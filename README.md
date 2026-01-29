@@ -1,2 +1,2 @@
 # InvestEd
-An educational app that teaches financial like skills.
+An educational app that teaches financial skills.
