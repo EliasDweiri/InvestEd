@@ -20,6 +20,7 @@ struct LeagueSection: View {
     @State private var chosenScope: Scope?
     @State private var globalBoard: [FriendProfile] = []
     @State private var isLoadingGlobal = false
+    @State private var globalError: String?
 
     /// Until the user picks, default to Friends if they have any.
     private var scope: Scope { chosenScope ?? (friends.isEmpty ? .everyone : .friends) }
@@ -118,6 +119,11 @@ struct LeagueSection: View {
                     .padding(.top, 2)
             } else if scope == .everyone && isLoadingGlobal {
                 ProgressView().frame(maxWidth: .infinity)
+            } else if scope == .everyone, let globalError {
+                Text(globalError)
+                    .font(AppTheme.captionFont)
+                    .foregroundColor(AppTheme.textSecondary)
+                    .frame(maxWidth: .infinity)
             } else if scope == .everyone {
                 Text("Top learners on InvestEd this week · resets weekly")
                     .font(AppTheme.captionFont)
@@ -130,7 +136,13 @@ struct LeagueSection: View {
 
     private func loadGlobalBoard() async {
         isLoadingGlobal = true
-        globalBoard = (try? await FirestoreService.shared.fetchWeeklyLeaderboard()) ?? []
+        do {
+            globalBoard = try await FirestoreService.shared.fetchWeeklyLeaderboard()
+        } catch {
+            print("[League] global board failed: \(error.localizedDescription)")
+            globalError = "Couldn't load the global league: \(error.localizedDescription)"
+            globalBoard = []
+        }
         isLoadingGlobal = false
     }
 

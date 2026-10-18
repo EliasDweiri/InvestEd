@@ -69,13 +69,24 @@ struct FriendsView: View {
                         .font(AppTheme.bodyFont.bold())
                         .foregroundColor(AppTheme.textPrimary)
                     Spacer()
-                    Button("Add") { viewModel.sendFriendRequest(to: found) }
-                        .font(AppTheme.captionFont)
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                        .background(AppTheme.secondaryBlue)
-                        .clipShape(Capsule())
+                    // Show the relationship instead of a misleading "Add".
+                    if appState.currentUser?.friendIDs.contains(found.id) == true {
+                        Label("Friends", systemImage: "checkmark")
+                            .font(AppTheme.captionFont)
+                            .foregroundColor(AppTheme.primaryGreen)
+                    } else if viewModel.requestedIDs.contains(found.id) {
+                        Text("Requested")
+                            .font(AppTheme.captionFont)
+                            .foregroundColor(AppTheme.textSecondary)
+                    } else {
+                        Button("Add") { viewModel.sendFriendRequest(to: found) }
+                            .font(AppTheme.captionFont)
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+                            .background(AppTheme.secondaryBlue)
+                            .clipShape(Capsule())
+                    }
                 }
             }
             Button {

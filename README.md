@@ -5,7 +5,13 @@
 > Built for the 2026 Congressional App Challenge.
 > _[FILL IN: your name]_ · Bellarmine College Preparatory, San Jose · _[district]_
 
-<!-- Screenshots: add 3–4 simulator screenshots here (Learn path, a lesson, Market tab, Friends league) -->
+<p align="center">
+  <img src="docs/screenshots/01-learn.jpg" width="160" alt="Learning path">
+  <img src="docs/screenshots/04-lesson.jpg" width="160" alt="A matching question in a lesson">
+  <img src="docs/screenshots/02-market.jpg" width="160" alt="Market simulator with live prices">
+  <img src="docs/screenshots/03-options.jpg" width="160" alt="Options playground priced with Black-Scholes">
+  <img src="docs/screenshots/05-league.jpg" width="160" alt="Weekly league">
+</p>
 
 ---
 
