@@ -29,7 +29,7 @@ enum MarketDataError: Error {
 /// If the network or Worker is unavailable, every call degrades to realistic
 /// `SampleData` so the simulator still works offline (e.g. during a demo).
 final class FinnhubMarketDataService: MarketDataProviding {
-    private let baseURL = "\(Constants.chatWorkerURL)/market"
+    private let baseURL = "\(Constants.workerURL)/market"
     private let session: URLSession = {
         let config = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = 8

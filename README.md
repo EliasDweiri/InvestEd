@@ -5,7 +5,7 @@
 > Built for the 2026 Congressional App Challenge.
 > _[FILL IN: your name]_ · Bellarmine College Preparatory, San Jose · _[district]_
 
-<!-- Screenshots: add 3–4 simulator screenshots here (Learn path, a lesson, Market tab, Penny chat) -->
+<!-- Screenshots: add 3–4 simulator screenshots here (Learn path, a lesson, Market tab, Friends league) -->
 
 ---
 
@@ -21,7 +21,7 @@ California won't require a personal-finance course to graduate until the class o
 | **12-unit learning path** | 60 lessons and 420 questions, from budgeting and paychecks to credit, compound interest, index funds, macroeconomics, investor psychology, crypto and quant basics. Each unit ends with a 15-question Knowledge Check that gates the next one. |
 | **8 interactive question types** | Multiple choice, true/false, select-all, ordering, matching, numeric entry (with a slider), sort-into-buckets, and *build-an-option*, where you construct a real call or put to fit a scenario. |
 | **Live market simulator** | $10,000 in virtual cash, real stock prices from Finnhub, search any U.S. ticker, buy and sell shares, and trade options priced with Black-Scholes. |
-| **Penny, an AI tutor** | Ask any money question in plain English. Penny explains jargon and never gives real-money investment advice. |
+| **Penny, your guide** | A piggy-bank mascot on every screen with hand-written tips about what you're looking at. |
 | **Motivation that lasts** | XP, levels, daily streaks with Streak Freezes, Gold earned from lessons, an avatar shop, friends, and weekly leagues against friends or everyone on the app. Nothing in the app costs real money. |
 
 ---
@@ -31,14 +31,13 @@ California won't require a personal-finance course to graduate until the class o
 ```
 ┌──────────────────────── iPhone (SwiftUI) ────────────────────────┐
 │  Views ──► ViewModels (MVVM) ──► Services                        │
-│  Learn · Market · Friends · Shop · Profile · Penny chat          │
+│  Learn · Market · Friends · Shop · Profile                       │
 └───────┬───────────────────────┬──────────────────────────┬───────┘
         │                       │                          │
    Firebase Auth          Firebase Firestore      Cloudflare Worker (JS)
-   (email sign-in)        users, friendRequests    ├─ POST /           → Gemini (Penny)
-                          + security rules         └─ GET /market/...  → Finnhub (quotes)
-                                                      API keys live here as secrets,
-                                                      never in the app.
+   (email sign-in)        users, friendRequests    GET /market/...  → Finnhub (quotes)
+                          + security rules         The API key lives here as a secret,
+                                                   never in the app.
 ```
 
 | Layer | Technology |
@@ -47,7 +46,6 @@ California won't require a personal-finance course to graduate until the class o
 | Accounts & data | Firebase Authentication, Cloud Firestore |
 | Backend | Cloudflare Workers (JavaScript) |
 | Market data | Finnhub API (free tier) |
-| AI tutor | Google Gemini API (free tier) |
 | Content pipeline | JSON lesson files + Python generator |
 
 Everything runs on free tiers — the app costs nothing to use or to operate at classroom scale.
@@ -57,7 +55,7 @@ Everything runs on free tiers — the app costs nothing to use or to operate at 
 - **Content as data.** Hand-maintaining hundreds of questions in Swift was error-prone, so lessons are written as JSON (`content_src/units/`) and `tools/gen_content.py` compiles them into type-safe Swift. It also assembles each unit's Knowledge Check automatically from that unit's lessons.
 - **Adaptive placement** (`OnboardingViewModel.swift`) — a small computerized-adaptive-testing loop: correct answers raise the difficulty and are worth more points, so the score reflects sustained level, not just a count.
 - **Options pricing** (`MarketModels.swift → OptionPricer`) — Black-Scholes implemented from the formula, with tests for known values and put-call parity.
-- **API keys kept off the device.** Anything compiled into an app can be extracted, so the Worker holds the Gemini and Finnhub keys as secrets. It also caches quotes at the edge (15 s) and company names (7 days) so the free Finnhub tier (~60 calls/min) is shared across every user.
+- **API key kept off the device.** Anything compiled into an app can be extracted, so the Worker holds the Finnhub key as a secret. It also caches quotes at the edge (15 s) and company names (7 days) so the free Finnhub tier (~60 calls/min) is shared across every user.
 - **Security rules.** Firestore rules (`backend/firestore.rules`) let each user write only their own document and only see friend requests they're part of. Two-way friendships are completed by each side writing its own record, so no user ever writes to anyone else's data.
 - **Accessibility.** VoiceOver labels on the learning path and stats, and the pulsing "current lesson" animation turns off with Reduce Motion.
 
@@ -83,8 +81,8 @@ Run them in Xcode with **⌘U**.
 InvestEd/
 ├── Con-Mod-Ser-Uti-VMo/
 │   ├── Models/        AppUser, Lesson/Question, Stock/Option, friends
-│   ├── ViewModels/    Learn, Market, Portfolio, Friends, Onboarding, Chat…
-│   ├── Services/      Firestore, Auth, MarketData (via Worker), ChatBot, Notifications
+│   ├── ViewModels/    Learn, Market, Portfolio, Friends, Onboarding, Settings…
+│   ├── Services/      Firestore, Auth, MarketData (via Worker), Notifications
 │   ├── Content/       Generated lessons + placement questions
 │   └── Utilities/     Theme, constants, offline sample quotes
 └── Onboarding/
@@ -99,7 +97,7 @@ InvestEdTests/         Unit tests
 ## Running it
 
 1. Open `InvestEd.xcodeproj` in Xcode 26 and run on an iOS 26 simulator.
-2. The app ships pointing at the deployed Worker, so market data and Penny work out of the box. To run your own backend: in `backend/`, `wrangler secret put GEMINI_API_KEY`, `wrangler secret put FINNHUB_API_KEY`, then `wrangler deploy`, and update `Constants.chatWorkerURL`.
+2. The app ships pointing at the deployed Worker, so live market data works out of the box. To run your own backend: in `backend/`, `wrangler secret put FINNHUB_API_KEY`, then `wrangler deploy`, and update `Constants.workerURL`.
 3. If the network is unavailable, the simulator falls back to built-in sample quotes.
 
 ---
@@ -111,7 +109,6 @@ InvestEdTests/         Unit tests
 | [Firebase iOS SDK](https://github.com/firebase/firebase-ios-sdk) (Auth, Firestore) and its Google dependencies (abseil, gRPC, leveldb, nanopb, Promises, GoogleUtilities, GTMSessionFetcher, AppCheck) | Accounts and database | Apache 2.0 / BSD |
 | [swift-algorithms](https://github.com/apple/swift-algorithms), [swift-numerics](https://github.com/apple/swift-numerics) | Pulled in by Firebase | Apache 2.0 |
 | Finnhub API | Live stock quotes and symbol search | Free tier |
-| Google Gemini API | Penny's answers | Free tier |
 | Cloudflare Workers | Backend proxy | Free tier |
 
 All app code, lesson content and the backend Worker are original to this project.
@@ -123,7 +120,7 @@ _Required by the Congressional App Challenge rules. Be specific and honest — j
 - **AI tools used:** _[FILL IN — e.g. Claude (Anthropic) for …; ChatGPT for …]_
 - **What AI helped with:** _[FILL IN — e.g. drafting boilerplate, debugging Swift 6 concurrency errors, first drafts of quiz questions which I then fact-checked]_
 - **What I designed and decided myself:** _[FILL IN — the idea and audience, the curriculum order, the gamification design, the architecture choices (free tiers, Worker proxy), which features to cut, testing and fixing on device…]_
-- **At runtime:** the in-app tutor, Penny, uses Google Gemini.
+- **At runtime:** the app itself uses no AI. Penny's tips and all lesson content are fixed text.
 
 ## What's next (2.0)
 

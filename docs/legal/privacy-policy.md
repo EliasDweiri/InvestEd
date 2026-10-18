@@ -20,7 +20,6 @@ We collect only the information needed to run the app and give you a personalize
 - **Learning progress:** Which lessons you've completed, quiz results, and your progress through the app's educational content.
 - **Simulated portfolio:** Your practice ("paper") trades and holdings. **This is fake money only.** InvestEd does not handle, hold, or transfer real money, and you cannot make real investments through the app.
 - **Friend connections:** The friend relationships you create, so you can connect with other users of the app.
-- **AI assistant messages:** When you ask our AI assistant ("Penny") a question, the text of your message is processed so Penny can respond (see "Third Parties" below).
 
 **What we do NOT collect:**
 - We do **not** show ads.
@@ -36,7 +35,6 @@ We use the information we collect to:
 - Save and display your learning progress and simulated portfolio.
 - Let you connect with friends inside the app.
 - Provide real, current market quotes so your practice experience feels realistic.
-- Answer your finance questions through the Penny AI assistant.
 - Keep the app working, fix problems, and protect against abuse or security threats.
 
 We do **not** use your information for advertising, profiling for marketers, or any purpose unrelated to running InvestEd.
@@ -47,7 +45,6 @@ To operate InvestEd, we rely on a small number of trusted service providers. We 
 
 - **Google Firebase (Authentication & Cloud Firestore):** We use Firebase Authentication to manage sign-in (email and password) and Cloud Firestore to securely store your account information, learning progress, simulated portfolio, and friend connections. Firebase is operated by Google. You can review Google's privacy practices at Google's Privacy Policy.
 - **Finnhub (market data):** We use Finnhub to display real stock and market quotes. We only request public market information. **No personal data about you is sent to Finnhub.**
-- **AI provider (Penny assistant):** When you chat with Penny, your message text is sent through our own proxy server to a third-party AI provider, which generates the response. We send only the content of your question — we don't attach your email, username, or other identifying account details to these requests. Please avoid including sensitive personal information in your messages to Penny.
 
 We do not allow these providers to use your information for their own advertising or to sell it.
 

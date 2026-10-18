@@ -44,7 +44,7 @@ struct DisclaimerView: View {
     static let disclaimerText = """
     InvestEd is educational only. Your portfolio here is 100% simulated, built \
     with fake money, and no real trades ever happen. Nothing in the app, \
-    including tips from your AI buddy Penny, is financial or investment advice. \
+    including tips from Penny, is financial or investment advice. \
     We're here to help you learn and practice, not to tell you what to do with \
     real money. Before you invest for real, do your own research and talk with \
     a licensed professional. Now go explore, make mistakes, and have fun learning!
