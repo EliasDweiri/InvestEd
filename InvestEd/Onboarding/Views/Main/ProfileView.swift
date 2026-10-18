@@ -113,7 +113,7 @@ struct ProfileView: View {
         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
             ProfileStat(icon: "star.fill", title: "Total XP", value: "\(appState.currentUser?.xp ?? 0)", color: AppTheme.accentGold)
             ProfileStat(icon: "rosette", title: "Level", value: "\(appState.currentUser?.level ?? 1)", color: AppTheme.secondaryBlue)
-            ProfileStat(icon: "flame.fill", title: "Day Streak", value: "\(appState.currentUser?.streak ?? 0)", color: AppTheme.streakOrange)
+            ProfileStat(icon: "flame.fill", title: "Day Streak", value: "\(appState.currentUser?.activeStreak ?? 0)", color: AppTheme.streakOrange)
             ProfileStat(icon: "checkmark.seal.fill", title: "Lessons Done", value: "\(appState.currentUser?.completedLessonIDs.count ?? 0)", color: AppTheme.primaryGreen)
             ProfileStat(icon: "goldcoin", title: "Gold", value: "\(appState.currentUser?.goldBalance ?? 0)", color: AppTheme.accentGold)
             ProfileStat(icon: "snowflake", title: "Streak Freezes", value: "\(appState.currentUser?.streakFreezes ?? 0)", color: AppTheme.secondaryBlue)

@@ -101,7 +101,7 @@ final class FirestoreService {
             .compactMap { try? $0.data(as: AppUser.self) }
             .filter { $0.currentWeeklyXP > 0 }
             .prefix(limit)
-            .map { FriendProfile(id: $0.id, username: $0.username, avatarEmoji: $0.avatarEmoji, xp: $0.xp, streak: $0.streak, weeklyXP: $0.currentWeeklyXP) }
+            .map { FriendProfile(id: $0.id, username: $0.username, avatarEmoji: $0.avatarEmoji, xp: $0.xp, streak: $0.activeStreak, weeklyXP: $0.currentWeeklyXP) }
     }
 
     /// Fetches lightweight public profiles for a list of friend IDs.
@@ -118,7 +118,7 @@ final class FirestoreService {
             db.collection("users").whereField(FieldPath.documentID(), in: chunk).getDocuments { snapshot, _ in
                 let profiles: [FriendProfile] = snapshot?.documents.compactMap { doc in
                     guard let user = try? doc.data(as: AppUser.self) else { return nil }
-                    return FriendProfile(id: user.id, username: user.username, avatarEmoji: user.avatarEmoji, xp: user.xp, streak: user.streak, weeklyXP: user.currentWeeklyXP)
+                    return FriendProfile(id: user.id, username: user.username, avatarEmoji: user.avatarEmoji, xp: user.xp, streak: user.activeStreak, weeklyXP: user.currentWeeklyXP)
                 } ?? []
                 allProfiles.append(contentsOf: profiles)
                 group.leave()

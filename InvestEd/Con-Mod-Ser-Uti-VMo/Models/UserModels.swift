@@ -110,6 +110,17 @@ struct AppUser: Identifiable, Codable, Equatable {
     /// Simple leveling: every 100 XP is one level.
     var level: Int { xp / 100 + 1 }
 
+    /// The streak as it stands *today*. `streak` is only recalculated when a
+    /// lesson is finished, so after missed days it still holds the old number.
+    /// If days were missed and there's no Streak Freeze to cover them, the
+    /// streak is already over — show 0 instead of a number that's gone.
+    var activeStreak: Int {
+        guard let last = lastLessonDate else { return 0 }
+        let missedDays = last.daysBetween(Date()) - 1
+        if missedDays <= 0 { return streak }
+        return (streakFreezes ?? 0) > 0 ? streak : 0
+    }
+
     /// XP earned during the current league week. Reads as 0 automatically
     /// once the stored anchor falls in a previous week.
     var currentWeeklyXP: Int {

@@ -55,4 +55,25 @@ struct UserModelTests {
         #expect(today.daysBetween(inThreeDays) == 3)
         #expect(today.daysBetween(today) == 0)
     }
+
+    /// A streak is only "alive" if the last lesson was today or yesterday,
+    /// or a Streak Freeze is available to cover the gap.
+    @Test func activeStreakDropsAfterMissedDays() {
+        let cal = Calendar.current
+        var u = AppUser.newUserDefault
+        u.streak = 5
+        u.streakFreezes = 0
+
+        u.lastLessonDate = Date()
+        #expect(u.activeStreak == 5, "lesson today keeps the streak")
+
+        u.lastLessonDate = cal.date(byAdding: .day, value: -1, to: Date())
+        #expect(u.activeStreak == 5, "lesson yesterday keeps the streak")
+
+        u.lastLessonDate = cal.date(byAdding: .day, value: -3, to: Date())
+        #expect(u.activeStreak == 0, "missed days with no freeze end the streak")
+
+        u.streakFreezes = 1
+        #expect(u.activeStreak == 5, "a Streak Freeze keeps it alive")
+    }
 }

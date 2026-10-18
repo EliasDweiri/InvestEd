@@ -10,7 +10,7 @@ struct FriendsView: View {
     /// streaks alive — the shared flame only burns as long as the weaker
     /// of the two.
     private func sharedStreakLabel(with friend: FriendProfile) -> String {
-        let shared = min(appState.currentUser?.streak ?? 0, friend.streak)
+        let shared = min(appState.currentUser?.activeStreak ?? 0, friend.streak)
         return shared > 0 ? " · \(shared) shared" : ""
     }
 
