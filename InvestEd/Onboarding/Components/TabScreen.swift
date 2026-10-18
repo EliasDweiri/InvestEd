@@ -30,6 +30,9 @@ struct TabScreen<Accessory: View, Hero: View, Content: View>: View {
     @ViewBuilder var hero: () -> Hero
     @ViewBuilder var content: () -> Content
 
+    /// Height of the floating tab bar plus a little air.
+    static var tabBarClearance: CGFloat { 96 }
+
     /// Penny's current tip for this screen (set by PennyCompanion).
     @State private var pennyTip: String?
 
@@ -42,7 +45,9 @@ struct TabScreen<Accessory: View, Hero: View, Content: View>: View {
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, -overlap)
-                .padding(.bottom, 28)
+                // Room to scroll the last card fully clear of the floating
+                // tab bar, which sits on top of the content.
+                .padding(.bottom, 28 + Self.tabBarClearance)
             }
         }
         .scrollIndicators(.hidden)
