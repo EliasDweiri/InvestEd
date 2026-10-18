@@ -47,7 +47,7 @@ Every lesson is quick, interactive, and rewarding. Earn XP, keep your streak ali
 - **🔥 Streaks, XP & levels** — stay motivated with daily streaks, hearts, Gold currency, and achievements.
 - **🏆 Weekly league** — climb the leaderboard and keep the momentum going.
 - **👋 Learn with friends** — add friends by username or QR code and compare progress on a friendly XP leaderboard.
-- **💬 Meet Penny** — your friendly AI helper for quick, plain-English answers to money questions.
+- **🐷 Meet Penny** — your piggy-bank guide with quick tips on every screen.
 - **🎨 Make it yours** — build a custom avatar and track your stats, badges, and progress.
 
 **Why InvestEd is safe:**
@@ -75,7 +75,7 @@ stocks,finance,budget,options,crypto,portfolio,teen,beginner,trading,market,savi
 
 ## Age Rating — Recommended: **12+** (legacy) / **13+** (Apple's 2026 age-rating system)
 
-**Rationale:** The app is purely educational and contains no real-money transactions, wagering, or gambling mechanics — the portfolio and all trades are simulated. However, it teaches and simulates **higher-risk instruments (options and crypto)** and includes an **AI chat assistant** and **user-to-user social features** (friend search, leaderboards). That combination makes an all-ages "4+" rating a poor fit and is best served by a **12+/13+** rating, which aligns with the teen-and-up target audience.
+**Rationale:** The app is purely educational and contains no real-money transactions, wagering, or gambling mechanics — the portfolio and all trades are simulated. However, it teaches and simulates **higher-risk instruments (options and crypto)** and includes **user-to-user social features** (friend search, leaderboards). That combination makes an all-ages "4+" rating a poor fit and is best served by a **12+/13+** rating, which aligns with the teen-and-up target audience.
 
 **Suggested answers to the App Store age-rating questionnaire:**
 - Simulated Gambling: **None** — stock/options simulation is skill-and-education based, not casino/wagering gambling. (If App Review flags the options simulator under this heading, be ready to explain in Review Notes that there are no wagers, odds, or payouts; if required to select a level, choose the lowest.)
@@ -94,7 +94,7 @@ stocks,finance,budget,options,crypto,portfolio,teen,beginner,trading,market,savi
 > • A simulated $10,000 portfolio with real, live stock quotes
 > • An Options Playground to explore calls and puts, risk-free
 > • Streaks, XP, levels, achievements, and a weekly league
-> • Friends, leaderboards, and Penny, your AI money helper
+> • Friends, leaderboards, and Penny, your piggy-bank guide
 >
 > This is just the beginning — more lessons and features are on the way. Keep your streak alive!
 
@@ -121,10 +121,6 @@ ALL TRADING IS SIMULATED
 - InvestEd provides general financial education only — no personalized
   investment advice. In-app disclaimers state this (e.g., the Options
   Playground labels pricing as "for learning, not investment advice").
-
-AI CHAT ("Penny")
-- Penny answers general money questions via a Cloudflare Worker proxy. It does
-  not give personalized or actionable trading recommendations.
 
 IN-APP PURCHASES
 - The "InvestEd Plus" subscription is laid out but DISABLED in this build
@@ -153,7 +149,7 @@ Based on what the app collects (Firebase Auth email; Firestore username + learni
 - **Data linked to you:** Email Address, User ID, Product Interaction (all three above).
 - **Data not linked to you:** None declared.
 - If you later add crash reporting or analytics SDKs (e.g., Firebase Crashlytics/Analytics), you must add **Diagnostics → Crash Data / Performance Data** and possibly **Identifiers → Device ID**; the current declaration assumes those are not enabled.
-- Third-party processors in this data flow: **Google Firebase** (Auth + Firestore) stores email, username, and progress; **Finnhub** receives stock symbols for quotes (no personal user data sent); the **Cloudflare Worker** proxies chat messages. Confirm each processor's data handling is reflected accurately before publishing.
+- Third-party processors in this data flow: **Google Firebase** (Auth + Firestore) stores email, username, and progress; **Finnhub** receives stock symbols for quotes (no personal user data sent); the **Cloudflare Worker** proxies market-data requests (stock symbols only). Confirm each processor's data handling is reflected accurately before publishing.
 
 ---
 
