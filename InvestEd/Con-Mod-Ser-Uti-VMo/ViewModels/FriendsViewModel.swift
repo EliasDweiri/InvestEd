@@ -10,6 +10,9 @@ final class FriendsViewModel: ObservableObject {
     @Published var searchUsername = ""
     @Published var searchResult: AppUser?
     @Published var statusMessage: String?
+    /// People I've sent a request to this session, so the search result
+    /// shows "Requested" instead of letting me send duplicates.
+    @Published var requestedIDs: Set<String> = []
 
     private var listener: ListenerRegistration?
     private var acceptedListener: ListenerRegistration?
@@ -113,6 +116,7 @@ final class FriendsViewModel: ObservableObject {
         }
         let request = FriendRequest(id: UUID().uuidString, fromUserID: me.id, fromUsername: me.username, toUserID: user.id, status: .pending, dateSent: Date())
         try? FirestoreService.shared.sendFriendRequest(request)
+        requestedIDs.insert(user.id)
         statusMessage = "Friend request sent to \(user.username)!"
     }
 
