@@ -17,7 +17,7 @@ struct PrimaryButton: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 16)
-            .background(AppTheme.primaryGradient)
+            .background(AppTheme.primaryGreen)
             .foregroundColor(.white)
             .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
         }
@@ -76,10 +76,10 @@ struct AnswerOptionButton: View {
             .padding(16)
             .background(backgroundColor)
             .foregroundColor(foregroundColor)
-            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius, style: .continuous))
             .overlay(
-                RoundedRectangle(cornerRadius: 16)
-                    .stroke(borderColor, lineWidth: 2)
+                RoundedRectangle(cornerRadius: AppTheme.cornerRadius, style: .continuous)
+                    .stroke(borderColor, lineWidth: state == .normal || state == .disabled ? 1 : 2)
             )
         }
     }
@@ -102,7 +102,7 @@ struct AnswerOptionButton: View {
 
     private var borderColor: Color {
         switch state {
-        case .normal, .disabled: return Color.clear
+        case .normal, .disabled: return AppTheme.hairline
         case .correct: return AppTheme.primaryGreen
         case .incorrect: return AppTheme.dangerRed
         }

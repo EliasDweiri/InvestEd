@@ -26,7 +26,6 @@ struct LeagueSection: View {
     private var scope: Scope { chosenScope ?? (friends.isEmpty ? .everyone : .friends) }
 
     private var myWeeklyXP: Int { appState.currentUser?.currentWeeklyXP ?? 0 }
-    private var tier: LeagueTier { LeagueTier.tier(forWeeklyXP: myWeeklyXP) }
 
     private struct Entry: Identifiable {
         let id: String
@@ -50,8 +49,7 @@ struct LeagueSection: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            tierCard
+        VStack(alignment: .leading, spacing: 10) {
             Picker("League", selection: Binding(get: { scope }, set: { chosenScope = $0 })) {
                 ForEach(Scope.allCases) { Text($0.rawValue).tag($0) }
             }
@@ -66,51 +64,22 @@ struct LeagueSection: View {
         .task { await loadGlobalBoard() }
     }
 
-    // MARK: - Tier card
-
-    private var tierCard: some View {
-        HStack(spacing: 14) {
-            ZStack {
-                Circle()
-                    .fill(Color(hex: tier.colorHex).opacity(0.18))
-                    .frame(width: 56, height: 56)
-                Image(systemName: tier.iconName)
-                    .font(.system(size: 26))
-                    .foregroundColor(Color(hex: tier.colorHex))
-            }
-            VStack(alignment: .leading, spacing: 5) {
-                Text(tier.name)
-                    .font(AppTheme.bodyFont.bold())
-                    .foregroundColor(AppTheme.textPrimary)
-                if let next = tier.nextTierXP {
-                    ProgressBarView(progress: Double(myWeeklyXP - tier.minXP) / Double(next - tier.minXP))
-                        .frame(height: 10)
-                    Text("\(next - myWeeklyXP) XP to the next league · resets weekly")
-                        .font(AppTheme.captionFont)
-                        .foregroundColor(AppTheme.textSecondary)
-                } else {
-                    Text("Top league — defend it! · resets weekly")
-                        .font(AppTheme.captionFont)
-                        .foregroundColor(AppTheme.textSecondary)
-                }
-            }
-        }
-        .padding()
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
-    }
-
     // MARK: - Standings
 
     private var standings: some View {
         VStack(spacing: 10) {
-            ForEach(Array(entries.enumerated()), id: \.element.id) { rank, entry in
-                row(rank: rank, entry: entry)
-                    .opacity(rowsShown ? 1 : 0)
-                    .offset(y: rowsShown ? 0 : 14)
-                    .animation(.spring(response: 0.45, dampingFraction: 0.85).delay(Double(rank) * 0.05), value: rowsShown)
+            VStack(spacing: 0) {
+                ForEach(Array(entries.enumerated()), id: \.element.id) { rank, entry in
+                    row(rank: rank, entry: entry)
+                        .opacity(rowsShown ? 1 : 0)
+                        .offset(y: rowsShown ? 0 : 14)
+                        .animation(.spring(response: 0.45, dampingFraction: 0.85).delay(Double(rank) * 0.05), value: rowsShown)
+                    if rank < entries.count - 1 {
+                        Rectangle().fill(AppTheme.hairline).frame(height: 1).padding(.leading, 14)
+                    }
+                }
             }
+            .cardSurface()
             if scope == .friends && friends.isEmpty {
                 Text("Add friends below to start your own league!")
                     .font(AppTheme.captionFont)
@@ -149,7 +118,7 @@ struct LeagueSection: View {
     private func row(rank: Int, entry: Entry) -> some View {
         HStack(spacing: 14) {
             Text("#\(rank + 1)")
-                .font(AppTheme.bodyFont.bold())
+                .font(.system(.body, design: .serif).weight(.bold).monospacedDigit())
                 .foregroundColor(rankColor(rank))
                 .frame(width: 36)
             MascotBubble(avatarKey: entry.avatarEmoji, size: 32)
@@ -163,13 +132,10 @@ struct LeagueSection: View {
                 .foregroundColor(AppTheme.primaryGreen)
                 .contentTransition(.numericText())
         }
-        .padding(14)
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
-        .overlay(
-            RoundedRectangle(cornerRadius: AppTheme.cornerRadius)
-                .stroke(entry.isMe ? AppTheme.primaryGreen : .clear, lineWidth: 2)
-        )
+        .padding(.horizontal, 14)
+        .padding(.vertical, 11)
+        // Your own row is marked with a tinted band, like a highlighted line on a statement.
+        .background(entry.isMe ? AppTheme.primaryGreen.opacity(0.08) : .clear)
     }
 
     private func rankColor(_ rank: Int) -> Color {
@@ -178,6 +144,45 @@ struct LeagueSection: View {
         case 1: return Color(hex: "9BA7B4")
         case 2: return Color(hex: "CD7F32")
         default: return AppTheme.textSecondary
+        }
+    }
+}
+
+/// The weekly-league badge shown in the Friends header.
+struct LeagueTierHero: View {
+    @EnvironmentObject var appState: AppState
+
+    private var myWeeklyXP: Int { appState.currentUser?.currentWeeklyXP ?? 0 }
+    private var tier: LeagueTier { LeagueTier.tier(forWeeklyXP: myWeeklyXP) }
+
+    var body: some View {
+        HStack(spacing: 14) {
+            Image(systemName: tier.iconName)
+                .font(.system(size: 24, weight: .semibold))
+                .foregroundColor(AppTheme.onInk)
+                .frame(width: 52, height: 52)
+                .background(AppTheme.onInk.opacity(0.15), in: Circle())
+            VStack(alignment: .leading, spacing: 6) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text(tier.name)
+                        .font(.system(.title3, design: .serif).weight(.bold))
+                    Spacer()
+                    Text("\(myWeeklyXP) XP this week")
+                        .font(.caption.weight(.semibold).monospacedDigit())
+                        .opacity(0.8)
+                }
+                if let next = tier.nextTierXP {
+                    HeaderProgressBar(progress: Double(myWeeklyXP - tier.minXP) / Double(max(next - tier.minXP, 1)))
+                    Text("\(next - myWeeklyXP) XP to the next league · resets weekly")
+                        .font(.caption)
+                        .opacity(0.8)
+                } else {
+                    Text("Top league — defend it! · resets weekly")
+                        .font(.caption)
+                        .opacity(0.8)
+                }
+            }
+            .foregroundColor(AppTheme.onInk)
         }
     }
 }

@@ -17,32 +17,28 @@ struct ShopView: View {
 
     var body: some View {
         NavigationStack {
-            ZStack {
-                AppTheme.background.ignoresSafeArea()
-                FloatingMoneyBackground()
-                ScrollView {
-                    VStack(spacing: 20) {
-                        header
-                        if let message = iap.message ?? shopMessage {
-                            Text(message)
-                                .font(AppTheme.captionFont)
-                                .foregroundColor(AppTheme.streakOrange)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .transition(.opacity)
-                        }
-                        // Real-money sections (Gold packs, InvestEd Plus) only
-                        // appear once StoreKit is live. Everything in this
-                        // build is earned by learning — nothing costs money.
-                        if Self.purchasesEnabled { goldPacksSection }
-                        powerUpsSection
-                        avatarGearSection
-                        if Self.purchasesEnabled { plusSection }
-                    }
-                    .padding()
-                    .padding(.bottom, 110) // keep last card clear of the floating tab bar
+            TabScreen(tab: .shop) {
+                PennyCompanion(tab: .shop)
+            } hero: {
+                shopHero
+            } content: {
+                if let message = iap.message ?? shopMessage {
+                    Text(message)
+                        .font(AppTheme.captionFont)
+                        .foregroundColor(AppTheme.textPrimary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(12)
+                        .cardSurface(radius: AppTheme.smallRadius)
+                        .transition(.opacity)
                 }
+                // Real-money sections (Gold packs, InvestEd Plus) only
+                // appear once StoreKit is live. Everything in this
+                // build is earned by learning — nothing costs money.
+                if Self.purchasesEnabled { goldPacksSection }
+                powerUpsSection
+                avatarGearSection
+                if Self.purchasesEnabled { plusSection }
             }
-            .navigationTitle("Shop")
             .task { await iap.loadProducts() }
             .sheet(isPresented: $showAvatarBuilder) {
                 AvatarBuilderView()
@@ -52,36 +48,35 @@ struct ShopView: View {
 
     // MARK: - Header (Moby + gold balance)
 
-    private var header: some View {
+    private var shopHero: some View {
         HStack(spacing: 14) {
             Image(Mascots.whale.imageName)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 72, height: 72)
-            VStack(alignment: .leading, spacing: 3) {
-                Text("Moby's Market")
-                    .font(AppTheme.headingFont)
-                    .foregroundColor(AppTheme.textPrimary)
-                Text("Spend the Gold you earn from lessons.")
-                    .font(AppTheme.captionFont)
-                    .foregroundColor(AppTheme.textSecondary)
+                .frame(width: 56, height: 56)
+                .padding(4)
+                .background(AppTheme.onInk.opacity(0.15), in: Circle())
+            VStack(alignment: .leading, spacing: 2) {
+                Text("MOBY'S MARKET")
+                    .font(AppTheme.kickerFont)
+                    .tracking(1.2)
+                    .opacity(0.75)
+                HStack(spacing: 6) {
+                    GoldCoinIcon(size: 22)
+                    Text("\(appState.currentUser?.goldBalance ?? 0)")
+                        .font(.system(size: 30, weight: .bold, design: .serif).monospacedDigit())
+                        .contentTransition(.numericText())
+                    Text("Gold")
+                        .font(.subheadline.weight(.semibold))
+                        .opacity(0.8)
+                }
+                Text("Earn 10 Gold per lesson, 15 if it's perfect.")
+                    .font(.caption)
+                    .opacity(0.8)
             }
+            .foregroundColor(AppTheme.onInk)
             Spacer()
-            HStack(spacing: 6) {
-                GoldCoinIcon(size: 18)
-                Text("\(appState.currentUser?.goldBalance ?? 0)")
-                    .font(AppTheme.bodyFont.bold())
-                    .foregroundColor(AppTheme.textPrimary)
-                    .contentTransition(.numericText())
-            }
-            .padding(.horizontal, 14)
-            .padding(.vertical, 9)
-            .background(AppTheme.accentGold.opacity(0.18))
-            .clipShape(Capsule())
         }
-        .padding()
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
     }
 
     // MARK: - Gold packs (real-money in-app purchase; placeholder until live)
@@ -93,7 +88,7 @@ struct ShopView: View {
                 Spacer()
                 if !iap.isConfigured {
                     Text("Coming soon")
-                        .font(.system(size: 10.5, weight: .bold, design: .rounded))
+                        .font(.system(size: 10.5, weight: .bold))
                         .foregroundColor(AppTheme.streakOrange)
                         .padding(.horizontal, 8).padding(.vertical, 4)
                         .background(Capsule().fill(AppTheme.streakOrange.opacity(0.15)))
@@ -116,15 +111,14 @@ struct ShopView: View {
             }
         }
         .padding()
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .cardSurface()
     }
 
     private func goldPackCell(_ pack: IAPManager.GoldPack) -> some View {
         VStack(spacing: 8) {
             if let tag = pack.tag {
                 Text(tag)
-                    .font(.system(size: 9, weight: .heavy, design: .rounded))
+                    .font(.system(size: 9, weight: .heavy))
                     .foregroundColor(.white)
                     .padding(.horizontal, 8).padding(.vertical, 3)
                     .background(Capsule().fill(AppTheme.primaryGreen))
@@ -180,8 +174,7 @@ struct ShopView: View {
             }
         }
         .padding()
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .cardSurface()
     }
 
     // MARK: - Avatar gear (functional, priced in Gold)
@@ -206,8 +199,7 @@ struct ShopView: View {
             }
         }
         .padding()
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .cardSurface()
     }
 
     private func gearCell(symbol: String, name: String) -> some View {
@@ -218,14 +210,14 @@ struct ShopView: View {
                 .font(.system(size: 22, weight: .bold))
                 .foregroundColor(owned ? .white : AppTheme.textSecondary)
                 .frame(width: 50, height: 50)
-                .background(Circle().fill(owned ? AppTheme.primaryGreen : AppTheme.background))
+                .background(Circle().fill(owned ? AppTheme.primaryGreen : AppTheme.cardBackground))
             Text(name)
-                .font(.system(size: 11, weight: .semibold, design: .rounded))
+                .font(.system(size: 11, weight: .semibold))
                 .foregroundColor(AppTheme.textPrimary)
                 .lineLimit(1)
             if owned {
                 Text("Owned")
-                    .font(.system(size: 10, weight: .bold, design: .rounded))
+                    .font(.system(size: 10, weight: .bold))
                     .foregroundColor(AppTheme.primaryGreen)
             } else {
                 Button {
@@ -234,20 +226,20 @@ struct ShopView: View {
                     HStack(spacing: 4) {
                         GoldCoinIcon(size: 11)
                         Text("\(price)")
-                            .font(.system(size: 11, weight: .bold, design: .rounded))
+                            .font(.system(size: 11, weight: .bold))
                     }
-                    .foregroundColor(Color(hex: "8A6410"))
+                    .foregroundColor(.white)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
-                    .background(Capsule().fill(AppTheme.accentGold))
+                    .background(AppTheme.accentGold, in: RoundedRectangle(cornerRadius: 7))
                 }
                 .buttonStyle(SpringPressStyle())
             }
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 10)
-        .background(AppTheme.background)
-        .clipShape(RoundedRectangle(cornerRadius: 14))
+        .background(AppTheme.sunkenBackground.opacity(0.5))
+        .clipShape(RoundedRectangle(cornerRadius: AppTheme.smallRadius))
     }
 
     // MARK: - InvestEd Plus (laid out, deliberately not purchasable yet)
@@ -292,13 +284,12 @@ struct ShopView: View {
             .buttonStyle(SpringPressStyle())
 
             Text("Real-money purchases are disabled in this build. They'll switch on when the Apple Developer subscription and App Store products are configured.")
-                .font(.system(size: 10.5, weight: .medium, design: .rounded))
+                .font(.system(size: 10.5, weight: .medium))
                 .foregroundColor(.white.opacity(0.75))
         }
         .padding()
         .background(
-            LinearGradient(colors: [Color(hex: "4361EE"), Color(hex: "9B5DE5")],
-                           startPoint: .topLeading, endPoint: .bottomTrailing)
+            AppTheme.secondaryBlue
         )
         .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
     }
@@ -350,9 +341,7 @@ struct ShopView: View {
     // MARK: - Layout helpers
 
     private func sectionTitle(_ title: String) -> some View {
-        Text(title)
-            .font(AppTheme.headingFont)
-            .foregroundColor(AppTheme.textPrimary)
+        SectionKicker(text: title)
     }
 
     private func shopRow<Trailing: View>(
@@ -377,7 +366,7 @@ struct ShopView: View {
                     .foregroundColor(AppTheme.textSecondary)
                 if let trailing {
                     Text(trailing)
-                        .font(.system(size: 10.5, weight: .semibold, design: .rounded))
+                        .font(.system(size: 10.5, weight: .semibold))
                         .foregroundColor(AppTheme.secondaryBlue)
                 }
             }
@@ -393,11 +382,10 @@ struct ShopView: View {
                 Text("\(price)")
                     .font(AppTheme.captionFont.bold())
             }
-            .foregroundColor(Color(hex: "8A6410"))
+            .foregroundColor(.white)
             .padding(.horizontal, 14)
             .padding(.vertical, 9)
-            .background(AppTheme.accentGold)
-            .clipShape(Capsule())
+            .background(AppTheme.accentGold, in: RoundedRectangle(cornerRadius: AppTheme.smallRadius))
         }
         .buttonStyle(SpringPressStyle())
     }

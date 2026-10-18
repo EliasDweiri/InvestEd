@@ -11,6 +11,7 @@
   <img src="docs/screenshots/02-market.jpg" width="160" alt="Market simulator with live prices">
   <img src="docs/screenshots/03-options.jpg" width="160" alt="Options playground priced with Black-Scholes">
   <img src="docs/screenshots/05-league.jpg" width="160" alt="Weekly league">
+  <img src="docs/screenshots/06-profile.jpg" width="160" alt="Profile">
 </p>
 
 ---
@@ -55,6 +56,16 @@ California won't require a personal-finance course to graduate until the class o
 | Content pipeline | JSON lesson files + Python generator |
 
 Everything runs on free tiers — the app costs nothing to use or to operate at classroom scale.
+
+### Design: "Banknote"
+
+The look is borrowed from real money and financial print rather than app templates:
+
+- **Ink colors from currency and a newspaper's markets page** — forest green, petrol blue, brick, ochre, slate — always flat, never gradients. Each tab owns one color, so you always know where you are.
+- **Warm paper instead of stark white**, with hairline borders instead of drop shadows, and rows grouped into statement-style cards.
+- **Type:** serif headlines (Apple's New York) for an editorial voice, SF for quick reading, tabular digits for money.
+- **One custom ornament:** a guilloche pattern — the fine wavy security line-work printed on banknotes — drawn in code (`GuillochePattern`) on every header and the app icon.
+- **One layout for every tab** (`TabScreen`): a colored header holding the screen's key numbers, with content cards tucked into its bottom edge.
 
 ### Engineering highlights
 

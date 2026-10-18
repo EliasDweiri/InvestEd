@@ -27,18 +27,17 @@ enum MainTab: Int, CaseIterable {
 
     var color: Color {
         switch self {
-        case .learn: return AppTheme.primaryGreen
-        case .market: return AppTheme.secondaryBlue
-        case .shop: return Color(hex: "E0A82E")
-        case .friends: return AppTheme.streakOrange
-        case .profile: return Color(hex: "9B5DE5")
+        case .learn: return Color(hex: "1E6B4F")    // forest
+        case .market: return Color(hex: "1F5F7A")   // petrol
+        case .shop: return Color(hex: "A86F14")     // ochre
+        case .friends: return Color(hex: "B04530")  // brick
+        case .profile: return Color(hex: "33403F")  // slate
         }
     }
 }
 
-/// A lively replacement for the stock tab bar: each tab gets its own
-/// color, the selected icon sits in a floating colored bubble, and
-/// switching tabs bounces the bubble with a spring.
+/// A floating tab bar: each tab has its own ink color, and the selected
+/// icon sits in a solid disc of that color.
 struct CustomTabBar: View {
     @Binding var selection: MainTab
 
@@ -58,9 +57,13 @@ struct CustomTabBar: View {
         .padding(.top, 8)
         .padding(.bottom, 6)
         .background(
-            AppTheme.cardBackground
-                .clipShape(RoundedRectangle(cornerRadius: 26))
-                .shadow(color: .black.opacity(0.10), radius: 12, y: 4)
+            RoundedRectangle(cornerRadius: 22, style: .continuous)
+                .fill(AppTheme.cardBackground)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 22, style: .continuous)
+                        .stroke(AppTheme.hairline, lineWidth: 1)
+                )
+                .shadow(color: .black.opacity(0.06), radius: 8, y: 2)
         )
         .padding(.horizontal, 14)
     }
@@ -77,15 +80,8 @@ private struct TabBarButton: View {
                 ZStack {
                     if isSelected {
                         Circle()
-                            .fill(
-                                LinearGradient(
-                                    colors: [tab.color, tab.color.opacity(0.72)],
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
-                                )
-                            )
+                            .fill(tab.color)
                             .frame(width: 44, height: 44)
-                            .shadow(color: tab.color.opacity(0.45), radius: 6, y: 3)
                             .transition(.scale.combined(with: .opacity))
                     }
                     Image(systemName: tab.icon)
@@ -97,7 +93,7 @@ private struct TabBarButton: View {
                 .offset(y: isSelected ? -6 : 0)
 
                 Text(tab.title)
-                    .font(.system(size: 10.5, weight: .semibold, design: .rounded))
+                    .font(.system(size: 10.5, weight: .semibold))
                     .foregroundColor(isSelected ? tab.color : AppTheme.textSecondary)
             }
             .frame(maxWidth: .infinity)

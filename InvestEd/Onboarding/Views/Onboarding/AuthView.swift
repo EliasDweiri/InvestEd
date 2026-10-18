@@ -21,10 +21,23 @@ struct AuthView: View {
             AppTheme.background.ignoresSafeArea()
             ScrollView {
                 VStack(spacing: 20) {
-                    Text(isSignUp ? "Create your account" : "Welcome back")
-                        .font(AppTheme.titleFont)
-                        .foregroundColor(AppTheme.textPrimary)
-                        .padding(.top, 40)
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("INVESTED")
+                            .font(AppTheme.kickerFont)
+                            .tracking(1.4)
+                            .foregroundColor(AppTheme.onInk.opacity(0.75))
+                        Text(isSignUp ? "Create your account" : "Welcome back")
+                            .font(.system(size: 30, weight: .bold, design: .serif))
+                            .foregroundColor(AppTheme.onInk)
+                        Text(isSignUp ? "Free, and it takes about 30 seconds." : "Pick up your streak where you left off.")
+                            .font(.subheadline)
+                            .foregroundColor(AppTheme.onInk.opacity(0.85))
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(20)
+                    .background(InkHeaderBackground(color: MainTab.learn.color))
+                    .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    .padding(.top, 24)
 
                     if isSignUp {
                         InvestEdTextField(title: "Username", text: $username)
@@ -134,8 +147,7 @@ private struct InvestEdTextField: View {
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled()
             .padding()
-            .background(AppTheme.cardBackground)
-            .clipShape(RoundedRectangle(cornerRadius: 14))
+            .cardSurface(radius: 14)
     }
 }
 
@@ -146,7 +158,6 @@ private struct InvestEdSecureField: View {
     var body: some View {
         SecureField(title, text: $text)
             .padding()
-            .background(AppTheme.cardBackground)
-            .clipShape(RoundedRectangle(cornerRadius: 14))
+            .cardSurface(radius: 14)
     }
 }

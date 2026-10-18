@@ -64,9 +64,9 @@ enum LeagueTier: Int, CaseIterable, Comparable {
         case .penny: return "B87333"
         case .nickel: return "8E9AA6"
         case .dime: return "74A7C4"
-        case .quarter: return "4361EE"
-        case .silverDollar: return "9B5DE5"
-        case .fortune: return "FFC93C"
+        case .quarter: return "1F5F7A"
+        case .silverDollar: return "A3A9AE"
+        case .fortune: return "D49A1E"
         }
     }
 

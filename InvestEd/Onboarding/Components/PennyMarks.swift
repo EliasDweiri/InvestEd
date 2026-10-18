@@ -1,17 +1,17 @@
 import SwiftUI
 
 /// Penny's snout-as-a-coin — the app icon mark, drawn natively so it can be
-/// dropped in as a subtle brand hint. Used sparingly (splash screen, chat
-/// thinking indicator) — a wink, not a billboard.
+/// dropped in as a subtle brand hint. Used sparingly (splash screen, the
+/// Gold currency, the current-lesson marker) — a wink, not a billboard.
 struct SnoutCoinMark: View {
     var size: CGFloat = 64
     var pulsing: Bool = false
 
     @State private var scaled = false
 
-    private var gold: Color { Color(hex: "FFC93C") }
-    private var goldDark: Color { Color(hex: "E0A82E") }
-    private var slot: Color { Color(hex: "1B1F3B") }
+    private var gold: Color { Color(hex: "E2AA30") }
+    private var goldDark: Color { Color(hex: "BE8A1E") }
+    private var slot: Color { Color(hex: "1F1C17") }
 
     var body: some View {
         ZStack {

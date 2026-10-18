@@ -15,29 +15,22 @@ struct MarketView: View {
 
     var body: some View {
         NavigationStack {
-            ZStack {
-                AppTheme.background.ignoresSafeArea()
-                FloatingMoneyBackground()
-                ScrollView {
-                    VStack(spacing: 20) {
-                        powerhousesSection
-                        searchSection
-                        portfolioCard
-                        if !(appState.currentUser?.holdings.isEmpty ?? true) {
-                            holdingsSection
-                        }
-                        if !portfolioVM.optionPositions.isEmpty {
-                            optionsSection
-                        }
-                        popularSection
-                    }
-                    .padding()
-                    // Extra room so the last row clears the tab bar.
-                    .padding(.bottom, 110)
+            TabScreen(tab: .market) {
+                PennyCompanion(tab: .market)
+            } hero: {
+                portfolioHero
+            } content: {
+                searchSection
+                powerhousesSection
+                if !(appState.currentUser?.holdings.isEmpty ?? true) {
+                    holdingsSection
                 }
-                .refreshable { await marketVM.loadWatchlist() }
+                if !portfolioVM.optionPositions.isEmpty {
+                    optionsSection
+                }
+                popularSection
             }
-            .navigationTitle("Market")
+            .refreshable { await marketVM.loadWatchlist() }
             .navigationDestination(item: $marketVM.searchedStock) { stock in
                 StockDetailView(stock: stock, portfolioVM: portfolioVM)
             }
@@ -56,10 +49,7 @@ struct MarketView: View {
     // MARK: - Market powerhouses (indexes)
 
     private var powerhousesSection: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Market Powerhouses")
-                .font(AppTheme.headingFont)
-                .foregroundColor(AppTheme.textPrimary)
+        PaperSection(title: "Market indexes") {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
                     ForEach(marketVM.indexes) { index in
@@ -99,8 +89,7 @@ struct MarketView: View {
                 if marketVM.isSearching { ProgressView() }
             }
             .padding(14)
-            .background(AppTheme.cardBackground)
-            .clipShape(RoundedRectangle(cornerRadius: 14))
+            .cardSurface(radius: 14)
 
             ForEach(marketVM.searchResults) { match in
                 Button {
@@ -125,8 +114,7 @@ struct MarketView: View {
                             .foregroundColor(AppTheme.textSecondary)
                     }
                     .padding(12)
-                    .background(AppTheme.cardBackground)
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .cardSurface(radius: 12)
                 }
                 .buttonStyle(SpringPressStyle())
             }
@@ -135,43 +123,30 @@ struct MarketView: View {
 
     // MARK: - Portfolio
 
-    private var portfolioCard: some View {
-        VStack(spacing: 8) {
-            Text("Portfolio Value")
-                .font(AppTheme.captionFont)
-                .foregroundColor(.white.opacity(0.85))
-            Text(portfolioVM.totalPortfolioValue(stocks: marketVM.allQuotes), format: .currency(code: "USD"))
-                .font(AppTheme.titleFont)
-                .foregroundColor(.white)
-                .contentTransition(.numericText())
-            totalReturnBadge
-            HStack(spacing: 20) {
-                VStack(spacing: 2) {
-                    Text("Cash")
-                        .font(AppTheme.captionFont).foregroundColor(.white.opacity(0.85))
-                    Text(appState.currentUser?.cashBalance ?? 0, format: .currency(code: "USD"))
-                        .font(AppTheme.bodyFont.bold()).foregroundColor(.white)
-                }
-                VStack(spacing: 2) {
-                    Text("Stocks")
-                        .font(AppTheme.captionFont).foregroundColor(.white.opacity(0.85))
-                    Text(portfolioVM.totalHoldingsValue(stocks: marketVM.allQuotes), format: .currency(code: "USD"))
-                        .font(AppTheme.bodyFont.bold()).foregroundColor(.white)
-                }
+    /// Portfolio value lives in the header — it's the number that matters most here.
+    private var portfolioHero: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text("PORTFOLIO VALUE")
+                    .font(AppTheme.kickerFont)
+                    .tracking(1.2)
+                    .foregroundColor(AppTheme.onInk.opacity(0.75))
+                Text(portfolioVM.totalPortfolioValue(stocks: marketVM.allQuotes), format: .currency(code: "USD"))
+                    .font(.system(size: 38, weight: .bold, design: .serif).monospacedDigit())
+                    .foregroundColor(AppTheme.onInk)
+                    .contentTransition(.numericText())
+                    .minimumScaleFactor(0.7)
+                    .lineLimit(1)
+                totalReturnBadge
+            }
+            HStack(spacing: 8) {
+                HeaderStat(icon: "banknote", value: (appState.currentUser?.cashBalance ?? 0).formatted(.currency(code: "USD").precision(.fractionLength(0))), label: "cash")
+                HeaderStat(icon: "chart.bar.fill", value: portfolioVM.totalHoldingsValue(stocks: marketVM.allQuotes).formatted(.currency(code: "USD").precision(.fractionLength(0))), label: "stocks")
                 if !portfolioVM.optionPositions.isEmpty {
-                    VStack(spacing: 2) {
-                        Text("Options")
-                            .font(AppTheme.captionFont).foregroundColor(.white.opacity(0.85))
-                        Text(portfolioVM.totalOptionsValue(stocks: marketVM.allQuotes), format: .currency(code: "USD"))
-                            .font(AppTheme.bodyFont.bold()).foregroundColor(.white)
-                    }
+                    HeaderStat(icon: "arrow.up.arrow.down", value: portfolioVM.totalOptionsValue(stocks: marketVM.allQuotes).formatted(.currency(code: "USD").precision(.fractionLength(0))), label: "options")
                 }
             }
         }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 24)
-        .background(AppTheme.primaryGradient)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
     }
 
     /// All-time gain/loss vs the $10,000 starting balance — the most motivating
@@ -186,24 +161,21 @@ struct MarketView: View {
             Text("\(gain >= 0 ? "+" : "")\(gain, format: .currency(code: "USD")) (\(pct, specifier: "%.2f")%) all-time")
                 .font(AppTheme.captionFont.bold())
         }
-        .foregroundColor(.white)
-        .padding(.horizontal, 12)
-        .padding(.vertical, 5)
-        .background(Capsule().fill(.white.opacity(0.18)))
+        .foregroundColor(AppTheme.onInk)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 4)
+        .background(AppTheme.onInk.opacity(0.15), in: RoundedRectangle(cornerRadius: 6))
     }
 
     // MARK: - Holdings
 
     private var holdingsSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Your Holdings")
-                .font(AppTheme.headingFont)
-                .foregroundColor(AppTheme.textPrimary)
-            ForEach(appState.currentUser?.holdings ?? []) { holding in
-                let stock = marketVM.quote(for: holding.symbol)
+        PaperSection(title: "Your holdings") {
+            ListCard(data: appState.currentUser?.holdings ?? []) { holding in
                 NavigationLink(value: holding.symbol) {
-                    HoldingRow(holding: holding, currentPrice: stock?.currentPrice)
+                    HoldingRow(holding: holding, currentPrice: marketVM.quote(for: holding.symbol)?.currentPrice)
                 }
+                .buttonStyle(.plain)
             }
         }
     }
@@ -211,11 +183,8 @@ struct MarketView: View {
     // MARK: - Open option positions
 
     private var optionsSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Your Options")
-                .font(AppTheme.headingFont)
-                .foregroundColor(AppTheme.textPrimary)
-            ForEach(portfolioVM.optionPositions) { position in
+        PaperSection(title: "Your options") {
+            ListCard(data: portfolioVM.optionPositions) { position in
                 OptionPositionRow(
                     position: position,
                     currentValue: portfolioVM.optionValue(position, stocks: marketVM.allQuotes)
@@ -229,20 +198,16 @@ struct MarketView: View {
     // MARK: - Popular stocks
 
     private var popularSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                Text("Popular Stocks")
-                    .font(AppTheme.headingFont)
-                    .foregroundColor(AppTheme.textPrimary)
-                Spacer()
-                if marketVM.isLoading { ProgressView() }
-            }
-            ForEach(marketVM.stocks) { stock in
+        PaperSection(title: "Popular stocks") {
+            if marketVM.isLoading { ProgressView().controlSize(.small) }
+        } content: {
+            ListCard(data: marketVM.stocks) { stock in
                 NavigationLink {
                     StockDetailView(stock: stock, portfolioVM: portfolioVM)
                 } label: {
                     StockRow(stock: stock)
                 }
+                .buttonStyle(.plain)
             }
         }
     }
@@ -294,8 +259,7 @@ private struct IndexCard: View {
         }
         .frame(width: 130, alignment: .leading)
         .padding(12)
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .cardSurface(radius: 16)
     }
 }
 
@@ -322,16 +286,15 @@ private struct StockRow: View {
             }
             VStack(alignment: .trailing, spacing: 3) {
                 Text(stock.currentPrice, format: .currency(code: "USD"))
-                    .font(AppTheme.bodyFont.bold())
+                    .font(AppTheme.bodyFont.bold().monospacedDigit())
                     .foregroundColor(AppTheme.textPrimary)
                 Text("\(stock.change >= 0 ? "+" : "")\(stock.changePercent, specifier: "%.2f")%")
                     .font(AppTheme.captionFont)
                     .foregroundColor(stock.change >= 0 ? AppTheme.primaryGreen : AppTheme.dangerRed)
             }
         }
-        .padding(14)
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .padding(.horizontal, 14)
+        .padding(.vertical, 12)
     }
 }
 
@@ -362,9 +325,8 @@ private struct HoldingRow: View {
                     .foregroundColor(gain >= 0 ? AppTheme.primaryGreen : AppTheme.dangerRed)
             }
         }
-        .padding(14)
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .padding(.horizontal, 14)
+        .padding(.vertical, 12)
     }
 }
 
@@ -408,9 +370,8 @@ private struct OptionPositionRow: View {
             }
             .buttonStyle(SpringPressStyle())
         }
-        .padding(14)
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .padding(.horizontal, 14)
+        .padding(.vertical, 12)
     }
 }
 
@@ -463,25 +424,35 @@ struct StockDetailView: View {
         }
     }
 
+    /// Floor of the chart's y-axis: a little under the lowest price, so the
+    /// line uses the full height instead of hugging the top above a $0 floor.
+    private var chartFloor: Double {
+        let prices = stock.priceHistory.map(\.price)
+        guard let low = prices.min(), let high = prices.max() else { return 0 }
+        return max(low - (high - low) * 0.15 - 0.01, 0)
+    }
+
     private var chart: some View {
         VStack(alignment: .leading, spacing: 6) {
             Chart(stock.priceHistory) { point in
+                AreaMark(x: .value("Date", point.date),
+                         yStart: .value("Floor", chartFloor),
+                         yEnd: .value("Price", point.price))
+                    .foregroundStyle((stock.change >= 0 ? AppTheme.primaryGreen : AppTheme.dangerRed).opacity(0.10))
+                    .interpolationMethod(.catmullRom)
                 LineMark(x: .value("Date", point.date), y: .value("Price", point.price))
                     .foregroundStyle(stock.change >= 0 ? AppTheme.primaryGreen : AppTheme.dangerRed)
                     .interpolationMethod(.catmullRom)
-                AreaMark(x: .value("Date", point.date), y: .value("Price", point.price))
-                    .foregroundStyle((stock.change >= 0 ? AppTheme.primaryGreen : AppTheme.dangerRed).opacity(0.12))
-                    .interpolationMethod(.catmullRom)
+                    .lineStyle(StrokeStyle(lineWidth: 2))
             }
             .chartYScale(domain: .automatic(includesZero: false))
             .frame(height: 180)
             Text("30-day trend · simulated preview anchored to the live price")
-                .font(.system(size: 10, weight: .medium, design: .rounded))
+                .font(.system(size: 10, weight: .medium))
                 .foregroundColor(AppTheme.textSecondary)
         }
         .padding()
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .cardSurface()
     }
 
     private var tradeCard: some View {
@@ -534,8 +505,7 @@ struct StockDetailView: View {
             }
         }
         .padding()
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .cardSurface()
     }
 
     private var optionsCard: some View {
@@ -558,8 +528,7 @@ struct StockDetailView: View {
             }
         }
         .padding()
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .cardSurface()
     }
 
     private func finishTrade(verb: String) {
@@ -685,7 +654,7 @@ struct OptionsPlaygroundSheet: View {
                         }
 
                         Text("Simulated pricing (Black-Scholes, 30% volatility). Real options quotes vary — this playground is for learning, not investment advice.")
-                            .font(.system(size: 10, weight: .medium, design: .rounded))
+                            .font(.system(size: 10, weight: .medium))
                             .foregroundColor(AppTheme.textSecondary)
                             .multilineTextAlignment(.center)
                     }
@@ -719,8 +688,7 @@ struct OptionsPlaygroundSheet: View {
                 .foregroundColor(AppTheme.textSecondary)
         }
         .padding(14)
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: 14))
+        .cardSurface(radius: 14)
     }
 
     private var quoteCard: some View {
@@ -756,14 +724,13 @@ struct OptionsPlaygroundSheet: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(14)
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: 14))
+        .cardSurface(radius: 14)
     }
 
     private func chip(title: String, selected: Bool, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Text(title)
-                .font(.system(size: 12, weight: .bold, design: .rounded))
+                .font(.system(size: 12, weight: .bold))
                 .foregroundColor(selected ? .white : AppTheme.textSecondary)
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
