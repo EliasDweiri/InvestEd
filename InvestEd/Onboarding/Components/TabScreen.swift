@@ -30,6 +30,9 @@ struct TabScreen<Accessory: View, Hero: View, Content: View>: View {
     @ViewBuilder var hero: () -> Hero
     @ViewBuilder var content: () -> Content
 
+    /// Penny's current tip for this screen (set by PennyCompanion).
+    @State private var pennyTip: String?
+
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
@@ -60,6 +63,13 @@ struct TabScreen<Accessory: View, Hero: View, Content: View>: View {
                 }
                 Spacer(minLength: 8)
                 accessory()
+                    .environment(\.pennyTip, $pennyTip)
+            }
+            if let pennyTip {
+                PennyTipBanner(text: pennyTip) {
+                    withAnimation(.easeOut(duration: 0.2)) { self.pennyTip = nil }
+                }
+                .transition(.move(edge: .top).combined(with: .opacity))
             }
             hero()
         }
