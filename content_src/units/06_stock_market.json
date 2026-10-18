@@ -1,0 +1,651 @@
+{
+  "constName": "stockMarket",
+  "id": "unit3",
+  "title": "Unit 6: The Stock Market",
+  "subtitle": "Quotes, orders, cycles, and options",
+  "colorHex": "FFC93C",
+  "lessons": [
+    {
+      "id": "unit3-lesson1",
+      "title": "Reading a Stock Quote",
+      "icon": "doc.text.magnifyingglass",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u3l1q1",
+          "prompt": "What does a stock's ticker symbol represent?",
+          "choices": [
+            "A short code that uniquely identifies a company's stock, like AAPL for Apple",
+            "The company's total yearly profit",
+            "The number of shares you personally own",
+            "The dividend the company pays"
+          ],
+          "correct": 0,
+          "explanation": "A ticker is just a nickname code exchanges use to identify a stock quickly. AAPL means Apple, TSLA means Tesla."
+        },
+        {
+          "type": "tf",
+          "id": "u3l1q2",
+          "prompt": "A stock's share price alone tells you how big the company is.",
+          "answer": false,
+          "explanation": "Price is per share. A $500 stock can be a smaller company than a $20 stock. Company size is measured by market cap, not price."
+        },
+        {
+          "type": "num",
+          "id": "u3l1q3",
+          "prompt": "A company has 10,000,000 shares priced at $50 each. What is its market cap, in dollars?",
+          "answer": 500000000,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "Market cap = share price x shares outstanding. $50 x 10,000,000 = $500,000,000."
+        },
+        {
+          "type": "mc",
+          "id": "u3l1q4",
+          "prompt": "What does market capitalization (market cap) measure?",
+          "choices": [
+            "The total value of all a company's shares: share price x shares outstanding",
+            "The price of a single share",
+            "How many employees a company has",
+            "The company's yearly advertising budget"
+          ],
+          "correct": 0,
+          "explanation": "Market cap adds up every share's value, so it reflects the company's true size far better than the price of one share."
+        },
+        {
+          "type": "match",
+          "id": "u3l1q5",
+          "prompt": "Match each part of a stock quote to what it tells you.",
+          "pairs": [
+            [
+              "Ticker",
+              "The stock's short ID code"
+            ],
+            [
+              "Change %",
+              "How much the price moved today"
+            ],
+            [
+              "Market cap",
+              "Total value of all the shares"
+            ],
+            [
+              "Volume",
+              "How many shares traded today"
+            ]
+          ],
+          "explanation": "Each field answers a different question: what it is, how it moved, how big the company is, and how actively it's trading."
+        },
+        {
+          "type": "num",
+          "id": "u3l1q6",
+          "prompt": "A stock opened at $200 and now trades at $210. What is its percent change today?",
+          "answer": 5,
+          "tolerance": 0,
+          "suffix": "%",
+          "explanation": "Change % = (new - old) / old. ($210 - $200) / $200 = 0.05 = 5%."
+        },
+        {
+          "type": "ms",
+          "id": "u3l1q7",
+          "prompt": "Which of these can you read straight from a stock quote? (Choose all that apply.)",
+          "choices": [
+            "The current share price",
+            "Today's percent change",
+            "The market cap",
+            "Exactly what the price will be tomorrow"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "A quote shows today's price, move, and company size. No quote can tell you tomorrow's price."
+        }
+      ]
+    },
+    {
+      "id": "unit3-lesson2",
+      "title": "Market vs Limit Orders",
+      "icon": "arrow.left.arrow.right",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u3l2q1",
+          "prompt": "What is a market order?",
+          "choices": [
+            "An order to buy or sell right away at the best price currently available",
+            "An order that only fills at a price you choose",
+            "A promise to hold a stock for one year",
+            "A fee charged by the exchange"
+          ],
+          "correct": 0,
+          "explanation": "A market order says 'fill me now, whatever the going price is.' You get speed, but not a guaranteed price."
+        },
+        {
+          "type": "mc",
+          "id": "u3l2q2",
+          "prompt": "What is a limit order?",
+          "choices": [
+            "An order that only executes at your chosen price or better",
+            "An order that fills instantly at any price",
+            "An order to sell your entire portfolio",
+            "A type of savings account"
+          ],
+          "correct": 0,
+          "explanation": "A limit order says 'only fill me at my price or better.' You control the price, but it might never fill."
+        },
+        {
+          "type": "tf",
+          "id": "u3l2q3",
+          "prompt": "A market order prioritizes speed, while a limit order prioritizes price control.",
+          "answer": true,
+          "explanation": "That's the core trade-off: market = fast but price uncertain; limit = price certain but the fill isn't guaranteed."
+        },
+        {
+          "type": "match",
+          "id": "u3l2q4",
+          "prompt": "Match each term to its meaning.",
+          "pairs": [
+            [
+              "Market order",
+              "Fills fast, price not guaranteed"
+            ],
+            [
+              "Limit order",
+              "Price guaranteed, fill not guaranteed"
+            ],
+            [
+              "Bid",
+              "Highest price a buyer will pay"
+            ],
+            [
+              "Ask",
+              "Lowest price a seller will accept"
+            ]
+          ],
+          "explanation": "Buyers post bids, sellers post asks, and your order type decides whether you chase speed or hold out for a price."
+        },
+        {
+          "type": "cat",
+          "id": "u3l2q5",
+          "prompt": "Sort each situation into the order type that fits best.",
+          "categories": [
+            "Market order",
+            "Limit order"
+          ],
+          "items": [
+            [
+              "Buy right now, the exact price doesn't matter much",
+              "Market order"
+            ],
+            [
+              "Only buy if it drops to $50",
+              "Limit order"
+            ],
+            [
+              "Sell instantly to exit a falling stock",
+              "Market order"
+            ],
+            [
+              "Sell only if it climbs to $100",
+              "Limit order"
+            ]
+          ],
+          "explanation": "Use a market order when getting in or out fast matters most, and a limit order when hitting a specific price matters most."
+        },
+        {
+          "type": "tf",
+          "id": "u3l2q6",
+          "prompt": "A limit order guarantees your order will always be filled.",
+          "answer": false,
+          "explanation": "A limit order guarantees the price, not the fill. If the stock never reaches your price, the order simply waits or expires."
+        },
+        {
+          "type": "order",
+          "id": "u3l2q7",
+          "prompt": "Put the steps of placing a limit buy order in order.",
+          "items": [
+            "Pick the stock and choose 'buy'",
+            "Select the 'limit' order type",
+            "Set your maximum price",
+            "Submit and wait for the price to reach it"
+          ],
+          "explanation": "You choose the stock, pick 'limit,' set your price ceiling, then let it sit until the market comes to your price."
+        }
+      ]
+    },
+    {
+      "id": "unit3-lesson3",
+      "title": "Bull vs Bear Markets",
+      "icon": "chart.line.uptrend.xyaxis",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u3l3q1",
+          "prompt": "What is a bull market?",
+          "choices": [
+            "A stretch when prices are generally rising and optimism is high",
+            "A stretch when prices are generally falling",
+            "A single day of heavy trading",
+            "A tax on stock gains"
+          ],
+          "correct": 0,
+          "explanation": "Picture a bull charging with its horns up. A bull market is a rising, optimistic market."
+        },
+        {
+          "type": "mc",
+          "id": "u3l3q2",
+          "prompt": "What is a bear market?",
+          "choices": [
+            "A stretch when prices fall 20% or more from recent highs",
+            "A stretch when prices keep hitting new highs",
+            "A market that only trades bonds",
+            "A market with zero price movement"
+          ],
+          "correct": 0,
+          "explanation": "Picture a bear swiping its paw down. A bear market is a falling market, officially a drop of 20% or more."
+        },
+        {
+          "type": "num",
+          "id": "u3l3q3",
+          "prompt": "A market is officially a 'bear market' once it falls at least what percent from its recent high?",
+          "answer": 20,
+          "tolerance": 0,
+          "suffix": "%",
+          "explanation": "The widely used rule of thumb is a 20% drop from the recent peak."
+        },
+        {
+          "type": "num",
+          "id": "u3l3q4",
+          "prompt": "An index peaks at 5,000 and falls to 4,000. What percent has it dropped?",
+          "answer": 20,
+          "tolerance": 0,
+          "suffix": "%",
+          "explanation": "(5,000 - 4,000) / 5,000 = 0.20 = 20% — exactly the bear-market threshold."
+        },
+        {
+          "type": "tf",
+          "id": "u3l3q5",
+          "prompt": "The smartest move in a bear market is always to panic-sell everything.",
+          "answer": false,
+          "explanation": "Panic-selling locks in losses. Historically, markets have recovered over time, so staying calm and sticking to a plan usually beats panicking."
+        },
+        {
+          "type": "match",
+          "id": "u3l3q6",
+          "prompt": "Match each market term to its meaning.",
+          "pairs": [
+            [
+              "Bull market",
+              "Prices rising, optimism high"
+            ],
+            [
+              "Bear market",
+              "Prices down 20%+ from highs"
+            ],
+            [
+              "Correction",
+              "A drop of about 10% from highs"
+            ],
+            [
+              "Volatility",
+              "How much prices swing up and down"
+            ]
+          ],
+          "explanation": "A correction is a milder dip than a bear market, and volatility just describes how jumpy prices are."
+        },
+        {
+          "type": "ms",
+          "id": "u3l3q7",
+          "prompt": "Which are smart habits during a bear market? (Choose all that apply.)",
+          "choices": [
+            "Stay calm and stick to your long-term plan",
+            "Keep investing steadily if you can",
+            "Sell everything the moment prices dip",
+            "Remember markets have recovered from past crashes"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Calm, consistency, and perspective help. Reflexively selling on every dip is what turns temporary drops into permanent losses."
+        }
+      ]
+    },
+    {
+      "id": "unit3-lesson4",
+      "title": "Intro to Options",
+      "icon": "function",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u3l4q1",
+          "prompt": "What is a call option?",
+          "choices": [
+            "The right to BUY a stock at a set price before a deadline",
+            "The right to SELL a stock at a set price",
+            "A guaranteed dividend payment",
+            "A loan from your broker"
+          ],
+          "correct": 0,
+          "explanation": "Call = the right to Call the stock toward you (buy it) at a fixed price. Calls are a bullish bet."
+        },
+        {
+          "type": "mc",
+          "id": "u3l4q2",
+          "prompt": "What is a put option?",
+          "choices": [
+            "The right to SELL a stock at a set price before a deadline",
+            "The right to BUY a stock at a set price",
+            "A type of index fund",
+            "A savings bond"
+          ],
+          "correct": 0,
+          "explanation": "Put = the right to Put the stock away from you (sell it) at a fixed price. Puts are a bearish bet."
+        },
+        {
+          "type": "tf",
+          "id": "u3l4q3",
+          "prompt": "One standard options contract controls 100 shares of the stock.",
+          "answer": true,
+          "explanation": "Almost all equity options come in bundles of 100 shares per contract, so small price moves get magnified."
+        },
+        {
+          "type": "num",
+          "id": "u3l4q4",
+          "prompt": "You buy 2 call contracts. How many shares do they control in total?",
+          "answer": 200,
+          "tolerance": 0,
+          "explanation": "Each contract is 100 shares, so 2 contracts control 2 x 100 = 200 shares."
+        },
+        {
+          "type": "mc",
+          "id": "u3l4q5",
+          "prompt": "What is the 'premium' on an option?",
+          "choices": [
+            "The price you pay to buy the option",
+            "The profit you're guaranteed to make",
+            "A special tax on options",
+            "The number of shares in one contract"
+          ],
+          "correct": 0,
+          "explanation": "The premium is the cost of the option itself — the money you hand over to hold that right."
+        },
+        {
+          "type": "cat",
+          "id": "u3l4q6",
+          "prompt": "Sort each idea into the view it expresses.",
+          "categories": [
+            "Bullish (calls)",
+            "Bearish (puts)"
+          ],
+          "items": [
+            [
+              "You think the stock will rise",
+              "Bullish (calls)"
+            ],
+            [
+              "Buying a call",
+              "Bullish (calls)"
+            ],
+            [
+              "You think the stock will fall",
+              "Bearish (puts)"
+            ],
+            [
+              "Buying a put",
+              "Bearish (puts)"
+            ]
+          ],
+          "explanation": "Calls profit when the stock climbs (bullish); puts profit when it drops (bearish)."
+        },
+        {
+          "type": "tf",
+          "id": "u3l4q7",
+          "prompt": "When you BUY an option, the most you can lose is the premium you paid.",
+          "answer": true,
+          "explanation": "If the bet goes wrong, the option can expire worthless — but you can never lose more than the premium you spent to buy it."
+        }
+      ]
+    },
+    {
+      "id": "unit3-lesson5",
+      "title": "Options Challenge",
+      "icon": "gamecontroller.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u3l5q1",
+          "prompt": "You're bullish on a stock — you expect its price to climb. Which option matches that view?",
+          "choices": [
+            "Buy a call",
+            "Buy a put",
+            "Sell all your shares immediately",
+            "Options can't express this view"
+          ],
+          "correct": 0,
+          "explanation": "Bullish means you expect a rise, and a call profits as the stock goes up. Call = bullish."
+        },
+        {
+          "type": "opt",
+          "id": "u3l5q2",
+          "prompt": "Build the position that fits Toro's view.",
+          "symbol": "NVDA",
+          "company": "NVIDIA",
+          "spot": 130,
+          "scenario": "You're convinced NVDA will jump after its earnings report next week.",
+          "kind": "call",
+          "target": 150,
+          "success": "A call profits when the stock climbs above your strike plus the premium you paid.",
+          "explanation": "A bullish view calls for a call. It locks in the right to buy NVDA at $150 even if the stock rockets past it."
+        },
+        {
+          "type": "mc",
+          "id": "u3l5q3",
+          "prompt": "You're bearish on a stock — you expect its price to drop. Which option matches that view?",
+          "choices": [
+            "Buy a put",
+            "Buy a call",
+            "Buy more shares",
+            "Options can't express this view"
+          ],
+          "correct": 0,
+          "explanation": "Bearish means you expect a fall, and a put profits as the stock goes down. Put = bearish."
+        },
+        {
+          "type": "opt",
+          "id": "u3l5q4",
+          "prompt": "Build the position that fits Toro's view.",
+          "symbol": "TSLA",
+          "company": "Tesla",
+          "spot": 256,
+          "scenario": "You think TSLA will slide after weak delivery numbers come out.",
+          "kind": "put",
+          "target": 230,
+          "success": "A put profits when the stock falls below your strike minus the premium paid.",
+          "explanation": "A bearish view calls for a put. It locks in the right to sell TSLA at $230 even if the stock sinks far below."
+        },
+        {
+          "type": "num",
+          "id": "u3l5q5",
+          "prompt": "A call costs a $3.00 premium per share. Since 1 contract covers 100 shares, what does 1 contract cost in total, in dollars?",
+          "answer": 300,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "Premium is quoted per share, so $3.00 x 100 shares = $300 for one contract."
+        },
+        {
+          "type": "opt",
+          "id": "u3l5q6",
+          "prompt": "Build the position that fits Toro's view.",
+          "symbol": "AAPL",
+          "company": "Apple",
+          "spot": 212,
+          "scenario": "You expect AAPL to rally into the holiday shopping season.",
+          "kind": "call",
+          "target": 230,
+          "success": "A call profits when the stock climbs above your strike plus the premium you paid.",
+          "explanation": "Expecting a rise is bullish, so you buy a call — the right to buy AAPL at $230 no matter how high it goes."
+        },
+        {
+          "type": "tf",
+          "id": "u3l5q7",
+          "prompt": "If you buy that call for a $300 premium, the most you can lose is $300.",
+          "answer": true,
+          "explanation": "When you buy an option, your entire risk is the premium. Worst case, it expires worthless and you're out $300 — no more."
+        }
+      ]
+    }
+  ],
+  "finalTest": {
+    "id": "unit3-final",
+    "title": "The Stock Market: Final Test",
+    "icon": "trophy.fill",
+    "xp": 50,
+    "questions": [
+      {
+        "type": "mc",
+        "id": "u3fq1",
+        "prompt": "What is a ticker symbol?",
+        "choices": [
+          "A short code that identifies a company's stock",
+          "The total number of shares outstanding",
+          "A company's yearly revenue",
+          "The exchange's opening time"
+        ],
+        "correct": 0,
+        "explanation": "A ticker like AAPL or NVDA is just a quick ID code for a stock."
+      },
+      {
+        "type": "num",
+        "id": "u3fq2",
+        "prompt": "A company has 20,000,000 shares priced at $30 each. What is its market cap, in dollars?",
+        "answer": 600000000,
+        "tolerance": 0,
+        "prefix": "$",
+        "explanation": "Market cap = price x shares. $30 x 20,000,000 = $600,000,000."
+      },
+      {
+        "type": "mc",
+        "id": "u3fq3",
+        "prompt": "A market order is best described as...",
+        "choices": [
+          "Buy or sell immediately at the best available price",
+          "Buy or sell only at a price you set",
+          "A plan to hold a stock for ten years",
+          "An order that can never be cancelled"
+        ],
+        "correct": 0,
+        "explanation": "Market orders trade speed for price certainty — they fill right away at whatever price is available."
+      },
+      {
+        "type": "tf",
+        "id": "u3fq4",
+        "prompt": "A limit order guarantees your price, but not that the order will fill.",
+        "answer": true,
+        "explanation": "If the stock never reaches your limit price, the order simply doesn't execute."
+      },
+      {
+        "type": "num",
+        "id": "u3fq5",
+        "prompt": "A stock rises from $200 to $250. What is its percent change?",
+        "answer": 25,
+        "tolerance": 0,
+        "suffix": "%",
+        "explanation": "($250 - $200) / $200 = 0.25 = 25%."
+      },
+      {
+        "type": "mc",
+        "id": "u3fq6",
+        "prompt": "By the common definition, a market becomes a 'bear market' after it falls at least...",
+        "choices": [
+          "20% from its recent high",
+          "5% from its recent high",
+          "50% from its recent high",
+          "1% in a single day"
+        ],
+        "correct": 0,
+        "explanation": "A 20% drop from the recent peak is the standard bear-market line."
+      },
+      {
+        "type": "mc",
+        "id": "u3fq7",
+        "prompt": "A call option gives you the right to...",
+        "choices": [
+          "BUY a stock at a set price",
+          "SELL a stock at a set price",
+          "Collect a guaranteed dividend",
+          "Borrow shares for free"
+        ],
+        "correct": 0,
+        "explanation": "Calls are the right to buy and are a bullish bet; puts are the right to sell and are bearish."
+      },
+      {
+        "type": "tf",
+        "id": "u3fq8",
+        "prompt": "When you buy an option, the most you can lose is the premium you paid.",
+        "answer": true,
+        "explanation": "The premium is your entire risk when buying an option — it can expire worthless, but you can't lose more than you spent."
+      },
+      {
+        "type": "match",
+        "id": "u3fq9",
+        "prompt": "Match each term to its meaning.",
+        "pairs": [
+          [
+            "Bull market",
+            "Prices generally rising"
+          ],
+          [
+            "Limit order",
+            "Executes at your price or better"
+          ],
+          [
+            "Put option",
+            "The right to SELL at a set price"
+          ],
+          [
+            "Market cap",
+            "Share price x shares outstanding"
+          ]
+        ],
+        "explanation": "These four span the whole unit: market mood, order types, options, and company size."
+      },
+      {
+        "type": "cat",
+        "id": "u3fq10",
+        "prompt": "Sort each idea into the market view it expresses.",
+        "categories": [
+          "Bullish",
+          "Bearish"
+        ],
+        "items": [
+          [
+            "Buying a call",
+            "Bullish"
+          ],
+          [
+            "Buying a put",
+            "Bearish"
+          ],
+          [
+            "Expecting prices to rise",
+            "Bullish"
+          ],
+          [
+            "Bracing for a 20% drop",
+            "Bearish"
+          ]
+        ],
+        "explanation": "Calls and rising-price expectations are bullish; puts and falling-price fears are bearish."
+      }
+    ]
+  }
+}

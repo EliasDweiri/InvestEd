@@ -1,0 +1,680 @@
+{
+  "constName": "investingFoundations",
+  "id": "unit2",
+  "title": "Unit 2: Investing Foundations",
+  "subtitle": "Stocks, bonds, risk, and portfolios",
+  "colorHex": "4361EE",
+  "lessons": [
+    {
+      "id": "unit2-lesson1",
+      "title": "What Is a Stock?",
+      "icon": "chart.line.uptrend.xyaxis",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u2l1q1",
+          "prompt": "What does owning a share of stock represent?",
+          "choices": [
+            "A small piece of ownership in a company",
+            "A loan you made to a company",
+            "A guaranteed fixed payment every year",
+            "A membership fee to shop at a store"
+          ],
+          "correct": 0,
+          "explanation": "A share makes you a part-owner, called a shareholder, of the company."
+        },
+        {
+          "type": "tf",
+          "id": "u2l1q2",
+          "prompt": "People who own shares of a company are called shareholders.",
+          "answer": true,
+          "explanation": "Owning shares gives you a slice of the company, which is exactly what a shareholder is."
+        },
+        {
+          "type": "match",
+          "id": "u2l1q3",
+          "prompt": "Match each term to its meaning.",
+          "pairs": [
+            [
+              "Share",
+              "One unit of ownership in a company"
+            ],
+            [
+              "Shareholder",
+              "A person who owns shares"
+            ],
+            [
+              "Stock exchange",
+              "A marketplace where shares are bought and sold"
+            ],
+            [
+              "Dividend",
+              "A share of profits paid to shareholders"
+            ]
+          ],
+          "explanation": "These four terms are the building blocks of how stock ownership works."
+        },
+        {
+          "type": "mc",
+          "id": "u2l1q4",
+          "prompt": "Where are most public company stocks bought and sold?",
+          "choices": [
+            "On stock exchanges like the NYSE or Nasdaq",
+            "At the company's front desk",
+            "Only inside local banks",
+            "Through the post office"
+          ],
+          "correct": 0,
+          "explanation": "Exchanges like the NYSE and Nasdaq match up buyers and sellers of shares."
+        },
+        {
+          "type": "ms",
+          "id": "u2l1q5",
+          "prompt": "Which of these can happen when you own shares of a company? (Choose all that apply.)",
+          "choices": [
+            "You may receive dividends",
+            "You may get voting rights on some decisions",
+            "Your share value can rise or fall",
+            "The company guarantees you can never lose money"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Ownership can bring dividends, votes, and price changes, but never a guarantee against loss."
+        },
+        {
+          "type": "num",
+          "id": "u2l1q6",
+          "prompt": "A company splits its ownership into 1,000 shares and you own 50 of them. What percent of the company do you own?",
+          "answer": 5,
+          "tolerance": 0,
+          "suffix": "%",
+          "explanation": "50 out of 1,000 shares is 50 divided by 1,000, which equals 0.05, or 5%."
+        },
+        {
+          "type": "order",
+          "id": "u2l1q7",
+          "prompt": "Put the steps of buying your first stock in order.",
+          "items": [
+            "Open a brokerage account",
+            "Add money to the account",
+            "Search for the company's ticker symbol",
+            "Place an order to buy shares"
+          ],
+          "explanation": "You set up and fund an account, find the stock, then place your buy order."
+        }
+      ]
+    },
+    {
+      "id": "unit2-lesson2",
+      "title": "Stocks vs Bonds",
+      "icon": "banknote.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u2l2q1",
+          "prompt": "What is the key difference between a stock and a bond?",
+          "choices": [
+            "A stock is ownership; a bond is a loan you make",
+            "A stock is a loan; a bond is ownership",
+            "They are two words for the exact same thing",
+            "Bonds can only be issued by tech companies"
+          ],
+          "correct": 0,
+          "explanation": "Stocks make you an owner, while bonds make you a lender who gets paid back with interest."
+        },
+        {
+          "type": "tf",
+          "id": "u2l2q2",
+          "prompt": "When you buy a government bond, you are lending money to the government.",
+          "answer": true,
+          "explanation": "A bond is debt: the issuer borrows from you and pays you interest for the loan."
+        },
+        {
+          "type": "cat",
+          "id": "u2l2q3",
+          "prompt": "Sort each feature under Stock or Bond.",
+          "categories": [
+            "Stock",
+            "Bond"
+          ],
+          "items": [
+            [
+              "Represents ownership",
+              "Stock"
+            ],
+            [
+              "Represents a loan",
+              "Bond"
+            ],
+            [
+              "Pays regular interest until it matures",
+              "Bond"
+            ],
+            [
+              "May pay dividends and can grow a lot",
+              "Stock"
+            ],
+            [
+              "Usually lower risk and steadier",
+              "Bond"
+            ],
+            [
+              "Higher potential return with more ups and downs",
+              "Stock"
+            ]
+          ],
+          "explanation": "Stocks are equity with more growth and risk; bonds are debt with steadier, smaller returns."
+        },
+        {
+          "type": "mc",
+          "id": "u2l2q4",
+          "prompt": "If a company goes bankrupt, who is generally paid first?",
+          "choices": [
+            "Bondholders, because they are lenders",
+            "Shareholders, because they are owners",
+            "Whoever bought most recently",
+            "Nobody is ever paid anything"
+          ],
+          "correct": 0,
+          "explanation": "Bondholders are creditors, so they line up ahead of shareholders when assets are paid out."
+        },
+        {
+          "type": "tf",
+          "id": "u2l2q5",
+          "prompt": "Bonds usually offer higher potential returns and bigger price swings than stocks.",
+          "answer": false,
+          "explanation": "It is the reverse: stocks usually have higher potential returns and more volatility than bonds."
+        },
+        {
+          "type": "num",
+          "id": "u2l2q6",
+          "prompt": "You buy a $1,000 bond that pays 4% interest per year. How many dollars of interest do you earn in one year?",
+          "answer": 40,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "4% of $1,000 is 0.04 times 1,000, which equals $40 of interest."
+        },
+        {
+          "type": "ms",
+          "id": "u2l2q7",
+          "prompt": "Which are generally TRUE of bonds compared with stocks? (Choose all that apply.)",
+          "choices": [
+            "They tend to be lower risk",
+            "They pay interest to the holder",
+            "They make you a part-owner of the company",
+            "They usually have smaller potential returns"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Bonds are lower-risk loans that pay interest with smaller returns, and they do not give ownership."
+        }
+      ]
+    },
+    {
+      "id": "unit2-lesson3",
+      "title": "Risk & Return",
+      "icon": "speedometer",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u2l3q1",
+          "prompt": "What is the general relationship between risk and potential return?",
+          "choices": [
+            "Higher potential returns usually come with higher risk",
+            "Higher returns always come with zero risk",
+            "Lower risk always means higher returns",
+            "Risk and return have nothing to do with each other"
+          ],
+          "correct": 0,
+          "explanation": "To chase bigger gains you generally have to accept a bigger chance of loss. That is the risk-return tradeoff."
+        },
+        {
+          "type": "tf",
+          "id": "u2l3q2",
+          "prompt": "Volatility describes how much an investment's price swings up and down.",
+          "answer": true,
+          "explanation": "High volatility means bigger, faster price swings in both directions."
+        },
+        {
+          "type": "cat",
+          "id": "u2l3q3",
+          "prompt": "Sort each asset into Lower risk or Higher risk.",
+          "categories": [
+            "Lower risk",
+            "Higher risk"
+          ],
+          "items": [
+            [
+              "Federally insured savings account",
+              "Lower risk"
+            ],
+            [
+              "U.S. Treasury bond",
+              "Lower risk"
+            ],
+            [
+              "A single small company's stock",
+              "Higher risk"
+            ],
+            [
+              "Cryptocurrency",
+              "Higher risk"
+            ],
+            [
+              "Certificate of deposit (CD)",
+              "Lower risk"
+            ],
+            [
+              "A trendy meme stock",
+              "Higher risk"
+            ]
+          ],
+          "explanation": "Insured cash and government bonds are steady, while individual stocks and crypto swing much more."
+        },
+        {
+          "type": "order",
+          "id": "u2l3q4",
+          "prompt": "Order these assets from LOWEST to HIGHEST typical risk.",
+          "items": [
+            "Savings account",
+            "Government bond",
+            "Diversified stock index fund",
+            "A single company's stock"
+          ],
+          "explanation": "Cash is steadiest, then government bonds, then a broad stock fund, and a single stock is the riskiest."
+        },
+        {
+          "type": "ms",
+          "id": "u2l3q5",
+          "prompt": "Which of these are ways to lower the risk in your investments? (Choose all that apply.)",
+          "choices": [
+            "Spread money across many different investments",
+            "Invest for a longer time horizon",
+            "Put all your money in one hot stock",
+            "Include some lower-risk assets like bonds"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Diversifying, staying invested longer, and mixing in steadier assets all cut risk; betting on one stock raises it."
+        },
+        {
+          "type": "mc",
+          "id": "u2l3q6",
+          "prompt": "Why might a young investor accept more risk than someone about to retire?",
+          "choices": [
+            "They have more time to recover from market drops",
+            "Young people never lose money",
+            "Risk disappears when you are young",
+            "Retirees automatically earn higher returns"
+          ],
+          "correct": 0,
+          "explanation": "A longer time horizon gives markets more time to bounce back from downturns."
+        },
+        {
+          "type": "num",
+          "id": "u2l3q7",
+          "prompt": "An investment worth $200 grows to $230 in one year. What is the return, in percent?",
+          "answer": 15,
+          "tolerance": 0,
+          "suffix": "%",
+          "explanation": "The $30 gain divided by the $200 you started with is 30 divided by 200, which equals 15%."
+        }
+      ]
+    },
+    {
+      "id": "unit2-lesson4",
+      "title": "Diversification",
+      "icon": "chart.pie.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u2l4q1",
+          "prompt": "What does diversification mean?",
+          "choices": [
+            "Spreading your money across many different investments",
+            "Putting all your money in one stock",
+            "Only investing in a single industry",
+            "Keeping every dollar in cash"
+          ],
+          "correct": 0,
+          "explanation": "Diversifying spreads risk so a single bad investment can't wipe you out."
+        },
+        {
+          "type": "tf",
+          "id": "u2l4q2",
+          "prompt": "The saying 'don't put all your eggs in one basket' captures the idea of diversification.",
+          "answer": true,
+          "explanation": "If you drop one basket you don't lose every egg, which is exactly what diversification protects against."
+        },
+        {
+          "type": "mc",
+          "id": "u2l4q3",
+          "prompt": "How does an index fund make diversification easy?",
+          "choices": [
+            "One purchase gives you tiny pieces of many companies at once",
+            "It guarantees you can never lose money",
+            "It only ever holds a single company",
+            "It removes the need for a brokerage account"
+          ],
+          "correct": 0,
+          "explanation": "An index fund like an S&P 500 fund bundles hundreds of companies into one investment."
+        },
+        {
+          "type": "ms",
+          "id": "u2l4q4",
+          "prompt": "Which of these portfolios are well diversified? (Choose all that apply.)",
+          "choices": [
+            "A total-stock-market index fund",
+            "Shares of 500 companies across many industries",
+            "All your money in one airline stock",
+            "A mix of stocks and bonds from around the world"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Spreading across many companies, sectors, and asset types is diversified; one airline stock is not."
+        },
+        {
+          "type": "tf",
+          "id": "u2l4q5",
+          "prompt": "Diversification can lower the risk of a single company doing badly, but it can't erase the risk of the whole market falling.",
+          "answer": true,
+          "explanation": "Spreading out reduces company-specific risk, yet a market-wide drop still affects almost everything."
+        },
+        {
+          "type": "num",
+          "id": "u2l4q6",
+          "prompt": "An S&P 500 index fund holds roughly how many companies? Enter the number.",
+          "answer": 500,
+          "tolerance": 0,
+          "explanation": "The S&P 500 tracks about 500 of the largest U.S. companies inside a single fund."
+        },
+        {
+          "type": "match",
+          "id": "u2l4q7",
+          "prompt": "Match each term to its meaning.",
+          "pairs": [
+            [
+              "Diversification",
+              "Spreading money across many investments"
+            ],
+            [
+              "Index fund",
+              "A fund that holds all the companies in an index"
+            ],
+            [
+              "S&P 500",
+              "An index of about 500 large U.S. companies"
+            ],
+            [
+              "Concentration",
+              "Putting most of your money in one place"
+            ]
+          ],
+          "explanation": "Diversification and index funds lower risk, while concentration raises it."
+        }
+      ]
+    },
+    {
+      "id": "unit2-lesson5",
+      "title": "Building a Portfolio",
+      "icon": "briefcase.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u2l5q1",
+          "prompt": "What is a portfolio?",
+          "choices": [
+            "The full collection of investments a person owns",
+            "A single stock",
+            "A type of bank loan",
+            "A government bond and nothing else"
+          ],
+          "correct": 0,
+          "explanation": "Your portfolio is everything you hold together: stocks, bonds, funds, and cash."
+        },
+        {
+          "type": "mc",
+          "id": "u2l5q2",
+          "prompt": "What does 'asset allocation' mean?",
+          "choices": [
+            "How you divide your money among stocks, bonds, and cash",
+            "Choosing one single best stock",
+            "The fee a broker charges you",
+            "The tax you owe on your gains"
+          ],
+          "correct": 0,
+          "explanation": "Asset allocation is the mix of asset types, and that mix shapes your risk and return."
+        },
+        {
+          "type": "num",
+          "id": "u2l5q3",
+          "prompt": "A common rule of thumb suggests putting about (110 minus your age)% in stocks. For a 20-year-old, what percent is that?",
+          "answer": 90,
+          "tolerance": 0,
+          "suffix": "%",
+          "explanation": "110 minus 20 equals 90, so the rule suggests roughly 90% in stocks for a 20-year-old."
+        },
+        {
+          "type": "tf",
+          "id": "u2l5q4",
+          "prompt": "Younger investors are often encouraged to hold a larger share of stocks than people near retirement.",
+          "answer": true,
+          "explanation": "With decades ahead, young investors can ride out market dips in exchange for higher long-run growth."
+        },
+        {
+          "type": "order",
+          "id": "u2l5q5",
+          "prompt": "Put these steps for building a beginner portfolio in order.",
+          "items": [
+            "Set your goal and time horizon",
+            "Build an emergency fund of cash",
+            "Choose an asset allocation of stocks vs bonds",
+            "Buy diversified funds that match it",
+            "Rebalance about once a year"
+          ],
+          "explanation": "Goal first, a safety cushion next, then pick a mix, invest in it, and check in yearly."
+        },
+        {
+          "type": "mc",
+          "id": "u2l5q6",
+          "prompt": "What is 'rebalancing' a portfolio?",
+          "choices": [
+            "Adjusting your holdings back to your target mix",
+            "Selling everything and starting over",
+            "Only ever buying and never selling",
+            "Moving your account to a new bank"
+          ],
+          "correct": 0,
+          "explanation": "Over time winners grow and shift your mix, so rebalancing trims them back to your plan."
+        },
+        {
+          "type": "ms",
+          "id": "u2l5q7",
+          "prompt": "Which factors should shape your asset allocation? (Choose all that apply.)",
+          "choices": [
+            "Your time horizon, meaning when you need the money",
+            "Your risk tolerance",
+            "Your goals",
+            "Your favorite color"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Time, comfort with risk, and goals drive your mix; your favorite color does not."
+        }
+      ]
+    }
+  ],
+  "finalTest": {
+    "id": "unit2-final",
+    "title": "Investing Foundations: Final Test",
+    "icon": "trophy.fill",
+    "xp": 50,
+    "questions": [
+      {
+        "type": "mc",
+        "id": "u2fq1",
+        "prompt": "A share of stock represents what?",
+        "choices": [
+          "Part ownership of a company",
+          "A loan you made to a company",
+          "A guaranteed interest payment",
+          "A fee charged by your bank"
+        ],
+        "correct": 0,
+        "explanation": "Stock is equity, which means it makes you a part-owner of the company."
+      },
+      {
+        "type": "mc",
+        "id": "u2fq2",
+        "prompt": "A bond is best described as what?",
+        "choices": [
+          "A loan you make that pays you interest",
+          "A slice of company ownership",
+          "A savings account at a store",
+          "A share that always pays dividends"
+        ],
+        "correct": 0,
+        "explanation": "A bond is debt: you lend money and earn interest until it is paid back."
+      },
+      {
+        "type": "tf",
+        "id": "u2fq3",
+        "prompt": "Stocks generally carry more risk and more growth potential than bonds.",
+        "answer": true,
+        "explanation": "Equity swings more than bonds, but it can also grow more over the long run."
+      },
+      {
+        "type": "match",
+        "id": "u2fq4",
+        "prompt": "Match each term to its meaning.",
+        "pairs": [
+          [
+            "Dividend",
+            "A share of profits paid to shareholders"
+          ],
+          [
+            "Volatility",
+            "How much a price swings up and down"
+          ],
+          [
+            "Diversification",
+            "Spreading money across many investments"
+          ],
+          [
+            "Asset allocation",
+            "How you split money among stocks, bonds, and cash"
+          ]
+        ],
+        "explanation": "These four terms are the core vocabulary of investing foundations."
+      },
+      {
+        "type": "cat",
+        "id": "u2fq5",
+        "prompt": "Sort each into Lower risk or Higher risk.",
+        "categories": [
+          "Lower risk",
+          "Higher risk"
+        ],
+        "items": [
+          [
+            "Government bond",
+            "Lower risk"
+          ],
+          [
+            "Insured savings account",
+            "Lower risk"
+          ],
+          [
+            "A single company's stock",
+            "Higher risk"
+          ],
+          [
+            "Cryptocurrency",
+            "Higher risk"
+          ]
+        ],
+        "explanation": "Government bonds and insured cash are steady, while single stocks and crypto swing hard."
+      },
+      {
+        "type": "num",
+        "id": "u2fq6",
+        "prompt": "You invest $500 and it grows to $575 in one year. What was your return, in percent?",
+        "answer": 15,
+        "tolerance": 0,
+        "suffix": "%",
+        "explanation": "The $75 gain divided by the $500 you invested is 75 divided by 500, which equals 15%."
+      },
+      {
+        "type": "ms",
+        "id": "u2fq7",
+        "prompt": "Which of these reduce risk in a portfolio? (Choose all that apply.)",
+        "choices": [
+          "Diversifying across many investments",
+          "Adding some bonds to your mix",
+          "Putting everything in one stock",
+          "Investing for a longer time horizon"
+        ],
+        "correct": [
+          0,
+          1,
+          3
+        ],
+        "explanation": "Spreading out, adding steadier assets, and a longer horizon all cut risk; one stock raises it."
+      },
+      {
+        "type": "num",
+        "id": "u2fq8",
+        "prompt": "Using the '110 minus age' rule, about what percent of a 30-year-old's portfolio would be in stocks?",
+        "answer": 80,
+        "tolerance": 0,
+        "suffix": "%",
+        "explanation": "110 minus 30 equals 80, so the rule suggests about 80% in stocks."
+      },
+      {
+        "type": "order",
+        "id": "u2fq9",
+        "prompt": "Order these assets from LOWEST to HIGHEST typical risk.",
+        "items": [
+          "Insured savings account",
+          "Government bond",
+          "Diversified index fund",
+          "A single company's stock"
+        ],
+        "explanation": "Cash is steadiest, bonds are next, a broad fund is higher, and a single stock is the riskiest."
+      },
+      {
+        "type": "mc",
+        "id": "u2fq10",
+        "prompt": "What does rebalancing a portfolio do?",
+        "choices": [
+          "Returns your holdings to your target mix",
+          "Guarantees you a profit",
+          "Removes all risk from investing",
+          "Closes your investment account"
+        ],
+        "correct": 0,
+        "explanation": "Rebalancing trims what has grown too big and tops up what has shrunk to keep your planned mix."
+      }
+    ]
+  }
+}

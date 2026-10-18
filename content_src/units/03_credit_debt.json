@@ -1,0 +1,689 @@
+{
+  "constName": "creditAndDebt",
+  "id": "unit4",
+  "title": "Unit 4: Credit & Debt",
+  "subtitle": "Borrowing without getting bitten",
+  "colorHex": "EF476F",
+  "lessons": [
+    {
+      "id": "unit4-lesson1",
+      "title": "Credit Scores",
+      "icon": "speedometer",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u4l1q1",
+          "prompt": "What is a credit score?",
+          "choices": [
+            "A number that predicts how likely you are to repay borrowed money",
+            "The amount of money in your bank account",
+            "A tax the government charges on loans",
+            "The interest rate on your savings account"
+          ],
+          "correct": 0,
+          "explanation": "A credit score is a snapshot of your borrowing trustworthiness, so lenders can guess how risky it is to lend to you."
+        },
+        {
+          "type": "num",
+          "id": "u4l1q2",
+          "prompt": "A FICO credit score ranges from a low of 300 up to a high of what number?",
+          "answer": 850,
+          "tolerance": 0,
+          "explanation": "FICO scores run from 300 to 850 — the higher you climb, the better the rates lenders offer you."
+        },
+        {
+          "type": "tf",
+          "id": "u4l1q3",
+          "prompt": "Paying your bills on time is the single biggest factor in your credit score.",
+          "answer": true,
+          "explanation": "Payment history is about 35% of a FICO score — nothing else moves the needle more than paying on time."
+        },
+        {
+          "type": "cat",
+          "id": "u4l1q4",
+          "prompt": "Sort each action into whether it's a soft inquiry (no score impact) or a hard inquiry (can ding your score).",
+          "categories": [
+            "Soft inquiry",
+            "Hard inquiry"
+          ],
+          "items": [
+            [
+              "Checking your own credit score",
+              "Soft inquiry"
+            ],
+            [
+              "Applying for a new credit card",
+              "Hard inquiry"
+            ],
+            [
+              "Getting a pre-approved offer in the mail",
+              "Soft inquiry"
+            ],
+            [
+              "Taking out an auto loan",
+              "Hard inquiry"
+            ]
+          ],
+          "explanation": "Soft inquiries — like peeking at your own score — never hurt you. Hard inquiries happen when you actually apply for credit and can shave off a few points."
+        },
+        {
+          "type": "ms",
+          "id": "u4l1q5",
+          "prompt": "Which habits help you build a strong credit score? (Choose all that apply.)",
+          "choices": [
+            "Paying every bill on time",
+            "Keeping credit card balances low",
+            "Maxing out your cards every month",
+            "Keeping older accounts open"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "On-time payments, low balances, and a long history all help. Maxing out cards spikes your utilization and drags your score down."
+        },
+        {
+          "type": "match",
+          "id": "u4l1q6",
+          "prompt": "Match each FICO score range to its rating.",
+          "pairs": [
+            [
+              "800–850",
+              "Exceptional"
+            ],
+            [
+              "670–739",
+              "Good"
+            ],
+            [
+              "580–669",
+              "Fair"
+            ],
+            [
+              "300–579",
+              "Poor"
+            ]
+          ],
+          "explanation": "Roughly: 800+ is exceptional, 670–739 is good, 580–669 is fair, and under 580 is poor. Aim to keep climbing."
+        },
+        {
+          "type": "tf",
+          "id": "u4l1q7",
+          "prompt": "A single hard inquiry usually only lowers your score by a few points.",
+          "answer": true,
+          "explanation": "One hard inquiry is a small, temporary dip. Missing payments does far more damage than a single application."
+        }
+      ]
+    },
+    {
+      "id": "unit4-lesson2",
+      "title": "Credit Cards",
+      "icon": "creditcard.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u4l2q1",
+          "prompt": "What does APR stand for on a credit card?",
+          "choices": [
+            "Annual Percentage Rate",
+            "Approved Payment Return",
+            "Average Purchase Reward",
+            "Automatic Payment Reminder"
+          ],
+          "correct": 0,
+          "explanation": "APR is the Annual Percentage Rate — the yearly cost of carrying a balance on your card."
+        },
+        {
+          "type": "tf",
+          "id": "u4l2q2",
+          "prompt": "If you pay your full statement balance by the due date, you typically pay no interest on your purchases.",
+          "answer": true,
+          "explanation": "That interest-free window is called the grace period — pay in full and the card is basically free to use."
+        },
+        {
+          "type": "mc",
+          "id": "u4l2q3",
+          "prompt": "What is the 'minimum payment trap'?",
+          "choices": [
+            "Paying only the minimum keeps you in debt for years because most of it goes to interest",
+            "The bank forces you to pay extra fees each month",
+            "You can never pay more than the minimum",
+            "The minimum payment resets your credit score"
+          ],
+          "correct": 0,
+          "explanation": "Paying just the minimum barely touches the balance — most goes to interest, so the debt can linger for years."
+        },
+        {
+          "type": "num",
+          "id": "u4l2q4",
+          "prompt": "Your card has a $2,000 limit and a $500 balance. What is your credit utilization, as a percent?",
+          "answer": 25,
+          "tolerance": 0,
+          "suffix": "%",
+          "explanation": "Utilization is balance ÷ limit: $500 ÷ $2,000 = 25%."
+        },
+        {
+          "type": "num",
+          "id": "u4l2q5",
+          "prompt": "Experts suggest keeping your credit utilization below what percent to protect your score?",
+          "answer": 30,
+          "tolerance": 0,
+          "suffix": "%",
+          "explanation": "Staying under 30% utilization tells lenders you're not leaning too hard on your available credit."
+        },
+        {
+          "type": "ms",
+          "id": "u4l2q6",
+          "prompt": "Which are smart credit card habits? (Choose all that apply.)",
+          "choices": [
+            "Pay the statement balance in full each month",
+            "Keep your utilization low",
+            "Only ever pay the minimum",
+            "Set up autopay for at least the minimum"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Paying in full, keeping balances low, and automating payments keep you safe. Paying only the minimum is the trap to avoid."
+        },
+        {
+          "type": "match",
+          "id": "u4l2q7",
+          "prompt": "Match each credit card term to its meaning.",
+          "pairs": [
+            [
+              "APR",
+              "The yearly cost of borrowing"
+            ],
+            [
+              "Grace period",
+              "Interest-free window if you pay in full"
+            ],
+            [
+              "Minimum payment",
+              "Smallest amount due to stay current"
+            ],
+            [
+              "Utilization",
+              "Balance divided by credit limit"
+            ]
+          ],
+          "explanation": "Knowing these four terms is most of what you need to use a card without getting bitten."
+        }
+      ]
+    },
+    {
+      "id": "unit4-lesson3",
+      "title": "Loans & Interest",
+      "icon": "percent",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "match",
+          "id": "u4l3q1",
+          "prompt": "Match each loan term to its meaning.",
+          "pairs": [
+            [
+              "Principal",
+              "The amount you originally borrow"
+            ],
+            [
+              "Interest",
+              "The extra you pay for borrowing"
+            ],
+            [
+              "APR",
+              "Yearly cost including interest and fees"
+            ],
+            [
+              "Term",
+              "How long you have to repay"
+            ]
+          ],
+          "explanation": "Principal is what you borrow, interest is the price of borrowing it, and the term is how long you take to pay it back."
+        },
+        {
+          "type": "num",
+          "id": "u4l3q2",
+          "prompt": "You borrow $1,000 at 5% simple interest for 1 year. How much interest do you owe?",
+          "answer": 50,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "Simple interest is principal × rate × time: $1,000 × 5% × 1 = $50."
+        },
+        {
+          "type": "num",
+          "id": "u4l3q3",
+          "prompt": "You borrow $1,000 at 5% simple interest, but now for 2 years. How much total interest do you owe?",
+          "answer": 100,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "$1,000 × 5% × 2 years = $100 — double the time means double the interest."
+        },
+        {
+          "type": "tf",
+          "id": "u4l3q4",
+          "prompt": "With a fixed-rate amortizing loan, your early payments go mostly toward interest and later payments go mostly toward principal.",
+          "answer": true,
+          "explanation": "Early on you owe interest on a big balance, so most of the payment is interest. As the balance shrinks, more of each payment chips away the principal."
+        },
+        {
+          "type": "mc",
+          "id": "u4l3q5",
+          "prompt": "What is the principal of a loan?",
+          "choices": [
+            "The original amount you borrowed, before interest",
+            "The interest you pay each month",
+            "The bank that gave you the loan",
+            "The penalty for paying late"
+          ],
+          "correct": 0,
+          "explanation": "The principal is the starting amount you borrowed — interest is charged on top of it."
+        },
+        {
+          "type": "order",
+          "id": "u4l3q6",
+          "prompt": "Same loan amount and same interest rate — order these from LEAST total interest paid to MOST.",
+          "items": [
+            "1-year loan",
+            "3-year loan",
+            "5-year loan",
+            "7-year loan"
+          ],
+          "explanation": "The longer you take to repay, the more total interest you rack up — even if the monthly payment feels smaller."
+        },
+        {
+          "type": "mc",
+          "id": "u4l3q7",
+          "prompt": "All else equal, which loan will cost you the most in total interest?",
+          "choices": [
+            "A higher APR with a longer term",
+            "A lower APR with a shorter term",
+            "A lower APR with a longer term",
+            "A higher APR with a shorter term"
+          ],
+          "correct": 0,
+          "explanation": "A higher rate and more time both pile on interest — combine them and you pay the most overall."
+        }
+      ]
+    },
+    {
+      "id": "unit4-lesson4",
+      "title": "Good Debt vs. Bad Debt",
+      "icon": "arrow.up.arrow.down",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "cat",
+          "id": "u4l4q1",
+          "prompt": "Sort each into 'Usually good debt' or 'Usually bad debt'.",
+          "categories": [
+            "Usually good debt",
+            "Usually bad debt"
+          ],
+          "items": [
+            [
+              "Mortgage on a home",
+              "Usually good debt"
+            ],
+            [
+              "Student loan for a degree",
+              "Usually good debt"
+            ],
+            [
+              "Payday loan",
+              "Usually bad debt"
+            ],
+            [
+              "Credit card debt for a vacation",
+              "Usually bad debt"
+            ],
+            [
+              "Small business loan",
+              "Usually good debt"
+            ]
+          ],
+          "explanation": "Good debt buys things that build wealth or income at a reasonable rate. Bad debt is high-cost borrowing for things that lose value or get used up."
+        },
+        {
+          "type": "mc",
+          "id": "u4l4q2",
+          "prompt": "What generally makes a debt 'good' debt?",
+          "choices": [
+            "It helps you build wealth or income and usually has a lower interest rate",
+            "It always has to be paid back quickly",
+            "It comes from a friend instead of a bank",
+            "It never charges any interest"
+          ],
+          "correct": 0,
+          "explanation": "Good debt is an investment in your future — like a home or education — at a manageable interest rate."
+        },
+        {
+          "type": "tf",
+          "id": "u4l4q3",
+          "prompt": "Payday loans often carry extremely high APRs, sometimes around 400%.",
+          "answer": true,
+          "explanation": "Payday loans look small but their fees translate to sky-high APRs — that's why they're classic bad debt."
+        },
+        {
+          "type": "mc",
+          "id": "u4l4q4",
+          "prompt": "What does it mean to 'default' on a loan?",
+          "choices": [
+            "Failing to make your payments as agreed",
+            "Paying the loan off early",
+            "Refinancing to a lower rate",
+            "Making an extra payment"
+          ],
+          "correct": 0,
+          "explanation": "Defaulting means you've stopped paying as promised — a serious step that hurts your credit and can trigger collections."
+        },
+        {
+          "type": "ms",
+          "id": "u4l4q5",
+          "prompt": "Which are possible consequences of defaulting on a loan? (Choose all that apply.)",
+          "choices": [
+            "Damage to your credit score",
+            "Your account sent to collections",
+            "Possible wage garnishment",
+            "Your credit score automatically jumps to 850"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Default can wreck your credit, send your debt to collectors, and even lead to garnished wages. It definitely won't boost your score."
+        },
+        {
+          "type": "match",
+          "id": "u4l4q6",
+          "prompt": "Match each debt to how it's usually classified.",
+          "pairs": [
+            [
+              "Mortgage",
+              "Often good debt"
+            ],
+            [
+              "Payday loan",
+              "Usually bad debt"
+            ],
+            [
+              "Federal student loan",
+              "Often good debt"
+            ],
+            [
+              "High-interest card balance",
+              "Usually bad debt"
+            ]
+          ],
+          "explanation": "Low-rate borrowing that builds an asset tends to be good; high-rate borrowing for spending tends to be bad."
+        },
+        {
+          "type": "num",
+          "id": "u4l4q7",
+          "prompt": "A payday lender charges $15 in fees for every $100 borrowed. On a $200 loan, how many dollars in fees do you pay?",
+          "answer": 30,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "$15 per $100 × 2 = $30 in fees for just two weeks — which works out to a shockingly high APR."
+        }
+      ]
+    },
+    {
+      "id": "unit4-lesson5",
+      "title": "Getting Out of Debt",
+      "icon": "chart.line.downtrend.xyaxis",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u4l5q1",
+          "prompt": "In the debt 'avalanche' method, which debt do you attack first?",
+          "choices": [
+            "The one with the highest interest rate",
+            "The one with the smallest balance",
+            "The newest debt you took on",
+            "The one with the friendliest lender"
+          ],
+          "correct": 0,
+          "explanation": "The avalanche targets the highest interest rate first, which saves you the most money over time."
+        },
+        {
+          "type": "mc",
+          "id": "u4l5q2",
+          "prompt": "In the debt 'snowball' method, which debt do you pay off first?",
+          "choices": [
+            "The one with the smallest balance",
+            "The one with the highest interest rate",
+            "The largest debt you owe",
+            "Whichever is due first"
+          ],
+          "correct": 0,
+          "explanation": "The snowball knocks out the smallest balance first, giving you a quick win to stay motivated."
+        },
+        {
+          "type": "tf",
+          "id": "u4l5q3",
+          "prompt": "The avalanche method saves you the most money in interest over time.",
+          "answer": true,
+          "explanation": "By killing the highest-rate debt first, the avalanche minimizes the total interest you pay."
+        },
+        {
+          "type": "mc",
+          "id": "u4l5q4",
+          "prompt": "Why do some people prefer the snowball method even though it can cost a little more?",
+          "choices": [
+            "Quick early wins keep them motivated to keep going",
+            "It's the only method banks allow",
+            "It always pays off debt faster than avalanche",
+            "It erases interest completely"
+          ],
+          "correct": 0,
+          "explanation": "Paying off a whole debt fast feels great, and that momentum helps many people stick with the plan."
+        },
+        {
+          "type": "order",
+          "id": "u4l5q5",
+          "prompt": "You're using the avalanche method. Order these debts by which you'd pay off first (highest rate first).",
+          "items": [
+            "Payday loan (25% APR)",
+            "Credit card (19% APR)",
+            "Car loan (7% APR)",
+            "Student loan (4% APR)"
+          ],
+          "explanation": "Avalanche always chases the highest interest rate first, then works down — that's the cheapest path out."
+        },
+        {
+          "type": "ms",
+          "id": "u4l5q6",
+          "prompt": "Which are smart steps when getting out of debt? (Choose all that apply.)",
+          "choices": [
+            "Always pay at least the minimum on every debt",
+            "List your debts with their rates and balances",
+            "Stop making any payments until you've saved a lump sum",
+            "Put any extra money toward one target debt at a time"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Always cover every minimum, map out your debts, and focus extra cash on one target. Skipping payments just adds fees and damages your credit."
+        },
+        {
+          "type": "match",
+          "id": "u4l5q7",
+          "prompt": "Match each payoff idea to its defining rule.",
+          "pairs": [
+            [
+              "Snowball",
+              "Smallest balance first"
+            ],
+            [
+              "Avalanche",
+              "Highest interest rate first"
+            ],
+            [
+              "Minimum payment",
+              "Pay on every debt to avoid penalties"
+            ]
+          ],
+          "explanation": "Snowball chases small balances, avalanche chases high rates, and minimums keep every account in good standing while you focus your extra money."
+        }
+      ]
+    }
+  ],
+  "finalTest": {
+    "id": "unit4-final",
+    "title": "Credit & Debt: Final Test",
+    "icon": "trophy.fill",
+    "xp": 50,
+    "questions": [
+      {
+        "type": "mc",
+        "id": "u4fq1",
+        "prompt": "What does a higher credit score generally mean for you?",
+        "choices": [
+          "Lenders see you as less risky and may offer lower interest rates",
+          "You must borrow more money each year",
+          "Your bank balance is automatically higher",
+          "You never have to pay interest again"
+        ],
+        "correct": 0,
+        "explanation": "A higher score signals you repay reliably, so lenders reward you with better rates and easier approvals."
+      },
+      {
+        "type": "num",
+        "id": "u4fq2",
+        "prompt": "A credit card has a $1,000 limit and a $200 balance. What is your credit utilization, as a percent?",
+        "answer": 20,
+        "tolerance": 0,
+        "suffix": "%",
+        "explanation": "Utilization is balance ÷ limit: $200 ÷ $1,000 = 20%, comfortably under the 30% guideline."
+      },
+      {
+        "type": "tf",
+        "id": "u4fq3",
+        "prompt": "Paying only the minimum on a credit card can keep you in debt for years.",
+        "answer": true,
+        "explanation": "Most of a minimum payment goes to interest, so the balance barely shrinks — that's the minimum payment trap."
+      },
+      {
+        "type": "cat",
+        "id": "u4fq4",
+        "prompt": "Sort each into 'Good debt' or 'Bad debt'.",
+        "categories": [
+          "Good debt",
+          "Bad debt"
+        ],
+        "items": [
+          [
+            "Mortgage",
+            "Good debt"
+          ],
+          [
+            "Payday loan",
+            "Bad debt"
+          ],
+          [
+            "Student loan for a degree",
+            "Good debt"
+          ],
+          [
+            "Credit card debt for impulse buys",
+            "Bad debt"
+          ]
+        ],
+        "explanation": "Low-rate borrowing that builds an asset is good debt; high-rate borrowing for spending is bad debt."
+      },
+      {
+        "type": "mc",
+        "id": "u4fq5",
+        "prompt": "If you pay your full statement balance by the due date, what usually happens?",
+        "choices": [
+          "You owe no interest on those purchases",
+          "Your interest rate doubles",
+          "Your credit limit is lowered",
+          "You're charged a late fee"
+        ],
+        "correct": 0,
+        "explanation": "Paying in full within the grace period means your purchases cost you nothing extra in interest."
+      },
+      {
+        "type": "match",
+        "id": "u4fq6",
+        "prompt": "Match each term to its meaning.",
+        "pairs": [
+          [
+            "Snowball",
+            "Smallest balance first"
+          ],
+          [
+            "Avalanche",
+            "Highest interest rate first"
+          ],
+          [
+            "Principal",
+            "The amount you borrow"
+          ],
+          [
+            "APR",
+            "Yearly cost of borrowing"
+          ]
+        ],
+        "explanation": "These four terms cover payoff strategies plus the basics of what a loan actually costs."
+      },
+      {
+        "type": "num",
+        "id": "u4fq7",
+        "prompt": "You borrow $500 at 6% simple interest for 1 year. How much interest do you owe?",
+        "answer": 30,
+        "tolerance": 0,
+        "prefix": "$",
+        "explanation": "Simple interest is principal × rate × time: $500 × 6% × 1 = $30."
+      },
+      {
+        "type": "ms",
+        "id": "u4fq8",
+        "prompt": "Which of these help improve your credit score? (Choose all that apply.)",
+        "choices": [
+          "Making on-time payments",
+          "Keeping utilization low",
+          "Maxing out your cards",
+          "Having a long credit history"
+        ],
+        "correct": [
+          0,
+          1,
+          3
+        ],
+        "explanation": "On-time payments, low utilization, and a long history all lift your score. Maxing out cards does the opposite."
+      },
+      {
+        "type": "order",
+        "id": "u4fq9",
+        "prompt": "Using the avalanche method, order these debts by which you'd pay off first (highest rate first).",
+        "items": [
+          "Payday loan (30% APR)",
+          "Credit card (20% APR)",
+          "Auto loan (6% APR)",
+          "Mortgage (4% APR)"
+        ],
+        "explanation": "Avalanche attacks the highest interest rate first, then works down to save the most money."
+      },
+      {
+        "type": "tf",
+        "id": "u4fq10",
+        "prompt": "Defaulting on a loan can hurt your credit and send the debt to collections.",
+        "answer": true,
+        "explanation": "Default is a serious step — it damages your credit score and can hand your debt over to collectors."
+      }
+    ]
+  }
+}

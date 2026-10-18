@@ -1,0 +1,654 @@
+{
+  "constName": "investorPsychology",
+  "id": "unit8",
+  "title": "Unit 10: Investor Psychology",
+  "subtitle": "Outsmarting your own brain",
+  "colorHex": "F15BB5",
+  "lessons": [
+    {
+      "id": "unit8-lesson1",
+      "title": "Emotions & FOMO",
+      "icon": "flame.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u8l1q1",
+          "prompt": "What does FOMO mean in investing?",
+          "choices": [
+            "Fear Of Missing Out — rushing to buy because everyone else seems to be getting rich",
+            "A low-fee index fund",
+            "A government program that insures your losses",
+            "The fee a broker charges to sell a stock"
+          ],
+          "correct": 0,
+          "explanation": "FOMO pushes people to buy after a price has already soared, often right near the top."
+        },
+        {
+          "type": "tf",
+          "id": "u8l1q2",
+          "prompt": "Panic-selling during a market drop turns a temporary paper loss into a permanent, real one.",
+          "answer": true,
+          "explanation": "A loss on paper only becomes real when you sell — holding gives prices a chance to recover."
+        },
+        {
+          "type": "ms",
+          "id": "u8l1q3",
+          "prompt": "Which are signs that FOMO — not real analysis — is driving your decision? (Choose all that apply.)",
+          "choices": [
+            "A stock is all over your feed and 'everyone' seems to own it",
+            "You feel a rush of urgency to buy right now before you miss out",
+            "You read the company's financials and decided the price was fair",
+            "You're scared of being the only one left out of the gains"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "FOMO feels urgent and social; real analysis is calm and based on facts, not on the crowd."
+        },
+        {
+          "type": "order",
+          "id": "u8l1q4",
+          "prompt": "Put the classic FOMO trap in order, from start to painful finish.",
+          "items": [
+            "A stock's price skyrockets and fills your feed",
+            "You feel you're missing out and buy near the peak",
+            "The hype fades and the price falls",
+            "You panic-sell at a loss"
+          ],
+          "explanation": "Buying on hype and selling on fear is the buy-high, sell-low trap in action."
+        },
+        {
+          "type": "mc",
+          "id": "u8l1q5",
+          "prompt": "A stock you own drops 20% on scary headlines, but nothing about the actual business changed. The emotionally-smart move is usually to:",
+          "choices": [
+            "Stick to your plan and avoid selling out of fear",
+            "Immediately sell everything to stop the pain",
+            "Borrow money to buy a huge amount right now",
+            "Refresh the price every five minutes all day"
+          ],
+          "correct": 0,
+          "explanation": "Reacting to fear locks in losses; a plan keeps emotion from making the decision for you."
+        },
+        {
+          "type": "tf",
+          "id": "u8l1q6",
+          "prompt": "The best time to decide how you'll react to a crash is before it happens, while you're calm.",
+          "answer": true,
+          "explanation": "Deciding your rules in advance keeps panic from choosing for you in the moment."
+        },
+        {
+          "type": "mc",
+          "id": "u8l1q7",
+          "prompt": "'Buy high, sell low' is the opposite of good investing. Which emotions most often cause it?",
+          "choices": [
+            "Greed/FOMO when buying, and fear/panic when selling",
+            "Boredom when buying, and pride when selling",
+            "Curiosity when buying, and gratitude when selling",
+            "Patience when buying, and calm when selling"
+          ],
+          "correct": 0,
+          "explanation": "Greed tempts you to buy at the top; fear tempts you to sell at the bottom."
+        }
+      ]
+    },
+    {
+      "id": "unit8-lesson2",
+      "title": "Cognitive Biases",
+      "icon": "brain.head.profile",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "match",
+          "id": "u8l2q1",
+          "prompt": "Match each bias to its meaning.",
+          "pairs": [
+            [
+              "Loss aversion",
+              "Losses hurt about twice as much as equal gains feel good"
+            ],
+            [
+              "Anchoring",
+              "Fixating on one number, like the price you paid, when judging value"
+            ],
+            [
+              "Confirmation bias",
+              "Only seeking out information that agrees with what you already believe"
+            ],
+            [
+              "Herd mentality",
+              "Doing what the crowd does instead of thinking for yourself"
+            ]
+          ],
+          "explanation": "Naming a bias is the first step to catching yourself doing it."
+        },
+        {
+          "type": "mc",
+          "id": "u8l2q2",
+          "prompt": "You refuse to sell a losing stock 'until it gets back to what I paid for it.' Which bias is this?",
+          "choices": [
+            "Anchoring to your purchase price",
+            "Herd mentality",
+            "Confirmation bias",
+            "Diversification"
+          ],
+          "correct": 0,
+          "explanation": "The market doesn't care what you paid; anchoring to that number clouds your judgment."
+        },
+        {
+          "type": "tf",
+          "id": "u8l2q3",
+          "prompt": "Loss aversion means the pain of losing $100 usually feels stronger than the joy of gaining $100.",
+          "answer": true,
+          "explanation": "Because losses sting more, people often sell winners too early and cling to losers too long."
+        },
+        {
+          "type": "cat",
+          "id": "u8l2q4",
+          "prompt": "Sort each behavior into the bias it shows.",
+          "categories": [
+            "Confirmation bias",
+            "Herd mentality"
+          ],
+          "items": [
+            [
+              "Only reading articles that praise a stock you own",
+              "Confirmation bias"
+            ],
+            [
+              "Buying a coin because your whole group chat is buying it",
+              "Herd mentality"
+            ],
+            [
+              "Ignoring a report that lists risks you'd rather not see",
+              "Confirmation bias"
+            ],
+            [
+              "Selling in a panic just because everyone else is selling",
+              "Herd mentality"
+            ]
+          ],
+          "explanation": "Confirmation bias filters your information; herd mentality copies the crowd."
+        },
+        {
+          "type": "mc",
+          "id": "u8l2q5",
+          "prompt": "The best defense against confirmation bias is to:",
+          "choices": [
+            "Actively look for solid arguments against your own idea",
+            "Only follow people who already agree with you",
+            "Avoid reading anything at all",
+            "Buy more of a stock every time it drops"
+          ],
+          "correct": 0,
+          "explanation": "Seeking out the other side stress-tests your idea before your money has to."
+        },
+        {
+          "type": "ms",
+          "id": "u8l2q6",
+          "prompt": "Which of these show herd mentality? (Choose all that apply.)",
+          "choices": [
+            "Buying a stock only because it's trending and everyone's talking about it",
+            "Selling because you see everyone else panic-selling",
+            "Buying after researching the company and deciding it's a fair price",
+            "Piling into a meme coin so you won't feel left out"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Herd mentality is letting the crowd — not your own analysis — make the call."
+        },
+        {
+          "type": "tf",
+          "id": "u8l2q7",
+          "prompt": "Anchoring can trick you into thinking a stock is 'cheap' just because it's lower than its all-time high.",
+          "answer": true,
+          "explanation": "A lower price isn't automatically a bargain; the business's actual value is what matters."
+        }
+      ]
+    },
+    {
+      "id": "unit8-lesson3",
+      "title": "Scams & Red Flags",
+      "icon": "exclamationmark.triangle.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u8l3q1",
+          "prompt": "An investment 'guarantees' you'll double your money in a month with 'zero risk.' This is:",
+          "choices": [
+            "A major red flag — real investments never guarantee high returns with no risk",
+            "A normal, safe opportunity you should jump on",
+            "Proof the investment is government-regulated",
+            "A sign of a well-diversified portfolio"
+          ],
+          "correct": 0,
+          "explanation": "Higher returns always come with higher risk, so 'guaranteed' big returns are a classic scam signal."
+        },
+        {
+          "type": "tf",
+          "id": "u8l3q2",
+          "prompt": "In a Ponzi scheme, early investors are paid with money from new investors — not from real profits.",
+          "answer": true,
+          "explanation": "It collapses the moment new money slows, and most people end up losing everything."
+        },
+        {
+          "type": "mc",
+          "id": "u8l3q3",
+          "prompt": "In a 'pump-and-dump,' scammers hype a cheap stock or coin to push the price up, and then:",
+          "choices": [
+            "Sell their own shares at the top, crashing the price for everyone else",
+            "Donate all the profits to charity",
+            "Hold forever and never sell",
+            "Report themselves to regulators"
+          ],
+          "correct": 0,
+          "explanation": "The organizers dump their shares on the hype, leaving latecomers holding the losses."
+        },
+        {
+          "type": "ms",
+          "id": "u8l3q4",
+          "prompt": "Which are red flags of a likely scam? (Choose all that apply.)",
+          "choices": [
+            "Promises of guaranteed, unusually high returns",
+            "High pressure to 'act now' before you can think or research",
+            "A boring, low-cost index fund with clear disclosures",
+            "Being told to recruit friends to earn bigger payouts"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Guarantees, urgency, and recruit-your-friends schemes are classic warning signs."
+        },
+        {
+          "type": "cat",
+          "id": "u8l3q5",
+          "prompt": "Sort each into a scam red flag or a healthy sign.",
+          "categories": [
+            "Red flag",
+            "Healthy sign"
+          ],
+          "items": [
+            [
+              "'Guaranteed' 500% returns",
+              "Red flag"
+            ],
+            [
+              "Clear, public financial statements",
+              "Healthy sign"
+            ],
+            [
+              "Pressure to invest before you can research",
+              "Red flag"
+            ],
+            [
+              "A regulated fund with transparent fees",
+              "Healthy sign"
+            ]
+          ],
+          "explanation": "Transparency is healthy; secrecy, guarantees, and pressure are red flags."
+        },
+        {
+          "type": "tf",
+          "id": "u8l3q6",
+          "prompt": "A paid promotion from an influencer counts as solid financial research.",
+          "answer": false,
+          "explanation": "Paid promos are advertising, not analysis — the promoter is being paid to say nice things."
+        },
+        {
+          "type": "mc",
+          "id": "u8l3q7",
+          "prompt": "A celebrity you follow is paid to promote a new crypto token. Before buying, you should:",
+          "choices": [
+            "Do your own research — a paid endorsement isn't evidence the token is good",
+            "Buy immediately because they're famous and trustworthy",
+            "Invest your whole savings to show support",
+            "Assume it's guaranteed to rise because a celebrity likes it"
+          ],
+          "correct": 0,
+          "explanation": "Fame isn't expertise, and paid promos come with a built-in conflict of interest."
+        }
+      ]
+    },
+    {
+      "id": "unit8-lesson4",
+      "title": "Building Good Habits",
+      "icon": "checklist",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u8l4q1",
+          "prompt": "Automating a set investment every payday (dollar-cost averaging) helps you:",
+          "choices": [
+            "Invest consistently without letting emotions or timing get in the way",
+            "Guarantee you always buy at the lowest possible price",
+            "Avoid ever paying any taxes",
+            "Beat the market every single year"
+          ],
+          "correct": 0,
+          "explanation": "Automatic, regular investing removes the temptation to time the market on emotion."
+        },
+        {
+          "type": "num",
+          "id": "u8l4q2",
+          "prompt": "You automate investing $150 every month. How many dollars is that over one year?",
+          "answer": 1800,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "$150 x 12 months = $1,800 invested automatically."
+        },
+        {
+          "type": "order",
+          "id": "u8l4q3",
+          "prompt": "Put the steps of a healthy 'rules before you invest' habit in order.",
+          "items": [
+            "Write down your goal and your rules while calm",
+            "Automate regular contributions",
+            "Check your portfolio on a set schedule, not constantly",
+            "Follow your written rules instead of your mood"
+          ],
+          "explanation": "Deciding rules in advance and automating them keeps emotion out of the driver's seat."
+        },
+        {
+          "type": "tf",
+          "id": "u8l4q4",
+          "prompt": "Checking your portfolio every few minutes tends to increase stress and lead to worse decisions.",
+          "answer": true,
+          "explanation": "Constant checking amplifies emotion; a calm, scheduled review is healthier and usually smarter."
+        },
+        {
+          "type": "mc",
+          "id": "u8l4q5",
+          "prompt": "Writing an 'investing rulebook' before you buy is helpful mainly because:",
+          "choices": [
+            "Calm, pre-set rules protect you from emotional decisions later",
+            "It guarantees you'll never lose money",
+            "It lets you skip doing any research",
+            "It makes your returns tax-free"
+          ],
+          "correct": 0,
+          "explanation": "Rules written in a calm moment act as guardrails when fear or greed hit later."
+        },
+        {
+          "type": "ms",
+          "id": "u8l4q6",
+          "prompt": "Which of these are good investing habits? (Choose all that apply.)",
+          "choices": [
+            "Automating contributions so you invest before you can spend it",
+            "Reviewing your portfolio on a set schedule, like quarterly",
+            "Writing down your plan and rules ahead of time",
+            "Trading impulsively every time you see a scary headline"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Automation, scheduled reviews, and written rules build discipline; impulsive trading breaks it."
+        },
+        {
+          "type": "num",
+          "id": "u8l4q7",
+          "prompt": "If you review your portfolio once every 3 months, how many times do you check it in a year?",
+          "answer": 4,
+          "tolerance": 0,
+          "explanation": "12 months / 3 = 4 scheduled reviews per year — calm and consistent."
+        }
+      ]
+    },
+    {
+      "id": "unit8-lesson5",
+      "title": "The Long Game",
+      "icon": "hourglass",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u8l5q1",
+          "prompt": "The saying 'time in the market beats timing the market' means:",
+          "choices": [
+            "Staying invested over the long run usually beats jumping in and out",
+            "You should only invest for a single day at a time",
+            "The best investors trade many times per hour",
+            "You must predict every crash to succeed"
+          ],
+          "correct": 0,
+          "explanation": "Since no one reliably times the market, patient long-term investing tends to win."
+        },
+        {
+          "type": "tf",
+          "id": "u8l5q2",
+          "prompt": "Missing just a handful of the market's best days can drastically lower your long-term returns.",
+          "answer": true,
+          "explanation": "The biggest up-days often come right after big drops, so jumping out risks missing the rebound."
+        },
+        {
+          "type": "mc",
+          "id": "u8l5q3",
+          "prompt": "'Buy-and-hold' investing means:",
+          "choices": [
+            "Buying quality investments and holding them for years through the ups and downs",
+            "Selling everything the moment prices dip",
+            "Buying and selling the same stock every day",
+            "Only holding cash and never investing"
+          ],
+          "correct": 0,
+          "explanation": "Buy-and-hold lets compounding work and cuts down on emotional, costly trading."
+        },
+        {
+          "type": "num",
+          "id": "u8l5q4",
+          "prompt": "An investor's money grows about 10% per year. Using the Rule of 72, roughly how many years until it doubles?",
+          "answer": 7,
+          "tolerance": 1,
+          "suffix": " years",
+          "explanation": "The Rule of 72 says 72 / 10 is about 7.2 years to double."
+        },
+        {
+          "type": "match",
+          "id": "u8l5q5",
+          "prompt": "Match each mindset to the investor it describes.",
+          "pairs": [
+            [
+              "Patient long-term investor",
+              "Buys quality and holds for years, ignoring daily noise"
+            ],
+            [
+              "Panic trader",
+              "Sells in fear every time the market dips"
+            ],
+            [
+              "Market timer",
+              "Tries (and usually fails) to guess the perfect moment to buy and sell"
+            ],
+            [
+              "FOMO chaser",
+              "Piles into whatever is hot right now, near its peak"
+            ]
+          ],
+          "explanation": "The calm, patient approach is the one that most reliably builds wealth over time."
+        },
+        {
+          "type": "tf",
+          "id": "u8l5q6",
+          "prompt": "Because the stock market has trended upward over the long run, staying invested has historically rewarded patience.",
+          "answer": true,
+          "explanation": "Despite crashes along the way, long-term investors have historically been rewarded for holding."
+        },
+        {
+          "type": "mc",
+          "id": "u8l5q7",
+          "prompt": "Compounding rewards long-term investors most because:",
+          "choices": [
+            "Your gains start earning their own gains, snowballing over many years",
+            "The government adds free money each year",
+            "Stocks can only ever go up",
+            "Short-term trading always earns more"
+          ],
+          "correct": 0,
+          "explanation": "Given time, compounding turns steady growth into a snowball — the longer you wait, the bigger it gets."
+        }
+      ]
+    }
+  ],
+  "finalTest": {
+    "id": "unit8-final",
+    "title": "Investor Psychology: Final Test",
+    "icon": "trophy.fill",
+    "xp": 50,
+    "questions": [
+      {
+        "type": "mc",
+        "id": "u8fq1",
+        "prompt": "FOMO most often leads investors to:",
+        "choices": [
+          "Buy near the top, after a price has already surged on hype",
+          "Buy low and sell high automatically",
+          "Avoid the stock market entirely",
+          "Diversify across many different assets"
+        ],
+        "correct": 0,
+        "explanation": "FOMO strikes after prices soar, tempting you to buy right before the hype fades."
+      },
+      {
+        "type": "tf",
+        "id": "u8fq2",
+        "prompt": "Panic-selling in a crash locks in your losses instead of giving prices a chance to recover.",
+        "answer": true,
+        "explanation": "A paper loss only becomes permanent once you actually sell."
+      },
+      {
+        "type": "match",
+        "id": "u8fq3",
+        "prompt": "Match each bias to its meaning.",
+        "pairs": [
+          [
+            "Loss aversion",
+            "Losses feel worse than equal gains feel good"
+          ],
+          [
+            "Anchoring",
+            "Over-fixating on one number, like the price you paid"
+          ],
+          [
+            "Confirmation bias",
+            "Only seeking information that agrees with you"
+          ],
+          [
+            "Herd mentality",
+            "Copying the crowd instead of thinking independently"
+          ]
+        ],
+        "explanation": "Spotting a bias by name helps you avoid falling into its trap."
+      },
+      {
+        "type": "ms",
+        "id": "u8fq4",
+        "prompt": "Which of these are red flags of an investment scam? (Choose all that apply.)",
+        "choices": [
+          "'Guaranteed' high returns with no risk",
+          "Pressure to act immediately",
+          "Transparent fees and public financial statements",
+          "Rewards for recruiting new investors"
+        ],
+        "correct": [
+          0,
+          1,
+          3
+        ],
+        "explanation": "Guarantees, urgency, and recruitment are classic scam signals; transparency is a good sign."
+      },
+      {
+        "type": "tf",
+        "id": "u8fq5",
+        "prompt": "A paid influencer promotion is a reliable substitute for doing your own research.",
+        "answer": false,
+        "explanation": "Paid promos are ads with a built-in conflict of interest, not real analysis."
+      },
+      {
+        "type": "cat",
+        "id": "u8fq6",
+        "prompt": "Sort each into a smart habit or an emotional trap.",
+        "categories": [
+          "Smart habit",
+          "Emotional trap"
+        ],
+        "items": [
+          [
+            "Automating monthly contributions",
+            "Smart habit"
+          ],
+          [
+            "Panic-selling on scary headlines",
+            "Emotional trap"
+          ],
+          [
+            "Reviewing your portfolio on a set schedule",
+            "Smart habit"
+          ],
+          [
+            "Chasing whatever is trending out of FOMO",
+            "Emotional trap"
+          ]
+        ],
+        "explanation": "Discipline and automation build wealth; emotional reactions erode it."
+      },
+      {
+        "type": "num",
+        "id": "u8fq7",
+        "prompt": "You automate $200 a month. How many dollars do you invest over a full year?",
+        "answer": 2400,
+        "tolerance": 0,
+        "prefix": "$",
+        "explanation": "$200 x 12 months = $2,400."
+      },
+      {
+        "type": "order",
+        "id": "u8fq8",
+        "prompt": "Put this emotional buy-high, sell-low cycle in order.",
+        "items": [
+          "Hype and FOMO push you to buy near the top",
+          "The market drops and headlines turn scary",
+          "Fear pushes you to panic-sell at a loss",
+          "You miss the rebound that follows"
+        ],
+        "explanation": "Emotion makes investors buy high and sell low — the exact opposite of the goal."
+      },
+      {
+        "type": "mc",
+        "id": "u8fq9",
+        "prompt": "'Time in the market beats timing the market' teaches you to:",
+        "choices": [
+          "Stay invested for the long run rather than jumping in and out",
+          "Trade as often as you possibly can",
+          "Only invest for one day at a time",
+          "Sell everything before every dip"
+        ],
+        "correct": 0,
+        "explanation": "Since timing the market reliably is nearly impossible, patience usually wins."
+      },
+      {
+        "type": "mc",
+        "id": "u8fq10",
+        "prompt": "Which statement is TRUE?",
+        "choices": [
+          "A Ponzi scheme pays old investors with new investors' money and eventually collapses",
+          "Guaranteed high returns with zero risk are a sign of a safe investment",
+          "Herd mentality means always thinking independently",
+          "Panic-selling is the best response to a market dip"
+        ],
+        "correct": 0,
+        "explanation": "Ponzi schemes have no real profits — they run on new money until it dries up."
+      }
+    ]
+  }
+}

@@ -1,0 +1,684 @@
+{
+  "constName": "cryptoAndDigitalAssets",
+  "id": "unit9",
+  "title": "Unit 11: Crypto & Digital Assets",
+  "subtitle": "Bitcoin, blockchains, and staying safe",
+  "colorHex": "F7931A",
+  "lessons": [
+    {
+      "id": "unit9-lesson1",
+      "title": "What Is Cryptocurrency?",
+      "icon": "bitcoinsign.circle.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u9l1q1",
+          "prompt": "Which best describes cryptocurrency?",
+          "choices": [
+            "Digital money that runs on a decentralized network",
+            "A coin minted by the U.S. Treasury",
+            "A type of government savings bond",
+            "A physical gold coin you hold in your hand"
+          ],
+          "correct": 0,
+          "explanation": "Crypto is digital-only money that lives on a computer network no single company or government controls."
+        },
+        {
+          "type": "tf",
+          "id": "u9l1q2",
+          "prompt": "Cryptocurrency is issued and guaranteed by a national government.",
+          "answer": false,
+          "explanation": "Unlike dollars or euros, most crypto has no government behind it promising its value."
+        },
+        {
+          "type": "mc",
+          "id": "u9l1q3",
+          "prompt": "What does it mean that crypto is 'decentralized'?",
+          "choices": [
+            "No single company or government is in control",
+            "One big bank runs the whole thing",
+            "The United Nations approves every payment",
+            "It only works when you are offline"
+          ],
+          "correct": 0,
+          "explanation": "Decentralized means power is spread across many computers instead of one central boss."
+        },
+        {
+          "type": "ms",
+          "id": "u9l1q4",
+          "prompt": "Which are true of most cryptocurrencies? (Choose all that apply.)",
+          "choices": [
+            "They are digital-only",
+            "They run on a decentralized network",
+            "Their prices can swing sharply",
+            "They are insured by the FDIC"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Crypto is digital, decentralized, and volatile, but it is NOT FDIC-insured like a bank deposit."
+        },
+        {
+          "type": "cat",
+          "id": "u9l1q5",
+          "prompt": "Sort each item into cryptocurrency or government money.",
+          "categories": [
+            "Cryptocurrency",
+            "Government money"
+          ],
+          "items": [
+            [
+              "Bitcoin",
+              "Cryptocurrency"
+            ],
+            [
+              "The US dollar",
+              "Government money"
+            ],
+            [
+              "Runs on a public blockchain",
+              "Cryptocurrency"
+            ],
+            [
+              "Printed by a central bank",
+              "Government money"
+            ]
+          ],
+          "explanation": "Crypto lives on blockchains with no central issuer; government money is printed and backed by a nation."
+        },
+        {
+          "type": "tf",
+          "id": "u9l1q6",
+          "prompt": "Crypto prices can be very volatile, sometimes moving 10% or more in a single day.",
+          "answer": true,
+          "explanation": "Big, fast price swings are normal in crypto, which makes it risky for money you might need soon."
+        },
+        {
+          "type": "mc",
+          "id": "u9l1q7",
+          "prompt": "Why is it called 'crypto'?",
+          "choices": [
+            "It uses cryptography to secure transactions",
+            "It must be kept in a crypt",
+            "It is completely invisible",
+            "It is always illegal"
+          ],
+          "correct": 0,
+          "explanation": "The name comes from cryptography, the math that keeps transactions secure and hard to fake."
+        }
+      ]
+    },
+    {
+      "id": "unit9-lesson2",
+      "title": "Blockchain Basics",
+      "icon": "square.stack.3d.up.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u9l2q1",
+          "prompt": "What is a blockchain?",
+          "choices": [
+            "A shared digital ledger that records transactions",
+            "A single Excel file on one laptop",
+            "A physical stack of coins",
+            "A private government database"
+          ],
+          "correct": 0,
+          "explanation": "A blockchain is a shared record of transactions, copied across many computers at once."
+        },
+        {
+          "type": "tf",
+          "id": "u9l2q2",
+          "prompt": "Once data is confirmed on a blockchain, it is extremely hard to change.",
+          "answer": true,
+          "explanation": "Blocks are locked together with cryptography, so altering old records is nearly impossible."
+        },
+        {
+          "type": "order",
+          "id": "u9l2q3",
+          "prompt": "Put the steps of a blockchain transaction in order.",
+          "items": [
+            "You send crypto to someone",
+            "The transaction is broadcast to the network",
+            "Miners or validators verify it",
+            "It is bundled into a new block",
+            "The block is linked onto the chain"
+          ],
+          "explanation": "Send, broadcast, verify, bundle into a block, then link the block to the chain."
+        },
+        {
+          "type": "mc",
+          "id": "u9l2q4",
+          "prompt": "What do miners or validators do?",
+          "choices": [
+            "Verify transactions and add new blocks",
+            "Print new dollar bills",
+            "Delete old transactions for fun",
+            "Set the country's interest rates"
+          ],
+          "correct": 0,
+          "explanation": "Miners and validators do the work of checking transactions and adding them to the chain."
+        },
+        {
+          "type": "ms",
+          "id": "u9l2q5",
+          "prompt": "Why is a blockchain hard to tamper with? (Choose all that apply.)",
+          "choices": [
+            "Copies are stored across many computers",
+            "Blocks are cryptographically linked together",
+            "One person can quietly edit it alone",
+            "Changing one block breaks the whole chain"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Many copies plus linked blocks mean no single person can secretly rewrite history."
+        },
+        {
+          "type": "match",
+          "id": "u9l2q6",
+          "prompt": "Match each term to its meaning.",
+          "pairs": [
+            [
+              "Ledger",
+              "A record of all transactions"
+            ],
+            [
+              "Node",
+              "A computer that helps run the network"
+            ],
+            [
+              "Block",
+              "A batch of confirmed transactions"
+            ],
+            [
+              "Decentralized",
+              "No single central authority in charge"
+            ]
+          ],
+          "explanation": "These are the core building blocks: a ledger of blocks, kept by nodes, with no central boss."
+        },
+        {
+          "type": "tf",
+          "id": "u9l2q7",
+          "prompt": "A blockchain is stored on a single central computer owned by a bank.",
+          "answer": false,
+          "explanation": "The opposite is true: it is copied across many independent computers, which is what makes it decentralized."
+        }
+      ]
+    },
+    {
+      "id": "unit9-lesson3",
+      "title": "Coins & Tokens",
+      "icon": "key.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u9l3q1",
+          "prompt": "Bitcoin is often nicknamed...",
+          "choices": [
+            "Digital gold",
+            "A digital cash printer",
+            "The internet dollar",
+            "A stablecoin"
+          ],
+          "correct": 0,
+          "explanation": "Bitcoin has a limited supply and is seen mainly as a store of value, like gold."
+        },
+        {
+          "type": "mc",
+          "id": "u9l3q2",
+          "prompt": "Ethereum is best described as...",
+          "choices": [
+            "A platform for apps and smart contracts",
+            "A currency printed by a government",
+            "A physical hardware wallet",
+            "A savings bank"
+          ],
+          "correct": 0,
+          "explanation": "Ethereum is a programmable platform where developers build apps, not just a simple coin."
+        },
+        {
+          "type": "match",
+          "id": "u9l3q3",
+          "prompt": "Match each term to its meaning.",
+          "pairs": [
+            [
+              "Bitcoin",
+              "Often called digital gold"
+            ],
+            [
+              "Ethereum",
+              "A platform for apps and smart contracts"
+            ],
+            [
+              "Wallet",
+              "Where you store your crypto keys"
+            ],
+            [
+              "Private key",
+              "The secret code that controls your crypto"
+            ]
+          ],
+          "explanation": "Coins and platforms differ, and your wallet holds the keys that prove ownership."
+        },
+        {
+          "type": "tf",
+          "id": "u9l3q4",
+          "prompt": "Your private key is like a password that lets you spend your crypto, so you must keep it secret.",
+          "answer": true,
+          "explanation": "Anyone who has your private key can move your crypto, so never share it."
+        },
+        {
+          "type": "ms",
+          "id": "u9l3q5",
+          "prompt": "Which are true about crypto wallets and keys? (Choose all that apply.)",
+          "choices": [
+            "Your public address can be shared to receive funds",
+            "Your private key must stay secret",
+            "A wallet stores your keys",
+            "Sharing your private key with others is perfectly safe"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Share your public address freely, but guard your private key like a password."
+        },
+        {
+          "type": "mc",
+          "id": "u9l3q6",
+          "prompt": "What is the difference between a coin and a token?",
+          "choices": [
+            "A coin has its own blockchain; a token is built on another blockchain",
+            "A coin is physical; a token is digital",
+            "They are exactly the same thing",
+            "A token is always worth more than a coin"
+          ],
+          "correct": 0,
+          "explanation": "Coins like Bitcoin run their own chain, while tokens ride on top of a chain like Ethereum."
+        },
+        {
+          "type": "tf",
+          "id": "u9l3q7",
+          "prompt": "If you lose your private key, there is usually a 'forgot password' button to recover your crypto.",
+          "answer": false,
+          "explanation": "There is no reset button in crypto, so losing your key usually means losing your coins forever."
+        }
+      ]
+    },
+    {
+      "id": "unit9-lesson4",
+      "title": "Crypto Risks & Safety",
+      "icon": "exclamationmark.shield.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u9l4q1",
+          "prompt": "What is the golden rule of crypto investing?",
+          "choices": [
+            "Only invest what you can afford to lose",
+            "Always borrow money to buy more",
+            "Put all of your savings into one coin",
+            "Never do any research first"
+          ],
+          "correct": 0,
+          "explanation": "Because crypto is so volatile, only risk money you could lose without wrecking your life."
+        },
+        {
+          "type": "tf",
+          "id": "u9l4q2",
+          "prompt": "Crypto held on an exchange or in a wallet is insured by the FDIC like a bank deposit.",
+          "answer": false,
+          "explanation": "There is no FDIC protection for crypto, so if it is lost or stolen, no one guarantees it back."
+        },
+        {
+          "type": "num",
+          "id": "u9l4q3",
+          "prompt": "You invest $500 in a coin and it drops 80%. How many dollars is your holding worth now?",
+          "answer": 100,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "An 80% drop leaves 20%, and 20% of $500 is $100."
+        },
+        {
+          "type": "mc",
+          "id": "u9l4q4",
+          "prompt": "What is a 'rug pull'?",
+          "choices": [
+            "Creators hype a project, take investors' money, then vanish",
+            "A way to earn guaranteed interest",
+            "A type of extra-secure wallet",
+            "A government tax on crypto gains"
+          ],
+          "correct": 0,
+          "explanation": "In a rug pull, the founders disappear with the money, leaving investors with worthless coins."
+        },
+        {
+          "type": "ms",
+          "id": "u9l4q5",
+          "prompt": "Which are smart crypto safety habits? (Choose all that apply.)",
+          "choices": [
+            "Only invest what you can afford to lose",
+            "Back up your keys somewhere safe",
+            "Share your private key with helpful strangers",
+            "Be skeptical of promises of guaranteed returns"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Protect your keys and your money, and never hand your private key to anyone."
+        },
+        {
+          "type": "match",
+          "id": "u9l4q6",
+          "prompt": "Match each risk to its description.",
+          "pairs": [
+            [
+              "Lost keys",
+              "No way to recover access to your coins"
+            ],
+            [
+              "Rug pull",
+              "Founders take the money and disappear"
+            ],
+            [
+              "Volatility",
+              "Prices can crash quickly"
+            ],
+            [
+              "No FDIC",
+              "Losses are not insured by the government"
+            ]
+          ],
+          "explanation": "Knowing the main risks helps you spot trouble before it costs you."
+        },
+        {
+          "type": "tf",
+          "id": "u9l4q7",
+          "prompt": "A project promising guaranteed high returns with no risk is a classic warning sign of a scam.",
+          "answer": true,
+          "explanation": "No real investment guarantees big returns with zero risk, so that promise is a red flag."
+        }
+      ]
+    },
+    {
+      "id": "unit9-lesson5",
+      "title": "The Wider Crypto World",
+      "icon": "network",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u9l5q1",
+          "prompt": "What is a stablecoin?",
+          "choices": [
+            "A crypto designed to hold a steady value, often pegged to $1",
+            "A coin that always doubles in price",
+            "A physical silver coin",
+            "A government savings bond"
+          ],
+          "correct": 0,
+          "explanation": "Stablecoins aim to stay near a fixed value like $1, so they swing far less than Bitcoin."
+        },
+        {
+          "type": "mc",
+          "id": "u9l5q2",
+          "prompt": "What is an NFT?",
+          "choices": [
+            "A unique digital token that proves ownership of a specific item",
+            "A stablecoin pegged to gold",
+            "A type of credit card",
+            "A bank account for crypto"
+          ],
+          "correct": 0,
+          "explanation": "NFT means non-fungible token, a one-of-a-kind digital certificate of ownership."
+        },
+        {
+          "type": "mc",
+          "id": "u9l5q3",
+          "prompt": "What does DeFi (decentralized finance) mean?",
+          "choices": [
+            "Financial services like lending and trading built on blockchains without traditional banks",
+            "A government finance department",
+            "A savings account at a normal bank",
+            "A crypto exchange owned by a bank"
+          ],
+          "correct": 0,
+          "explanation": "DeFi recreates banking-style services using code on a blockchain instead of a bank."
+        },
+        {
+          "type": "cat",
+          "id": "u9l5q4",
+          "prompt": "Sort each description into stablecoin, NFT, or DeFi.",
+          "categories": [
+            "Stablecoin",
+            "NFT",
+            "DeFi"
+          ],
+          "items": [
+            [
+              "Aims to stay pinned near $1",
+              "Stablecoin"
+            ],
+            [
+              "A one-of-a-kind digital collectible",
+              "NFT"
+            ],
+            [
+              "Lending or trading crypto without a bank",
+              "DeFi"
+            ],
+            [
+              "Often pegged to the US dollar",
+              "Stablecoin"
+            ],
+            [
+              "Proves you own a unique piece of digital art",
+              "NFT"
+            ],
+            [
+              "A decentralized exchange app",
+              "DeFi"
+            ]
+          ],
+          "explanation": "Stablecoins hold value, NFTs prove ownership, and DeFi offers bank-like services on-chain."
+        },
+        {
+          "type": "tf",
+          "id": "u9l5q5",
+          "prompt": "A stranger DMs you promising to double any crypto you send them. This is a scam.",
+          "answer": true,
+          "explanation": "'Send me crypto and I'll send back double' is one of the oldest scams around."
+        },
+        {
+          "type": "ms",
+          "id": "u9l5q6",
+          "prompt": "Which are common crypto scam red flags? (Choose all that apply.)",
+          "choices": [
+            "Promises of guaranteed profit",
+            "Pressure to act fast right now",
+            "Requests for your private key or seed phrase",
+            "Using a well-known regulated exchange"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Guarantees, urgency, and key requests scream scam; a reputable exchange is not itself a red flag."
+        },
+        {
+          "type": "tf",
+          "id": "u9l5q7",
+          "prompt": "NFTs and DeFi carry no risk because they use blockchain technology.",
+          "answer": false,
+          "explanation": "Blockchain does not remove risk; NFTs and DeFi can still lose value or be exploited by hackers."
+        }
+      ]
+    }
+  ],
+  "finalTest": {
+    "id": "unit9-final",
+    "title": "Crypto & Digital Assets: Final Test",
+    "icon": "trophy.fill",
+    "xp": 50,
+    "questions": [
+      {
+        "type": "mc",
+        "id": "u9fq1",
+        "prompt": "Which best describes cryptocurrency?",
+        "choices": [
+          "Digital money on a decentralized network, not issued by a government",
+          "Paper money printed by the Federal Reserve",
+          "A savings account at a credit union",
+          "A government-backed bond"
+        ],
+        "correct": 0,
+        "explanation": "Crypto is digital, decentralized, and not backed by any government."
+      },
+      {
+        "type": "tf",
+        "id": "u9fq2",
+        "prompt": "Cryptocurrencies like Bitcoin are backed and guaranteed by a national government.",
+        "answer": false,
+        "explanation": "No government stands behind Bitcoin's value, which is part of what makes it different and risky."
+      },
+      {
+        "type": "mc",
+        "id": "u9fq3",
+        "prompt": "A blockchain is best described as...",
+        "choices": [
+          "A shared, tamper-resistant ledger of transactions",
+          "A single private file owned by one bank",
+          "A physical vault full of gold",
+          "A secret government spreadsheet"
+        ],
+        "correct": 0,
+        "explanation": "A blockchain is a shared ledger copied across many computers, making it hard to fake."
+      },
+      {
+        "type": "order",
+        "id": "u9fq4",
+        "prompt": "Order the steps of a blockchain transaction.",
+        "items": [
+          "A transaction is created",
+          "It is broadcast to the network",
+          "Validators confirm it is valid",
+          "It is added to a new block",
+          "The block is linked to the chain"
+        ],
+        "explanation": "Create, broadcast, confirm, add to a block, then link it to the chain."
+      },
+      {
+        "type": "mc",
+        "id": "u9fq5",
+        "prompt": "Why is Bitcoin nicknamed 'digital gold'?",
+        "choices": [
+          "It has a limited supply and is seen as a store of value",
+          "The government guarantees its price",
+          "It is physically made of gold",
+          "It can never lose value"
+        ],
+        "correct": 0,
+        "explanation": "Like gold, Bitcoin's supply is capped and many treat it as a long-term store of value."
+      },
+      {
+        "type": "num",
+        "id": "u9fq6",
+        "prompt": "You put $1,000 into a coin and it falls 25%. What is your holding worth now?",
+        "answer": 750,
+        "tolerance": 0,
+        "prefix": "$",
+        "explanation": "A 25% drop leaves 75%, and 75% of $1,000 is $750."
+      },
+      {
+        "type": "match",
+        "id": "u9fq7",
+        "prompt": "Match each term to its meaning.",
+        "pairs": [
+          [
+            "Private key",
+            "Secret code that controls your crypto"
+          ],
+          [
+            "Stablecoin",
+            "Crypto pegged to a steady value like $1"
+          ],
+          [
+            "NFT",
+            "Unique token proving ownership of an item"
+          ],
+          [
+            "Validator",
+            "Verifies transactions and adds blocks"
+          ]
+        ],
+        "explanation": "These are key ideas from across the unit: keys, stablecoins, NFTs, and validators."
+      },
+      {
+        "type": "ms",
+        "id": "u9fq8",
+        "prompt": "Which are warning signs of a crypto scam? (Choose all that apply.)",
+        "choices": [
+          "Promises of guaranteed returns",
+          "A request for your private key or seed phrase",
+          "Pressure to act immediately",
+          "Trading on a regulated, well-known exchange"
+        ],
+        "correct": [
+          0,
+          1,
+          2
+        ],
+        "explanation": "Guarantees, key requests, and urgency are classic scam signals; a reputable exchange is not."
+      },
+      {
+        "type": "cat",
+        "id": "u9fq9",
+        "prompt": "Sort each statement into Bitcoin or Ethereum.",
+        "categories": [
+          "Bitcoin",
+          "Ethereum"
+        ],
+        "items": [
+          [
+            "Often called digital gold",
+            "Bitcoin"
+          ],
+          [
+            "A platform for smart contracts and apps",
+            "Ethereum"
+          ],
+          [
+            "Designed mainly as a store of value",
+            "Bitcoin"
+          ],
+          [
+            "Powers many tokens and DeFi apps",
+            "Ethereum"
+          ]
+        ],
+        "explanation": "Bitcoin is mainly a store of value; Ethereum is a programmable platform for apps."
+      },
+      {
+        "type": "tf",
+        "id": "u9fq10",
+        "prompt": "Money you keep on a crypto exchange is FDIC-insured just like a bank account.",
+        "answer": false,
+        "explanation": "Crypto is not FDIC-insured, so only risk what you can afford to lose and guard your keys."
+      }
+    ]
+  }
+}

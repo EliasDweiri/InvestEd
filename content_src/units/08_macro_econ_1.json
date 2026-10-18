@@ -1,0 +1,689 @@
+{
+  "constName": "macroEconOne",
+  "id": "unit10",
+  "title": "Unit 10: Macro Economics I",
+  "subtitle": "The big picture and the business cycle",
+  "colorHex": "2EC4B6",
+  "lessons": [
+    {
+      "id": "unit10-lesson1",
+      "title": "What Is Macroeconomics?",
+      "icon": "globe.americas.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u10l1q1",
+          "prompt": "What does macroeconomics study?",
+          "choices": [
+            "The economy as a whole — things like a country's total output, inflation, and jobs",
+            "Only how one family budgets its monthly income",
+            "How to pick a single winning stock",
+            "The payroll rules inside one small company"
+          ],
+          "correct": 0,
+          "explanation": "Macroeconomics zooms out to the whole economy — total production, prices, and employment — instead of one person or business."
+        },
+        {
+          "type": "tf",
+          "id": "u10l1q2",
+          "prompt": "Microeconomics looks at individual choices (one person or business), while macroeconomics looks at the whole economy.",
+          "answer": true,
+          "explanation": "Micro means the small, individual scale; macro means the big, whole-economy scale."
+        },
+        {
+          "type": "match",
+          "id": "u10l1q3",
+          "prompt": "Match each question to whether it is a micro or a macro question.",
+          "pairs": [
+            [
+              "Should I buy a $5 coffee or save it?",
+              "Micro"
+            ],
+            [
+              "Is the whole country's unemployment rising?",
+              "Macro"
+            ],
+            [
+              "Should this bakery raise its bread price?",
+              "Micro"
+            ],
+            [
+              "Is inflation across the nation speeding up?",
+              "Macro"
+            ]
+          ],
+          "explanation": "Personal or single-business choices are micro; nationwide totals like inflation and unemployment are macro."
+        },
+        {
+          "type": "ms",
+          "id": "u10l1q4",
+          "prompt": "Which of these are macroeconomic topics? (Choose all that apply.)",
+          "choices": [
+            "A nation's total economic output (GDP)",
+            "The country's overall inflation rate",
+            "Which sneakers you should buy this week",
+            "The national unemployment rate"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "GDP, inflation, and unemployment describe the whole economy. Your sneaker choice is a personal, micro decision."
+        },
+        {
+          "type": "cat",
+          "id": "u10l1q5",
+          "prompt": "Sort each topic into microeconomics or macroeconomics.",
+          "categories": [
+            "Microeconomics",
+            "Macroeconomics"
+          ],
+          "items": [
+            [
+              "Your family's grocery budget",
+              "Microeconomics"
+            ],
+            [
+              "The nation's total output",
+              "Macroeconomics"
+            ],
+            [
+              "One coffee shop's pricing",
+              "Microeconomics"
+            ],
+            [
+              "Countrywide inflation",
+              "Macroeconomics"
+            ],
+            [
+              "A single store's hiring",
+              "Microeconomics"
+            ]
+          ],
+          "explanation": "One person, family, or business is micro. Whole-country totals are macro."
+        },
+        {
+          "type": "mc",
+          "id": "u10l1q6",
+          "prompt": "Across a whole economy, what usually happens to prices when total demand for goods rises much faster than businesses can produce them?",
+          "choices": [
+            "Prices tend to rise (upward pressure on prices)",
+            "Prices fall all the way to zero",
+            "Prices can never change",
+            "The economy instantly shuts down"
+          ],
+          "correct": 0,
+          "explanation": "Just like in a single market, when economy-wide demand outruns supply, prices get pushed up."
+        },
+        {
+          "type": "tf",
+          "id": "u10l1q7",
+          "prompt": "Even though it studies the whole economy, macroeconomics still uses the ideas of supply and demand — just at a much larger scale.",
+          "answer": true,
+          "explanation": "Supply and demand work for one lemonade stand and for an entire country's economy alike."
+        }
+      ]
+    },
+    {
+      "id": "unit10-lesson2",
+      "title": "GDP & Economic Growth",
+      "icon": "chart.line.uptrend.xyaxis",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u10l2q1",
+          "prompt": "What does GDP (Gross Domestic Product) measure?",
+          "choices": [
+            "The total value of all goods and services a country produces in a period",
+            "The total number of people living in a country",
+            "How much cash the government keeps in the bank",
+            "The price of a single company's stock"
+          ],
+          "correct": 0,
+          "explanation": "GDP adds up the value of everything a country produces — it's the main scoreboard for the size of an economy."
+        },
+        {
+          "type": "tf",
+          "id": "u10l2q2",
+          "prompt": "When GDP is growing, the economy is producing more goods and services than before.",
+          "answer": true,
+          "explanation": "Rising GDP means more output — usually a sign of an expanding, healthier economy."
+        },
+        {
+          "type": "mc",
+          "id": "u10l2q3",
+          "prompt": "An economy is said to be in a contraction (or recession) when...",
+          "choices": [
+            "Its GDP is shrinking — total output is falling",
+            "Its GDP is growing quickly",
+            "Prices become perfectly stable",
+            "Everyone suddenly gets a raise"
+          ],
+          "correct": 0,
+          "explanation": "A contraction means the economy is shrinking — GDP falls instead of grows."
+        },
+        {
+          "type": "num",
+          "id": "u10l2q4",
+          "prompt": "A country's GDP grows from $1,000 billion to $1,030 billion in a year. What is the growth rate?",
+          "answer": 3,
+          "tolerance": 0,
+          "suffix": "%",
+          "explanation": "The increase is $30 billion; $30 ÷ $1,000 = 0.03 = 3% growth."
+        },
+        {
+          "type": "cat",
+          "id": "u10l2q5",
+          "prompt": "Sort each situation into growth or contraction.",
+          "categories": [
+            "Growth",
+            "Contraction"
+          ],
+          "items": [
+            [
+              "Factories produce more cars than last year",
+              "Growth"
+            ],
+            [
+              "GDP falls for six months straight",
+              "Contraction"
+            ],
+            [
+              "More new businesses open and hire",
+              "Growth"
+            ],
+            [
+              "Output drops and shops cut back",
+              "Contraction"
+            ]
+          ],
+          "explanation": "More output is growth; falling output is contraction."
+        },
+        {
+          "type": "ms",
+          "id": "u10l2q6",
+          "prompt": "Which of these count toward this year's GDP? (Choose all that apply.)",
+          "choices": [
+            "A new car built and sold this year",
+            "A haircut you paid for this year",
+            "A used car resold from five years ago",
+            "A fresh loaf of bread baked and sold this year"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "GDP counts new goods and services produced this period. Reselling an old used car isn't new production, so it doesn't add to GDP."
+        },
+        {
+          "type": "num",
+          "id": "u10l2q7",
+          "prompt": "Using the Rule of 72, if GDP grows about 3% per year, roughly how many years does the economy take to double in size?",
+          "answer": 24,
+          "tolerance": 0,
+          "suffix": " years",
+          "explanation": "72 ÷ 3 = 24, so at 3% annual growth an economy roughly doubles in about 24 years."
+        }
+      ]
+    },
+    {
+      "id": "unit10-lesson3",
+      "title": "Inflation & Prices",
+      "icon": "dollarsign.arrow.circlepath",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u10l3q1",
+          "prompt": "What is inflation?",
+          "choices": [
+            "A general rise in the prices of goods and services over time",
+            "A drop in the price of everything",
+            "The total number of jobs in a country",
+            "The interest a bank pays you"
+          ],
+          "correct": 0,
+          "explanation": "Inflation is the overall upward drift of prices — the same dollar buys a little less each year."
+        },
+        {
+          "type": "tf",
+          "id": "u10l3q2",
+          "prompt": "During inflation, a dollar buys less than it used to — its purchasing power falls.",
+          "answer": true,
+          "explanation": "When prices rise, each dollar stretches less far, so your money's purchasing power shrinks."
+        },
+        {
+          "type": "mc",
+          "id": "u10l3q3",
+          "prompt": "What is the Consumer Price Index (CPI) used for?",
+          "choices": [
+            "Tracking the average price of a typical basket of goods and services over time",
+            "Counting how many people have jobs",
+            "Measuring a single company's profit",
+            "Setting the price of gold"
+          ],
+          "correct": 0,
+          "explanation": "The CPI follows the cost of a common basket of everyday items, so it's a key gauge of inflation."
+        },
+        {
+          "type": "tf",
+          "id": "u10l3q4",
+          "prompt": "In many countries, central banks aim for an inflation rate of about 2% per year.",
+          "answer": true,
+          "explanation": "A low, steady ~2% is seen as healthy — enough to keep the economy moving without eroding money too fast."
+        },
+        {
+          "type": "num",
+          "id": "u10l3q5",
+          "prompt": "Your savings earned a 5% nominal return this year, but inflation was 2%. What was your approximate real return?",
+          "answer": 3,
+          "tolerance": 0,
+          "suffix": "%",
+          "explanation": "Real return is roughly nominal return minus inflation: 5% − 2% = 3%. That's your gain in actual buying power."
+        },
+        {
+          "type": "match",
+          "id": "u10l3q6",
+          "prompt": "Match each term to its meaning.",
+          "pairs": [
+            [
+              "Inflation",
+              "The general rise in prices over time"
+            ],
+            [
+              "Purchasing power",
+              "How much your money can actually buy"
+            ],
+            [
+              "CPI",
+              "An index tracking the price of a basket of goods"
+            ],
+            [
+              "Real return",
+              "Your return after subtracting inflation"
+            ]
+          ],
+          "explanation": "These four ideas explain how rising prices quietly shrink the value of money."
+        },
+        {
+          "type": "num",
+          "id": "u10l3q7",
+          "prompt": "A basket of goods cost $100 last year. With 2% inflation, what does that same basket cost this year?",
+          "answer": 102,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "2% of $100 is $2, so the basket now costs $100 + $2 = $102."
+        }
+      ]
+    },
+    {
+      "id": "unit10-lesson4",
+      "title": "Unemployment & Jobs",
+      "icon": "briefcase.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u10l4q1",
+          "prompt": "What does the unemployment rate measure?",
+          "choices": [
+            "The percentage of the labor force who want a job but don't have one",
+            "The total number of people in the country",
+            "How much money workers earn",
+            "The number of companies that exist"
+          ],
+          "correct": 0,
+          "explanation": "It's the share of people who are actively looking for work but can't find it, out of everyone in the labor force."
+        },
+        {
+          "type": "num",
+          "id": "u10l4q2",
+          "prompt": "In a labor force of 200 people, 10 are unemployed and looking for work. What is the unemployment rate?",
+          "answer": 5,
+          "tolerance": 0,
+          "suffix": "%",
+          "explanation": "10 ÷ 200 = 0.05 = 5%. Unemployment rate is unemployed people divided by the labor force."
+        },
+        {
+          "type": "tf",
+          "id": "u10l4q3",
+          "prompt": "A small amount of unemployment is normal, because people are always switching jobs or just entering the workforce.",
+          "answer": true,
+          "explanation": "Some 'frictional' unemployment is healthy — it just means people are moving between jobs. Zero unemployment almost never happens."
+        },
+        {
+          "type": "ms",
+          "id": "u10l4q4",
+          "prompt": "When unemployment rises sharply, what tends to happen? (Choose all that apply.)",
+          "choices": [
+            "People have less income to spend",
+            "Overall consumer spending tends to fall",
+            "Everyone instantly gets richer",
+            "Businesses may sell less and slow down"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Fewer paychecks means less spending, which can ripple out and slow the whole economy."
+        },
+        {
+          "type": "match",
+          "id": "u10l4q5",
+          "prompt": "Match each type of unemployment to an example.",
+          "pairs": [
+            [
+              "Frictional",
+              "Someone quit to search for a better job"
+            ],
+            [
+              "Cyclical",
+              "People laid off during a recession"
+            ],
+            [
+              "Structural",
+              "A worker's skills no longer match available jobs"
+            ]
+          ],
+          "explanation": "Frictional is between jobs; cyclical follows the business cycle; structural is a mismatch of skills or industries."
+        },
+        {
+          "type": "tf",
+          "id": "u10l4q6",
+          "prompt": "An unemployment rate of exactly 0% is the normal, healthy goal for every economy.",
+          "answer": false,
+          "explanation": "Some unemployment is always expected as people switch jobs; economists aim for low unemployment, not zero."
+        },
+        {
+          "type": "mc",
+          "id": "u10l4q7",
+          "prompt": "A full-time student who is not looking for work is counted as...",
+          "choices": [
+            "Not in the labor force, so not counted as unemployed",
+            "Unemployed",
+            "Employed",
+            "The main cause of inflation"
+          ],
+          "correct": 0,
+          "explanation": "To be 'unemployed' you must be actively looking for work. People not seeking a job aren't in the labor force at all."
+        }
+      ]
+    },
+    {
+      "id": "unit10-lesson5",
+      "title": "The Business Cycle",
+      "icon": "arrow.triangle.2.circlepath",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "order",
+          "id": "u10l5q1",
+          "prompt": "Put the four phases of the business cycle in order, starting from a growing economy.",
+          "items": [
+            "Expansion",
+            "Peak",
+            "Contraction",
+            "Trough"
+          ],
+          "explanation": "The economy grows (expansion), tops out (peak), shrinks (contraction), and bottoms out (trough) — then it starts over."
+        },
+        {
+          "type": "match",
+          "id": "u10l5q2",
+          "prompt": "Match each business-cycle phase to its description.",
+          "pairs": [
+            [
+              "Expansion",
+              "The economy is growing and jobs are rising"
+            ],
+            [
+              "Peak",
+              "Growth tops out at its highest point"
+            ],
+            [
+              "Contraction",
+              "The economy shrinks and output falls"
+            ],
+            [
+              "Trough",
+              "The low point before growth begins again"
+            ]
+          ],
+          "explanation": "These four phases repeat over and over — that's why it's called a cycle."
+        },
+        {
+          "type": "tf",
+          "id": "u10l5q3",
+          "prompt": "The business cycle always turns — no expansion lasts forever, and no contraction lasts forever either.",
+          "answer": true,
+          "explanation": "Booms eventually cool and downturns eventually recover — the cycle keeps turning."
+        },
+        {
+          "type": "mc",
+          "id": "u10l5q4",
+          "prompt": "A recession is another name for which phase of the business cycle?",
+          "choices": [
+            "A contraction, when the economy is shrinking",
+            "A peak, when growth is highest",
+            "An expansion, when the economy is growing",
+            "A trough that lasts only one day"
+          ],
+          "correct": 0,
+          "explanation": "A recession is a significant, sustained contraction — falling output across the economy."
+        },
+        {
+          "type": "ms",
+          "id": "u10l5q5",
+          "prompt": "Which are typical signs of an economic expansion? (Choose all that apply.)",
+          "choices": [
+            "Rising GDP",
+            "Falling unemployment",
+            "Widespread layoffs and shrinking output",
+            "Growing consumer spending"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "During an expansion, output, jobs, and spending all tend to rise. Widespread layoffs signal a contraction instead."
+        },
+        {
+          "type": "cat",
+          "id": "u10l5q6",
+          "prompt": "Sort each event into the expansion or contraction phase.",
+          "categories": [
+            "Expansion",
+            "Contraction"
+          ],
+          "items": [
+            [
+              "Companies hire more workers",
+              "Expansion"
+            ],
+            [
+              "GDP falls for months",
+              "Contraction"
+            ],
+            [
+              "Consumer spending climbs",
+              "Expansion"
+            ],
+            [
+              "Layoffs spread across industries",
+              "Contraction"
+            ]
+          ],
+          "explanation": "Growth, hiring, and rising spending mark an expansion; falling output and layoffs mark a contraction."
+        },
+        {
+          "type": "mc",
+          "id": "u10l5q7",
+          "prompt": "The lowest point of the business cycle, just before the economy starts to recover, is called the...",
+          "choices": [
+            "Trough",
+            "Peak",
+            "Expansion",
+            "Boom"
+          ],
+          "correct": 0,
+          "explanation": "The trough is the bottom — the turning point where a contraction ends and a new expansion begins."
+        }
+      ]
+    }
+  ],
+  "finalTest": {
+    "id": "unit10-final",
+    "title": "Macro Economics I: Final Test",
+    "icon": "trophy.fill",
+    "xp": 50,
+    "questions": [
+      {
+        "type": "mc",
+        "id": "u10fq1",
+        "prompt": "Macroeconomics is best described as the study of...",
+        "choices": [
+          "The whole economy — output, inflation, and jobs",
+          "One family's weekly budget",
+          "A single company's logo design",
+          "How to trade one stock"
+        ],
+        "correct": 0,
+        "explanation": "Macro zooms out to the entire economy, unlike micro's focus on individuals and single businesses."
+      },
+      {
+        "type": "tf",
+        "id": "u10fq2",
+        "prompt": "GDP measures the total value of goods and services a country produces.",
+        "answer": true,
+        "explanation": "It's the main scoreboard for the size of an economy."
+      },
+      {
+        "type": "num",
+        "id": "u10fq3",
+        "prompt": "GDP rises from $2,000 billion to $2,040 billion in a year. What is the growth rate?",
+        "answer": 2,
+        "tolerance": 0,
+        "suffix": "%",
+        "explanation": "The $40 increase ÷ $2,000 = 0.02 = 2% growth."
+      },
+      {
+        "type": "mc",
+        "id": "u10fq4",
+        "prompt": "During inflation, the purchasing power of your money...",
+        "choices": [
+          "Falls — each dollar buys less",
+          "Rises — each dollar buys more",
+          "Stays perfectly constant",
+          "Becomes infinite"
+        ],
+        "correct": 0,
+        "explanation": "Rising prices mean your money buys fewer goods, so purchasing power falls."
+      },
+      {
+        "type": "num",
+        "id": "u10fq5",
+        "prompt": "You earn a 6% nominal return while inflation is 2%. What is your approximate real return?",
+        "answer": 4,
+        "tolerance": 0,
+        "suffix": "%",
+        "explanation": "Real return is roughly nominal minus inflation: 6% − 2% = 4%."
+      },
+      {
+        "type": "num",
+        "id": "u10fq6",
+        "prompt": "If 8 people are unemployed in a labor force of 100, what is the unemployment rate?",
+        "answer": 8,
+        "tolerance": 0,
+        "suffix": "%",
+        "explanation": "8 ÷ 100 = 0.08 = 8%."
+      },
+      {
+        "type": "order",
+        "id": "u10fq7",
+        "prompt": "Order the business cycle phases, starting from a growing economy.",
+        "items": [
+          "Expansion",
+          "Peak",
+          "Contraction",
+          "Trough"
+        ],
+        "explanation": "Grow, top out, shrink, bottom out — then the cycle repeats."
+      },
+      {
+        "type": "match",
+        "id": "u10fq8",
+        "prompt": "Match each term to its meaning.",
+        "pairs": [
+          [
+            "GDP",
+            "Total value of everything a country produces"
+          ],
+          [
+            "CPI",
+            "An index tracking the price of a basket of goods"
+          ],
+          [
+            "Recession",
+            "A period when the economy is shrinking"
+          ],
+          [
+            "Trough",
+            "The low point before the economy recovers"
+          ]
+        ],
+        "explanation": "These are the core macro terms from this unit."
+      },
+      {
+        "type": "ms",
+        "id": "u10fq9",
+        "prompt": "Which of these are macroeconomic measures? (Choose all that apply.)",
+        "choices": [
+          "National GDP",
+          "The countrywide inflation rate",
+          "Which cereal you eat for breakfast",
+          "The national unemployment rate"
+        ],
+        "correct": [
+          0,
+          1,
+          3
+        ],
+        "explanation": "GDP, inflation, and unemployment describe the whole economy; your cereal is a personal choice."
+      },
+      {
+        "type": "cat",
+        "id": "u10fq10",
+        "prompt": "Sort each into expansion or contraction.",
+        "categories": [
+          "Expansion",
+          "Contraction"
+        ],
+        "items": [
+          [
+            "Rising GDP and more hiring",
+            "Expansion"
+          ],
+          [
+            "Falling output and layoffs",
+            "Contraction"
+          ],
+          [
+            "Consumer spending climbs",
+            "Expansion"
+          ],
+          [
+            "A recession deepens",
+            "Contraction"
+          ]
+        ],
+        "explanation": "Rising output and jobs mean expansion; falling output and layoffs mean contraction."
+      }
+    ]
+  }
+}

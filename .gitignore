@@ -1,0 +1,14 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+
+# macOS
+.DS_Store
+
+# Cloudflare Wrangler local state
+backend/.wrangler/
+backend/.dev.vars
+node_modules/

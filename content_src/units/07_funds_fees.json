@@ -1,0 +1,627 @@
+{
+  "constName": "fundsAndFees",
+  "id": "unit6",
+  "title": "Unit 6: Funds & Fees",
+  "subtitle": "Index funds, ETFs, and keeping costs low",
+  "colorHex": "9B5DE5",
+  "lessons": [
+    {
+      "id": "unit6-lesson1",
+      "title": "Index Funds",
+      "icon": "chart.line.uptrend.xyaxis",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u6l1q1",
+          "prompt": "What is an index fund?",
+          "choices": [
+            "A fund that buys all (or a representative sample of) the stocks in a market index",
+            "A fund where a manager hand-picks a few stocks hoping to beat the market",
+            "A savings account that tracks inflation",
+            "A single company's stock"
+          ],
+          "correct": 0,
+          "explanation": "An index fund simply mirrors an index, like the S&P 500, so you own a little piece of everything in it."
+        },
+        {
+          "type": "tf",
+          "id": "u6l1q2",
+          "prompt": "An index fund's goal is to match the market's return, not to beat it.",
+          "answer": true,
+          "explanation": "By copying the index instead of trying to outsmart it, index funds aim for the market's average return at very low cost."
+        },
+        {
+          "type": "mc",
+          "id": "u6l1q3",
+          "prompt": "The S&P 500 is an index made up of roughly what?",
+          "choices": [
+            "500 of the largest U.S. companies",
+            "500 cryptocurrencies",
+            "50 government bonds",
+            "5,000 global startups"
+          ],
+          "correct": 0,
+          "explanation": "The S&P 500 tracks about 500 of the biggest U.S. companies, so an S&P 500 index fund spreads your money across all of them."
+        },
+        {
+          "type": "ms",
+          "id": "u6l1q4",
+          "prompt": "Which of these are real advantages of index funds? (Choose all that apply.)",
+          "choices": [
+            "Instant diversification across many companies",
+            "Low costs because there's no expensive stock-picking team",
+            "A guarantee that you'll never lose money",
+            "They have historically beaten most active funds over the long run"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Index funds are cheap, diversified, and beat most active funds over time — but no investment can promise you'll never lose money."
+        },
+        {
+          "type": "num",
+          "id": "u6l1q5",
+          "prompt": "The S&P 500 index is built from 500 companies. Owning one share of a fund that tracks it gives you a slice of how many companies?",
+          "answer": 500,
+          "tolerance": 0,
+          "explanation": "One share of an S&P 500 index fund spreads your money across all 500 companies at once — that's diversification in a single click."
+        },
+        {
+          "type": "tf",
+          "id": "u6l1q6",
+          "prompt": "Because most active fund managers fail to beat their index over the long run, a low-cost index fund is often a smart default.",
+          "answer": true,
+          "explanation": "Study after study shows the large majority of active managers lag their benchmark after fees, which is why index funds are so popular."
+        },
+        {
+          "type": "order",
+          "id": "u6l1q7",
+          "prompt": "Order these from least diversified to most diversified.",
+          "items": [
+            "A single company's stock",
+            "A fund holding 30 companies",
+            "An S&P 500 index fund (500 companies)",
+            "A total U.S. market index fund (thousands of companies)"
+          ],
+          "explanation": "The more companies you hold, the more spread out your risk — going from one stock to a total-market fund steadily increases diversification."
+        }
+      ]
+    },
+    {
+      "id": "unit6-lesson2",
+      "title": "ETFs vs Mutual Funds",
+      "icon": "arrow.left.arrow.right.circle.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u6l2q1",
+          "prompt": "What's a key difference in how ETFs and mutual funds trade?",
+          "choices": [
+            "ETFs trade throughout the day like a stock; mutual funds price just once per day after the market closes",
+            "Mutual funds trade every second; ETFs trade only once a year",
+            "There is no difference between them",
+            "ETFs can only be bought by banks"
+          ],
+          "correct": 0,
+          "explanation": "ETF (exchange-traded fund) prices move all day like a stock, while a mutual fund settles at one price after the close."
+        },
+        {
+          "type": "cat",
+          "id": "u6l2q2",
+          "prompt": "Sort each trait into ETF or Mutual Fund.",
+          "categories": [
+            "ETF",
+            "Mutual Fund"
+          ],
+          "items": [
+            [
+              "You can buy or sell it anytime the market is open",
+              "ETF"
+            ],
+            [
+              "Your order fills at the closing NAV price",
+              "Mutual Fund"
+            ],
+            [
+              "Traded through a brokerage using a ticker symbol",
+              "ETF"
+            ],
+            [
+              "Often has a minimum initial investment, like $1,000 or $3,000",
+              "Mutual Fund"
+            ]
+          ],
+          "explanation": "ETFs act like stocks with live pricing and a ticker; mutual funds price once daily at NAV and frequently require a minimum to start."
+        },
+        {
+          "type": "tf",
+          "id": "u6l2q3",
+          "prompt": "If you place a mutual fund order at 11 a.m., it is executed instantly at that moment's live price.",
+          "answer": false,
+          "explanation": "Mutual fund orders all fill at the same day-end NAV, no matter what time of day you place them."
+        },
+        {
+          "type": "mc",
+          "id": "u6l2q4",
+          "prompt": "What are fractional shares?",
+          "choices": [
+            "Buying a portion of a share, so you can invest a set dollar amount even when one whole share is expensive",
+            "Shares that are broken and can't be sold",
+            "A share that pays no dividends",
+            "Free shares handed out by the government"
+          ],
+          "correct": 0,
+          "explanation": "Fractional shares let you invest, say, $50 in a fund even if one full share costs hundreds — great for starting small."
+        },
+        {
+          "type": "ms",
+          "id": "u6l2q5",
+          "prompt": "Which statements about ETFs are TRUE? (Choose all that apply.)",
+          "choices": [
+            "They trade throughout the day",
+            "Many track an index, just like index mutual funds",
+            "They usually have a ticker symbol you can look up",
+            "They can only be sold once a year"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "ETFs trade live all day, carry a ticker, and often track indexes — you're never locked in to selling just once a year."
+        },
+        {
+          "type": "tf",
+          "id": "u6l2q6",
+          "prompt": "Both ETFs and mutual funds let you own a basket of many investments in a single purchase.",
+          "answer": true,
+          "explanation": "Whichever wrapper you pick, one purchase buys a whole basket of holdings — instant diversification."
+        },
+        {
+          "type": "num",
+          "id": "u6l2q7",
+          "prompt": "One share of a fund costs $250, but you only want to invest $50. How many shares do you buy? (Enter as a decimal.)",
+          "answer": 0.2,
+          "tolerance": 0,
+          "explanation": "$50 divided by $250 is 0.2 — fractional shares let you put in exactly the dollar amount you want."
+        }
+      ]
+    },
+    {
+      "id": "unit6-lesson3",
+      "title": "What's Inside a Fund",
+      "icon": "chart.pie.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u6l3q1",
+          "prompt": "What are a fund's \"holdings\"?",
+          "choices": [
+            "The individual investments, like stocks, that the fund owns",
+            "The fees the fund charges you",
+            "The number of investors in the fund",
+            "The bank that stores the fund"
+          ],
+          "correct": 0,
+          "explanation": "A fund's holdings are simply the list of companies (or bonds) it owns on your behalf."
+        },
+        {
+          "type": "match",
+          "id": "u6l3q2",
+          "prompt": "Match each company to the sector it belongs to.",
+          "pairs": [
+            [
+              "Apple",
+              "Technology"
+            ],
+            [
+              "ExxonMobil",
+              "Energy"
+            ],
+            [
+              "Pfizer",
+              "Health Care"
+            ],
+            [
+              "JPMorgan Chase",
+              "Financials"
+            ]
+          ],
+          "explanation": "Funds group their holdings into sectors so you can see how your money is spread across the economy."
+        },
+        {
+          "type": "tf",
+          "id": "u6l3q3",
+          "prompt": "In a market-cap-weighted index fund, bigger companies make up a larger share of the fund.",
+          "answer": true,
+          "explanation": "Market-cap weighting means a giant like Apple takes up far more of the fund than a small company does."
+        },
+        {
+          "type": "num",
+          "id": "u6l3q4",
+          "prompt": "A fund puts 7% of its money into its largest holding. If you invest $1,000, how many dollars are in that one company?",
+          "answer": 70,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "7% of $1,000 is $70 — the weighting tells you how much of your money sits in each holding."
+        },
+        {
+          "type": "mc",
+          "id": "u6l3q5",
+          "prompt": "Why does one share of a broad fund usually carry less risk than one single stock?",
+          "choices": [
+            "If one company does badly, the others can cushion the blow",
+            "Because funds can never fall in value",
+            "Because the government insures all funds",
+            "Because funds only ever hold winning stocks"
+          ],
+          "correct": 0,
+          "explanation": "Spreading money across many companies means no single failure can wipe you out — that's the power of diversification."
+        },
+        {
+          "type": "ms",
+          "id": "u6l3q6",
+          "prompt": "What can you typically learn from a fund's fact sheet? (Choose all that apply.)",
+          "choices": [
+            "Its top holdings",
+            "How it's split across sectors",
+            "Exactly what it will be worth next year",
+            "Its expense ratio"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "A fact sheet shows holdings, sector breakdown, and fees — but no one can promise a future price."
+        },
+        {
+          "type": "tf",
+          "id": "u6l3q7",
+          "prompt": "Owning one share of a diversified fund means you indirectly own tiny slices of many different companies at once.",
+          "answer": true,
+          "explanation": "That single share represents a sliver of every company in the fund — one purchase, many businesses."
+        }
+      ]
+    },
+    {
+      "id": "unit6-lesson4",
+      "title": "Why Fees Matter",
+      "icon": "percent",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u6l4q1",
+          "prompt": "What is an expense ratio?",
+          "choices": [
+            "A fund's yearly fee, shown as a percent of the money you have invested",
+            "The return the fund guarantees you",
+            "A one-time fee just to open an account",
+            "The tax you owe on your gains"
+          ],
+          "correct": 0,
+          "explanation": "The expense ratio is the slice the fund quietly takes each year — a 0.10% ratio means $1 per $1,000 invested."
+        },
+        {
+          "type": "num",
+          "id": "u6l4q2",
+          "prompt": "A fund has a 0.50% expense ratio. On a $10,000 investment, how many dollars does that fee cost you in one year?",
+          "answer": 50,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "0.50% of $10,000 is $50 — that's what comes out of your pocket each year for holding the fund."
+        },
+        {
+          "type": "num",
+          "id": "u6l4q3",
+          "prompt": "Fund A charges 0.05% and Fund B charges 1.05% on a $10,000 balance. How many MORE dollars per year does Fund B cost?",
+          "answer": 100,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "The 1.00% gap on $10,000 is $100 a year — and that difference compounds against you for as long as you invest."
+        },
+        {
+          "type": "tf",
+          "id": "u6l4q4",
+          "prompt": "A 1% annual fee sounds tiny, but over decades it can quietly cost you tens of thousands of dollars in lost growth.",
+          "answer": true,
+          "explanation": "Every dollar taken in fees is also a dollar that never compounds for you, so small fees snowball over a lifetime."
+        },
+        {
+          "type": "order",
+          "id": "u6l4q5",
+          "prompt": "Order these funds from cheapest to most expensive by expense ratio.",
+          "items": [
+            "0.03%",
+            "0.20%",
+            "0.75%",
+            "1.25%"
+          ],
+          "explanation": "Lower expense ratios keep more of your money invested and compounding — cheaper is usually better."
+        },
+        {
+          "type": "mc",
+          "id": "u6l4q6",
+          "prompt": "Why do fees hurt more the longer you invest?",
+          "choices": [
+            "You lose the fee AND all the future growth that money could have earned — year after year",
+            "Fees only apply during the first year",
+            "Fees make the market go up",
+            "Fees are fully refunded at retirement"
+          ],
+          "correct": 0,
+          "explanation": "Fees don't just take money once; they steal the compounding that money would have produced for decades."
+        },
+        {
+          "type": "ms",
+          "id": "u6l4q7",
+          "prompt": "Which habits help you keep investing costs low? (Choose all that apply.)",
+          "choices": [
+            "Choosing low-expense-ratio index funds",
+            "Avoiding funds with high sales loads or commissions",
+            "Trading in and out constantly to chase hot funds",
+            "Comparing expense ratios before you buy"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Low ratios, avoiding loads, and comparing costs all help; constant trading usually adds fees and taxes."
+        }
+      ]
+    },
+    {
+      "id": "unit6-lesson5",
+      "title": "Automated Investing",
+      "icon": "gearshape.2.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u6l5q1",
+          "prompt": "What is a robo-advisor?",
+          "choices": [
+            "An online service that automatically builds and manages a diversified portfolio for you, usually for a low fee",
+            "A robot that visits your house to give advice",
+            "A stock that only trades on weekends",
+            "A government retirement program"
+          ],
+          "correct": 0,
+          "explanation": "Robo-advisors use software to pick low-cost funds, rebalance, and manage your mix so you don't have to do it by hand."
+        },
+        {
+          "type": "mc",
+          "id": "u6l5q2",
+          "prompt": "What is a target-date fund?",
+          "choices": [
+            "A fund that automatically shifts from riskier to safer investments as your target year approaches",
+            "A fund you're forced to sell on one specific date",
+            "A fund that holds just one stock",
+            "A fund that charges no fees ever"
+          ],
+          "correct": 0,
+          "explanation": "A target-date fund starts aggressive and gradually turns conservative as your goal year — like retirement — nears."
+        },
+        {
+          "type": "tf",
+          "id": "u6l5q3",
+          "prompt": "A target-date fund labeled '2065' is designed for someone planning to retire around the year 2065.",
+          "answer": true,
+          "explanation": "The year in the name is the rough target — the fund adjusts its risk on a glide path toward that date."
+        },
+        {
+          "type": "match",
+          "id": "u6l5q4",
+          "prompt": "Match each tool to what it does for you.",
+          "pairs": [
+            [
+              "Robo-advisor",
+              "Auto-manages a portfolio based on your goals"
+            ],
+            [
+              "Target-date fund",
+              "Gets more conservative as a set year nears"
+            ],
+            [
+              "Index fund",
+              "Tracks a whole market index at low cost"
+            ],
+            [
+              "Automatic deposit",
+              "Invests a set amount on a schedule for you"
+            ]
+          ],
+          "explanation": "Each of these takes a decision off your plate, making it easier to stay invested consistently."
+        },
+        {
+          "type": "tf",
+          "id": "u6l5q5",
+          "prompt": "'Set and forget' investing works partly because automation keeps you consistent and reduces emotional buy and sell decisions.",
+          "answer": true,
+          "explanation": "Automating deposits removes the temptation to time the market or panic, which is where many investors trip up."
+        },
+        {
+          "type": "ms",
+          "id": "u6l5q6",
+          "prompt": "Which are real benefits of automated investing? (Choose all that apply.)",
+          "choices": [
+            "It keeps you diversified without constant effort",
+            "It removes the temptation to panic-sell",
+            "It guarantees a profit every year",
+            "It can automatically rebalance your portfolio"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Automation helps with diversification, discipline, and rebalancing — but nothing can guarantee yearly profits."
+        },
+        {
+          "type": "num",
+          "id": "u6l5q7",
+          "prompt": "You set up an automatic investment of $50 every month. How many dollars will you have invested after one year (12 months)?",
+          "answer": 600,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "$50 times 12 months is $600 — small automatic amounts quietly add up over time."
+        }
+      ]
+    }
+  ],
+  "finalTest": {
+    "id": "unit6-final",
+    "title": "Funds & Fees: Final Test",
+    "icon": "trophy.fill",
+    "xp": 50,
+    "questions": [
+      {
+        "type": "mc",
+        "id": "u6fq1",
+        "prompt": "Over the long run, most actively managed funds tend to do what compared with their benchmark index?",
+        "choices": [
+          "Underperform it after fees",
+          "Always beat it",
+          "Match it exactly",
+          "Avoid all risk"
+        ],
+        "correct": 0,
+        "explanation": "After their higher fees, the large majority of active funds lag the index — the core case for low-cost index funds."
+      },
+      {
+        "type": "mc",
+        "id": "u6fq2",
+        "prompt": "Which one trades throughout the day at live market prices?",
+        "choices": [
+          "An ETF",
+          "A mutual fund",
+          "Both price only once a year",
+          "Neither can be traded"
+        ],
+        "correct": 0,
+        "explanation": "ETFs trade all day like stocks, while mutual funds price just once daily after the close."
+      },
+      {
+        "type": "num",
+        "id": "u6fq3",
+        "prompt": "A fund charges a 0.30% expense ratio. On a $5,000 investment, what is the annual fee in dollars?",
+        "answer": 15,
+        "tolerance": 0,
+        "prefix": "$",
+        "explanation": "0.30% of $5,000 is $15 — the fund's yearly cut of your money."
+      },
+      {
+        "type": "tf",
+        "id": "u6fq4",
+        "prompt": "A mutual fund order fills at the day's closing NAV, not at the price when you placed it midday.",
+        "answer": true,
+        "explanation": "All mutual fund trades for a day settle at the same end-of-day NAV, regardless of when you ordered."
+      },
+      {
+        "type": "cat",
+        "id": "u6fq5",
+        "prompt": "Sort each trait into ETF or Mutual Fund.",
+        "categories": [
+          "ETF",
+          "Mutual Fund"
+        ],
+        "items": [
+          [
+            "Trades intraday like a stock",
+            "ETF"
+          ],
+          [
+            "Priced once per day at NAV",
+            "Mutual Fund"
+          ],
+          [
+            "Commonly has a minimum initial investment",
+            "Mutual Fund"
+          ],
+          [
+            "Bought and sold via a ticker symbol whenever the market is open",
+            "ETF"
+          ]
+        ],
+        "explanation": "ETFs behave like stocks with live pricing and a ticker; mutual funds price once daily and often require a minimum."
+      },
+      {
+        "type": "num",
+        "id": "u6fq6",
+        "prompt": "Fund X costs 0.10% and Fund Y costs 1.10% on a $20,000 balance. How many MORE dollars does Fund Y charge in one year?",
+        "answer": 200,
+        "tolerance": 0,
+        "prefix": "$",
+        "explanation": "The 1.00% difference on $20,000 is $200 a year — and that gap compounds against you every year you hold it."
+      },
+      {
+        "type": "match",
+        "id": "u6fq7",
+        "prompt": "Match each term to its description.",
+        "pairs": [
+          [
+            "Robo-advisor",
+            "Automatically builds and manages your portfolio"
+          ],
+          [
+            "Target-date fund",
+            "Shifts to safer assets as a set year approaches"
+          ],
+          [
+            "Expense ratio",
+            "A fund's yearly fee as a percent of assets"
+          ],
+          [
+            "Index fund",
+            "Owns a whole market index at low cost"
+          ]
+        ],
+        "explanation": "These are the core tools of low-cost, hands-off investing you met throughout the unit."
+      },
+      {
+        "type": "ms",
+        "id": "u6fq8",
+        "prompt": "Which of these help keep your investing costs low? (Choose all that apply.)",
+        "choices": [
+          "Choosing low expense ratios",
+          "Using broad index funds",
+          "Frequent trading to chase winners",
+          "Avoiding high sales loads"
+        ],
+        "correct": [
+          0,
+          1,
+          3
+        ],
+        "explanation": "Low fees, broad index funds, and dodging loads keep costs down; constant trading usually adds costs and taxes."
+      },
+      {
+        "type": "order",
+        "id": "u6fq9",
+        "prompt": "Order these from least diversified to most diversified.",
+        "items": [
+          "One single stock",
+          "A fund of 20 stocks",
+          "An S&P 500 index fund",
+          "A total world stock index fund"
+        ],
+        "explanation": "The more companies (and countries) you hold, the more your risk is spread out."
+      },
+      {
+        "type": "num",
+        "id": "u6fq10",
+        "prompt": "One share of a fund costs $400, but you invest $100. How many shares do you own? (Enter as a decimal.)",
+        "answer": 0.25,
+        "tolerance": 0,
+        "explanation": "$100 divided by $400 is 0.25 — fractional shares let you invest any dollar amount you like."
+      }
+    ]
+  }
+}

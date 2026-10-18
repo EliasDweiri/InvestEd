@@ -1,0 +1,677 @@
+{
+  "constName": "powerOfTime",
+  "id": "unit5",
+  "title": "Unit 4: The Power of Time",
+  "subtitle": "Compound growth and starting early",
+  "colorHex": "FF6B4A",
+  "lessons": [
+    {
+      "id": "unit5-lesson1",
+      "title": "Compound Interest",
+      "icon": "chart.line.uptrend.xyaxis",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u5l1q1",
+          "prompt": "What is compound interest?",
+          "choices": [
+            "Interest earned on your original money AND on the interest it has already earned",
+            "Interest paid only on the money you first put in",
+            "A one-time bonus banks give new customers",
+            "A fee charged when you withdraw savings"
+          ],
+          "correct": 0,
+          "explanation": "Compound interest means your interest earns interest too. Over time that snowball effect makes your money grow faster and faster."
+        },
+        {
+          "type": "tf",
+          "id": "u5l1q2",
+          "prompt": "Compound interest can also work against you when you carry a balance on a credit card.",
+          "answer": true,
+          "explanation": "Debt compounds too. Unpaid interest gets added to what you owe, so the balance you're charged interest on keeps growing."
+        },
+        {
+          "type": "num",
+          "id": "u5l1q3",
+          "prompt": "You invest $1,000 at 10% compounded once a year. How many dollars do you have after 2 years?",
+          "answer": 1210,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "Year 1: $1,000 grows to $1,100. Year 2: that $1,100 grows to $1,210 — the extra $10 is interest earning interest."
+        },
+        {
+          "type": "mc",
+          "id": "u5l1q4",
+          "prompt": "You put $1,000 in two accounts at the same 10% rate. Which ends up with more after several years?",
+          "choices": [
+            "The compound-interest account",
+            "The simple-interest account",
+            "They always tie exactly",
+            "Neither earns anything"
+          ],
+          "correct": 0,
+          "explanation": "Simple interest pays only on your original $1,000 each year. Compound interest pays on the growing balance, so it pulls ahead and the gap widens over time."
+        },
+        {
+          "type": "match",
+          "id": "u5l1q5",
+          "prompt": "Match each compound-interest term to its meaning.",
+          "pairs": [
+            [
+              "Principal",
+              "The original amount you invest or borrow"
+            ],
+            [
+              "Interest rate",
+              "The percentage your money grows each period"
+            ],
+            [
+              "Compounding",
+              "Earning interest on your interest"
+            ],
+            [
+              "Balance",
+              "The total amount your account is worth right now"
+            ]
+          ],
+          "explanation": "Principal is your starting money, the rate is how fast it grows, compounding is interest on interest, and the balance is the running total."
+        },
+        {
+          "type": "ms",
+          "id": "u5l1q6",
+          "prompt": "Which of these make compound interest work harder for you? (Choose all that apply.)",
+          "choices": [
+            "Starting as early as you can",
+            "Leaving your earnings invested instead of spending them",
+            "A higher interest rate",
+            "Withdrawing your interest every year"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "More time, reinvested earnings, and a higher rate all feed the snowball. Cashing out your interest every year stops it from compounding."
+        },
+        {
+          "type": "order",
+          "id": "u5l1q7",
+          "prompt": "Put these interest rates in order by how much a $1,000 investment earns over 10 years, least to most.",
+          "items": [
+            "2% per year",
+            "5% per year",
+            "8% per year",
+            "12% per year"
+          ],
+          "explanation": "A higher rate compounds faster, so the higher the rate the more interest you pile up over the same 10 years."
+        }
+      ]
+    },
+    {
+      "id": "unit5-lesson2",
+      "title": "The Rule of 72",
+      "icon": "divide.circle.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u5l2q1",
+          "prompt": "What does the Rule of 72 help you estimate?",
+          "choices": [
+            "Roughly how many years it takes your money to double",
+            "Exactly how much tax you'll owe",
+            "The best stock to buy",
+            "How much to spend each month"
+          ],
+          "correct": 0,
+          "explanation": "Divide 72 by your yearly interest rate and you get a quick estimate of how many years it takes an investment to double."
+        },
+        {
+          "type": "num",
+          "id": "u5l2q2",
+          "prompt": "At an 8% yearly return, about how many years does it take your money to double?",
+          "answer": 9,
+          "tolerance": 0,
+          "suffix": " years",
+          "explanation": "72 ÷ 8 = 9. So money growing at 8% a year doubles in roughly 9 years."
+        },
+        {
+          "type": "match",
+          "id": "u5l2q3",
+          "prompt": "Match each yearly return to its approximate doubling time using the Rule of 72.",
+          "pairs": [
+            [
+              "4%",
+              "18 years"
+            ],
+            [
+              "6%",
+              "12 years"
+            ],
+            [
+              "9%",
+              "8 years"
+            ],
+            [
+              "12%",
+              "6 years"
+            ]
+          ],
+          "explanation": "Just divide 72 by the rate: 72÷4=18, 72÷6=12, 72÷9=8, and 72÷12=6."
+        },
+        {
+          "type": "num",
+          "id": "u5l2q4",
+          "prompt": "You want your money to double in about 6 years. Roughly what yearly return do you need?",
+          "answer": 12,
+          "tolerance": 0,
+          "suffix": "%",
+          "explanation": "Flip the rule around: 72 ÷ 6 years = 12%. You'd need about a 12% yearly return."
+        },
+        {
+          "type": "tf",
+          "id": "u5l2q5",
+          "prompt": "The Rule of 72 can also estimate how fast rising prices (inflation) cut your money's value in half.",
+          "answer": true,
+          "explanation": "The same math works for anything that grows by a percentage — including inflation eating away at what your dollars can buy."
+        },
+        {
+          "type": "mc",
+          "id": "u5l2q6",
+          "prompt": "At a 3% yearly return, about how long does it take money to double?",
+          "choices": [
+            "24 years",
+            "12 years",
+            "6 years",
+            "36 years"
+          ],
+          "correct": 0,
+          "explanation": "72 ÷ 3 = 24. Low returns mean a long wait — about 24 years to double at 3%."
+        },
+        {
+          "type": "cat",
+          "id": "u5l2q7",
+          "prompt": "Using the Rule of 72, sort each yearly return by how long it takes money to double.",
+          "categories": [
+            "Doubles in under 10 years",
+            "Doubles in 10 years or more"
+          ],
+          "items": [
+            [
+              "10%",
+              "Doubles in under 10 years"
+            ],
+            [
+              "8%",
+              "Doubles in under 10 years"
+            ],
+            [
+              "12%",
+              "Doubles in under 10 years"
+            ],
+            [
+              "6%",
+              "Doubles in 10 years or more"
+            ],
+            [
+              "4%",
+              "Doubles in 10 years or more"
+            ],
+            [
+              "3%",
+              "Doubles in 10 years or more"
+            ]
+          ],
+          "explanation": "72÷10≈7.2, 72÷8=9, 72÷12=6 all beat 10 years; 72÷6=12, 72÷4=18, 72÷3=24 all take 10 years or more."
+        }
+      ]
+    },
+    {
+      "id": "unit5-lesson3",
+      "title": "Starting Early",
+      "icon": "hourglass",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u5l3q1",
+          "prompt": "When it comes to growing wealth, what usually matters most?",
+          "choices": [
+            "How early you start, because time lets money compound",
+            "Picking the single perfect stock",
+            "Being born rich",
+            "Waiting until you earn a lot before you invest"
+          ],
+          "correct": 0,
+          "explanation": "Time is the secret ingredient. The earlier you start, the more years compounding has to turn small amounts into a lot."
+        },
+        {
+          "type": "tf",
+          "id": "u5l3q2",
+          "prompt": "Someone who invests from age 18 to 28 and then stops can end up with more than someone who starts at 28 and invests for decades.",
+          "answer": true,
+          "explanation": "This is the classic early-saver surprise: the head start gives the early investor's money extra years to compound, which can beat a bigger total invested later."
+        },
+        {
+          "type": "num",
+          "id": "u5l3q3",
+          "prompt": "Early Erin invests $200 a month for 10 years, then stops. How many dollars did she personally put in?",
+          "answer": 24000,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "$200 × 12 months × 10 years = $24,000. That's all Erin ever contributes — the rest of her growth comes from compounding."
+        },
+        {
+          "type": "num",
+          "id": "u5l3q4",
+          "prompt": "Late Liam invests $200 a month from age 28 to 65 — that's 37 years. How many dollars does he personally put in?",
+          "answer": 88800,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "$200 × 12 × 37 = $88,800. Liam contributes far more than Erin, yet her early start can still put her ahead."
+        },
+        {
+          "type": "mc",
+          "id": "u5l3q5",
+          "prompt": "Why can an early starter end up ahead even after investing fewer total dollars?",
+          "choices": [
+            "Their money has many more years to compound",
+            "Early investors get a secret higher rate",
+            "Banks reward youth with free money",
+            "Older investors pay a penalty"
+          ],
+          "correct": 0,
+          "explanation": "Extra decades of compounding do the heavy lifting. Time in the market beats the amount you put in."
+        },
+        {
+          "type": "ms",
+          "id": "u5l3q6",
+          "prompt": "Which habits help you take full advantage of time? (Choose all that apply.)",
+          "choices": [
+            "Start investing as early as possible",
+            "Invest consistently, even small amounts",
+            "Leave your money invested to keep compounding",
+            "Wait many years before you begin"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Start early, stay consistent, and let it ride — those three give compounding the years it needs. Waiting just throws that time away."
+        },
+        {
+          "type": "order",
+          "id": "u5l3q7",
+          "prompt": "Put these savers in order by the total dollars they personally contribute, least to most.",
+          "items": [
+            "Erin: $200/month for 10 years",
+            "Maya: $200/month for 20 years",
+            "Liam: $200/month for 37 years"
+          ],
+          "explanation": "$24,000 vs $48,000 vs $88,800. Erin puts in the least — yet starting first gives her money the most time to grow."
+        }
+      ]
+    },
+    {
+      "id": "unit5-lesson4",
+      "title": "Dollar-Cost Averaging",
+      "icon": "calendar.badge.clock",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u5l4q1",
+          "prompt": "What is dollar-cost averaging?",
+          "choices": [
+            "Investing a fixed dollar amount on a regular schedule, no matter the price",
+            "Investing everything you have the moment you get it",
+            "Only buying when prices are at their lowest",
+            "Selling a little bit every month"
+          ],
+          "correct": 0,
+          "explanation": "You put in the same amount on a set schedule — say $100 every month — regardless of whether prices are up or down."
+        },
+        {
+          "type": "tf",
+          "id": "u5l4q2",
+          "prompt": "With dollar-cost averaging, a fixed amount of money buys more shares when the price is low and fewer when it's high.",
+          "answer": true,
+          "explanation": "Because your dollars are fixed, a lower price stretches further and buys more shares — automatically leaning into cheap prices."
+        },
+        {
+          "type": "num",
+          "id": "u5l4q3",
+          "prompt": "You invest $120 this month and the share price is $12. How many shares do you buy?",
+          "answer": 10,
+          "tolerance": 0,
+          "suffix": " shares",
+          "explanation": "$120 ÷ $12 = 10 shares."
+        },
+        {
+          "type": "num",
+          "id": "u5l4q4",
+          "prompt": "Next month you invest another $120, but the price has dropped to $6. How many shares do you buy now?",
+          "answer": 20,
+          "tolerance": 0,
+          "suffix": " shares",
+          "explanation": "$120 ÷ $6 = 20 shares. The same $120 bought twice as many shares because the price fell."
+        },
+        {
+          "type": "num",
+          "id": "u5l4q5",
+          "prompt": "Over those two months you invested $240 and now own 30 shares. What average price did you pay per share?",
+          "answer": 8,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "$240 ÷ 30 shares = $8 per share — lower than the simple average of $12 and $6 ($9), because you bought more shares when cheap."
+        },
+        {
+          "type": "ms",
+          "id": "u5l4q6",
+          "prompt": "Which are real benefits of dollar-cost averaging? (Choose all that apply.)",
+          "choices": [
+            "It takes the pressure off trying to time the market perfectly",
+            "It automatically buys more shares when prices are low",
+            "It builds a steady investing habit",
+            "It guarantees you'll never lose money"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "DCA removes timing stress, leans into low prices, and builds discipline — but no strategy guarantees a profit."
+        },
+        {
+          "type": "order",
+          "id": "u5l4q7",
+          "prompt": "Order the steps to set up a dollar-cost averaging plan.",
+          "items": [
+            "Pick an amount you can invest regularly",
+            "Choose a fixed schedule, like every month",
+            "Invest that amount every period no matter the price",
+            "Keep it going through the ups and downs"
+          ],
+          "explanation": "Decide the amount, set the schedule, invest on autopilot, and stay consistent — that's dollar-cost averaging."
+        }
+      ]
+    },
+    {
+      "id": "unit5-lesson5",
+      "title": "Setting Financial Goals",
+      "icon": "target",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u5l5q1",
+          "prompt": "In a SMART goal, what does the 'M' stand for?",
+          "choices": [
+            "Measurable",
+            "Money",
+            "Maximum",
+            "Mandatory"
+          ],
+          "correct": 0,
+          "explanation": "Measurable means you can track progress with a number — like saving $1,200 — so you know when you've hit it."
+        },
+        {
+          "type": "match",
+          "id": "u5l5q2",
+          "prompt": "Match each letter of SMART to what it stands for.",
+          "pairs": [
+            [
+              "S",
+              "Specific"
+            ],
+            [
+              "A",
+              "Achievable"
+            ],
+            [
+              "R",
+              "Relevant"
+            ],
+            [
+              "T",
+              "Time-bound"
+            ]
+          ],
+          "explanation": "SMART goals are Specific, Measurable, Achievable, Relevant, and Time-bound — clear targets you can actually reach."
+        },
+        {
+          "type": "cat",
+          "id": "u5l5q3",
+          "prompt": "Sort each goal by whether you'd keep the money safe in savings or invest it for growth.",
+          "categories": [
+            "Save (short-term)",
+            "Invest (long-term)"
+          ],
+          "items": [
+            [
+              "Spring break trip in 4 months",
+              "Save (short-term)"
+            ],
+            [
+              "New laptop in 6 months",
+              "Save (short-term)"
+            ],
+            [
+              "Holiday gifts this December",
+              "Save (short-term)"
+            ],
+            [
+              "Retirement in 45 years",
+              "Invest (long-term)"
+            ],
+            [
+              "House down payment in 15 years",
+              "Invest (long-term)"
+            ],
+            [
+              "College fund for a baby born today",
+              "Invest (long-term)"
+            ]
+          ],
+          "explanation": "Money you need soon should stay safe in savings; money you won't touch for years can be invested to grow and ride out the ups and downs."
+        },
+        {
+          "type": "tf",
+          "id": "u5l5q4",
+          "prompt": "Money you'll need in just a few months is best put in stocks so it can grow as much as possible.",
+          "answer": false,
+          "explanation": "Stocks can drop right when you need the cash. Short-term money belongs somewhere safe, like a savings account."
+        },
+        {
+          "type": "mc",
+          "id": "u5l5q5",
+          "prompt": "Why invest rather than just save for a goal that's decades away?",
+          "choices": [
+            "You have time to ride out market dips and let compounding grow your money",
+            "Savings accounts are illegal for long goals",
+            "Investing has no risk over long periods",
+            "It's the only way to open an account"
+          ],
+          "correct": 0,
+          "explanation": "A long time horizon lets you weather market ups and downs and gives compounding years to work — so growth investments make sense."
+        },
+        {
+          "type": "num",
+          "id": "u5l5q6",
+          "prompt": "Your SMART goal is to save $1,200 for a laptop in 12 months. How many dollars must you save each month?",
+          "answer": 100,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "$1,200 ÷ 12 months = $100 a month. Breaking a goal into monthly steps makes it Achievable and Time-bound."
+        },
+        {
+          "type": "ms",
+          "id": "u5l5q7",
+          "prompt": "Which of these make a goal 'SMART'? (Choose all that apply.)",
+          "choices": [
+            "It's specific and measurable",
+            "It has a clear deadline",
+            "It's realistic for your income",
+            "It's vague, like 'save more someday'"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "SMART goals are clear, have a deadline, and are realistic. 'Save more someday' is too fuzzy to act on or track."
+        }
+      ]
+    }
+  ],
+  "finalTest": {
+    "id": "unit5-final",
+    "title": "The Power of Time: Final Test",
+    "icon": "trophy.fill",
+    "xp": 50,
+    "questions": [
+      {
+        "type": "mc",
+        "id": "u5fq1",
+        "prompt": "Which best describes compound interest?",
+        "choices": [
+          "Earning interest on both your original money and the interest already earned",
+          "Earning interest only on your original deposit",
+          "A flat fee added to your account each year",
+          "A discount for keeping money in the bank"
+        ],
+        "correct": 0,
+        "explanation": "Compound interest snowballs because your earnings start earning too — the engine behind long-term growth."
+      },
+      {
+        "type": "num",
+        "id": "u5fq2",
+        "prompt": "You invest $500 at 10% compounded once a year. How many dollars do you have after 2 years?",
+        "answer": 605,
+        "tolerance": 0,
+        "prefix": "$",
+        "explanation": "Year 1: $500 → $550. Year 2: $550 → $605. The extra $5 is interest earning interest."
+      },
+      {
+        "type": "num",
+        "id": "u5fq3",
+        "prompt": "Using the Rule of 72, about how many years does money take to double at a 6% yearly return?",
+        "answer": 12,
+        "tolerance": 0,
+        "suffix": " years",
+        "explanation": "72 ÷ 6 = 12 years. Divide 72 by the rate for a quick doubling estimate."
+      },
+      {
+        "type": "tf",
+        "id": "u5fq4",
+        "prompt": "Compounding only helps you — it never works against you.",
+        "answer": false,
+        "explanation": "Debt compounds too. Unpaid credit-card interest grows the same way, which is why balances can balloon fast."
+      },
+      {
+        "type": "mc",
+        "id": "u5fq5",
+        "prompt": "Why can someone who starts investing at 18 beat someone who starts at 28, even with less money invested?",
+        "choices": [
+          "Their money has more years to compound",
+          "They secretly earn a higher interest rate",
+          "Young people pay no taxes",
+          "Older investors are charged extra fees"
+        ],
+        "correct": 0,
+        "explanation": "Time in the market is the edge. Extra years of compounding can outweigh a larger amount invested later."
+      },
+      {
+        "type": "num",
+        "id": "u5fq6",
+        "prompt": "With dollar-cost averaging you invest $120 and the share price is $8. How many shares do you buy?",
+        "answer": 15,
+        "tolerance": 0,
+        "suffix": " shares",
+        "explanation": "$120 ÷ $8 = 15 shares. A fixed dollar amount buys more shares when the price is lower."
+      },
+      {
+        "type": "cat",
+        "id": "u5fq7",
+        "prompt": "Sort each goal by whether you'd save the money or invest it for growth.",
+        "categories": [
+          "Save (short-term)",
+          "Invest (long-term)"
+        ],
+        "items": [
+          [
+            "Concert tickets in 2 months",
+            "Save (short-term)"
+          ],
+          [
+            "Emergency fund for this year",
+            "Save (short-term)"
+          ],
+          [
+            "Retirement in 40 years",
+            "Invest (long-term)"
+          ],
+          [
+            "College fund for a newborn",
+            "Invest (long-term)"
+          ]
+        ],
+        "explanation": "Near-term money stays safe in savings; far-off goals can be invested so compounding and growth have time to work."
+      },
+      {
+        "type": "match",
+        "id": "u5fq8",
+        "prompt": "Match each letter of a SMART goal to what it stands for.",
+        "pairs": [
+          [
+            "S",
+            "Specific"
+          ],
+          [
+            "M",
+            "Measurable"
+          ],
+          [
+            "A",
+            "Achievable"
+          ],
+          [
+            "T",
+            "Time-bound"
+          ]
+        ],
+        "explanation": "SMART goals are Specific, Measurable, Achievable, Relevant, and Time-bound — clear enough to act on and track."
+      },
+      {
+        "type": "ms",
+        "id": "u5fq9",
+        "prompt": "Which choices help you harness the power of time and compounding? (Choose all that apply.)",
+        "choices": [
+          "Start investing early",
+          "Reinvest your earnings instead of spending them",
+          "Invest consistently over the years",
+          "Withdraw your gains every few months"
+        ],
+        "correct": [
+          0,
+          1,
+          2
+        ],
+        "explanation": "Starting early, reinvesting, and staying consistent all feed the compounding snowball. Cashing out often cuts it short."
+      },
+      {
+        "type": "order",
+        "id": "u5fq10",
+        "prompt": "Put these $1,000 investments in order by their ending value after 10 years, least to most.",
+        "items": [
+          "2% per year",
+          "5% per year",
+          "10% per year"
+        ],
+        "explanation": "A higher rate compounds faster, so over the same 10 years the 10% investment grows the most and the 2% grows the least."
+      }
+    ]
+  }
+}

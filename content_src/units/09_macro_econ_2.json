@@ -1,0 +1,657 @@
+{
+  "constName": "macroEconTwo",
+  "id": "unit12",
+  "title": "Unit 9: Macro Economics II",
+  "subtitle": "Policy, trade, and the wider world",
+  "colorHex": "0077B6",
+  "lessons": [
+    {
+      "id": "unit12-lesson1",
+      "title": "The Federal Reserve & Interest Rates",
+      "icon": "building.columns.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u12l1q1",
+          "prompt": "What is the Federal Reserve (the 'Fed')?",
+          "choices": [
+            "The central bank of the United States",
+            "A regular bank where you open a checking account",
+            "The New York Stock Exchange",
+            "The agency that collects your taxes"
+          ],
+          "correct": 0,
+          "explanation": "The Fed is the U.S. central bank. It manages the nation's money and steers interest rates rather than serving everyday customers."
+        },
+        {
+          "type": "mc",
+          "id": "u12l1q2",
+          "prompt": "The Fed's 'dual mandate' is to pursue which TWO goals?",
+          "choices": [
+            "Maximum employment and stable prices",
+            "Higher stock prices and more exports",
+            "Lower taxes and less regulation",
+            "A balanced budget and free trade"
+          ],
+          "correct": 0,
+          "explanation": "Congress gave the Fed two jobs: keep as many people employed as possible while keeping prices (inflation) stable."
+        },
+        {
+          "type": "tf",
+          "id": "u12l1q3",
+          "prompt": "The Federal Reserve is often called the 'central bank' of the United States.",
+          "answer": true,
+          "explanation": "A central bank manages a nation's currency and interest rates, and the Fed is exactly that for the U.S."
+        },
+        {
+          "type": "mc",
+          "id": "u12l1q4",
+          "prompt": "The main interest rate the Fed targets is the...",
+          "choices": [
+            "Federal funds rate",
+            "Mortgage rate",
+            "Credit card APR",
+            "Savings account rate"
+          ],
+          "correct": 0,
+          "explanation": "The federal funds rate is what banks charge each other for overnight loans. When the Fed moves it, other rates across the economy tend to follow."
+        },
+        {
+          "type": "ms",
+          "id": "u12l1q5",
+          "prompt": "Which of these are part of the Fed's job? (Choose all that apply.)",
+          "choices": [
+            "Setting key interest rates",
+            "Trying to keep inflation low and stable",
+            "Aiming for maximum employment",
+            "Setting the income tax rates you pay"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Interest rates, stable prices, and employment are the Fed's turf. Setting taxes belongs to Congress, not the Fed."
+        },
+        {
+          "type": "match",
+          "id": "u12l1q6",
+          "prompt": "Match each term to its meaning.",
+          "pairs": [
+            [
+              "Central bank",
+              "The institution that manages a nation's money and interest rates"
+            ],
+            [
+              "Dual mandate",
+              "The Fed's twin goals of stable prices and max employment"
+            ],
+            [
+              "Federal funds rate",
+              "The key overnight rate the Fed targets"
+            ],
+            [
+              "Inflation",
+              "A general rise in prices over time"
+            ]
+          ],
+          "explanation": "These four ideas are the backbone of how the Fed operates and why it exists."
+        },
+        {
+          "type": "tf",
+          "id": "u12l1q7",
+          "prompt": "The Federal Reserve sets the income tax rates that citizens pay each year.",
+          "answer": false,
+          "explanation": "Taxes are set by Congress (that's fiscal policy). The Fed handles monetary policy, like interest rates."
+        }
+      ]
+    },
+    {
+      "id": "unit12-lesson2",
+      "title": "Monetary Policy",
+      "icon": "percent",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u12l2q1",
+          "prompt": "When the economy is overheating and inflation is high, what does the Fed usually do?",
+          "choices": [
+            "Raise interest rates to cool it down",
+            "Cut interest rates to speed it up",
+            "Nothing at all",
+            "Print more tax forms"
+          ],
+          "correct": 0,
+          "explanation": "Higher rates make borrowing pricier, which cools spending and demand, helping bring inflation back down."
+        },
+        {
+          "type": "mc",
+          "id": "u12l2q2",
+          "prompt": "When the Fed LOWERS interest rates, borrowing money generally becomes...",
+          "choices": [
+            "Cheaper, encouraging spending and investment",
+            "More expensive, discouraging spending",
+            "Illegal",
+            "Completely unchanged"
+          ],
+          "correct": 0,
+          "explanation": "Lower rates mean cheaper loans, so people and businesses tend to borrow, spend, and invest more."
+        },
+        {
+          "type": "order",
+          "id": "u12l2q3",
+          "prompt": "Put the steps in order for how a Fed rate HIKE cools the economy.",
+          "items": [
+            "The Fed raises its key interest rate",
+            "Loans and credit become more expensive",
+            "People and businesses borrow and spend less",
+            "Demand cools and inflation eases"
+          ],
+          "explanation": "A hike raises borrowing costs, which slows spending, which cools demand and inflation. That's the chain reaction."
+        },
+        {
+          "type": "tf",
+          "id": "u12l2q4",
+          "prompt": "Lowering interest rates is often called 'loosening' or 'easing' monetary policy.",
+          "answer": true,
+          "explanation": "Cutting rates 'loosens' or 'eases' conditions to give the economy more room to grow. Raising them is 'tightening.'"
+        },
+        {
+          "type": "num",
+          "id": "u12l2q5",
+          "prompt": "The Fed raises its target rate from 4.5% to 5.25%. By how many percentage points did it hike?",
+          "answer": 0.75,
+          "tolerance": 0,
+          "suffix": "%",
+          "explanation": "5.25% minus 4.5% is 0.75 points, which traders also call a '75 basis point' hike."
+        },
+        {
+          "type": "mc",
+          "id": "u12l2q6",
+          "prompt": "Higher interest rates tend to do what to stock prices, all else equal?",
+          "choices": [
+            "Put downward pressure on them",
+            "Guarantee they rise",
+            "Have zero effect ever",
+            "Only affect crypto"
+          ],
+          "correct": 0,
+          "explanation": "Higher rates make borrowing costlier for companies and make safe bonds more attractive, which often weighs on stocks."
+        },
+        {
+          "type": "ms",
+          "id": "u12l2q7",
+          "prompt": "Which of these are goals of RAISING interest rates? (Choose all that apply.)",
+          "choices": [
+            "Slow down high inflation",
+            "Cool an overheating economy",
+            "Make borrowing more expensive on purpose",
+            "Instantly eliminate all unemployment"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Hikes are meant to cool demand and tame inflation. They don't fix employment instantly and can even raise unemployment short term."
+        }
+      ]
+    },
+    {
+      "id": "unit12-lesson3",
+      "title": "Fiscal Policy",
+      "icon": "banknote.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u12l3q1",
+          "prompt": "Fiscal policy refers to a government's use of...",
+          "choices": [
+            "Spending and taxes to influence the economy",
+            "Interest rates set by the central bank",
+            "Stock market trading",
+            "Foreign exchange reserves only"
+          ],
+          "correct": 0,
+          "explanation": "Fiscal policy is the government's budget toolkit: how much it taxes and how much it spends."
+        },
+        {
+          "type": "cat",
+          "id": "u12l3q2",
+          "prompt": "Sort each tool by who controls it.",
+          "categories": [
+            "Fiscal (Congress/Govt)",
+            "Monetary (Fed)"
+          ],
+          "items": [
+            [
+              "Setting income tax rates",
+              "Fiscal (Congress/Govt)"
+            ],
+            [
+              "Government spending on roads",
+              "Fiscal (Congress/Govt)"
+            ],
+            [
+              "Setting the federal funds rate",
+              "Monetary (Fed)"
+            ],
+            [
+              "Sending stimulus checks",
+              "Fiscal (Congress/Govt)"
+            ],
+            [
+              "Adjusting the money supply",
+              "Monetary (Fed)"
+            ]
+          ],
+          "explanation": "Taxes and spending are fiscal (government); interest rates and money supply are monetary (Fed). Keeping them straight is key."
+        },
+        {
+          "type": "tf",
+          "id": "u12l3q3",
+          "prompt": "A budget deficit happens when a government spends more than it collects in taxes.",
+          "answer": true,
+          "explanation": "Spend more than you take in and you run a deficit, covering the gap by borrowing."
+        },
+        {
+          "type": "num",
+          "id": "u12l3q4",
+          "prompt": "A government collects $3 trillion in taxes but spends $4 trillion in a year. What is its deficit? (Answer in trillions.)",
+          "answer": 1,
+          "tolerance": 0,
+          "suffix": " trillion",
+          "explanation": "$4 trillion spent minus $3 trillion collected leaves a $1 trillion deficit for the year."
+        },
+        {
+          "type": "mc",
+          "id": "u12l3q5",
+          "prompt": "'Stimulus' spending is designed to...",
+          "choices": [
+            "Boost economic activity, often during a slowdown",
+            "Slow the economy on purpose",
+            "Pay off all national debt instantly",
+            "Set interest rates"
+          ],
+          "correct": 0,
+          "explanation": "Stimulus pumps money into the economy (through spending or tax cuts) to lift demand when growth is weak."
+        },
+        {
+          "type": "tf",
+          "id": "u12l3q6",
+          "prompt": "The national debt is the total of all past deficits (minus any surpluses) a government has piled up over time.",
+          "answer": true,
+          "explanation": "Each year's deficit adds to a running total. That accumulated total is the national debt."
+        },
+        {
+          "type": "ms",
+          "id": "u12l3q7",
+          "prompt": "Which of these are examples of fiscal policy? (Choose all that apply.)",
+          "choices": [
+            "Cutting taxes to boost spending",
+            "Increasing government spending on infrastructure",
+            "Sending stimulus payments",
+            "The Fed cutting interest rates"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Taxes, spending, and stimulus are fiscal. A Fed rate cut is monetary policy, run by the central bank."
+        }
+      ]
+    },
+    {
+      "id": "unit12-lesson4",
+      "title": "Trade & Currencies",
+      "icon": "globe.americas.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "match",
+          "id": "u12l4q1",
+          "prompt": "Match each trade term to its meaning.",
+          "pairs": [
+            [
+              "Imports",
+              "Goods and services a country buys from abroad"
+            ],
+            [
+              "Exports",
+              "Goods and services a country sells to other countries"
+            ],
+            [
+              "Trade deficit",
+              "When a country imports more than it exports"
+            ],
+            [
+              "Exchange rate",
+              "How much one currency is worth in another"
+            ]
+          ],
+          "explanation": "Imports come in, exports go out, and the exchange rate is the price tag that links two currencies."
+        },
+        {
+          "type": "mc",
+          "id": "u12l4q2",
+          "prompt": "An 'exchange rate' tells you...",
+          "choices": [
+            "How much one currency is worth in terms of another",
+            "The interest rate on a loan",
+            "A country's tax rate",
+            "The price of a single stock"
+          ],
+          "correct": 0,
+          "explanation": "For example, if 1 euro = $1.10, the exchange rate tells you how many dollars one euro buys."
+        },
+        {
+          "type": "tf",
+          "id": "u12l4q3",
+          "prompt": "A 'strong dollar' means the U.S. dollar buys MORE foreign currency than before.",
+          "answer": true,
+          "explanation": "A strong dollar has extra buying power abroad, so each dollar swaps for more euros, yen, or pounds."
+        },
+        {
+          "type": "cat",
+          "id": "u12l4q4",
+          "prompt": "Sort each person by which situation helps them.",
+          "categories": [
+            "Helped by a STRONG dollar",
+            "Helped by a WEAK dollar"
+          ],
+          "items": [
+            [
+              "A U.S. tourist traveling in Europe",
+              "Helped by a STRONG dollar"
+            ],
+            [
+              "A U.S. company exporting goods abroad",
+              "Helped by a WEAK dollar"
+            ],
+            [
+              "An American buying imported electronics",
+              "Helped by a STRONG dollar"
+            ],
+            [
+              "A foreign tourist visiting the U.S.",
+              "Helped by a WEAK dollar"
+            ]
+          ],
+          "explanation": "A strong dollar makes foreign goods and travel cheaper for Americans. A weak dollar makes U.S. exports and visits cheaper for foreigners."
+        },
+        {
+          "type": "mc",
+          "id": "u12l4q5",
+          "prompt": "If a country exports MORE than it imports, it has a...",
+          "choices": [
+            "Trade surplus",
+            "Trade deficit",
+            "Budget deficit",
+            "Recession"
+          ],
+          "correct": 0,
+          "explanation": "Selling more abroad than you buy is a trade surplus. The reverse is a trade deficit."
+        },
+        {
+          "type": "num",
+          "id": "u12l4q6",
+          "prompt": "1 euro = 1.10 U.S. dollars. How many dollars would you need to buy 50 euros?",
+          "answer": 55,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "50 euros times $1.10 each equals $55."
+        },
+        {
+          "type": "tf",
+          "id": "u12l4q7",
+          "prompt": "A weaker dollar tends to make American-made exports cheaper and more attractive to foreign buyers.",
+          "answer": true,
+          "explanation": "When the dollar is weak, foreign buyers can afford more U.S. goods, which can boost exports."
+        }
+      ]
+    },
+    {
+      "id": "unit12-lesson5",
+      "title": "Recessions & Reading the News",
+      "icon": "chart.line.downtrend.xyaxis",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u12l5q1",
+          "prompt": "A recession is best described as...",
+          "choices": [
+            "A significant, widespread decline in economic activity lasting months",
+            "A single bad day in the stock market",
+            "Any drop in one company's stock",
+            "A tax increase"
+          ],
+          "correct": 0,
+          "explanation": "A recession is a broad, lasting slump across the economy, not just one rough day or one falling stock."
+        },
+        {
+          "type": "tf",
+          "id": "u12l5q2",
+          "prompt": "A common rule of thumb defines a recession as two consecutive quarters of shrinking GDP.",
+          "answer": true,
+          "explanation": "It's a handy shortcut. The official U.S. call is broader, but 'two down quarters' is the popular rule of thumb."
+        },
+        {
+          "type": "mc",
+          "id": "u12l5q3",
+          "prompt": "Why do news headlines about the economy often feel scarier than reality?",
+          "choices": [
+            "Dramatic, fearful headlines attract more clicks and attention",
+            "They are legally required to exaggerate",
+            "Journalists never use any data",
+            "Reporting good news is illegal"
+          ],
+          "correct": 0,
+          "explanation": "Fear and drama grab attention, so headlines lean sensational. Read past them to the actual data before reacting."
+        },
+        {
+          "type": "num",
+          "id": "u12l5q4",
+          "prompt": "Experts suggest an emergency fund of 3 to 6 months of expenses. If your expenses are $1,500 a month, how much is a 3-month fund?",
+          "answer": 4500,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "3 months times $1,500 equals $4,500 of cushion."
+        },
+        {
+          "type": "ms",
+          "id": "u12l5q5",
+          "prompt": "Why does an emergency fund matter during a recession? (Choose all that apply.)",
+          "choices": [
+            "Job losses are more common, so income can stop",
+            "It lets you avoid selling investments at a low point",
+            "It covers surprise expenses without new debt",
+            "It guarantees the stock market will go up"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "A cash cushion buys you time and options when income drops. Nothing, though, guarantees which way markets move."
+        },
+        {
+          "type": "order",
+          "id": "u12l5q6",
+          "prompt": "Order these calm, smart responses to a scary economic headline.",
+          "items": [
+            "Take a breath instead of panic-selling",
+            "Read past the headline to the real numbers",
+            "Revisit your long-term plan and goals",
+            "Top up your emergency fund if needed"
+          ],
+          "explanation": "Pause, check the data, stick to your plan, and shore up your safety net. That beats reacting on emotion."
+        },
+        {
+          "type": "tf",
+          "id": "u12l5q7",
+          "prompt": "Selling all your investments in a panic every time a scary headline appears is a proven path to wealth.",
+          "answer": false,
+          "explanation": "Panic-selling usually means selling low. Long-term investors who stay the course tend to do far better."
+        }
+      ]
+    }
+  ],
+  "finalTest": {
+    "id": "unit12-final",
+    "title": "Macro Economics II: Final Test",
+    "icon": "trophy.fill",
+    "xp": 50,
+    "questions": [
+      {
+        "type": "mc",
+        "id": "u12fq1",
+        "prompt": "The Federal Reserve's dual mandate is to pursue...",
+        "choices": [
+          "Stable prices and maximum employment",
+          "Higher taxes and lower spending",
+          "A strong dollar and more exports",
+          "Balanced government budgets"
+        ],
+        "correct": 0,
+        "explanation": "The Fed's two jobs are keeping prices stable and employment high."
+      },
+      {
+        "type": "tf",
+        "id": "u12fq2",
+        "prompt": "Monetary policy (interest rates) is run by the Fed, while fiscal policy (spending and taxes) is run by the government.",
+        "answer": true,
+        "explanation": "The Fed handles rates and the money supply; Congress handles taxes and spending. Two different toolkits."
+      },
+      {
+        "type": "mc",
+        "id": "u12fq3",
+        "prompt": "To fight high inflation, the Fed will most likely...",
+        "choices": [
+          "Raise interest rates",
+          "Cut interest rates to zero",
+          "Lower income taxes",
+          "Mail out stimulus checks"
+        ],
+        "correct": 0,
+        "explanation": "Raising rates cools spending and demand, which helps bring inflation down."
+      },
+      {
+        "type": "match",
+        "id": "u12fq4",
+        "prompt": "Match each policy tool to who controls it.",
+        "pairs": [
+          [
+            "Federal funds rate",
+            "The Federal Reserve"
+          ],
+          [
+            "Income tax rates",
+            "Congress"
+          ],
+          [
+            "Government stimulus checks",
+            "Congress"
+          ],
+          [
+            "The money supply",
+            "The Federal Reserve"
+          ]
+        ],
+        "explanation": "Rates and the money supply are the Fed's; taxes and stimulus are Congress's."
+      },
+      {
+        "type": "num",
+        "id": "u12fq5",
+        "prompt": "A government spends $5 trillion and collects $4.2 trillion in taxes. What is its deficit? (Answer in trillions.)",
+        "answer": 0.8,
+        "tolerance": 0,
+        "suffix": " trillion",
+        "explanation": "$5 trillion minus $4.2 trillion equals a $0.8 trillion deficit."
+      },
+      {
+        "type": "cat",
+        "id": "u12fq6",
+        "prompt": "Sort each action into fiscal or monetary policy.",
+        "categories": [
+          "Fiscal Policy",
+          "Monetary Policy"
+        ],
+        "items": [
+          [
+            "Raising the federal funds rate",
+            "Monetary Policy"
+          ],
+          [
+            "Cutting income taxes",
+            "Fiscal Policy"
+          ],
+          [
+            "Government infrastructure spending",
+            "Fiscal Policy"
+          ],
+          [
+            "Adjusting the money supply",
+            "Monetary Policy"
+          ]
+        ],
+        "explanation": "Rates and money supply are monetary; taxes and spending are fiscal."
+      },
+      {
+        "type": "mc",
+        "id": "u12fq7",
+        "prompt": "A 'weak dollar' tends to help...",
+        "choices": [
+          "U.S. exporters selling goods abroad",
+          "American tourists shopping in Europe",
+          "Americans buying cheap imports",
+          "No one at all"
+        ],
+        "correct": 0,
+        "explanation": "A weak dollar makes U.S. goods cheaper for foreign buyers, which helps exporters."
+      },
+      {
+        "type": "num",
+        "id": "u12fq8",
+        "prompt": "1 U.S. dollar = 0.80 British pounds. How many pounds do you get for $200?",
+        "answer": 160,
+        "tolerance": 0,
+        "suffix": " pounds",
+        "explanation": "$200 times 0.80 pounds per dollar equals 160 pounds."
+      },
+      {
+        "type": "ms",
+        "id": "u12fq9",
+        "prompt": "Which are smart moves when scary economic headlines appear? (Choose all that apply.)",
+        "choices": [
+          "Keep an emergency fund of 3-6 months' expenses",
+          "Check the real data behind the headline",
+          "Stick to your long-term plan",
+          "Panic-sell all your investments immediately"
+        ],
+        "correct": [
+          0,
+          1,
+          2
+        ],
+        "explanation": "A cushion, real data, and a steady plan beat panic-selling on a headline every time."
+      },
+      {
+        "type": "order",
+        "id": "u12fq10",
+        "prompt": "Put these in order: how a Fed rate CUT is meant to heat up a slow economy.",
+        "items": [
+          "The Fed lowers its key interest rate",
+          "Borrowing becomes cheaper",
+          "People and businesses spend and invest more",
+          "Economic activity picks up"
+        ],
+        "explanation": "A cut lowers borrowing costs, which lifts spending and investment, which revives growth."
+      }
+    ]
+  }
+}

@@ -1,0 +1,666 @@
+{
+  "constName": "quantCorner",
+  "id": "unit11",
+  "title": "Unit 12: Quant Corner",
+  "subtitle": "Probability, data, and the math of markets",
+  "colorHex": "3D5A80",
+  "lessons": [
+    {
+      "id": "unit11-lesson1",
+      "title": "Probability & Expected Value",
+      "icon": "die.face.5.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u11l1q1",
+          "prompt": "What does 'expected value' (EV) mean?",
+          "choices": [
+            "The long-run average outcome, found by adding each outcome times its probability",
+            "The result you personally hope will happen",
+            "The single biggest amount you could win",
+            "A payout you are guaranteed to receive"
+          ],
+          "correct": 0,
+          "explanation": "EV is the probability-weighted average of every outcome, so it tells you what a bet is worth over many tries, not on any one try."
+        },
+        {
+          "type": "num",
+          "id": "u11l1q2",
+          "prompt": "A game gives a 30% chance to win $10 and a 70% chance to win nothing. What is its expected value, in dollars?",
+          "answer": 3,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "(0.30 x $10) + (0.70 x $0) = $3. On average each play is worth $3, even though most plays win $0."
+        },
+        {
+          "type": "tf",
+          "id": "u11l1q3",
+          "prompt": "A bet can have positive expected value and still lose on any single try.",
+          "answer": true,
+          "explanation": "Positive EV means it pays off on average over many tries, but luck still decides a single outcome."
+        },
+        {
+          "type": "mc",
+          "id": "u11l1q4",
+          "prompt": "Why do casinos reliably make money over time?",
+          "choices": [
+            "Every game is tilted slightly in the house's favor, and that tiny edge repeats over millions of bets",
+            "They cheat at every single table",
+            "Players always run out of luck at midnight",
+            "They don't actually profit; casinos usually lose"
+          ],
+          "correct": 0,
+          "explanation": "A small 'house edge' per bet, multiplied by a huge number of bets, turns into steady profit. Edge plus repetition wins."
+        },
+        {
+          "type": "cat",
+          "id": "u11l1q5",
+          "prompt": "Sort each bet into positive or negative expected value.",
+          "categories": [
+            "Positive EV",
+            "Negative EV"
+          ],
+          "items": [
+            [
+              "Costs $1; 50% chance to win $5",
+              "Positive EV"
+            ],
+            [
+              "A lottery that returns 60 cents on average per $1 ticket",
+              "Negative EV"
+            ],
+            [
+              "Costs $2; 50% chance to win $3",
+              "Negative EV"
+            ],
+            [
+              "Costs $5; 25% chance to win $30",
+              "Positive EV"
+            ]
+          ],
+          "explanation": "Compare the average payout to the cost: $1 for a $2.50 average is positive, but $2 for a $1.50 average is negative. Most lottery tickets are negative EV."
+        },
+        {
+          "type": "ms",
+          "id": "u11l1q6",
+          "prompt": "Which statements about expected value are true? (Choose all that apply.)",
+          "choices": [
+            "It weights each outcome by how likely it is",
+            "A positive-EV bet can still lose on a single try",
+            "It promises you a profit every single time",
+            "Negative-EV bets tend to lose money if repeated many times"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "EV is a long-run average, not a guarantee. Positive EV wins over many tries; negative EV bleeds money over many tries."
+        },
+        {
+          "type": "tf",
+          "id": "u11l1q7",
+          "prompt": "The house edge is the reason that, over enough spins, the casino comes out ahead of the player.",
+          "answer": true,
+          "explanation": "Each game keeps a little more than it pays back, so the more you play, the more that edge grows in the house's favor."
+        }
+      ]
+    },
+    {
+      "id": "unit11-lesson2",
+      "title": "Reading the Data",
+      "icon": "chart.bar.xaxis",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u11l2q1",
+          "prompt": "What is 'backtesting'?",
+          "choices": [
+            "Checking how a strategy would have performed on historical data before risking real money",
+            "Testing your posture while you trade",
+            "Selling stocks you bought last week",
+            "Reviewing your monthly bank statement"
+          ],
+          "correct": 0,
+          "explanation": "Quants replay history to ask 'would this rule have worked?' It is a cheap way to throw out bad ideas before betting real cash."
+        },
+        {
+          "type": "tf",
+          "id": "u11l2q2",
+          "prompt": "A strategy that made money in the past is guaranteed to make money in the future.",
+          "answer": false,
+          "explanation": "Markets change and patterns fade once everyone spots them. Past performance never guarantees future results."
+        },
+        {
+          "type": "mc",
+          "id": "u11l2q3",
+          "prompt": "Your friend's one stock pick doubled. What would a quant say about copying them?",
+          "choices": [
+            "One result is far too small a sample; luck and skill look identical after a single trade",
+            "One win proves they are a genius",
+            "Always copy whoever won most recently",
+            "Sample size never matters"
+          ],
+          "correct": 0,
+          "explanation": "Flip enough coins and someone gets five heads in a row. You need many results to tell real skill from a lucky streak."
+        },
+        {
+          "type": "mc",
+          "id": "u11l2q4",
+          "prompt": "Ice cream sales and sunburns both rise every summer. What does this show?",
+          "choices": [
+            "Correlation isn't causation; a third factor (hot, sunny weather) drives both",
+            "Ice cream causes sunburn",
+            "Sunburn makes people crave ice cream",
+            "The data must be wrong"
+          ],
+          "correct": 0,
+          "explanation": "Two things moving together doesn't mean one causes the other. A hidden third cause is a classic trap in market data too."
+        },
+        {
+          "type": "match",
+          "id": "u11l2q5",
+          "prompt": "Match each data idea to its meaning.",
+          "pairs": [
+            [
+              "Backtest",
+              "Testing a rule on past data"
+            ],
+            [
+              "Sample size",
+              "How many data points you have"
+            ],
+            [
+              "Correlation",
+              "Two things moving together"
+            ],
+            [
+              "Overfitting",
+              "A rule tuned so tightly to old data it fails on new data"
+            ]
+          ],
+          "explanation": "These four ideas are the backbone of thinking with data instead of gut feelings."
+        },
+        {
+          "type": "num",
+          "id": "u11l2q6",
+          "prompt": "You flip a fair coin 10 times. How many heads would you EXPECT on average? (Whole number.)",
+          "answer": 5,
+          "tolerance": 0,
+          "explanation": "Expected heads = 10 flips x 50% = 5. Any single run of 10 flips can differ, but 5 is the long-run average."
+        },
+        {
+          "type": "order",
+          "id": "u11l2q7",
+          "prompt": "Order these sample sizes from LEAST to MOST trustworthy for spotting a real pattern.",
+          "items": [
+            "1 coin flip",
+            "10 coin flips",
+            "100 coin flips",
+            "10,000 coin flips"
+          ],
+          "explanation": "The bigger the sample, the more luck averages out and the clearer any real pattern becomes."
+        }
+      ]
+    },
+    {
+      "id": "unit11-lesson3",
+      "title": "Charts & Trends",
+      "icon": "chart.xyaxis.line",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u11l3q1",
+          "prompt": "What is a 'trend' on a price chart?",
+          "choices": [
+            "The general direction prices are moving over time: up, down, or sideways",
+            "The exact price at this second",
+            "A guarantee of tomorrow's price",
+            "The number of shares traded today"
+          ],
+          "correct": 0,
+          "explanation": "A trend is the overall drift of prices across many days, not any single day's move."
+        },
+        {
+          "type": "mc",
+          "id": "u11l3q2",
+          "prompt": "What is a 'moving average'?",
+          "choices": [
+            "The average price over a recent window that slides forward, smoothing out day-to-day jumps",
+            "The fastest price change of the day",
+            "The all-time highest price of a stock",
+            "A fee charged for each trade"
+          ],
+          "correct": 0,
+          "explanation": "It averages the last few prices and updates each day, drawing a smoother line that makes the trend easier to see."
+        },
+        {
+          "type": "tf",
+          "id": "u11l3q3",
+          "prompt": "A moving average smooths out short-term noise to make the underlying trend easier to see.",
+          "answer": true,
+          "explanation": "By averaging recent prices, it flattens random wiggles so the bigger direction stands out."
+        },
+        {
+          "type": "num",
+          "id": "u11l3q4",
+          "prompt": "The last 3 closing prices were $8, $10, and $12. What is the 3-day moving average, in dollars?",
+          "answer": 10,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "($8 + $10 + $12) / 3 = $30 / 3 = $10. You add the recent prices and divide by how many there are."
+        },
+        {
+          "type": "match",
+          "id": "u11l3q5",
+          "prompt": "Match each chart term to what it means.",
+          "pairs": [
+            [
+              "Signal",
+              "The real underlying trend"
+            ],
+            [
+              "Noise",
+              "Random day-to-day wiggles"
+            ],
+            [
+              "Uptrend",
+              "Prices generally rising over time"
+            ],
+            [
+              "Moving average",
+              "A smoothed line of recent prices"
+            ]
+          ],
+          "explanation": "Reading charts is mostly about separating the signal (the trend) from the noise (the random jitter)."
+        },
+        {
+          "type": "order",
+          "id": "u11l3q6",
+          "prompt": "Order these time frames from shortest to longest.",
+          "items": [
+            "One minute",
+            "One hour",
+            "One day",
+            "One month"
+          ],
+          "explanation": "Zooming out from minutes to months is how analysts tell short-term noise apart from the long-term trend."
+        },
+        {
+          "type": "ms",
+          "id": "u11l3q7",
+          "prompt": "Which statements about reading charts are true? (Choose all that apply.)",
+          "choices": [
+            "A moving average lags a bit because it is built from past prices",
+            "Short-term price wiggles are often just noise",
+            "A chart pattern guarantees what happens next",
+            "Longer time frames help reveal the bigger trend"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Charts describe the past and hint at direction, but no pattern can promise the future."
+        }
+      ]
+    },
+    {
+      "id": "unit11-lesson4",
+      "title": "Risk, Reward & Position Sizing",
+      "icon": "scalemass.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u11l4q1",
+          "prompt": "Why should you never put all your money into one trade?",
+          "choices": [
+            "A single loss could wipe you out, and you can't recover from zero",
+            "One trade is always illegal",
+            "It makes your taxes higher",
+            "Brokers ban large trades"
+          ],
+          "correct": 0,
+          "explanation": "If everything rides on one bet and it fails, you have nothing left to bounce back with. Surviving losses is rule one."
+        },
+        {
+          "type": "mc",
+          "id": "u11l4q2",
+          "prompt": "What is diversification?",
+          "choices": [
+            "Spreading money across many different investments so one loss can't sink you",
+            "Buying as much of one hot stock as possible",
+            "Keeping all your cash under a mattress",
+            "Trading only on Fridays"
+          ],
+          "correct": 0,
+          "explanation": "When your money is spread out, a single bad investment is only a small dent, not a disaster."
+        },
+        {
+          "type": "tf",
+          "id": "u11l4q3",
+          "prompt": "Position sizing means deciding how much money to put into a single trade.",
+          "answer": true,
+          "explanation": "Choosing the size of each bet is how you control how much a loss can hurt you."
+        },
+        {
+          "type": "num",
+          "id": "u11l4q4",
+          "prompt": "You have $1,000 and follow a rule to risk at most 2% on any single trade. What is the most you'd risk, in dollars?",
+          "answer": 20,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "2% of $1,000 = $20. Keeping each risk tiny means a losing streak can't blow up your whole account."
+        },
+        {
+          "type": "tf",
+          "id": "u11l4q5",
+          "prompt": "After a 50% loss, you need a 100% gain just to get back to where you started.",
+          "answer": true,
+          "explanation": "Drop from $100 to $50, and you must double that $50 back to $100, which is a 100% gain. Losses hurt more than they look."
+        },
+        {
+          "type": "cat",
+          "id": "u11l4q6",
+          "prompt": "Sort each action into whether it manages or increases your risk.",
+          "categories": [
+            "Manages risk",
+            "Increases risk"
+          ],
+          "items": [
+            [
+              "Putting your entire savings into one stock",
+              "Increases risk"
+            ],
+            [
+              "Spreading money across many companies",
+              "Manages risk"
+            ],
+            [
+              "Risking only a small percent per trade",
+              "Manages risk"
+            ],
+            [
+              "Borrowing money to bet bigger (leverage)",
+              "Increases risk"
+            ],
+            [
+              "Keeping some cash on the sidelines",
+              "Manages risk"
+            ]
+          ],
+          "explanation": "Diversifying, sizing small, and holding cash cushion you; concentrating everything or using borrowed money amplifies the danger."
+        },
+        {
+          "type": "ms",
+          "id": "u11l4q7",
+          "prompt": "Which are smart risk and position-sizing rules? (Choose all that apply.)",
+          "choices": [
+            "Never put all your money in one bet",
+            "Diversify across different investments",
+            "Size trades so a losing streak won't ruin you",
+            "Bet bigger after every loss to win it back"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Doubling down to chase losses is how people blow up accounts. Staying diversified and sized to survive is the pro move."
+        }
+      ]
+    },
+    {
+      "id": "unit11-lesson5",
+      "title": "Meet the Quants",
+      "icon": "function",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u11l5q1",
+          "prompt": "What is a 'quant'?",
+          "choices": [
+            "Someone who uses math, statistics, and code to find and trade patterns in markets",
+            "A person who only trades gold coins",
+            "A banker who never touches computers",
+            "A news reporter who covers stocks"
+          ],
+          "correct": 0,
+          "explanation": "Short for 'quantitative analyst', a quant turns market ideas into numbers, models, and code."
+        },
+        {
+          "type": "mc",
+          "id": "u11l5q2",
+          "prompt": "What is high-frequency trading (HFT)?",
+          "choices": [
+            "Computers making huge numbers of trades in fractions of a second",
+            "Trading once a year on your birthday",
+            "Buying a stock and holding it for decades",
+            "Trading only during lunch"
+          ],
+          "correct": 0,
+          "explanation": "HFT firms use fast computers and code to place enormous numbers of tiny, split-second trades."
+        },
+        {
+          "type": "tf",
+          "id": "u11l5q3",
+          "prompt": "Math and models can reduce and manage risk, but they can never delete it completely.",
+          "answer": true,
+          "explanation": "Even the best model is a simplification of a messy world, so surprises still happen. Risk is managed, never erased."
+        },
+        {
+          "type": "order",
+          "id": "u11l5q4",
+          "prompt": "Order how a quant typically builds a strategy.",
+          "items": [
+            "Form an idea about the market",
+            "Turn it into a testable rule",
+            "Backtest it on historical data",
+            "Risk a small amount of real money"
+          ],
+          "explanation": "Idea, rule, backtest, then a small live test: that careful loop is how quants avoid betting big on a hunch."
+        },
+        {
+          "type": "match",
+          "id": "u11l5q5",
+          "prompt": "Match each quant tool or term to what it does.",
+          "pairs": [
+            [
+              "Algorithm",
+              "A set of rules a computer follows to trade"
+            ],
+            [
+              "Backtest",
+              "Checking a strategy against past data"
+            ],
+            [
+              "Diversification",
+              "Spreading risk across many bets"
+            ],
+            [
+              "Model",
+              "A math simplification of how something works"
+            ]
+          ],
+          "explanation": "Quants combine these tools to test ideas and control risk instead of guessing."
+        },
+        {
+          "type": "ms",
+          "id": "u11l5q6",
+          "prompt": "What do quants actually rely on? (Choose all that apply.)",
+          "choices": [
+            "Probability and statistics",
+            "Computer code and algorithms",
+            "A crystal ball that predicts prices perfectly",
+            "Careful risk management"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Quants lean on math, code, and risk control. Nobody, quant or not, can predict prices perfectly."
+        },
+        {
+          "type": "tf",
+          "id": "u11l5q7",
+          "prompt": "Because models can be wrong, quants still use risk limits and position sizing to survive surprises.",
+          "answer": true,
+          "explanation": "Smart quants assume they'll be wrong sometimes, so they size bets to live through the losses."
+        }
+      ]
+    }
+  ],
+  "finalTest": {
+    "id": "unit11-final",
+    "title": "Quant Corner: Final Test",
+    "icon": "trophy.fill",
+    "xp": 50,
+    "questions": [
+      {
+        "type": "mc",
+        "id": "u11fq1",
+        "prompt": "Which best defines expected value?",
+        "choices": [
+          "The probability-weighted average of all possible outcomes",
+          "The most money you could possibly win",
+          "The result you are hoping for",
+          "A guaranteed profit"
+        ],
+        "correct": 0,
+        "explanation": "EV weights each outcome by its odds, giving the long-run average of a bet, not a promise about any single try."
+      },
+      {
+        "type": "num",
+        "id": "u11fq2",
+        "prompt": "A bet has a 40% chance to win $20 and a 60% chance to win nothing. What is its expected value, in dollars?",
+        "answer": 8,
+        "tolerance": 0,
+        "prefix": "$",
+        "explanation": "(0.40 x $20) + (0.60 x $0) = $8. That's the average value per play over many tries."
+      },
+      {
+        "type": "tf",
+        "id": "u11fq3",
+        "prompt": "If two things are correlated, it proves that one of them causes the other.",
+        "answer": false,
+        "explanation": "Correlation is not causation; a hidden third factor can drive both, so they move together without one causing the other."
+      },
+      {
+        "type": "mc",
+        "id": "u11fq4",
+        "prompt": "Why do casinos profit in the long run?",
+        "choices": [
+          "A small house edge repeated over millions of bets",
+          "They win every single hand",
+          "They only let unlucky people play",
+          "Luck always favors the house at night"
+        ],
+        "correct": 0,
+        "explanation": "A tiny built-in edge per bet, multiplied across a mountain of bets, becomes reliable profit."
+      },
+      {
+        "type": "num",
+        "id": "u11fq5",
+        "prompt": "The last 5 closing prices were $10, $12, $14, $16, and $18. What is the 5-day moving average, in dollars?",
+        "answer": 14,
+        "tolerance": 0,
+        "prefix": "$",
+        "explanation": "($10 + $12 + $14 + $16 + $18) / 5 = $70 / 5 = $14. Add the recent prices and divide by how many there are."
+      },
+      {
+        "type": "ms",
+        "id": "u11fq6",
+        "prompt": "Which are good risk-management habits? (Choose all that apply.)",
+        "choices": [
+          "Diversify across many investments",
+          "Risk only a small percent on any single trade",
+          "Put all your money in one hot stock",
+          "Size positions so a losing streak won't ruin you"
+        ],
+        "correct": [
+          0,
+          1,
+          3
+        ],
+        "explanation": "Spreading out, sizing small, and surviving losing streaks keep you in the game; betting everything on one pick does not."
+      },
+      {
+        "type": "match",
+        "id": "u11fq7",
+        "prompt": "Match each term to its meaning.",
+        "pairs": [
+          [
+            "Backtesting",
+            "Testing a strategy on past data"
+          ],
+          [
+            "Moving average",
+            "A smoothed line of recent prices"
+          ],
+          [
+            "House edge",
+            "A built-in advantage for the casino"
+          ],
+          [
+            "Diversification",
+            "Spreading risk across many bets"
+          ]
+        ],
+        "explanation": "These are the core ideas of the whole unit: test with data, smooth the noise, respect the edge, and spread your risk."
+      },
+      {
+        "type": "cat",
+        "id": "u11fq8",
+        "prompt": "Sort each into signal or noise.",
+        "categories": [
+          "Signal",
+          "Noise"
+        ],
+        "items": [
+          [
+            "A steady year-long upward trend",
+            "Signal"
+          ],
+          [
+            "A random one-minute price wiggle",
+            "Noise"
+          ],
+          [
+            "A clear multi-month climb",
+            "Signal"
+          ],
+          [
+            "A single odd tick that instantly reverses",
+            "Noise"
+          ]
+        ],
+        "explanation": "Signal is the real, lasting trend; noise is the random short-term jitter that a moving average smooths away."
+      },
+      {
+        "type": "order",
+        "id": "u11fq9",
+        "prompt": "Order how a quant builds a strategy, first to last.",
+        "items": [
+          "Form an idea about the market",
+          "Write it as a testable rule",
+          "Backtest it on historical data",
+          "Try it with a small real position"
+        ],
+        "explanation": "Idea, rule, backtest, then a small live test: a disciplined loop that beats trading on a hunch."
+      },
+      {
+        "type": "tf",
+        "id": "u11fq10",
+        "prompt": "A 50% loss requires a 100% gain just to break even.",
+        "answer": true,
+        "explanation": "Falling from $100 to $50 means you must double that $50 back to $100, a 100% gain, which is why avoiding big losses matters so much."
+      }
+    ]
+  }
+}

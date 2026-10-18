@@ -1,0 +1,677 @@
+{
+  "constName": "paychecksAndTaxes",
+  "id": "unit7",
+  "title": "Unit 7: Paychecks & Taxes",
+  "subtitle": "Where your money goes before you see it",
+  "colorHex": "00B4D8",
+  "lessons": [
+    {
+      "id": "unit7-lesson1",
+      "title": "Reading a Paycheck",
+      "icon": "banknote.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u7l1q1",
+          "prompt": "What does 'gross pay' mean on a paycheck?",
+          "choices": [
+            "Your total earnings before any deductions",
+            "The money you actually take home",
+            "The tax you owe the government",
+            "Your yearly bonus"
+          ],
+          "correct": 0,
+          "explanation": "Gross pay is everything you earned before taxes and other deductions are taken out. It's always the bigger number."
+        },
+        {
+          "type": "tf",
+          "id": "u7l1q2",
+          "prompt": "When deductions come out of your pay, your net (take-home) pay is smaller than your gross pay.",
+          "answer": true,
+          "explanation": "Net pay is what's left after taxes and deductions, so it's the smaller amount that lands in your bank account."
+        },
+        {
+          "type": "num",
+          "id": "u7l1q3",
+          "prompt": "Your gross pay is $1,000 and total deductions are $250. What is your net (take-home) pay?",
+          "answer": 750,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "$1,000 gross minus $250 in deductions leaves $750 of take-home pay."
+        },
+        {
+          "type": "match",
+          "id": "u7l1q4",
+          "prompt": "Match each paycheck term to its meaning.",
+          "pairs": [
+            [
+              "Gross pay",
+              "Earnings before deductions"
+            ],
+            [
+              "Net pay",
+              "Take-home after deductions"
+            ],
+            [
+              "Deduction",
+              "Money withheld from your pay"
+            ],
+            [
+              "W-4",
+              "Form telling your employer how much tax to withhold"
+            ]
+          ],
+          "explanation": "Gross is before, net is after, deductions are what's taken out, and the W-4 sets how much tax gets withheld."
+        },
+        {
+          "type": "ms",
+          "id": "u7l1q5",
+          "prompt": "Which of these are common deductions taken out of a paycheck? (Choose all that apply.)",
+          "choices": [
+            "Federal income tax",
+            "Social Security & Medicare (FICA)",
+            "Your weekly grocery bill",
+            "Health insurance premium"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Taxes, FICA, and benefits like health insurance come straight out of your pay. Your grocery bill is spending you handle yourself."
+        },
+        {
+          "type": "mc",
+          "id": "u7l1q6",
+          "prompt": "What is a W-4 form used for?",
+          "choices": [
+            "Telling your employer how much federal tax to withhold from each paycheck",
+            "Applying for a credit card",
+            "Opening a savings account",
+            "Filing for unemployment"
+          ],
+          "correct": 0,
+          "explanation": "You fill out a W-4 when you start a job so your employer knows how much tax to hold back from each check."
+        },
+        {
+          "type": "order",
+          "id": "u7l1q7",
+          "prompt": "Put these steps in order, from earning money to getting paid.",
+          "items": [
+            "Employer calculates your gross pay",
+            "Taxes are withheld",
+            "Other deductions come out",
+            "You receive your net pay by direct deposit"
+          ],
+          "explanation": "You earn gross pay, taxes and deductions are subtracted, and what's left is deposited as your net pay."
+        }
+      ]
+    },
+    {
+      "id": "unit7-lesson2",
+      "title": "How Income Tax Works",
+      "icon": "percent",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u7l2q1",
+          "prompt": "What is your 'marginal tax rate'?",
+          "choices": [
+            "The rate applied to your last (highest) dollar of income",
+            "The rate applied to every dollar you earn",
+            "A tax only businesses pay",
+            "A flat 10% on all income"
+          ],
+          "correct": 0,
+          "explanation": "Your marginal rate is the rate on the top slice of your income, not on all of it. Different chunks of income get taxed at different rates."
+        },
+        {
+          "type": "tf",
+          "id": "u7l2q2",
+          "prompt": "Moving into a higher tax bracket means your entire income is suddenly taxed at that higher rate.",
+          "answer": false,
+          "explanation": "This is the classic 'raise myth.' Only the income above the bracket's threshold is taxed at the higher rate, so a raise always leaves you with more money."
+        },
+        {
+          "type": "tf",
+          "id": "u7l2q3",
+          "prompt": "A tax refund happens when you overpaid taxes during the year and the government returns the extra.",
+          "answer": true,
+          "explanation": "A refund isn't a bonus. It's your own money coming back because too much was withheld from your paychecks."
+        },
+        {
+          "type": "num",
+          "id": "u7l2q4",
+          "prompt": "Say the first $10,000 you earn is taxed at 10%, and income above $10,000 is taxed at 20%. If you earn $30,000, how much tax do you owe in dollars?",
+          "answer": 5000,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "10% of the first $10,000 is $1,000, and 20% of the remaining $20,000 is $4,000, for a total of $5,000."
+        },
+        {
+          "type": "mc",
+          "id": "u7l2q5",
+          "prompt": "You get a raise that pushes part of your income into a higher bracket. What happens to your take-home pay?",
+          "choices": [
+            "Only the portion above the threshold is taxed higher, so you still take home more overall",
+            "Your whole paycheck shrinks because you're now 'in' the higher bracket",
+            "You take home exactly the same as before",
+            "You now owe tax on money you earned in past years"
+          ],
+          "correct": 0,
+          "explanation": "Brackets are marginal, so a raise always increases your take-home pay. Turning down a raise to 'avoid taxes' never makes sense."
+        },
+        {
+          "type": "match",
+          "id": "u7l2q6",
+          "prompt": "Match each tax term to its meaning.",
+          "pairs": [
+            [
+              "Tax bracket",
+              "An income range taxed at a set rate"
+            ],
+            [
+              "Marginal rate",
+              "The rate on your last dollar earned"
+            ],
+            [
+              "Effective rate",
+              "Your average rate across all income"
+            ],
+            [
+              "Refund",
+              "Money back when you overpaid taxes"
+            ]
+          ],
+          "explanation": "Brackets set the ranges, the marginal rate hits your top dollar, the effective rate is your overall average, and a refund returns any overpayment."
+        },
+        {
+          "type": "tf",
+          "id": "u7l2q7",
+          "prompt": "Your effective (average) tax rate is usually lower than your top marginal rate.",
+          "answer": true,
+          "explanation": "Because your lower income slices are taxed at lower rates, the average you actually pay comes out below your highest bracket rate."
+        }
+      ]
+    },
+    {
+      "id": "unit7-lesson3",
+      "title": "Types of Taxes",
+      "icon": "building.columns.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "cat",
+          "id": "u7l3q1",
+          "prompt": "Sort each example into the type of tax it describes.",
+          "categories": [
+            "Income tax",
+            "Sales tax",
+            "Property tax"
+          ],
+          "items": [
+            [
+              "Tax on the money you earn at your job",
+              "Income tax"
+            ],
+            [
+              "Extra amount added at the register when you buy something",
+              "Sales tax"
+            ],
+            [
+              "Yearly tax based on the value of a home you own",
+              "Property tax"
+            ],
+            [
+              "The 8% added to the price of new sneakers",
+              "Sales tax"
+            ],
+            [
+              "Tax homeowners pay that helps fund local schools",
+              "Property tax"
+            ]
+          ],
+          "explanation": "Income tax hits your earnings, sales tax is added to purchases, and property tax is based on real estate you own."
+        },
+        {
+          "type": "mc",
+          "id": "u7l3q2",
+          "prompt": "What are payroll taxes (FICA) used for?",
+          "choices": [
+            "Funding Social Security and Medicare",
+            "Paying for your local library only",
+            "Covering your health insurance directly",
+            "Repaying your student loans"
+          ],
+          "correct": 0,
+          "explanation": "FICA taxes come out of your wages to fund Social Security and Medicare, programs that support retirees and people needing care."
+        },
+        {
+          "type": "tf",
+          "id": "u7l3q3",
+          "prompt": "Sales tax is a percentage added to the price of many goods and services when you buy them.",
+          "answer": true,
+          "explanation": "You pay sales tax at checkout, so a listed price often costs a bit more once tax is added on."
+        },
+        {
+          "type": "match",
+          "id": "u7l3q4",
+          "prompt": "Match each tax to what it's based on or funds.",
+          "pairs": [
+            [
+              "Sales tax",
+              "Charged at checkout on purchases"
+            ],
+            [
+              "Property tax",
+              "Based on real estate value, funds local services"
+            ],
+            [
+              "Payroll tax (FICA)",
+              "Funds Social Security & Medicare"
+            ],
+            [
+              "Income tax",
+              "Based on what you earn"
+            ]
+          ],
+          "explanation": "Each tax has a different trigger: buying, owning property, earning wages, or earning income overall."
+        },
+        {
+          "type": "ms",
+          "id": "u7l3q5",
+          "prompt": "Which taxes would a teen with a part-time job and no house realistically pay? (Choose all that apply.)",
+          "choices": [
+            "Payroll tax (FICA) from their paycheck",
+            "Sales tax when they buy things",
+            "State income tax in states that charge it",
+            "Property tax on a house they don't own"
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "FICA comes out of every paycheck, sales tax hits purchases, and many states tax wages too. Property tax only applies to real estate you own."
+        },
+        {
+          "type": "num",
+          "id": "u7l3q6",
+          "prompt": "You buy a $50 item in a place with 8% sales tax. How much sales tax do you pay in dollars?",
+          "answer": 4,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "8% of $50 is $4, so the total at the register would be $54."
+        },
+        {
+          "type": "mc",
+          "id": "u7l3q7",
+          "prompt": "Property tax is mainly based on what?",
+          "choices": [
+            "The assessed value of real estate you own, like a house or land",
+            "How much you spend at stores each year",
+            "The number of hours you work",
+            "Your streaming subscriptions"
+          ],
+          "correct": 0,
+          "explanation": "Property tax is tied to the value of real estate you own, and it usually helps pay for local services like schools and roads."
+        }
+      ]
+    },
+    {
+      "id": "unit7-lesson4",
+      "title": "Retirement Accounts 101",
+      "icon": "chart.line.uptrend.xyaxis",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u7l4q1",
+          "prompt": "What is a 401(k)?",
+          "choices": [
+            "A retirement account offered through your employer, often funded straight from your paycheck",
+            "A type of checking account for daily spending",
+            "A short-term loan from your boss",
+            "A government tax form"
+          ],
+          "correct": 0,
+          "explanation": "A 401(k) is an employer-sponsored retirement account. Money can go in automatically from your paycheck, often before taxes."
+        },
+        {
+          "type": "tf",
+          "id": "u7l4q2",
+          "prompt": "An employer 401(k) match is basically free money your employer adds when you contribute.",
+          "answer": true,
+          "explanation": "If your employer matches your contributions, that's extra money added to your retirement savings just for participating. Not grabbing it leaves free money on the table."
+        },
+        {
+          "type": "num",
+          "id": "u7l4q3",
+          "prompt": "You contribute $2,000 to your 401(k) and your employer matches 50% of your contributions. How much free money does your employer add in dollars?",
+          "answer": 1000,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "50% of your $2,000 contribution is $1,000 of employer match, bringing your total to $3,000."
+        },
+        {
+          "type": "match",
+          "id": "u7l4q4",
+          "prompt": "Match each retirement term to its meaning.",
+          "pairs": [
+            [
+              "401(k)",
+              "Employer-sponsored retirement account"
+            ],
+            [
+              "Roth IRA",
+              "After-tax money that grows tax-free"
+            ],
+            [
+              "Employer match",
+              "Free money added when you contribute"
+            ],
+            [
+              "Compound growth",
+              "Earnings that go on to earn more"
+            ]
+          ],
+          "explanation": "A 401(k) comes from your job, a Roth IRA gives tax-free withdrawals later, the match is free money, and compounding grows your money over time."
+        },
+        {
+          "type": "mc",
+          "id": "u7l4q5",
+          "prompt": "What's a key perk of a Roth IRA?",
+          "choices": [
+            "You pay taxes now, but qualified withdrawals in retirement are tax-free",
+            "You never pay any taxes ever on any account",
+            "Your employer is required to fund it for you",
+            "You can withdraw all your earnings with no rules the day you open it"
+          ],
+          "correct": 0,
+          "explanation": "With a Roth IRA you contribute after-tax money, and later your withdrawals (including all the growth) can come out tax-free."
+        },
+        {
+          "type": "ms",
+          "id": "u7l4q6",
+          "prompt": "Which statements about tax-advantaged retirement accounts are true? (Choose all that apply.)",
+          "choices": [
+            "They let your money grow with tax benefits",
+            "An employer match adds free money",
+            "You should skip the match to keep more cash today",
+            "Starting young gives compounding more time to work"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Tax perks, employer matches, and an early start all help. Skipping the match throws away free money."
+        },
+        {
+          "type": "tf",
+          "id": "u7l4q7",
+          "prompt": "Thanks to compound growth, starting to invest at 22 instead of 32 can build a much bigger nest egg, even with the same monthly contribution.",
+          "answer": true,
+          "explanation": "Those extra years let your earnings pile up and earn even more, so time is one of your biggest advantages when investing."
+        }
+      ]
+    },
+    {
+      "id": "unit7-lesson5",
+      "title": "Your First Job Money Moves",
+      "icon": "briefcase.fill",
+      "xp": 20,
+      "questions": [
+        {
+          "type": "mc",
+          "id": "u7l5q1",
+          "prompt": "What does 'pay yourself first' mean?",
+          "choices": [
+            "Set aside savings or investing money before you spend on anything else",
+            "Buy yourself a treat every payday before paying bills",
+            "Pay your rent before your savings",
+            "Give yourself a raise whenever you want"
+          ],
+          "correct": 0,
+          "explanation": "Paying yourself first means saving off the top of each paycheck, so saving happens automatically instead of with whatever's left over."
+        },
+        {
+          "type": "tf",
+          "id": "u7l5q2",
+          "prompt": "'Lifestyle inflation' is when your spending rises as fast as your income, so you never really get ahead.",
+          "answer": true,
+          "explanation": "Also called lifestyle creep, it's why some people earn more but never save more. Keeping spending steady as income grows is how you build wealth."
+        },
+        {
+          "type": "mc",
+          "id": "u7l5q3",
+          "prompt": "How can splitting your direct deposit help you save?",
+          "choices": [
+            "It automatically sends part of each paycheck to savings before you can spend it",
+            "It makes your paycheck arrive faster",
+            "It lowers your income tax rate",
+            "It doubles your gross pay"
+          ],
+          "correct": 0,
+          "explanation": "A direct deposit split routes some of every paycheck straight into savings, so you save without having to think about it."
+        },
+        {
+          "type": "num",
+          "id": "u7l5q4",
+          "prompt": "You take home $1,500 per paycheck and pay yourself first by saving 20%. How many dollars go to savings?",
+          "answer": 300,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "20% of $1,500 is $300, moved to savings before you spend the rest."
+        },
+        {
+          "type": "order",
+          "id": "u7l5q5",
+          "prompt": "Put these 'pay yourself first' money moves in a smart order.",
+          "items": [
+            "Receive your paycheck by direct deposit",
+            "Automatically move savings out first",
+            "Pay for your needs",
+            "Enjoy what's left on wants"
+          ],
+          "explanation": "Get paid, save off the top, cover essentials, then spend the rest guilt-free."
+        },
+        {
+          "type": "ms",
+          "id": "u7l5q6",
+          "prompt": "Which are smart money moves at your first job? (Choose all that apply.)",
+          "choices": [
+            "Automate savings with a direct deposit split",
+            "Grab the full employer 401(k) match",
+            "Upgrade your lifestyle to match every raise",
+            "Build an emergency fund"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Automating savings, taking the match, and building an emergency fund all set you up. Spending every raise is lifestyle inflation working against you."
+        },
+        {
+          "type": "match",
+          "id": "u7l5q7",
+          "prompt": "Match each money move to what it means.",
+          "pairs": [
+            [
+              "Pay yourself first",
+              "Save before you spend"
+            ],
+            [
+              "Lifestyle inflation",
+              "Spending rises with income"
+            ],
+            [
+              "Direct deposit split",
+              "Paycheck auto-divided into accounts"
+            ],
+            [
+              "Emergency fund",
+              "Cash set aside for surprises"
+            ]
+          ],
+          "explanation": "These habits work together: save first, resist creep, automate the split, and keep a cushion for the unexpected."
+        }
+      ]
+    }
+  ],
+  "finalTest": {
+    "id": "unit7-final",
+    "title": "Paychecks & Taxes: Final Test",
+    "icon": "trophy.fill",
+    "xp": 50,
+    "questions": [
+      {
+        "type": "mc",
+        "id": "u7fq1",
+        "prompt": "Which number on your paycheck is your 'take-home' pay?",
+        "choices": [
+          "Net pay",
+          "Gross pay",
+          "Your marginal rate",
+          "Your bonus"
+        ],
+        "correct": 0,
+        "explanation": "Net pay is what's left after taxes and deductions. It's the money that actually lands in your account."
+      },
+      {
+        "type": "num",
+        "id": "u7fq2",
+        "prompt": "Your gross pay is $1,200 and total deductions are $300. What is your net pay in dollars?",
+        "answer": 900,
+        "tolerance": 0,
+        "prefix": "$",
+        "explanation": "$1,200 gross minus $300 in deductions leaves $900 of take-home pay."
+      },
+      {
+        "type": "tf",
+        "id": "u7fq3",
+        "prompt": "A raise that bumps you into a higher tax bracket taxes your whole income at that higher rate.",
+        "answer": false,
+        "explanation": "Only the income above the bracket threshold is taxed higher. A raise always leaves you with more take-home pay."
+      },
+      {
+        "type": "mc",
+        "id": "u7fq4",
+        "prompt": "Your marginal tax rate is the rate applied to which part of your income?",
+        "choices": [
+          "Your last (highest) dollar earned",
+          "Every single dollar you earn",
+          "Only your savings interest",
+          "The money you spend on rent"
+        ],
+        "correct": 0,
+        "explanation": "The marginal rate hits the top slice of your income, while lower slices are taxed at lower rates."
+      },
+      {
+        "type": "cat",
+        "id": "u7fq5",
+        "prompt": "Sort each example into the type of tax it describes.",
+        "categories": [
+          "Income/Payroll",
+          "Sales",
+          "Property"
+        ],
+        "items": [
+          [
+            "Money withheld from your paycheck",
+            "Income/Payroll"
+          ],
+          [
+            "Extra added at the register",
+            "Sales"
+          ],
+          [
+            "Yearly tax based on a home's value",
+            "Property"
+          ],
+          [
+            "FICA that funds Social Security",
+            "Income/Payroll"
+          ],
+          [
+            "8% added to a $20 shirt",
+            "Sales"
+          ]
+        ],
+        "explanation": "Income and payroll taxes hit earnings, sales tax is added to purchases, and property tax is based on real estate you own."
+      },
+      {
+        "type": "match",
+        "id": "u7fq6",
+        "prompt": "Match each retirement term to its meaning.",
+        "pairs": [
+          [
+            "401(k)",
+            "Employer-sponsored retirement account"
+          ],
+          [
+            "Roth IRA",
+            "After-tax money that grows tax-free"
+          ],
+          [
+            "Employer match",
+            "Free money added when you contribute"
+          ],
+          [
+            "Compound growth",
+            "Earnings that go on to earn more"
+          ]
+        ],
+        "explanation": "A 401(k) comes from work, a Roth IRA offers tax-free withdrawals later, the match is free money, and compounding grows your savings over time."
+      },
+      {
+        "type": "num",
+        "id": "u7fq7",
+        "prompt": "You contribute $3,000 to your 401(k) and your employer matches 50%. How much free money does your employer add in dollars?",
+        "answer": 1500,
+        "tolerance": 0,
+        "prefix": "$",
+        "explanation": "50% of your $3,000 contribution is $1,500 of employer match."
+      },
+      {
+        "type": "ms",
+        "id": "u7fq8",
+        "prompt": "Which are smart moves with your first paycheck? (Choose all that apply.)",
+        "choices": [
+          "Pay yourself first into savings",
+          "Take the full employer 401(k) match",
+          "Let spending rise with every raise",
+          "Automate savings with a direct deposit split"
+        ],
+        "correct": [
+          0,
+          1,
+          3
+        ],
+        "explanation": "Saving first, grabbing the match, and automating savings build wealth. Letting spending rise with income is lifestyle inflation."
+      },
+      {
+        "type": "tf",
+        "id": "u7fq9",
+        "prompt": "An employer 401(k) match is essentially free money, so it's usually worth contributing enough to get all of it.",
+        "answer": true,
+        "explanation": "The match adds money to your account just for participating, so missing it means turning down free money."
+      },
+      {
+        "type": "order",
+        "id": "u7fq10",
+        "prompt": "Put the journey of your money in order, from earning to saving.",
+        "items": [
+          "Earn your gross pay",
+          "Taxes and deductions are withheld",
+          "Net pay is direct-deposited",
+          "Pay yourself first into savings"
+        ],
+        "explanation": "You earn gross pay, taxes and deductions come out, your net pay is deposited, and then you save off the top."
+      }
+    ]
+  }
+}
