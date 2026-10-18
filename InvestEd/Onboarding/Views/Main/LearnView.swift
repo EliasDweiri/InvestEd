@@ -67,7 +67,7 @@ struct LearnView: View {
 
     /// True when there's a streak to lose and no lesson done yet today.
     private var streakAtRisk: Bool {
-        guard let user = appState.currentUser, user.streak > 0 else { return false }
+        guard let user = appState.currentUser, user.activeStreak > 0 else { return false }
         guard let last = user.lastLessonDate else { return true }
         return !Calendar.current.isDateInToday(last)
     }
@@ -78,7 +78,7 @@ struct LearnView: View {
                 .font(.system(size: 22))
                 .foregroundColor(AppTheme.streakOrange)
             VStack(alignment: .leading, spacing: 2) {
-                Text("Your \(appState.currentUser?.streak ?? 0)-day streak is on the line!")
+                Text("Your \(appState.currentUser?.activeStreak ?? 0)-day streak is on the line!")
                     .font(AppTheme.bodyFont.bold())
                     .foregroundColor(AppTheme.textPrimary)
                 Text("One quick lesson today keeps the flame alive.")
@@ -98,7 +98,7 @@ struct LearnView: View {
 
     private var statsHeader: some View {
         HStack(spacing: 10) {
-            StatChip(icon: "flame.fill", value: "\(appState.currentUser?.streak ?? 0)", color: AppTheme.streakOrange)
+            StatChip(icon: "flame.fill", value: "\(appState.currentUser?.activeStreak ?? 0)", color: AppTheme.streakOrange)
             StatChip(icon: "star.fill", value: "\(appState.currentUser?.xp ?? 0)", color: AppTheme.accentGold)
             StatChip(icon: "rosette", value: "Lv \((appState.currentUser?.level ?? 1))", color: AppTheme.secondaryBlue)
             StatChip(icon: "goldcoin", value: "\(appState.currentUser?.goldBalance ?? 0)", color: AppTheme.accentGold)
