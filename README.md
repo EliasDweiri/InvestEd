@@ -3,7 +3,7 @@
 **A free iPhone app that teaches teens personal finance and investing through bite-sized lessons and a live, risk-free stock market simulator.**
 
 > Built for the 2026 Congressional App Challenge.
-> _[FILL IN: your name(s), school, and congressional district]_
+> _[FILL IN: your name]_ · Bellarmine College Preparatory, San Jose · _[district]_
 
 <!-- Screenshots: add 3–4 simulator screenshots here (Learn path, a lesson, Market tab, Penny chat) -->
 
@@ -11,7 +11,7 @@
 
 ## The problem
 
-_[FILL IN — one paragraph: who isn't being taught this, a real statistic (e.g. whether your state requires a personal-finance course to graduate), and why it matters to you personally.]_
+California won't require a personal-finance course to graduate until the class of 2031, and the law covers only public high schools ([EdSource](https://edsource.org/2026/california-high-school-finance-course/759788)). Until then, most students can finish high school without learning how a paycheck, a credit score or an index fund works, while living in one of the most expensive regions in the country. _[FILL IN: one or two sentences on why this matters to you personally.]_
 
 ## What it does
 
