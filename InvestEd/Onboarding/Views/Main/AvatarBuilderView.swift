@@ -12,13 +12,7 @@ struct AvatarView: View {
     var body: some View {
         ZStack {
             Circle()
-                .fill(
-                    LinearGradient(
-                        colors: [Color(hex: config.backgroundHex), Color(hex: config.backgroundHex).opacity(0.7)],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
+                .fill(Color(hex: AvatarConfig.currentPalette(config.backgroundHex)))
             Image(Mascots.imageName(forAvatarKey: config.baseEmoji))
                 .resizable()
                 .scaledToFit()
@@ -27,7 +21,7 @@ struct AvatarView: View {
             if let hat = config.hat {
                 Image(systemName: hat)
                     .font(.system(size: size * 0.24, weight: .bold))
-                    .foregroundColor(Color(hex: "FFC93C"))
+                    .foregroundColor(Color(hex: "E2AA30"))
                     .shadow(color: .black.opacity(0.25), radius: 1, y: 1)
                     .offset(y: -size * 0.42)
             }
@@ -186,8 +180,7 @@ struct AvatarBuilderView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .cardSurface()
     }
 
     private func grid<Item: Hashable, Cell: View>(items: [Item], columns: Int, @ViewBuilder cell: @escaping (Item) -> Cell) -> some View {
@@ -231,7 +224,7 @@ struct AvatarBuilderView: View {
                                     )
                                 if !owns(symbol), let price = AvatarConfig.price(of: symbol) {
                                     Text("\(price)")
-                                        .font(.system(size: 8, weight: .bold, design: .rounded))
+                                        .font(.system(size: 8, weight: .bold))
                                         .foregroundColor(Color(hex: "8A6410"))
                                         .padding(.horizontal, 5)
                                         .padding(.vertical, 2)
@@ -240,7 +233,7 @@ struct AvatarBuilderView: View {
                                 }
                             }
                             Text(name)
-                                .font(.system(size: 10, weight: .medium, design: .rounded))
+                                .font(.system(size: 10, weight: .medium))
                                 .foregroundColor(AppTheme.textSecondary)
                         }
                     }

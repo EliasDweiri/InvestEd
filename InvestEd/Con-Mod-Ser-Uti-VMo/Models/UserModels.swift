@@ -8,14 +8,22 @@ struct AvatarConfig: Codable, Equatable {
     // a mascot key ("pig", "fox", ...). Old emoji values still decode fine —
     // Mascots.mascot(forAvatarKey:) maps them to the right artwork.
     var baseEmoji: String = "pig"
-    var backgroundHex: String = "00C896"
+    var backgroundHex: String = "1E6B4F"
     var hat: String? = nil          // SF Symbol name, worn up top
     var accessory: String? = nil    // SF Symbol name, badge at the side
 
     static let baseOptions = ["pig", "fox", "bear", "bull", "turtle", "owl",
                               "squirrel", "elephant", "raccoon", "octopus",
                               "whale", "beaver", "panda"]
-    static let backgroundOptions = ["00C896", "4361EE", "FFC93C", "FF6B4A", "9B5DE5", "F15BB5", "00B4D8", "1B1F3B"]
+    /// Backdrops saved before the redesign map to their closest color in
+    /// the current palette, so older avatars match the rest of the app.
+    static func currentPalette(_ hex: String) -> String {
+        let legacy = ["00C896": "1E6B4F", "4361EE": "1F5F7A", "FFC93C": "D49A1E", "FF6B4A": "B04530",
+                      "9B5DE5": "8C5A3C", "F15BB5": "9A4256", "00B4D8": "1F5F7A", "1B1F3B": "33403F"]
+        return legacy[hex.uppercased()] ?? hex
+    }
+
+    static let backgroundOptions = ["1E6B4F", "1F5F7A", "D49A1E", "B04530", "5B6B2F", "8C5A3C", "33403F", "E3D5B8"]
 
     /// (symbol, display name) — mostly money-themed, a few just for fun.
     static let hatOptions: [(String, String)] = [

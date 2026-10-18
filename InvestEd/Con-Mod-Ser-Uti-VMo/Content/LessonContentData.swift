@@ -26,7 +26,7 @@ enum LessonContentData {
             id: "unit1",
             title: "Unit 1: Money Basics",
             subtitle: "Budgeting, saving, and everyday money habits",
-            colorHex: "00C896",
+            colorHex: "1E6B4F",
             lessons: [
                 Lesson(
                     id: "unit1-lesson1",
@@ -370,7 +370,7 @@ enum LessonContentData {
             id: "unit7",
             title: "Unit 2: Paychecks & Taxes",
             subtitle: "Where your money goes before you see it",
-            colorHex: "00B4D8",
+            colorHex: "1F5F7A",
             lessons: [
                 Lesson(
                     id: "unit7-lesson1",
@@ -710,7 +710,7 @@ enum LessonContentData {
             id: "unit4",
             title: "Unit 3: Credit & Debt",
             subtitle: "Borrowing without getting bitten",
-            colorHex: "EF476F",
+            colorHex: "B04530",
             lessons: [
                 Lesson(
                     id: "unit4-lesson1",
@@ -1069,7 +1069,7 @@ enum LessonContentData {
             id: "unit5",
             title: "Unit 4: The Power of Time",
             subtitle: "Compound growth and starting early",
-            colorHex: "FF6B4A",
+            colorHex: "A86F14",
             lessons: [
                 Lesson(
                     id: "unit5-lesson1",
@@ -1394,7 +1394,7 @@ enum LessonContentData {
             id: "unit2",
             title: "Unit 5: Investing Foundations",
             subtitle: "Stocks, bonds, risk, and portfolios",
-            colorHex: "4361EE",
+            colorHex: "4F6A2E",
             lessons: [
                 Lesson(
                     id: "unit2-lesson1",
@@ -1739,7 +1739,7 @@ enum LessonContentData {
             id: "unit3",
             title: "Unit 6: The Stock Market",
             subtitle: "Quotes, orders, cycles, and options",
-            colorHex: "FFC93C",
+            colorHex: "23395B",
             lessons: [
                 Lesson(
                     id: "unit3-lesson1",
@@ -2074,7 +2074,7 @@ enum LessonContentData {
             id: "unit6",
             title: "Unit 7: Funds & Fees",
             subtitle: "Index funds, ETFs, and keeping costs low",
-            colorHex: "9B5DE5",
+            colorHex: "8C5A3C",
             lessons: [
                 Lesson(
                     id: "unit6-lesson1",
@@ -2408,7 +2408,7 @@ enum LessonContentData {
             id: "unit10",
             title: "Unit 8: Macro Economics I",
             subtitle: "The big picture and the business cycle",
-            colorHex: "2EC4B6",
+            colorHex: "3F6B4A",
             lessons: [
                 Lesson(
                     id: "unit10-lesson1",
@@ -2750,7 +2750,7 @@ enum LessonContentData {
             id: "unit12",
             title: "Unit 9: Macro Economics II",
             subtitle: "Policy, trade, and the wider world",
-            colorHex: "0077B6",
+            colorHex: "1D4E7A",
             lessons: [
                 Lesson(
                     id: "unit12-lesson1",
@@ -3100,7 +3100,7 @@ enum LessonContentData {
             id: "unit8",
             title: "Unit 10: Investor Psychology",
             subtitle: "Outsmarting your own brain",
-            colorHex: "F15BB5",
+            colorHex: "9A4256",
             lessons: [
                 Lesson(
                     id: "unit8-lesson1",
@@ -3435,7 +3435,7 @@ enum LessonContentData {
             id: "unit9",
             title: "Unit 11: Crypto & Digital Assets",
             subtitle: "Bitcoin, blockchains, and staying safe",
-            colorHex: "F7931A",
+            colorHex: "B8651B",
             lessons: [
                 Lesson(
                     id: "unit9-lesson1",
@@ -3805,7 +3805,7 @@ enum LessonContentData {
             id: "unit11",
             title: "Unit 12: Quant Corner",
             subtitle: "Probability, data, and the math of markets",
-            colorHex: "3D5A80",
+            colorHex: "3E4A52",
             lessons: [
                 Lesson(
                     id: "unit11-lesson1",

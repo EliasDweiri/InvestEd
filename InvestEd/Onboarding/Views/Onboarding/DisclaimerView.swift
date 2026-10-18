@@ -16,17 +16,25 @@ struct DisclaimerView: View {
                 Spacer()
                 Image(Mascots.pig.imageName)
                     .resizable().scaledToFit()
-                    .frame(width: 96, height: 96)
+                    .frame(width: 84, height: 84)
+                    .padding(10)
+                    .background(MainTab.learn.color.opacity(0.12), in: Circle())
                 Text("Learn by doing — safely")
                     .font(AppTheme.titleFont)
                     .foregroundColor(AppTheme.textPrimary)
                     .multilineTextAlignment(.center)
 
                 Text(Self.disclaimerText)
-                    .font(AppTheme.bodyFont)
-                    .foregroundColor(AppTheme.textSecondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 4)
+                    .font(.callout)
+                    .foregroundColor(AppTheme.textPrimary.opacity(0.85))
+                    .multilineTextAlignment(.leading)
+                    .padding(18)
+                    .cardSurface()
+                    .overlay(alignment: .leading) {
+                        UnevenRoundedRectangle(topLeadingRadius: AppTheme.cornerRadius, bottomLeadingRadius: AppTheme.cornerRadius)
+                            .fill(AppTheme.primaryGreen)
+                            .frame(width: 5)
+                    }
 
                 Spacer()
                 if let onAccept {

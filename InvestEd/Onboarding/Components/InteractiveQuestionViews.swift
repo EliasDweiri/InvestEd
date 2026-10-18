@@ -21,7 +21,7 @@ private struct QChip: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .font(.system(size: 13, weight: .bold, design: .rounded))
+                .font(.system(size: 13, weight: .bold))
                 .foregroundColor(foreground)
                 .padding(.horizontal, 14)
                 .padding(.vertical, 10)
@@ -35,21 +35,21 @@ private struct QChip: View {
         switch correctness {
         case .right: return AppTheme.primaryGreen
         case .wrong: return AppTheme.dangerRed
-        case .none: return selected ? .white : AppTheme.textSecondary
+        case .none: return selected ? .white : AppTheme.textPrimary
         }
     }
     private var background: Color {
         switch correctness {
         case .right: return AppTheme.primaryGreen.opacity(0.15)
         case .wrong: return AppTheme.dangerRed.opacity(0.15)
-        case .none: return selected ? tint : AppTheme.cardBackground
+        case .none: return selected ? tint : AppTheme.sunkenBackground
         }
     }
     private var border: Color {
         switch correctness {
         case .right: return AppTheme.primaryGreen
         case .wrong: return AppTheme.dangerRed
-        case .none: return selected ? tint : Color.clear
+        case .none: return selected ? tint : AppTheme.hairline
         }
     }
 }
@@ -170,7 +170,7 @@ struct OrderingAnswerView: View {
                                 .frame(width: 26, height: 26)
                             if let placedAt {
                                 Text("\(placedAt + 1)")
-                                    .font(.system(size: 13, weight: .heavy, design: .rounded))
+                                    .font(.system(size: 13, weight: .heavy))
                                     .foregroundColor(.white)
                             }
                         }
@@ -181,8 +181,7 @@ struct OrderingAnswerView: View {
                         Spacer()
                     }
                     .padding(14)
-                    .background(AppTheme.cardBackground)
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .cardSurface(radius: 16)
                     .overlay(RoundedRectangle(cornerRadius: 16)
                         .stroke(placedAt != nil ? badgeColor(for: idx) : Color.clear, lineWidth: 2))
                 }
@@ -325,8 +324,7 @@ struct NumericAnswerView: View {
                     }
                 }
                 .padding(16)
-                .background(AppTheme.cardBackground)
-                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .cardSurface(radius: 16)
             }
 
             if locked, let answer = question.numericAnswer {
@@ -391,8 +389,7 @@ struct CategorizeAnswerView: View {
                     }
                 }
                 .padding(12)
-                .background(AppTheme.cardBackground)
-                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .cardSurface(radius: 16)
             }
         }
     }
@@ -480,7 +477,7 @@ struct InteractiveOptionAnswerView: View {
                 }
 
                 Text("Simulated Black-Scholes pricing — for learning, not investment advice.")
-                    .font(.system(size: 10, weight: .medium, design: .rounded))
+                    .font(.system(size: 10, weight: .medium))
                     .foregroundColor(AppTheme.textSecondary)
             }
         )
@@ -582,8 +579,7 @@ struct InteractiveOptionAnswerView: View {
                         : "\(challenge.symbol) must rise above this to profit")
         }
         .padding(12)
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: 14))
+        .cardSurface(radius: 14)
     }
 
     private func payoffCard(_ challenge: OptionChallenge) -> some View {
@@ -634,7 +630,7 @@ struct InteractiveOptionAnswerView: View {
                 Text(value).font(AppTheme.bodyFont.bold()).foregroundColor(AppTheme.textPrimary)
             }
             Text(note)
-                .font(.system(size: 10, weight: .medium, design: .rounded))
+                .font(.system(size: 10, weight: .medium))
                 .foregroundColor(AppTheme.textSecondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }

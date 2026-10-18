@@ -22,42 +22,76 @@ extension Color {
     }
 }
 
-// MARK: - InvestEd's design system
+// MARK: - InvestEd's design system: "Banknote"
 //
-// Palette rationale:
-// - Emerald green as the hero color: growth + money, and consistently one
-//   of the most positively-received colors across age groups.
-// - Indigo-blue for secondary actions: blue is the single most universally
-//   liked color and reads as trustworthy/focused — good for a finance app.
-// - Gold for XP/rewards: signals achievement and optimism.
-// - Coral-orange for streaks: energetic without feeling alarming (unlike red).
-// - Backgrounds stay soft and neutral so the accent colors actually pop.
+// The look is borrowed from real money and financial print, not from
+// app templates:
+// - Ink colors you'd find on currency and in a newspaper's markets page —
+//   forest green, petrol blue, brick, ochre — all flat, never gradients.
+// - A warm paper canvas instead of stark white, with hairline rules and
+//   borders instead of soft drop shadows.
+// - Serif headlines (Apple's New York) for an editorial, finance-page voice,
+//   SF for everything you read quickly, and tabular digits for money.
+// - The one custom ornament is a guilloche pattern — the fine wavy line-work
+//   printed on banknotes — used on screen headers.
 
 enum AppTheme {
-    // Brand colors
-    static let primaryGreen = Color(hex: "00C896")
-    static let secondaryBlue = Color(hex: "4361EE")
-    static let accentGold = Color(hex: "FFC93C")
-    static let streakOrange = Color(hex: "FF6B4A")
-    static let dangerRed = Color(hex: "EF476F")
+    // Ink colors
+    static let primaryGreen = Color(hex: "1E7350")   // forest: brand, success, "up"
+    static let secondaryBlue = Color(hex: "1F5F7A")  // petrol: info, secondary actions
+    static let accentGold = Color(hex: "D49A1E")     // gold: XP, rewards, Gold currency
+    static let streakOrange = Color(hex: "D2572B")   // brick-orange: streaks
+    static let dangerRed = Color(hex: "BF3B2B")      // brick red: wrong, "down", loss
 
-    // Adaptive surfaces (automatically flip for light/dark mode)
-    static let background = Color.dynamic(light: "F7F9FC", dark: "10141C")
-    static let cardBackground = Color.dynamic(light: "FFFFFF", dark: "1C2333")
-    static let textPrimary = Color.dynamic(light: "1B1F3B", dark: "F2F4F8")
-    static let textSecondary = Color.dynamic(light: "6B7280", dark: "9CA3AF")
+    // Paper surfaces (flip for dark mode)
+    static let background = Color.dynamic(light: "F3EEE4", dark: "121110")
+    static let cardBackground = Color.dynamic(light: "FFFCF5", dark: "1D1B17")
+    static let sunkenBackground = Color.dynamic(light: "EAE3D6", dark: "26231E")
+    static let hairline = Color.dynamic(light: "E2D9C8", dark: "302C25")
+    static let textPrimary = Color.dynamic(light: "1F1C17", dark: "F3EEE4")
+    static let textSecondary = Color.dynamic(light: "6E665A", dark: "A69E90")
 
-    static let primaryGradient = LinearGradient(
-        colors: [primaryGreen, secondaryBlue],
-        startPoint: .topLeading,
-        endPoint: .bottomTrailing
-    )
+    /// Text and icons placed on a colored header block.
+    static let onInk = Color(hex: "FFF8EA")
 
-    // Layout & type — rounded fonts throughout give the app a friendly,
-    // Duolingo-like feel rather than a "serious bank app" feel.
-    static let cornerRadius: CGFloat = 20
-    static let titleFont = Font.system(.largeTitle, design: .rounded).weight(.bold)
-    static let headingFont = Font.system(.title2, design: .rounded).weight(.bold)
-    static let bodyFont = Font.system(.body, design: .rounded)
-    static let captionFont = Font.system(.caption, design: .rounded).weight(.medium)
+    // Layout — a small radius hierarchy instead of one big pill radius.
+    static let cornerRadius: CGFloat = 14
+    static let smallRadius: CGFloat = 10
+
+    // Type — serif display + SF text.
+    static let titleFont = Font.system(.largeTitle, design: .serif).weight(.bold)
+    static let headingFont = Font.system(.title3, design: .serif).weight(.semibold)
+    static let bodyFont = Font.system(.body)
+    static let captionFont = Font.system(.caption).weight(.medium)
+    /// Small all-caps label used above sections, like a newspaper kicker.
+    static let kickerFont = Font.system(size: 11, weight: .bold).width(.expanded)
+}
+
+// MARK: - Surfaces
+
+extension View {
+    /// The standard card: warm paper, hairline border, no drop shadow.
+    func cardSurface(radius: CGFloat = AppTheme.cornerRadius) -> some View {
+        self
+            .background(AppTheme.cardBackground)
+            .clipShape(RoundedRectangle(cornerRadius: radius, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: radius, style: .continuous)
+                    .stroke(AppTheme.hairline, lineWidth: 1)
+            )
+    }
+}
+
+/// A section label in small expanded caps — e.g. "YOUR HOLDINGS".
+struct SectionKicker: View {
+    let text: String
+    var color: Color = AppTheme.textSecondary
+
+    var body: some View {
+        Text(text.uppercased())
+            .font(AppTheme.kickerFont)
+            .tracking(1.2)
+            .foregroundColor(color)
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
 }

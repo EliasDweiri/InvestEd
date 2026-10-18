@@ -1,7 +1,7 @@
 import SwiftUI
 
-/// The Friends tab: incoming requests up top, then your friends ranked by
-/// XP (a mini leaderboard), plus username search to add new friends.
+/// The Friends tab: your league tier in the header, then search, incoming
+/// requests, this week's league, and your friends ranked by XP.
 struct FriendsView: View {
     @EnvironmentObject var appState: AppState
     @StateObject private var viewModel = FriendsViewModel()
@@ -16,24 +16,20 @@ struct FriendsView: View {
 
     var body: some View {
         NavigationStack {
-            ZStack {
-                AppTheme.background.ignoresSafeArea()
-                FloatingMoneyBackground()
-                ScrollView {
-                    VStack(spacing: 20) {
-                        LeagueSection(friends: viewModel.friends)
-                        searchCard
-                        if !viewModel.incomingRequests.isEmpty {
-                            requestsSection
-                        }
-                        friendsSection
-                    }
-                    .padding()
-                    // Extra room so the last friend row clears the tab bar.
-                    .padding(.bottom, 110)
+            TabScreen(tab: .friends) {
+                PennyCompanion(tab: .friends)
+            } hero: {
+                LeagueTierHero()
+            } content: {
+                searchCard
+                if !viewModel.incomingRequests.isEmpty {
+                    requestsSection
                 }
+                PaperSection(title: "This week's league") {
+                    LeagueSection(friends: viewModel.friends)
+                }
+                friendsSection
             }
-            .navigationTitle("Friends")
             .onAppear {
                 viewModel.loadFriends()
                 viewModel.startListening()
@@ -112,15 +108,13 @@ struct FriendsView: View {
             }
         }
         .padding()
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .cardSurface()
     }
 
     private var requestsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Friend Requests")
-                .font(AppTheme.headingFont)
-                .foregroundColor(AppTheme.textPrimary)
+            SectionKicker(text: "Friend requests")
+                .padding(.horizontal, 4)
             ForEach(viewModel.incomingRequests) { request in
                 HStack {
                     Text(request.fromUsername)
@@ -143,17 +137,15 @@ struct FriendsView: View {
                     }
                 }
                 .padding(14)
-                .background(AppTheme.cardBackground)
-                .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+                .cardSurface()
             }
         }
     }
 
     private var friendsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Your Friends")
-                .font(AppTheme.headingFont)
-                .foregroundColor(AppTheme.textPrimary)
+            SectionKicker(text: "Your friends")
+                .padding(.horizontal, 4)
             if viewModel.friends.isEmpty {
                 VStack(spacing: 8) {
                     Image(Mascots.panda.imageName)
@@ -167,10 +159,11 @@ struct FriendsView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 30)
-                .background(AppTheme.cardBackground)
-                .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+                .cardSurface()
             } else {
-                ForEach(Array(viewModel.friends.sorted { $0.xp > $1.xp }.enumerated()), id: \.element.id) { rank, friend in
+                let sorted = viewModel.friends.sorted { $0.xp > $1.xp }
+                VStack(spacing: 0) {
+                ForEach(Array(sorted.enumerated()), id: \.element.id) { rank, friend in
                     HStack(spacing: 14) {
                         Text("#\(rank + 1)")
                             .font(AppTheme.bodyFont.bold())
@@ -187,13 +180,17 @@ struct FriendsView: View {
                         }
                         Spacer()
                         Text("\(friend.xp) XP")
-                            .font(AppTheme.bodyFont.bold())
+                            .font(AppTheme.bodyFont.bold().monospacedDigit())
                             .foregroundColor(AppTheme.primaryGreen)
                     }
-                    .padding(14)
-                    .background(AppTheme.cardBackground)
-                    .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 11)
+                    if rank < sorted.count - 1 {
+                        Rectangle().fill(AppTheme.hairline).frame(height: 1).padding(.leading, 14)
+                    }
                 }
+                }
+                .cardSurface()
             }
         }
     }

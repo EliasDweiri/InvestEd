@@ -17,44 +17,23 @@ struct ProfileView: View {
 
     var body: some View {
         NavigationStack {
-            ZStack {
-                AppTheme.background.ignoresSafeArea()
-                FloatingMoneyBackground()
-                ScrollView {
-                    VStack(spacing: 20) {
-                        headerCard
-                        statsGrid
-                        monthlyBadge
-                        achievementsSection
-                        if !(appState.currentUser?.transactions.isEmpty ?? true) {
-                            transactionsSection
-                        }
-                        SecondaryButton(title: "Sign Out") {
-                            viewModel.signOut()
-                        }
-                    }
-                    .padding()
-                    // Extra room so the Sign Out button clears the tab bar.
-                    .padding(.bottom, 110)
+            TabScreen(tab: .profile) {
+                HStack(spacing: 8) {
+                    HeaderIconButton(systemName: "qrcode", label: "My friend code") { showQRCode = true }
+                    HeaderIconButton(systemName: "gearshape.fill", label: "Settings") { showSettings = true }
+                    PennyCompanion(tab: .profile)
                 }
-            }
-            .navigationTitle("Profile")
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        showSettings = true
-                    } label: {
-                        Image(systemName: "gearshape.fill")
-                            .foregroundColor(AppTheme.textPrimary)
-                    }
+            } hero: {
+                profileHero
+            } content: {
+                statsGrid
+                monthlyBadge
+                achievementsSection
+                if !(appState.currentUser?.transactions.isEmpty ?? true) {
+                    transactionsSection
                 }
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        showQRCode = true
-                    } label: {
-                        Image(systemName: "qrcode")
-                            .foregroundColor(AppTheme.textPrimary)
-                    }
+                SecondaryButton(title: "Sign Out") {
+                    viewModel.signOut()
                 }
             }
             .sheet(isPresented: $showSettings) {
@@ -72,45 +51,50 @@ struct ProfileView: View {
 
     // MARK: - Header
 
-    private var headerCard: some View {
-        VStack(spacing: 12) {
+    private var profileHero: some View {
+        HStack(spacing: 16) {
             Button {
                 showAvatarBuilder = true
             } label: {
                 ZStack(alignment: .bottomTrailing) {
-                    AvatarView(config: avatarConfig, size: 104)
+                    AvatarView(config: avatarConfig, size: 84)
+                        .overlay(Circle().stroke(AppTheme.onInk.opacity(0.5), lineWidth: 2))
                     Image(systemName: "paintbrush.fill")
-                        .font(.system(size: 12, weight: .bold))
+                        .font(.system(size: 11, weight: .bold))
                         .foregroundColor(.white)
-                        .padding(7)
-                        .background(Circle().fill(AppTheme.secondaryBlue))
-                        .overlay(Circle().stroke(.white, lineWidth: 2))
+                        .padding(6)
+                        .background(Circle().fill(AppTheme.primaryGreen))
+                        .overlay(Circle().stroke(AppTheme.onInk, lineWidth: 2))
                 }
             }
             .buttonStyle(SpringPressStyle())
+            .accessibilityLabel("Edit avatar")
 
-            Text(appState.currentUser?.username ?? "Investor")
-                .font(AppTheme.headingFont)
-                .foregroundColor(.white)
-            if let joined = appState.currentUser?.joinDate {
-                Text("Investing since \(joined.formatted(date: .abbreviated, time: .omitted))")
-                    .font(AppTheme.captionFont)
-                    .foregroundColor(.white.opacity(0.85))
+            VStack(alignment: .leading, spacing: 4) {
+                Text(appState.currentUser?.username ?? "Investor")
+                    .font(.system(.title2, design: .serif).weight(.bold))
+                    .lineLimit(1)
+                if let joined = appState.currentUser?.joinDate {
+                    Text("Investing since \(joined.formatted(date: .abbreviated, time: .omitted))")
+                        .font(.footnote)
+                        .opacity(0.8)
+                }
+                Text("Level \(appState.currentUser?.level ?? 1) · \(appState.currentUser?.xp ?? 0) XP")
+                    .font(.caption.weight(.semibold).monospacedDigit())
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 3)
+                    .background(AppTheme.onInk.opacity(0.15), in: RoundedRectangle(cornerRadius: 6))
             }
-            Text("Tap your avatar to restyle it")
-                .font(.system(size: 11, weight: .medium, design: .rounded))
-                .foregroundColor(.white.opacity(0.7))
+            .foregroundColor(AppTheme.onInk)
+            Spacer()
         }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 24)
-        .background(AppTheme.primaryGradient)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
     }
 
     // MARK: - Stats
 
     private var statsGrid: some View {
-        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+        // One "statement" card with six figures, instead of six big tiles.
+        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 0) {
             ProfileStat(icon: "star.fill", title: "Total XP", value: "\(appState.currentUser?.xp ?? 0)", color: AppTheme.accentGold)
             ProfileStat(icon: "rosette", title: "Level", value: "\(appState.currentUser?.level ?? 1)", color: AppTheme.secondaryBlue)
             ProfileStat(icon: "flame.fill", title: "Day Streak", value: "\(appState.currentUser?.activeStreak ?? 0)", color: AppTheme.streakOrange)
@@ -118,6 +102,8 @@ struct ProfileView: View {
             ProfileStat(icon: "goldcoin", title: "Gold", value: "\(appState.currentUser?.goldBalance ?? 0)", color: AppTheme.accentGold)
             ProfileStat(icon: "snowflake", title: "Streak Freezes", value: "\(appState.currentUser?.streakFreezes ?? 0)", color: AppTheme.secondaryBlue)
         }
+        .padding(.vertical, 6)
+        .cardSurface()
     }
 
     // MARK: - Monthly badge
@@ -144,17 +130,15 @@ struct ProfileView: View {
             Spacer()
         }
         .padding()
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .cardSurface()
     }
 
     // MARK: - Achievements
 
     private var achievementsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Achievements")
-                .font(AppTheme.headingFont)
-                .foregroundColor(AppTheme.textPrimary)
+            SectionKicker(text: "Achievements")
+                .padding(.horizontal, 4)
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
                 ForEach(Achievement.all) { achievement in
                     AchievementCell(
@@ -207,9 +191,8 @@ struct ProfileView: View {
 
     private var transactionsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Recent Trades")
-                .font(AppTheme.headingFont)
-                .foregroundColor(AppTheme.textPrimary)
+            SectionKicker(text: "Recent trades")
+                .padding(.horizontal, 4)
             ForEach((appState.currentUser?.transactions ?? []).prefix(10)) { tx in
                 HStack {
                     Image(systemName: tx.type == .buy ? "arrow.down.circle.fill" : "arrow.up.circle.fill")
@@ -234,8 +217,7 @@ struct ProfileView: View {
                     }
                 }
                 .padding(14)
-                .background(AppTheme.cardBackground)
-                .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+                .cardSurface()
             }
         }
     }
@@ -258,11 +240,11 @@ private struct AchievementCell: View {
                     .foregroundColor(unlocked ? Color(hex: achievement.colorHex) : AppTheme.textSecondary.opacity(0.6))
             }
             Text(achievement.title)
-                .font(.system(size: 11, weight: .semibold, design: .rounded))
+                .font(.system(size: 11, weight: .semibold))
                 .foregroundColor(unlocked ? AppTheme.textPrimary : AppTheme.textSecondary)
                 .lineLimit(1)
             Text(achievement.caption)
-                .font(.system(size: 9, weight: .medium, design: .rounded))
+                .font(.system(size: 9, weight: .medium))
                 .foregroundColor(AppTheme.textSecondary)
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
@@ -270,8 +252,7 @@ private struct AchievementCell: View {
         .frame(maxWidth: .infinity)
         .padding(.vertical, 12)
         .padding(.horizontal, 4)
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .cardSurface(radius: 16)
         .opacity(unlocked ? 1 : 0.75)
     }
 }
@@ -283,25 +264,25 @@ private struct ProfileStat: View {
     let color: Color
 
     var body: some View {
-        VStack(spacing: 6) {
-            if icon == "goldcoin" {
-                GoldCoinIcon(size: 22)
-            } else {
-                Image(systemName: icon)
-                    .font(.system(size: 22))
-                    .foregroundColor(color)
+        VStack(spacing: 4) {
+            HStack(spacing: 5) {
+                if icon == "goldcoin" {
+                    GoldCoinIcon(size: 15)
+                } else {
+                    Image(systemName: icon)
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(color)
+                }
+                Text(value)
+                    .font(.system(.title3, design: .serif).weight(.bold).monospacedDigit())
+                    .foregroundColor(AppTheme.textPrimary)
+                    .contentTransition(.numericText())
             }
-            Text(value)
-                .font(AppTheme.headingFont)
-                .foregroundColor(AppTheme.textPrimary)
-                .contentTransition(.numericText())
             Text(title)
-                .font(AppTheme.captionFont)
+                .font(.caption2.weight(.medium))
                 .foregroundColor(AppTheme.textSecondary)
         }
         .frame(maxWidth: .infinity)
-        .padding(.vertical, 18)
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .padding(.vertical, 12)
     }
 }

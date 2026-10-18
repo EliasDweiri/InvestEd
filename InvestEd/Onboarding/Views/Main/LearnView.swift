@@ -12,38 +12,66 @@ struct LearnView: View {
 
     var body: some View {
         NavigationStack {
-            ZStack {
-                AppTheme.background.ignoresSafeArea()
-                FloatingMoneyBackground()
-                ScrollViewReader { proxy in
-                    ScrollView {
-                        VStack(spacing: 36) {
-                            statsHeader
-                            if streakAtRisk {
-                                streakBanner
-                            }
-                            let currentID = currentNodeID
-                            ForEach(Array(viewModel.units.enumerated()), id: \.element.id) { unitIndex, unit in
-                                UnitPathView(unit: unit, unitIndex: unitIndex, viewModel: viewModel, currentNodeID: currentID)
-                            }
-                        }
-                        .padding()
-                        // Generous bottom room so the last path stop scrolls
-                        // well above the floating tab bar and stays tappable.
-                        .padding(.bottom, 120)
+            ScrollViewReader { proxy in
+                TabScreen(tab: .learn) {
+                    PennyCompanion(tab: .learn)
+                } hero: {
+                    learnHero
+                } content: {
+                    if streakAtRisk {
+                        streakBanner
                     }
-                    .onAppear {
-                        // Land the returning user on their current stop, not Unit 1.
-                        guard let id = currentNodeID else { return }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
-                            withAnimation(.easeInOut) { proxy.scrollTo(id, anchor: .center) }
-                        }
+                    let currentID = currentNodeID
+                    ForEach(Array(viewModel.units.enumerated()), id: \.element.id) { unitIndex, unit in
+                        UnitPathView(unit: unit, unitIndex: unitIndex, viewModel: viewModel, currentNodeID: currentID)
+                    }
+                }
+                .onAppear {
+                    // Land a returning user on their current stop instead of
+                    // Unit 1 — but while they're still in Unit 1, keep the
+                    // header (streak, XP, progress) in view.
+                    guard let id = currentNodeID, (appState.currentUser?.currentUnitIndex ?? 0) > 0 else { return }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+                        withAnimation(.easeInOut) { proxy.scrollTo(id, anchor: .center) }
                     }
                 }
             }
-            .navigationTitle("Learn")
             .fullScreenCover(item: $viewModel.activeLesson) { _ in
                 LessonPlayerView(viewModel: viewModel)
+            }
+        }
+    }
+
+    // MARK: - Header
+
+    private var totalLessons: Int { viewModel.units.reduce(0) { $0 + $1.lessons.count } }
+    private var doneLessons: Int { appState.currentUser?.completedLessonIDs.count ?? 0 }
+
+    /// The unit the learner is working in right now.
+    private var currentUnitTitle: String {
+        let index = min(appState.currentUser?.currentUnitIndex ?? 0, max(viewModel.units.count - 1, 0))
+        return viewModel.units.indices.contains(index) ? viewModel.units[index].title : ""
+    }
+
+    private var learnHero: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            VStack(alignment: .leading, spacing: 7) {
+                HStack {
+                    Text(currentUnitTitle)
+                        .font(.subheadline.weight(.semibold))
+                    Spacer()
+                    Text("\(doneLessons) of \(totalLessons) lessons")
+                        .font(.caption.weight(.semibold).monospacedDigit())
+                        .opacity(0.8)
+                }
+                .foregroundColor(AppTheme.onInk)
+                HeaderProgressBar(progress: totalLessons == 0 ? 0 : Double(doneLessons) / Double(totalLessons))
+            }
+            HStack(spacing: 8) {
+                HeaderStat(icon: "flame.fill", value: "\(appState.currentUser?.activeStreak ?? 0)", label: "streak")
+                HeaderStat(icon: "star.fill", value: "\(appState.currentUser?.xp ?? 0)", label: "XP")
+                HeaderStat(icon: "rosette", value: "\(appState.currentUser?.level ?? 1)", label: "level")
+                HeaderStat(icon: "goldcoin", value: "\(appState.currentUser?.goldBalance ?? 0)", label: "Gold")
             }
         }
     }
@@ -88,22 +116,15 @@ struct LearnView: View {
             Spacer()
         }
         .padding(14)
-        .background(AppTheme.streakOrange.opacity(0.12))
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
-        .overlay(
-            RoundedRectangle(cornerRadius: AppTheme.cornerRadius)
-                .stroke(AppTheme.streakOrange.opacity(0.4), lineWidth: 1.5)
-        )
-    }
-
-    private var statsHeader: some View {
-        HStack(spacing: 10) {
-            StatChip(icon: "flame.fill", value: "\(appState.currentUser?.activeStreak ?? 0)", color: AppTheme.streakOrange)
-            StatChip(icon: "star.fill", value: "\(appState.currentUser?.xp ?? 0)", color: AppTheme.accentGold)
-            StatChip(icon: "rosette", value: "Lv \((appState.currentUser?.level ?? 1))", color: AppTheme.secondaryBlue)
-            StatChip(icon: "goldcoin", value: "\(appState.currentUser?.goldBalance ?? 0)", color: AppTheme.accentGold)
+        .cardSurface()
+        .overlay(alignment: .leading) {
+            // A brick-colored rule down the left edge, like a callout box.
+            UnevenRoundedRectangle(topLeadingRadius: AppTheme.cornerRadius, bottomLeadingRadius: AppTheme.cornerRadius)
+                .fill(AppTheme.streakOrange)
+                .frame(width: 5)
         }
     }
+
 }
 
 struct StatChip: View {
@@ -153,16 +174,19 @@ private struct UnitPathView: View {
     @ObservedObject var viewModel: LearnViewModel
     let currentNodeID: String?
 
+    private var unitColor: Color { Color(hex: unit.colorHex) }
+
     var body: some View {
-        VStack(spacing: 30) {
+        VStack(spacing: 0) {
             banner
-            VStack(spacing: 34) {
+            VStack(spacing: 30) {
                 ForEach(Array(unit.lessons.enumerated()), id: \.element.id) { lessonIndex, lesson in
                     PathNodeView(
                         lesson: lesson,
                         state: nodeState(lessonIndex: lessonIndex, lesson: lesson),
                         xOffset: xOffset(for: lessonIndex),
-                        guide: lessonIndex == 1 ? unitGuide : nil
+                        guide: lessonIndex == 1 ? unitGuide : nil,
+                        anchorIndex: lessonIndex
                     ) {
                         viewModel.startLesson(lesson, unitIndex: unitIndex)
                     }
@@ -172,14 +196,43 @@ private struct UnitPathView: View {
                     FinalTestNodeView(
                         title: test.title,
                         state: finalTestState(test: test),
-                        isCurrent: test.id == currentNodeID
+                        isCurrent: test.id == currentNodeID,
+                        anchorIndex: unit.lessons.count
                     ) {
                         viewModel.startFinalTest(unitIndex: unitIndex)
                     }
                     .id(test.id)
                 }
             }
+            .padding(.vertical, 26)
+            .frame(maxWidth: .infinity)
+            // The dotted road that links the stops, drawn through each
+            // node's center so it always follows the zigzag exactly.
+            .backgroundPreferenceValue(NodeAnchorKey.self) { anchors in
+                GeometryReader { geo in
+                    let points = anchors.sorted { $0.key < $1.key }.map { geo[$0.value] }
+                    Path { path in
+                        guard let first = points.first else { return }
+                        path.move(to: first)
+                        for (from, to) in zip(points, points.dropFirst()) {
+                            let midY = (from.y + to.y) / 2
+                            path.addCurve(to: to,
+                                          control1: CGPoint(x: from.x, y: midY),
+                                          control2: CGPoint(x: to.x, y: midY))
+                        }
+                    }
+                    .stroke(unitColor.opacity(0.35),
+                            style: StrokeStyle(lineWidth: 3, lineCap: .round, dash: [0.5, 9]))
+                }
+            }
+            .background(unitColor.opacity(0.05))
         }
+        .cardSurface(radius: 18)
+        .opacity(viewModel.isUnitUnlocked(unitIndex) ? 1 : 0.72)
+    }
+
+    private var lessonsDone: Int {
+        unit.lessons.filter { viewModel.isLessonCompleted($0) }.count
     }
 
     /// Gentle zigzag: center, left, center, right, repeat.
@@ -209,27 +262,58 @@ private struct UnitPathView: View {
     private var banner: some View {
         HStack(spacing: 12) {
             VStack(alignment: .leading, spacing: 4) {
-                Text(unit.title)
-                    .font(AppTheme.headingFont)
-                    .foregroundColor(.white)
+                Text("UNIT \(unitIndex + 1)")
+                    .font(AppTheme.kickerFont)
+                    .tracking(1.2)
+                    .foregroundColor(AppTheme.onInk.opacity(0.75))
+                Text(unitTopic)
+                    .font(.system(.title3, design: .serif).weight(.bold))
+                    .foregroundColor(AppTheme.onInk)
                 Text(unit.subtitle)
-                    .font(AppTheme.captionFont)
-                    .foregroundColor(.white.opacity(0.85))
-                Text("with \(unitGuide.name)")
-                    .font(.system(size: 10.5, weight: .semibold, design: .rounded))
-                    .foregroundColor(.white.opacity(0.7))
+                    .font(.footnote)
+                    .foregroundColor(AppTheme.onInk.opacity(0.82))
+                    .fixedSize(horizontal: false, vertical: true)
+                HStack(spacing: 8) {
+                    HeaderProgressBar(progress: unit.lessons.isEmpty ? 0 : Double(lessonsDone) / Double(unit.lessons.count))
+                        .frame(width: 90)
+                    Text("\(lessonsDone)/\(unit.lessons.count) · with \(unitGuide.name)")
+                        .font(.caption2.weight(.semibold).monospacedDigit())
+                        .foregroundColor(AppTheme.onInk.opacity(0.8))
+                }
+                .padding(.top, 4)
             }
             Spacer()
             Image(unitGuide.imageName)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 62, height: 62)
-                .shadow(color: .black.opacity(0.15), radius: 4, y: 2)
+                .frame(width: 58, height: 58)
+                .padding(5)
+                .background(AppTheme.onInk.opacity(0.16), in: Circle())
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding()
-        .background(Color(hex: unit.colorHex))
-        .clipShape(RoundedRectangle(cornerRadius: AppTheme.cornerRadius))
+        .padding(16)
+        .background(
+            ZStack {
+                unitColor
+                GuillochePattern(lines: 8).stroke(AppTheme.onInk.opacity(0.10), lineWidth: 0.6)
+            }
+            .clipped()
+        )
+    }
+
+    /// "Unit 3: Credit & Debt" -> "Credit & Debt" (the number is shown separately).
+    private var unitTopic: String {
+        guard let colon = unit.title.firstIndex(of: ":") else { return unit.title }
+        return unit.title[unit.title.index(after: colon)...].trimmingCharacters(in: .whitespaces)
+    }
+}
+
+/// Collects the center of every stop on a unit's path, in order, so the
+/// connecting road can be drawn through them.
+private struct NodeAnchorKey: PreferenceKey {
+    static let defaultValue: [Int: Anchor<CGPoint>] = [:]
+    static func reduce(value: inout [Int: Anchor<CGPoint>], nextValue: () -> [Int: Anchor<CGPoint>]) {
+        value.merge(nextValue()) { $1 }
     }
 }
 
@@ -242,6 +326,7 @@ private struct PathNodeView: View {
     let state: NodeState
     let xOffset: CGFloat
     var guide: Mascot? = nil
+    var anchorIndex: Int = 0
     let action: () -> Void
 
     @State private var pulsing = false
@@ -269,6 +354,7 @@ private struct PathNodeView: View {
             .disabled(state == .locked)
             .accessibilityLabel("\(lesson.title), \(accessibilityStateLabel)")
             .accessibilityHint(state == .locked ? "Finish earlier lessons to unlock" : "Starts the lesson")
+            .anchorPreference(key: NodeAnchorKey.self, value: .center) { [anchorIndex: $0] }
 
             Text(lesson.title)
                 .font(AppTheme.captionFont)
@@ -289,7 +375,7 @@ private struct PathNodeView: View {
                         .frame(width: 52, height: 52)
                         .shadow(color: .black.opacity(0.12), radius: 3, y: 2)
                     Text(guide.name)
-                        .font(.system(size: 9, weight: .semibold, design: .rounded))
+                        .font(.system(size: 9, weight: .semibold))
                         .foregroundColor(AppTheme.textSecondary)
                         .padding(.horizontal, 7)
                         .padding(.vertical, 2)
@@ -379,6 +465,7 @@ private struct FinalTestNodeView: View {
     let title: String
     let state: TestState
     let isCurrent: Bool
+    var anchorIndex: Int = 0
     let action: () -> Void
 
     @State private var pulsing = false
@@ -388,7 +475,7 @@ private struct FinalTestNodeView: View {
         VStack(spacing: 8) {
             if isCurrent {
                 Text("KNOWLEDGE CHECK")
-                    .font(.system(size: 11, weight: .heavy, design: .rounded))
+                    .font(.system(size: 11, weight: .heavy))
                     .foregroundColor(.white)
                     .padding(.horizontal, 14)
                     .padding(.vertical, 7)
@@ -415,6 +502,7 @@ private struct FinalTestNodeView: View {
             .buttonStyle(SpringPressStyle())
             .disabled(state == .locked)
             .accessibilityLabel("\(title), knowledge check, \(state == .passed ? "passed" : state == .locked ? "locked" : "available")")
+            .anchorPreference(key: NodeAnchorKey.self, value: .center) { [anchorIndex: $0] }
 
             Text(title)
                 .font(AppTheme.captionFont.bold())
@@ -475,11 +563,9 @@ struct LessonPlayerView: View {
             } else if let question {
                 questionView(question)
             }
-            // A soft green/red hue pulses in from the screen edges on each answer.
+            // A green/red frame flashes around the screen on each answer.
             Rectangle()
-                .fill(RadialGradient(
-                    gradient: Gradient(colors: [.clear, .clear, edgeGlowColor.opacity(0.85)]),
-                    center: .center, startRadius: 170, endRadius: 540))
+                .strokeBorder(edgeGlowColor, lineWidth: 7)
                 .ignoresSafeArea()
                 .allowsHitTesting(false)
                 .opacity(edgeGlowOpacity)
@@ -618,7 +704,7 @@ struct LessonPlayerView: View {
             Spacer()
             if viewModel.activeIsFinalTest {
                 Text("KNOWLEDGE CHECK")
-                    .font(.system(size: 11, weight: .heavy, design: .rounded))
+                    .font(.system(size: 11, weight: .heavy))
                     .foregroundColor(AppTheme.accentGold)
             }
             Spacer()
@@ -654,8 +740,7 @@ struct LessonPlayerView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
-        .background(AppTheme.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .cardSurface(radius: 16)
     }
 
     // MARK: Out-of-hearts screen

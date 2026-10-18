@@ -1,10 +1,8 @@
 import SwiftUI
 
-/// Penny, everywhere: a small floating mascot in the bottom-right corner of
-/// every tab. She offers a short tip about the screen you just landed on
-/// (the bubble auto-hides after a few seconds); tap her for another tip.
-/// Tips are hand-written, not AI-generated. Collapsed, she's a 48pt circle
-/// that never blocks content or the tab bar.
+/// Penny lives in the top-right corner of every tab's header. She offers a
+/// short tip about the screen you just landed on (the bubble auto-hides
+/// after a few seconds); tap her for another. Tips are hand-written.
 struct PennyCompanion: View {
     let tab: MainTab
 
@@ -12,63 +10,73 @@ struct PennyCompanion: View {
     @State private var tipTask: Task<Void, Never>?
 
     var body: some View {
-        VStack(alignment: .trailing, spacing: 8) {
+        Button {
+            showNextTip()
+        } label: {
+            Image(Mascots.pig.imageName)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 34, height: 34)
+                .frame(width: 40, height: 40)
+                .background(AppTheme.onInk.opacity(0.15), in: Circle())
+        }
+        .buttonStyle(SpringPressStyle())
+        .accessibilityLabel("Penny")
+        .accessibilityHint("Shows a tip about this screen")
+        // The tip drops down from Penny, over the content, without moving
+        // anything else on screen.
+        .overlay(alignment: .topTrailing) {
             if let tipText {
-                Button {
-                    dismissTip()
-                } label: {
-                    VStack(alignment: .leading, spacing: 6) {
-                        HStack {
-                            Text("Penny")
-                                .font(AppTheme.captionFont.bold())
-                                .foregroundColor(AppTheme.primaryGreen)
-                            Spacer()
-                            Button {
-                                dismissTip()
-                            } label: {
-                                Image(systemName: "xmark")
-                                    .font(.system(size: 11, weight: .bold))
-                                    .foregroundColor(AppTheme.textSecondary)
-                            }
-                        }
-                        Text(tipText)
-                            .font(AppTheme.captionFont)
-                            .foregroundColor(AppTheme.textPrimary)
-                            .multilineTextAlignment(.leading)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-                    .padding(12)
-                    .frame(maxWidth: 240, alignment: .leading)
-                    .background(AppTheme.cardBackground)
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
-                    .shadow(color: .black.opacity(0.15), radius: 10, y: 4)
-                }
-                .buttonStyle(SpringPressStyle())
-                .transition(.scale(scale: 0.85, anchor: .bottomTrailing).combined(with: .opacity))
+                tipBubble(tipText)
+                    .offset(y: 50)
+                    .transition(.scale(scale: 0.9, anchor: .topTrailing).combined(with: .opacity))
             }
-
-            Button {
-                showNextTip()
-            } label: {
-                Image(Mascots.pig.imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 48, height: 48)
-                    .shadow(color: .black.opacity(0.18), radius: 6, y: 3)
-            }
-            .buttonStyle(SpringPressStyle())
-            .accessibilityLabel("Penny")
-            .accessibilityHint("Shows a tip about this screen")
         }
         .onAppear { scheduleTip(for: tab) }
         .onChange(of: tab) { scheduleTip(for: tab) }
         .onDisappear { tipTask?.cancel() }
     }
 
+    private func tipBubble(_ text: String) -> some View {
+        Button {
+            dismissTip()
+        } label: {
+            VStack(alignment: .leading, spacing: 5) {
+                HStack {
+                    Text("PENNY'S TIP")
+                        .font(AppTheme.kickerFont)
+                        .tracking(1)
+                        .foregroundColor(AppTheme.primaryGreen)
+                    Spacer()
+                    Image(systemName: "xmark")
+                        .font(.system(size: 10, weight: .bold))
+                        .foregroundColor(AppTheme.textSecondary)
+                }
+                Text(text)
+                    .font(.footnote)
+                    .foregroundColor(AppTheme.textPrimary)
+                    .multilineTextAlignment(.leading)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding(12)
+            .frame(width: 250, alignment: .leading)
+            .cardSurface(radius: 12)
+            .shadow(color: .black.opacity(0.12), radius: 10, y: 4)
+        }
+        .buttonStyle(.plain)
+    }
+
     // MARK: - Tip scheduling
+
+    /// Tabs Penny has already greeted this launch — she offers one tip per
+    /// tab automatically, then only when tapped, so she never keeps
+    /// covering the header.
+    private static var greetedTabs: Set<MainTab> = []
 
     private func scheduleTip(for tab: MainTab) {
         tipTask?.cancel()
+        guard !Self.greetedTabs.contains(tab) else { return }
+        Self.greetedTabs.insert(tab)
         tipTask = Task {
             try? await Task.sleep(nanoseconds: 900_000_000) // let the tab settle
             guard !Task.isCancelled else { return }

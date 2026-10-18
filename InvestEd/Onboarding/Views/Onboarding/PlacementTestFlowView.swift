@@ -24,11 +24,12 @@ private struct PlacementIntroView: View {
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
-            Image(systemName: "graduationcap.fill")
+            Image(Mascots.owl.imageName)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 90, height: 90)
-                .foregroundStyle(AppTheme.primaryGradient)
+                .frame(width: 96, height: 96)
+                .padding(12)
+                .background(MainTab.learn.color.opacity(0.12), in: Circle())
 
             Text("Let's find your starting point")
                 .font(AppTheme.titleFont)
