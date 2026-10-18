@@ -1,13 +1,21 @@
 import SwiftUI
 
 /// Penny lives in the top-right corner of every tab's header. She offers a
-/// short tip about the screen you just landed on (the bubble auto-hides
-/// after a few seconds); tap her for another. Tips are hand-written.
+/// short tip about the screen you just landed on (it auto-hides after a few
+/// seconds); tap her for another. Tips are hand-written.
 struct PennyCompanion: View {
     let tab: MainTab
 
-    @State private var tipText: String?
+    /// Where the tip shows. TabScreen supplies this and prints the tip
+    /// inline in its header, so it pushes content down instead of
+    /// covering any text.
+    @Environment(\.pennyTip) private var tip
     @State private var tipTask: Task<Void, Never>?
+
+    private var tipText: String? {
+        get { tip.wrappedValue }
+        nonmutating set { tip.wrappedValue = newValue }
+    }
 
     var body: some View {
         Button {
@@ -23,47 +31,9 @@ struct PennyCompanion: View {
         .buttonStyle(SpringPressStyle())
         .accessibilityLabel("Penny")
         .accessibilityHint("Shows a tip about this screen")
-        // The tip drops down from Penny, over the content, without moving
-        // anything else on screen.
-        .overlay(alignment: .topTrailing) {
-            if let tipText {
-                tipBubble(tipText)
-                    .offset(y: 50)
-                    .transition(.scale(scale: 0.9, anchor: .topTrailing).combined(with: .opacity))
-            }
-        }
         .onAppear { scheduleTip(for: tab) }
         .onChange(of: tab) { scheduleTip(for: tab) }
         .onDisappear { tipTask?.cancel() }
-    }
-
-    private func tipBubble(_ text: String) -> some View {
-        Button {
-            dismissTip()
-        } label: {
-            VStack(alignment: .leading, spacing: 5) {
-                HStack {
-                    Text("PENNY'S TIP")
-                        .font(AppTheme.kickerFont)
-                        .tracking(1)
-                        .foregroundColor(AppTheme.primaryGreen)
-                    Spacer()
-                    Image(systemName: "xmark")
-                        .font(.system(size: 10, weight: .bold))
-                        .foregroundColor(AppTheme.textSecondary)
-                }
-                Text(text)
-                    .font(.footnote)
-                    .foregroundColor(AppTheme.textPrimary)
-                    .multilineTextAlignment(.leading)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-            .padding(12)
-            .frame(width: 250, alignment: .leading)
-            .cardSurface(radius: 12)
-            .shadow(color: .black.opacity(0.12), radius: 10, y: 4)
-        }
-        .buttonStyle(.plain)
     }
 
     // MARK: - Tip scheduling
@@ -149,5 +119,68 @@ struct PennyCompanion: View {
                 "Your monthly badge just needs one lesson this month. Easy win."
             ]
         }
+    }
+}
+
+// MARK: - Tip plumbing
+
+private struct PennyTipKey: EnvironmentKey {
+    static let defaultValue: Binding<String?> = .constant(nil)
+}
+
+extension EnvironmentValues {
+    /// The tip Penny is showing on the current screen, if any.
+    var pennyTip: Binding<String?> {
+        get { self[PennyTipKey.self] }
+        set { self[PennyTipKey.self] = newValue }
+    }
+}
+
+/// Penny's tip, printed inside the ink header under the title. It takes
+/// its own row, so nothing on screen is ever hidden behind it.
+struct PennyTipBanner: View {
+    let text: String
+    let onClose: () -> Void
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 10) {
+            Image(Mascots.pig.imageName)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 26, height: 26)
+            VStack(alignment: .leading, spacing: 3) {
+                Text("PENNY'S TIP")
+                    .font(AppTheme.kickerFont)
+                    .tracking(1)
+                    .foregroundColor(AppTheme.onInk.opacity(0.75))
+                Text(text)
+                    .font(.footnote.weight(.medium))
+                    .foregroundColor(AppTheme.onInk)
+                    .multilineTextAlignment(.leading)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            Spacer(minLength: 4)
+            Button(action: onClose) {
+                Image(systemName: "xmark")
+                    .font(.system(size: 11, weight: .bold))
+                    .foregroundColor(AppTheme.onInk.opacity(0.8))
+                    .frame(width: 28, height: 28)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Close tip")
+        }
+        .padding(.leading, 12)
+        .padding(.vertical, 10)
+        .padding(.trailing, 4)
+        .background(
+            RoundedRectangle(cornerRadius: AppTheme.smallRadius, style: .continuous)
+                .fill(AppTheme.onInk.opacity(0.14))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: AppTheme.smallRadius, style: .continuous)
+                .stroke(AppTheme.onInk.opacity(0.22), lineWidth: 1)
+        )
+        .accessibilityElement(children: .combine)
     }
 }
