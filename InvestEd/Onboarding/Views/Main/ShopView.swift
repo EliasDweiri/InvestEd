@@ -34,6 +34,9 @@ struct ShopView: View {
                 // Real-money sections (Gold packs, InvestEd Plus) only
                 // appear once StoreKit is live. Everything in this
                 // build is earned by learning — nothing costs money.
+                // The studio is the shop's most-used door, so it sits at
+                // the top instead of below the whole gear grid.
+                avatarStudioCard
                 if Self.purchasesEnabled { goldPacksSection }
                 powerUpsSection
                 avatarGearSection
@@ -175,6 +178,42 @@ struct ShopView: View {
         }
         .padding()
         .cardSurface()
+    }
+
+    // MARK: - Avatar Studio shortcut
+
+    private var avatarStudioCard: some View {
+        Button {
+            showAvatarBuilder = true
+        } label: {
+            HStack(spacing: 14) {
+                AvatarView(
+                    config: appState.currentUser?.avatar
+                        ?? AvatarConfig(baseEmoji: appState.currentUser?.avatarEmoji ?? "pig"),
+                    size: 54
+                )
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Avatar Studio")
+                        .font(AppTheme.headingFont)
+                        .foregroundColor(AppTheme.textPrimary)
+                    Text("Restyle your character and equip the gear you've unlocked.")
+                        .font(AppTheme.captionFont)
+                        .foregroundColor(AppTheme.textSecondary)
+                        .multilineTextAlignment(.leading)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                Spacer(minLength: 4)
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundColor(MainTab.shop.color)
+            }
+            .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .cardSurface()
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(SpringPressStyle())
+        .accessibilityLabel("Open Avatar Studio")
     }
 
     // MARK: - Avatar gear (functional, priced in Gold)
