@@ -50,7 +50,7 @@ final class PortfolioViewModel: ObservableObject {
             return
         }
         guard cost <= user.cashBalance else {
-            errorMessage = "You don't have enough cash — this trade costs \(cost.formatted(.currency(code: "USD")))."
+            errorMessage = "You don't have enough cash. This trade costs \(cost.formatted(.currency(code: "USD")))."
             return
         }
         user.cashBalance -= cost

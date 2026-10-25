@@ -363,11 +363,7 @@ private struct PathNodeView: View {
                 .frame(maxWidth: 150)
         }
         .overlay(alignment: xOffset > 0 ? .leading : .trailing) {
-            if state == .current {
-                SnoutCoinMark(size: 30)
-                    .offset(x: xOffset > 0 ? -58 : 58, y: 10)
-                    .transition(.scale.combined(with: .opacity))
-            } else if let guide {
+            if state != .current, let guide {
                 VStack(spacing: 3) {
                     Image(guide.imageName)
                         .resizable()
@@ -755,8 +751,8 @@ struct LessonPlayerView: View {
                 .font(AppTheme.titleFont)
                 .foregroundColor(AppTheme.textPrimary)
             Text(viewModel.activeIsFinalTest
-                 ? "The Knowledge Check needs all 5 lives. Review the unit and give it another shot!"
-                 : "You used all 5 lives. Give this lesson another try — you've got this!")
+                 ? "The Knowledge Check needs all 5 lives. Review the unit and give it another shot."
+                 : "You used all 5 lives. Review the explanations and try the lesson again.")
                 .font(AppTheme.bodyFont)
                 .foregroundColor(AppTheme.textSecondary)
                 .multilineTextAlignment(.center)

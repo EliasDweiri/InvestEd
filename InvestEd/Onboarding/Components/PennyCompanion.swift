@@ -45,7 +45,9 @@ struct PennyCompanion: View {
 
     private func scheduleTip(for tab: MainTab) {
         tipTask?.cancel()
-        guard !Self.greetedTabs.contains(tab) else { return }
+        // Only greet on the Learn tab, once per launch. Elsewhere Penny waits
+        // to be tapped, so screens don't shift under the user's finger.
+        guard tab == .learn, !Self.greetedTabs.contains(tab) else { return }
         Self.greetedTabs.insert(tab)
         tipTask = Task {
             try? await Task.sleep(nanoseconds: 900_000_000) // let the tab settle
@@ -84,37 +86,36 @@ struct PennyCompanion: View {
         switch tab {
         case .learn:
             return [
-                "A lesson a day keeps your streak alive — and streaks earn the most Gold over time.",
+                "A lesson a day keeps your streak alive, and long streaks earn the most Gold.",
                 "Stuck on a question? Wrong answers cost a heart, but the explanation teaches you either way.",
-                "Each unit's animal guide hints at the theme — the bear teaches you not to panic in downturns.",
+                "Each unit's animal guide hints at its theme. The bear teaches you not to panic in a downturn.",
                 "Perfect lessons pay bonus XP and Gold. Slow down and read every choice.",
                 "The Quant Corner at the bottom of the path is where the math nerds hang out. Worth the climb."
             ]
         case .market:
             return [
-                "The powerhouses up top are indexes — baskets of hundreds of stocks in one number.",
-                "Time in the market beats timing the market — steady investing wins.",
+                "Market Indexes like the S&P 500 sum up hundreds of stocks in one number.",
+                "Time in the market beats timing the market.",
                 "Red days are normal. The S&P 500 has survived every crash in history so far.",
-                "Options are powerful but risky — with a bought option you can lose the whole premium.",
+                "Options are powerful but risky. When you buy one, you can lose the whole premium.",
                 "Dollar-cost averaging: invest a fixed amount on a schedule and dips work FOR you.",
-                "Try the ticker search — you can practice-trade almost any listed stock.",
-                "Your practice portfolio uses real market prices — experiment without real risk."
+                "Use the ticker search to practice-trade almost any listed stock.",
+                "Your practice portfolio uses real market prices, so you can experiment without real risk."
             ]
         case .shop:
             return [
-                "Streak Freezes are the best Gold you'll ever spend — they save your streak automatically.",
-                "Gold comes from lessons: 10 per lesson, 15 if it's perfect.",
+                "A Streak Freeze saves your streak automatically if you miss a day.",
                 "Avatar gear you unlock here gets equipped in the Avatar Studio."
             ]
         case .friends:
             return [
-                "The weekly league resets every week — XP earned this week decides your rank.",
+                "The league resets weekly, so only XP earned this week counts toward your rank.",
                 "Shared streaks only count days when BOTH of you kept the flame alive.",
-                "Add friends with a code from their Profile tab — tap the QR icon."
+                "Add friends with the code on their Profile tab. Tap the QR icon to find yours."
             ]
         case .profile:
             return [
-                "Tap your avatar to restyle it — new characters unlock in the Shop.",
+                "Tap your avatar to restyle it. New gear unlocks in the Shop.",
                 "Every 100 XP is a level. Perfect lessons are the fastest climb.",
                 "Your monthly badge just needs one lesson this month. Easy win."
             ]

@@ -154,9 +154,9 @@ struct AvatarBuilderView: View {
             appState.currentUser = user
             try? FirestoreService.shared.saveUser(user)
             equip()
-            shopMessage = "Unlocked for \(price) Gold!"
+            shopMessage = "Unlocked for \(price) Gold."
         } else {
-            shopMessage = "Not enough Gold — complete lessons to earn more! (\(price) needed)"
+            shopMessage = "Not enough Gold. Complete lessons to earn more (\(price) needed)."
         }
     }
 

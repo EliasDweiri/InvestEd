@@ -16,7 +16,7 @@
           "id": "u8l1q1",
           "prompt": "What does FOMO mean in investing?",
           "choices": [
-            "Fear Of Missing Out — rushing to buy because everyone else seems to be getting rich",
+            "Fear Of Missing Out: rushing to buy because everyone else seems to be getting rich",
             "A low-fee index fund",
             "A government program that insures your losses",
             "The fee a broker charges to sell a stock"
@@ -29,12 +29,12 @@
           "id": "u8l1q2",
           "prompt": "Panic-selling during a market drop turns a temporary paper loss into a permanent, real one.",
           "answer": true,
-          "explanation": "A loss on paper only becomes real when you sell — holding gives prices a chance to recover."
+          "explanation": "A loss on paper only becomes real when you sell. Holding gives prices a chance to recover."
         },
         {
           "type": "ms",
           "id": "u8l1q3",
-          "prompt": "Which are signs that FOMO — not real analysis — is driving your decision? (Choose all that apply.)",
+          "prompt": "Which are signs that FOMO, not real analysis, is driving your decision? (Choose all that apply.)",
           "choices": [
             "A stock is all over your feed and 'everyone' seems to own it",
             "You feel a rush of urgency to buy right now before you miss out",
@@ -201,7 +201,7 @@
             1,
             3
           ],
-          "explanation": "Herd mentality is letting the crowd — not your own analysis — make the call."
+          "explanation": "Herd mentality is letting the crowd, not your own analysis, make the call."
         },
         {
           "type": "tf",
@@ -223,7 +223,7 @@
           "id": "u8l3q1",
           "prompt": "An investment 'guarantees' you'll double your money in a month with 'zero risk.' This is:",
           "choices": [
-            "A major red flag — real investments never guarantee high returns with no risk",
+            "A major red flag: real investments never guarantee high returns with no risk",
             "A normal, safe opportunity you should jump on",
             "Proof the investment is government-regulated",
             "A sign of a well-diversified portfolio"
@@ -234,7 +234,7 @@
         {
           "type": "tf",
           "id": "u8l3q2",
-          "prompt": "In a Ponzi scheme, early investors are paid with money from new investors — not from real profits.",
+          "prompt": "In a Ponzi scheme, early investors are paid with money from new investors, not from real profits.",
           "answer": true,
           "explanation": "It collapses the moment new money slows, and most people end up losing everything."
         },
@@ -301,14 +301,14 @@
           "id": "u8l3q6",
           "prompt": "A paid promotion from an influencer counts as solid financial research.",
           "answer": false,
-          "explanation": "Paid promos are advertising, not analysis — the promoter is being paid to say nice things."
+          "explanation": "Paid promos are advertising, not analysis. The promoter is being paid to say nice things."
         },
         {
           "type": "mc",
           "id": "u8l3q7",
           "prompt": "A celebrity you follow is paid to promote a new crypto token. Before buying, you should:",
           "choices": [
-            "Do your own research — a paid endorsement isn't evidence the token is good",
+            "Do your own research. A paid endorsement isn't evidence the token is good",
             "Buy immediately because they're famous and trustworthy",
             "Invest your whole savings to show support",
             "Assume it's guaranteed to rise because a celebrity likes it"
@@ -401,7 +401,7 @@
           "prompt": "If you review your portfolio once every 3 months, how many times do you check it in a year?",
           "answer": 4,
           "tolerance": 0,
-          "explanation": "12 months / 3 = 4 scheduled reviews per year — calm and consistent."
+          "explanation": "12 months / 3 = 4 scheduled reviews per year: calm and consistent."
         }
       ]
     },
@@ -495,7 +495,7 @@
             "Short-term trading always earns more"
           ],
           "correct": 0,
-          "explanation": "Given time, compounding turns steady growth into a snowball — the longer you wait, the bigger it gets."
+          "explanation": "Given time, compounding turns steady growth into a snowball. The longer you wait, the bigger it gets."
         }
       ]
     }
@@ -621,7 +621,7 @@
           "Fear pushes you to panic-sell at a loss",
           "You miss the rebound that follows"
         ],
-        "explanation": "Emotion makes investors buy high and sell low — the exact opposite of the goal."
+        "explanation": "Emotion makes investors buy high and sell low, the exact opposite of the goal."
       },
       {
         "type": "mc",
@@ -647,7 +647,7 @@
           "Panic-selling is the best response to a market dip"
         ],
         "correct": 0,
-        "explanation": "Ponzi schemes have no real profits — they run on new money until it dries up."
+        "explanation": "Ponzi schemes have no real profits. They run on new money until it dries up."
       }
     ]
   }

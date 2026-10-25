@@ -16,13 +16,13 @@
           "id": "u10l1q1",
           "prompt": "What does macroeconomics study?",
           "choices": [
-            "The economy as a whole — things like a country's total output, inflation, and jobs",
+            "The economy as a whole: things like a country's total output, inflation, and jobs",
             "Only how one family budgets its monthly income",
             "How to pick a single winning stock",
             "The payroll rules inside one small company"
           ],
           "correct": 0,
-          "explanation": "Macroeconomics zooms out to the whole economy — total production, prices, and employment — instead of one person or business."
+          "explanation": "Macroeconomics zooms out to the whole economy (total production, prices, and employment) instead of one person or business."
         },
         {
           "type": "tf",
@@ -120,7 +120,7 @@
         {
           "type": "tf",
           "id": "u10l1q7",
-          "prompt": "Even though it studies the whole economy, macroeconomics still uses the ideas of supply and demand — just at a much larger scale.",
+          "prompt": "Even though it studies the whole economy, macroeconomics still uses supply and demand, just on a much larger scale.",
           "answer": true,
           "explanation": "Supply and demand work for one lemonade stand and for an entire country's economy alike."
         }
@@ -143,27 +143,27 @@
             "The price of a single company's stock"
           ],
           "correct": 0,
-          "explanation": "GDP adds up the value of everything a country produces — it's the main scoreboard for the size of an economy."
+          "explanation": "GDP adds up the value of everything a country produces. It's the main scoreboard for the size of an economy."
         },
         {
           "type": "tf",
           "id": "u10l2q2",
           "prompt": "When GDP is growing, the economy is producing more goods and services than before.",
           "answer": true,
-          "explanation": "Rising GDP means more output — usually a sign of an expanding, healthier economy."
+          "explanation": "Rising GDP means more output, usually a sign of a growing, healthier economy."
         },
         {
           "type": "mc",
           "id": "u10l2q3",
           "prompt": "An economy is said to be in a contraction (or recession) when...",
           "choices": [
-            "Its GDP is shrinking — total output is falling",
+            "Its GDP is shrinking: total output is falling",
             "Its GDP is growing quickly",
             "Prices become perfectly stable",
             "Everyone suddenly gets a raise"
           ],
           "correct": 0,
-          "explanation": "A contraction means the economy is shrinking — GDP falls instead of grows."
+          "explanation": "A contraction means the economy is shrinking: GDP falls instead of growing."
         },
         {
           "type": "num",
@@ -247,12 +247,12 @@
             "The interest a bank pays you"
           ],
           "correct": 0,
-          "explanation": "Inflation is the overall upward drift of prices — the same dollar buys a little less each year."
+          "explanation": "Inflation is the overall rise in prices. The same dollar buys a little less each year."
         },
         {
           "type": "tf",
           "id": "u10l3q2",
-          "prompt": "During inflation, a dollar buys less than it used to — its purchasing power falls.",
+          "prompt": "During inflation, a dollar buys less than it used to. Its purchasing power falls.",
           "answer": true,
           "explanation": "When prices rise, each dollar stretches less far, so your money's purchasing power shrinks."
         },
@@ -274,7 +274,7 @@
           "id": "u10l3q4",
           "prompt": "In many countries, central banks aim for an inflation rate of about 2% per year.",
           "answer": true,
-          "explanation": "A low, steady ~2% is seen as healthy — enough to keep the economy moving without eroding money too fast."
+          "explanation": "A low, steady ~2% is seen as healthy: enough to keep the economy moving without eroding money too fast."
         },
         {
           "type": "num",
@@ -353,7 +353,7 @@
           "id": "u10l4q3",
           "prompt": "A small amount of unemployment is normal, because people are always switching jobs or just entering the workforce.",
           "answer": true,
-          "explanation": "Some 'frictional' unemployment is healthy — it just means people are moving between jobs. Zero unemployment almost never happens."
+          "explanation": "Some 'frictional' unemployment is healthy. It just means people are moving between jobs. Zero unemployment almost never happens."
         },
         {
           "type": "ms",
@@ -430,7 +430,7 @@
             "Contraction",
             "Trough"
           ],
-          "explanation": "The economy grows (expansion), tops out (peak), shrinks (contraction), and bottoms out (trough) — then it starts over."
+          "explanation": "The economy grows (expansion), tops out (peak), shrinks (contraction), and bottoms out (trough). Then it starts over."
         },
         {
           "type": "match",
@@ -454,14 +454,14 @@
               "The low point before growth begins again"
             ]
           ],
-          "explanation": "These four phases repeat over and over — that's why it's called a cycle."
+          "explanation": "These four phases repeat over and over. That's why it's called a cycle."
         },
         {
           "type": "tf",
           "id": "u10l5q3",
-          "prompt": "The business cycle always turns — no expansion lasts forever, and no contraction lasts forever either.",
+          "prompt": "The business cycle always turns. No expansion lasts forever, and no contraction does either.",
           "answer": true,
-          "explanation": "Booms eventually cool and downturns eventually recover — the cycle keeps turning."
+          "explanation": "Booms eventually cool and downturns eventually recover. The cycle keeps turning."
         },
         {
           "type": "mc",
@@ -474,7 +474,7 @@
             "A trough that lasts only one day"
           ],
           "correct": 0,
-          "explanation": "A recession is a significant, sustained contraction — falling output across the economy."
+          "explanation": "A recession is a significant, sustained contraction, with output falling across the economy."
         },
         {
           "type": "ms",
@@ -532,7 +532,7 @@
             "Boom"
           ],
           "correct": 0,
-          "explanation": "The trough is the bottom — the turning point where a contraction ends and a new expansion begins."
+          "explanation": "The trough is the bottom: the turning point where a contraction ends and a new expansion begins."
         }
       ]
     }
@@ -548,7 +548,7 @@
         "id": "u10fq1",
         "prompt": "Macroeconomics is best described as the study of...",
         "choices": [
-          "The whole economy — output, inflation, and jobs",
+          "The whole economy: output, inflation, and jobs",
           "One family's weekly budget",
           "A single company's logo design",
           "How to trade one stock"
@@ -577,8 +577,8 @@
         "id": "u10fq4",
         "prompt": "During inflation, the purchasing power of your money...",
         "choices": [
-          "Falls — each dollar buys less",
-          "Rises — each dollar buys more",
+          "Falls: each dollar buys less",
+          "Rises: each dollar buys more",
           "Stays perfectly constant",
           "Becomes infinite"
         ],
@@ -613,7 +613,7 @@
           "Contraction",
           "Trough"
         ],
-        "explanation": "Grow, top out, shrink, bottom out — then the cycle repeats."
+        "explanation": "Grow, top out, shrink, bottom out, and then the cycle repeats."
       },
       {
         "type": "match",

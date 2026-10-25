@@ -41,7 +41,7 @@ final class NotificationService {
     func notifyFriendRequest(from username: String) {
         let content = UNMutableNotificationContent()
         content.title = "New friend request!"
-        content.body = "\(username) wants to be your money buddy. Accept in the Friends tab!"
+        content.body = "\(username) sent you a friend request. Accept it in the Friends tab."
         content.sound = .default
         let request = UNNotificationRequest(identifier: "friendRequest-\(UUID().uuidString)", content: content, trigger: nil)
         UNUserNotificationCenter.current().add(request)

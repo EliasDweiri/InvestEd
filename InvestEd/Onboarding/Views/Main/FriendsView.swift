@@ -152,7 +152,7 @@ struct FriendsView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 64, height: 64)
-                    Text("No friends yet — search a username above to add your first!")
+                    Text("No friends yet. Search a username above to add your first.")
                         .font(AppTheme.captionFont)
                         .foregroundColor(AppTheme.textSecondary)
                         .multilineTextAlignment(.center)
@@ -165,16 +165,12 @@ struct FriendsView: View {
                 VStack(spacing: 0) {
                 ForEach(Array(sorted.enumerated()), id: \.element.id) { rank, friend in
                     HStack(spacing: 14) {
-                        Text("#\(rank + 1)")
-                            .font(AppTheme.bodyFont.bold())
-                            .foregroundColor(rank == 0 ? AppTheme.accentGold : AppTheme.textSecondary)
-                            .frame(width: 36)
                         MascotBubble(avatarKey: friend.avatarEmoji, size: 34)
                         VStack(alignment: .leading, spacing: 2) {
                             Text(friend.username)
                                 .font(AppTheme.bodyFont.bold())
                                 .foregroundColor(AppTheme.textPrimary)
-                            Text("Level \(friend.level) · \(friend.streak)-day streak\(sharedStreakLabel(with: friend))")
+                            Text("Level \(friend.level)" + (friend.streak > 0 ? " · \(friend.streak)-day streak" : "") + sharedStreakLabel(with: friend))
                                 .font(AppTheme.captionFont)
                                 .foregroundColor(AppTheme.textSecondary)
                         }
