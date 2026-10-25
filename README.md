@@ -3,7 +3,7 @@
 **A free iPhone app that teaches teens personal finance and investing through bite-sized lessons and a live, risk-free stock market simulator.**
 
 > Built for the 2026 Congressional App Challenge.
-> _[FILL IN: your name]_ · Bellarmine College Preparatory, San Jose · _[district]_
+> Elias Dweiri · Bellarmine College Preparatory, San Jose, California
 
 <p align="center">
   <img src="docs/screenshots/01-learn.jpg" width="160" alt="Learning path">
@@ -18,7 +18,7 @@
 
 ## The problem
 
-California won't require a personal-finance course to graduate until the class of 2031, and the law covers only public high schools ([EdSource](https://edsource.org/2026/california-high-school-finance-course/759788)). Until then, most students can finish high school without learning how a paycheck, a credit score or an index fund works, while living in one of the most expensive regions in the country. _[FILL IN: one or two sentences on why this matters to you personally.]_
+California won't require a personal-finance course to graduate until the class of 2031, and the law covers only public high schools ([EdSource](https://edsource.org/2026/california-high-school-finance-course/759788)). Until then, most students can finish high school without learning how a paycheck, a credit score or an index fund works, while living in one of the most expensive regions in the country. I learned most of what I know about money from my dad and my own studying, and talking with people who were never taught the basics showed me how many teens miss out. InvestEd is my way of giving other students that same start.
 
 ## What it does
 
@@ -132,11 +132,9 @@ All app code, lesson content and the backend Worker are original to this project
 
 ## Use of AI tools
 
-_Required by the Congressional App Challenge rules. Be specific and honest — judges value clear disclosure._
-
-- **AI tools used:** _[FILL IN — e.g. Claude (Anthropic) for …; ChatGPT for …]_
-- **What AI helped with:** _[FILL IN — e.g. drafting boilerplate, debugging Swift 6 concurrency errors, first drafts of quiz questions which I then fact-checked]_
-- **What I designed and decided myself:** _[FILL IN — the idea and audience, the curriculum order, the gamification design, the architecture choices (free tiers, Worker proxy), which features to cut, testing and fixing on device…]_
+- **AI tools used:** Claude (Anthropic).
+- **What AI helped with:** Claude was my coding partner. I planned each step (the market simulator, the friend system, and so on) and it wrote much of the Swift, JavaScript and Python code, helped debug build and runtime errors, drafted first versions of lesson questions, and helped redesign the interface and write this README and the tests.
+- **What I designed and decided myself:** the idea and audience; what the app teaches and in what order; the architecture and the rule that every tool stays free (Cloudflare Workers, no Sign in with Apple); assembling and building the project in Xcode; setting up Firebase and deploying the Worker and security rules; fact-checking lessons; testing with two accounts; and product calls such as removing the AI chatbot and hiding paid features.
 - **At runtime:** the app itself uses no AI. Penny's tips and all lesson content are fixed text.
 
 ## What's next (2.0)
