@@ -88,6 +88,14 @@ struct SettingsView: View {
                     .font(AppTheme.captionFont)
                     .foregroundColor(AppTheme.secondaryBlue)
             }
+            // Re-runs the adaptive placement test. Nothing is saved until the
+            // test is finished, and a retake never moves you backward.
+            Button("Retake placement test") {
+                guard var user = appState.currentUser else { return }
+                user.hasCompletedPlacement = false
+                dismiss()
+                appState.currentUser = user
+            }
         }
     }
 
