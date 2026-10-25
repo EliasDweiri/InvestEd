@@ -87,8 +87,13 @@ final class OnboardingViewModel: ObservableObject {
     /// unit is ever saved.
     func finalizePlacement() {
         guard var user = AppState.shared.currentUser else { return }
-        user.currentUnitIndex = placementResultUnitIndex
-        user.currentLessonIndex = 0
+        // A first placement sets the starting unit. A retake (from Settings)
+        // only ever moves a learner forward, never back past finished work.
+        let isFirstPlacement = user.completedLessonIDs.isEmpty
+        if isFirstPlacement || placementResultUnitIndex > user.currentUnitIndex {
+            user.currentUnitIndex = placementResultUnitIndex
+            user.currentLessonIndex = 0
+        }
         user.hasCompletedPlacement = true
         AppState.shared.currentUser = user
         try? FirestoreService.shared.saveUser(user)
