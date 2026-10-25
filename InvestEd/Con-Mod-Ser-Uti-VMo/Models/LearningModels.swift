@@ -160,6 +160,14 @@ enum QuestionResponse: Equatable {
 }
 
 extension Question {
+    /// True when the right-hand option chosen for `pair` carries the same
+    /// text as the pair's own right side.
+    func isMatchCorrect(_ pair: MatchPair, chosenRightID: Int?) -> Bool {
+        guard let chosenRightID,
+              let chosen = matchPairs.first(where: { $0.id == chosenRightID }) else { return false }
+        return chosen.right == pair.right
+    }
+
     func isCorrect(_ response: QuestionResponse) -> Bool {
         switch (type, response) {
         case (.multipleChoice, .choice(let id)), (.trueFalse, .choice(let id)):
@@ -170,7 +178,10 @@ extension Question {
             return indices == Array(orderingItems.indices)
         case (.matching, .matches(let map)):
             guard map.count == matchPairs.count else { return false }
-            return matchPairs.allSatisfy { map[$0.id] == $0.id }
+            // Compare by the right-hand TEXT, not the pair id: when two pairs
+            // share an answer (e.g. two items that are both "Need"), either
+            // identical chip is correct.
+            return matchPairs.allSatisfy { isMatchCorrect($0, chosenRightID: map[$0.id]) }
         case (.numericEntry, .number(let value)):
             guard let answer = numericAnswer else { return false }
             return abs(value - answer) <= numericTolerance + 0.0001

@@ -51,6 +51,13 @@ struct TabScreen<Accessory: View, Hero: View, Content: View>: View {
             }
         }
         .scrollIndicators(.hidden)
+        // Keep the status bar on the tab's ink color, so content scrolling
+        // up never shows through behind the clock and battery.
+        .overlay(alignment: .top) {
+            Color.clear
+                .frame(height: 0)
+                .background(tab.color.ignoresSafeArea(edges: .top))
+        }
         .background(AppTheme.background.ignoresSafeArea())
         .toolbar(.hidden, for: .navigationBar)
     }

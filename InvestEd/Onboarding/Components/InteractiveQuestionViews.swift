@@ -263,10 +263,10 @@ struct MatchingAnswerView: View {
 
     private func rowTint(_ pair: MatchPair) -> Color {
         guard locked else { return AppTheme.textPrimary }
-        return matches[pair.id] == pair.id ? AppTheme.primaryGreen : AppTheme.dangerRed
+        return question.isMatchCorrect(pair, chosenRightID: matches[pair.id]) ? AppTheme.primaryGreen : AppTheme.dangerRed
     }
     private func rowBorder(_ pair: MatchPair) -> Color {
-        if locked { return matches[pair.id] == pair.id ? AppTheme.primaryGreen : AppTheme.dangerRed }
+        if locked { return question.isMatchCorrect(pair, chosenRightID: matches[pair.id]) ? AppTheme.primaryGreen : AppTheme.dangerRed }
         if activeLeft == pair.id { return AppTheme.secondaryBlue }
         return matches[pair.id] != nil ? AppTheme.secondaryBlue.opacity(0.5) : .clear
     }
