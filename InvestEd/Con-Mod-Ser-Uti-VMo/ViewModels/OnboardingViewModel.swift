@@ -46,8 +46,12 @@ final class OnboardingViewModel: ObservableObject {
             $0.difficulty == currentDifficulty && !askedQuestionIDs.contains($0.id)
         }
         let fallbackPool = PlacementQuestionData.all.filter { !askedQuestionIDs.contains($0.id) }
-        let question = pool.randomElement() ?? fallbackPool.randomElement()
-        if let question { askedQuestionIDs.insert(question.id) }
+        guard var question = pool.randomElement() ?? fallbackPool.randomElement() else { return nil }
+        askedQuestionIDs.insert(question.id)
+        // Shuffle multiple-choice answers so the right one isn't always in
+        // the same spot. True/False keeps its natural order. Grading uses
+        // choice IDs, so order doesn't matter.
+        if question.choices.count > 2 { question.choices.shuffle() }
         return question
     }
 
