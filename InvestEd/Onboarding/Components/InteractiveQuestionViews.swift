@@ -342,7 +342,8 @@ struct NumericAnswerView: View {
     }
 
     private func formatted(_ value: Double) -> String {
-        let number = value == value.rounded() ? String(Int(value)) : String(format: "%.2f", value)
+        // Grouped thousands ("4,500"), and decimals only when needed.
+        let number = value.formatted(.number.precision(.fractionLength(value == value.rounded() ? 0 : 2)))
         return "\(question.numericPrefix ?? "")\(number)\(question.numericSuffix ?? "")"
     }
 }
