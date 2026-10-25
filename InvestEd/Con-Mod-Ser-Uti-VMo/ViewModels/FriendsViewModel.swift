@@ -94,30 +94,30 @@ final class FriendsViewModel: ObservableObject {
             .replacingOccurrences(of: "invested:add:", with: "")
         guard !cleaned.isEmpty else { return }
         guard cleaned != appState.currentUser?.id else {
-            statusMessage = "That's your own code! Share it with a friend instead."
+            statusMessage = "That's your own code. Share it with a friend instead."
             return
         }
         if let user = try? await FirestoreService.shared.fetchUser(id: cleaned) {
             sendFriendRequest(to: user)
         } else {
-            statusMessage = "No user found for that code — double-check it."
+            statusMessage = "No user found for that code. Check it and try again."
         }
     }
 
     func sendFriendRequest(to user: AppUser) {
         guard let me = appState.currentUser else { return }
         guard !me.friendIDs.contains(user.id) else {
-            statusMessage = "You and \(user.username) are already friends!"
+            statusMessage = "You and \(user.username) are already friends."
             return
         }
         guard user.id != me.id else {
-            statusMessage = "That's you! Share your code with a friend instead."
+            statusMessage = "That's your own code. Share it with a friend instead."
             return
         }
         let request = FriendRequest(id: UUID().uuidString, fromUserID: me.id, fromUsername: me.username, toUserID: user.id, status: .pending, dateSent: Date())
         try? FirestoreService.shared.sendFriendRequest(request)
         requestedIDs.insert(user.id)
-        statusMessage = "Friend request sent to \(user.username)!"
+        statusMessage = "Friend request sent to \(user.username)."
     }
 
     func respond(to request: FriendRequest, accept: Bool) {

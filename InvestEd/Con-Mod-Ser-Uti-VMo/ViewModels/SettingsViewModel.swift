@@ -25,12 +25,12 @@ final class SettingsViewModel: ObservableObject {
         isWorking = true; message = nil
         do {
             if try await FirestoreService.shared.isUsernameTaken(name, excluding: user.id) {
-                message = "That username is taken — try another."
+                message = "That username is taken. Try another."
             } else {
                 user.username = name
                 appState.currentUser = user
                 try FirestoreService.shared.saveUser(user)
-                message = "Username updated!"
+                message = "Username updated."
             }
         } catch {
             message = "Couldn't update username: \(error.localizedDescription)"

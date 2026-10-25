@@ -10,30 +10,103 @@
       "title": "Budgeting 101",
       "icon": "chart.pie.fill",
       "questions": [
-        {"type": "mc", "id": "u1l1q1", "prompt": "What is a budget?",
-          "choices": ["A plan for how you'll spend and save your money", "A type of bank account", "A loan from the government", "A stock market index"],
+        {
+          "type": "mc",
+          "id": "u1l1q1",
+          "prompt": "What is a budget?",
+          "choices": [
+            "A plan for how you'll spend and save your money",
+            "A type of bank account",
+            "A loan from the government",
+            "A stock market index"
+          ],
           "correct": 0,
-          "explanation": "A budget is simply a plan that maps out your income and expenses so you know where your money is going."},
-        {"type": "tf", "id": "u1l1q2", "prompt": "A budget should include both your income and your expenses.",
+          "explanation": "A budget is simply a plan that maps out your income and expenses so you know where your money is going."
+        },
+        {
+          "type": "tf",
+          "id": "u1l1q2",
+          "prompt": "A budget should include both your income and your expenses.",
           "answer": true,
-          "explanation": "A good budget tracks money coming in (income) and money going out (expenses)."},
-        {"type": "cat", "id": "u1l1q3", "prompt": "Sort each item into fixed (same every month) or variable (changes month to month).",
-          "categories": ["Fixed", "Variable"],
-          "items": [["Rent", "Fixed"], ["Groceries", "Variable"], ["Car insurance", "Fixed"], ["Dining out", "Variable"], ["Netflix subscription", "Fixed"]],
-          "explanation": "Fixed costs like rent and insurance stay the same; variable costs like groceries and dining out move around with your choices."},
-        {"type": "num", "id": "u1l1q4", "prompt": "You earn $2,000 a month and spend $2,300. How many dollars over budget are you?",
-          "answer": 300, "tolerance": 0, "prefix": "$",
-          "explanation": "Spending $2,300 on $2,000 of income is a $300 deficit — you're relying on savings or debt to cover the gap."},
-        {"type": "tf", "id": "u1l1q5", "prompt": "The 50/30/20 rule suggests 50% needs, 30% wants, 20% savings.",
+          "explanation": "A good budget tracks money coming in (income) and money going out (expenses)."
+        },
+        {
+          "type": "cat",
+          "id": "u1l1q3",
+          "prompt": "Sort each item into fixed (same every month) or variable (changes month to month).",
+          "categories": [
+            "Fixed",
+            "Variable"
+          ],
+          "items": [
+            [
+              "Rent",
+              "Fixed"
+            ],
+            [
+              "Groceries",
+              "Variable"
+            ],
+            [
+              "Car insurance",
+              "Fixed"
+            ],
+            [
+              "Dining out",
+              "Variable"
+            ],
+            [
+              "Netflix subscription",
+              "Fixed"
+            ]
+          ],
+          "explanation": "Fixed costs like rent and insurance stay the same; variable costs like groceries and dining out move around with your choices."
+        },
+        {
+          "type": "num",
+          "id": "u1l1q4",
+          "prompt": "You earn $2,000 a month and spend $2,300. How many dollars over budget are you?",
+          "answer": 300,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "Spending $2,300 on $2,000 of income is a $300 deficit. You're relying on savings or debt to cover the gap."
+        },
+        {
+          "type": "tf",
+          "id": "u1l1q5",
+          "prompt": "The 50/30/20 rule suggests 50% needs, 30% wants, 20% savings.",
           "answer": true,
-          "explanation": "It's a popular, simple guideline for splitting take-home pay across needs, wants, and savings."},
-        {"type": "ms", "id": "u1l1q6", "prompt": "Which of these belong in the 'needs' bucket of a budget? (Choose all that apply.)",
-          "choices": ["Rent", "Groceries", "Concert tickets", "Electricity bill"],
-          "correct": [0, 1, 3],
-          "explanation": "Rent, groceries, and utilities are essentials. Concert tickets are a 'want' — nice, but not required to live."},
-        {"type": "order", "id": "u1l1q7", "prompt": "Put these budgeting steps in the order you'd do them.",
-          "items": ["Add up your monthly income", "List your expenses", "Subtract expenses from income", "Adjust spending to hit your savings goal"],
-          "explanation": "Start with what comes in, list what goes out, find the difference, then adjust — that's the budgeting loop."}
+          "explanation": "It's a popular, simple guideline for splitting take-home pay across needs, wants, and savings."
+        },
+        {
+          "type": "ms",
+          "id": "u1l1q6",
+          "prompt": "Which of these belong in the 'needs' bucket of a budget? (Choose all that apply.)",
+          "choices": [
+            "Rent",
+            "Groceries",
+            "Concert tickets",
+            "Electricity bill"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Rent, groceries, and utilities are essentials. Concert tickets are a 'want': nice, but not required to live."
+        },
+        {
+          "type": "order",
+          "id": "u1l1q7",
+          "prompt": "Put these budgeting steps in the order you'd do them.",
+          "items": [
+            "Add up your monthly income",
+            "List your expenses",
+            "Subtract expenses from income",
+            "Adjust spending to hit your savings goal"
+          ],
+          "explanation": "Start with what comes in, list what goes out, find the difference, then adjust. That's the budgeting loop."
+        }
       ]
     },
     {
@@ -41,30 +114,111 @@
       "title": "Needs vs. Wants",
       "icon": "cart.fill",
       "questions": [
-        {"type": "cat", "id": "u1l2q1", "prompt": "Drop each purchase into 'Need' or 'Want'.",
-          "categories": ["Need", "Want"],
-          "items": [["Groceries", "Need"], ["Designer sneakers", "Want"], ["Bus fare to work", "Need"], ["A new video game", "Want"], ["Basic phone plan", "Need"]],
-          "explanation": "Needs keep you fed, housed, and able to earn. Wants add enjoyment but you could live without them."},
-        {"type": "tf", "id": "u1l2q2", "prompt": "Streaming subscriptions are usually considered a 'want.'",
+        {
+          "type": "cat",
+          "id": "u1l2q1",
+          "prompt": "Drop each purchase into 'Need' or 'Want'.",
+          "categories": [
+            "Need",
+            "Want"
+          ],
+          "items": [
+            [
+              "Groceries",
+              "Need"
+            ],
+            [
+              "Designer sneakers",
+              "Want"
+            ],
+            [
+              "Bus fare to work",
+              "Need"
+            ],
+            [
+              "A new video game",
+              "Want"
+            ],
+            [
+              "Basic phone plan",
+              "Need"
+            ]
+          ],
+          "explanation": "Needs keep you fed, housed, and able to earn. Wants add enjoyment but you could live without them."
+        },
+        {
+          "type": "tf",
+          "id": "u1l2q2",
+          "prompt": "Streaming subscriptions are usually considered a 'want.'",
           "answer": true,
-          "explanation": "Enjoyable, but not essential to survive — so streaming is generally a want."},
-        {"type": "mc", "id": "u1l2q3", "prompt": "Why is it important to separate needs from wants?",
-          "choices": ["It helps you cover essentials first and avoid debt", "It has no real impact on your finances", "It only matters for businesses", "It's required by law"],
+          "explanation": "Enjoyable, but not essential to survive, so streaming is generally a want."
+        },
+        {
+          "type": "mc",
+          "id": "u1l2q3",
+          "prompt": "Why is it important to separate needs from wants?",
+          "choices": [
+            "It helps you cover essentials first and avoid debt",
+            "It has no real impact on your finances",
+            "It only matters for businesses",
+            "It's required by law"
+          ],
           "correct": 0,
-          "explanation": "Knowing the difference makes sure essentials are funded before extras — the core of not overspending."},
-        {"type": "mc", "id": "u1l2q4", "prompt": "Which best describes a 'want'?",
-          "choices": ["Something that improves life but isn't essential to survive", "Something you must have to survive", "A type of tax", "A government benefit"],
+          "explanation": "Knowing the difference makes sure essentials are paid for before extras. That's the core of not overspending."
+        },
+        {
+          "type": "mc",
+          "id": "u1l2q4",
+          "prompt": "Which best describes a 'want'?",
+          "choices": [
+            "Something that improves life but isn't essential to survive",
+            "Something you must have to survive",
+            "A type of tax",
+            "A government benefit"
+          ],
           "correct": 0,
-          "explanation": "Wants add comfort or fun; you could go without them if money got tight."},
-        {"type": "match", "id": "u1l2q5", "prompt": "Match each item to whether it's usually a need or a want.",
-          "pairs": [["Prescription medicine", "Need"], ["Second streaming service", "Want"], ["Winter coat", "Need"], ["Concert VIP upgrade", "Want"]],
-          "explanation": "Health and staying warm are needs; extra entertainment and upgrades are wants."},
-        {"type": "tf", "id": "u1l2q6", "prompt": "Housing and basic utilities are usually considered needs.",
+          "explanation": "Wants add comfort or fun; you could go without them if money got tight."
+        },
+        {
+          "type": "match",
+          "id": "u1l2q5",
+          "prompt": "Match each item to whether it's usually a need or a want.",
+          "pairs": [
+            [
+              "Prescription medicine",
+              "Need"
+            ],
+            [
+              "Second streaming service",
+              "Want"
+            ],
+            [
+              "Winter coat",
+              "Need"
+            ],
+            [
+              "Concert VIP upgrade",
+              "Want"
+            ]
+          ],
+          "explanation": "Health and staying warm are needs; extra entertainment and upgrades are wants."
+        },
+        {
+          "type": "tf",
+          "id": "u1l2q6",
+          "prompt": "Housing and basic utilities are usually considered needs.",
           "answer": true,
-          "explanation": "Shelter, water, heat, and electricity are essentials — classic needs."},
-        {"type": "num", "id": "u1l2q7", "prompt": "Using the 50/30/20 rule on $2,000 take-home pay, how many dollars go to 'wants'?",
-          "answer": 600, "tolerance": 0, "prefix": "$",
-          "explanation": "30% of $2,000 is $600 — the slice the rule sets aside for wants."}
+          "explanation": "Shelter, water, heat, and electricity are essentials. They're classic needs."
+        },
+        {
+          "type": "num",
+          "id": "u1l2q7",
+          "prompt": "Using the 50/30/20 rule on $2,000 take-home pay, how many dollars go to 'wants'?",
+          "answer": 600,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "30% of $2,000 is $600, the slice the rule sets aside for wants."
+        }
       ]
     },
     {
@@ -72,30 +226,82 @@
       "title": "Saving & Emergency Funds",
       "icon": "banknote.fill",
       "questions": [
-        {"type": "mc", "id": "u1l3q1", "prompt": "What is an emergency fund for?",
-          "choices": ["Unexpected costs like medical bills or car repairs", "Buying stocks quickly", "Everyday grocery shopping", "Paying regular monthly rent"],
+        {
+          "type": "mc",
+          "id": "u1l3q1",
+          "prompt": "What is an emergency fund for?",
+          "choices": [
+            "Unexpected costs like medical bills or car repairs",
+            "Buying stocks quickly",
+            "Everyday grocery shopping",
+            "Paying regular monthly rent"
+          ],
           "correct": 0,
-          "explanation": "It's a cushion for life's surprises — not for planned spending."},
-        {"type": "num", "id": "u1l3q2", "prompt": "Experts often suggest saving how many months of expenses in an emergency fund? (Give the low end of the common 3–6 range.)",
-          "answer": 3, "tolerance": 0, "suffix": " months",
-          "explanation": "3–6 months of expenses is the usual target; 3 months is a solid starting goal."},
-        {"type": "mc", "id": "u1l3q3", "prompt": "Where should you generally NOT keep your emergency fund?",
-          "choices": ["In risky stocks that can drop fast", "In a high-yield savings account", "In a regular savings account", "Somewhere easy to access"],
+          "explanation": "It's a cushion for life's surprises, not for planned spending."
+        },
+        {
+          "type": "num",
+          "id": "u1l3q2",
+          "prompt": "Experts often suggest saving how many months of expenses in an emergency fund? (Give the low end of the common 3–6 range.)",
+          "answer": 3,
+          "tolerance": 0,
+          "suffix": " months",
+          "explanation": "3–6 months of expenses is the usual target; 3 months is a solid starting goal."
+        },
+        {
+          "type": "mc",
+          "id": "u1l3q3",
+          "prompt": "Where should you generally NOT keep your emergency fund?",
+          "choices": [
+            "In risky stocks that can drop fast",
+            "In a high-yield savings account",
+            "In a regular savings account",
+            "Somewhere easy to access"
+          ],
           "correct": 0,
-          "explanation": "Emergency money must be safe and reachable — not tied up in something that could fall right when you need it."},
-        {"type": "mc", "id": "u1l3q4", "prompt": "What does 'paying yourself first' mean?",
-          "choices": ["Setting aside savings before spending on anything else", "Buying yourself gifts before bills", "Only paying bills you enjoy", "Investing all your income in stocks"],
+          "explanation": "Emergency money must be safe and easy to reach, not tied up in something that could fall right when you need it."
+        },
+        {
+          "type": "mc",
+          "id": "u1l3q4",
+          "prompt": "What does 'paying yourself first' mean?",
+          "choices": [
+            "Setting aside savings before spending on anything else",
+            "Buying yourself gifts before bills",
+            "Only paying bills you enjoy",
+            "Investing all your income in stocks"
+          ],
           "correct": 0,
-          "explanation": "Automate savings before you can spend it — the money's gone before you miss it."},
-        {"type": "tf", "id": "u1l3q5", "prompt": "An emergency fund should be easy to access quickly if needed.",
+          "explanation": "Automate savings before you can spend the money. It's gone before you miss it."
+        },
+        {
+          "type": "tf",
+          "id": "u1l3q5",
+          "prompt": "An emergency fund should be easy to access quickly if needed.",
           "answer": true,
-          "explanation": "Liquidity matters — in a real emergency you need the cash fast."},
-        {"type": "order", "id": "u1l3q6", "prompt": "Order these savings priorities from what most people should do first to last.",
-          "items": ["Build a small $500–$1,000 starter fund", "Pay off high-interest debt", "Grow the fund to 3–6 months of expenses", "Start investing for the long term"],
-          "explanation": "A starter cushion first, then kill high-interest debt, then a full emergency fund, then invest — a common ordering."},
-        {"type": "num", "id": "u1l3q7", "prompt": "If your essential expenses are $1,500 a month, how big is a 3-month emergency fund?",
-          "answer": 4500, "tolerance": 0, "prefix": "$",
-          "explanation": "$1,500 × 3 months = $4,500 — three months of essentials covered."}
+          "explanation": "Liquidity matters. In a real emergency you need the cash fast."
+        },
+        {
+          "type": "order",
+          "id": "u1l3q6",
+          "prompt": "Order these savings priorities from what most people should do first to last.",
+          "items": [
+            "Build a small $500–$1,000 starter fund",
+            "Pay off high-interest debt",
+            "Grow the fund to 3–6 months of expenses",
+            "Start investing for the long term"
+          ],
+          "explanation": "A starter cushion first, then pay off high-interest debt, then a full emergency fund, then invest. That's a common order."
+        },
+        {
+          "type": "num",
+          "id": "u1l3q7",
+          "prompt": "If your essential expenses are $1,500 a month, how big is a 3-month emergency fund?",
+          "answer": 4500,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "$1,500 × 3 months = $4,500, enough to cover three months of essentials."
+        }
       ]
     },
     {
@@ -103,30 +309,96 @@
       "title": "Banking Basics",
       "icon": "building.columns.fill",
       "questions": [
-        {"type": "match", "id": "u1l4q1", "prompt": "Match each account or term to what it's for.",
-          "pairs": [["Checking account", "Everyday spending and bills"], ["Savings account", "Setting money aside to earn interest"], ["APY", "Yearly interest a savings account pays"], ["Overdraft", "Spending more than your balance"]],
-          "explanation": "Checking is for daily use, savings earns interest (measured as APY), and an overdraft is spending past your balance."},
-        {"type": "tf", "id": "u1l4q2", "prompt": "A high-yield savings account usually pays more interest than a regular checking account.",
+        {
+          "type": "match",
+          "id": "u1l4q1",
+          "prompt": "Match each account or term to what it's for.",
+          "pairs": [
+            [
+              "Checking account",
+              "Everyday spending and bills"
+            ],
+            [
+              "Savings account",
+              "Setting money aside to earn interest"
+            ],
+            [
+              "APY",
+              "Yearly interest a savings account pays"
+            ],
+            [
+              "Overdraft",
+              "Spending more than your balance"
+            ]
+          ],
+          "explanation": "Checking is for daily use, savings earns interest (measured as APY), and an overdraft is spending past your balance."
+        },
+        {
+          "type": "tf",
+          "id": "u1l4q2",
+          "prompt": "A high-yield savings account usually pays more interest than a regular checking account.",
           "answer": true,
-          "explanation": "High-yield savings accounts exist to grow your cash; checking is built for spending and pays little or nothing."},
-        {"type": "mc", "id": "u1l4q3", "prompt": "In the U.S., what does FDIC insurance protect?",
-          "choices": ["Your bank deposits (up to the limit) if the bank fails", "Your stocks if they lose value", "Your car in an accident", "Your credit score"],
+          "explanation": "High-yield savings accounts exist to grow your cash; checking is built for spending and pays little or nothing."
+        },
+        {
+          "type": "mc",
+          "id": "u1l4q3",
+          "prompt": "In the U.S., what does FDIC insurance protect?",
+          "choices": [
+            "Your bank deposits (up to the limit) if the bank fails",
+            "Your stocks if they lose value",
+            "Your car in an accident",
+            "Your credit score"
+          ],
           "correct": 0,
-          "explanation": "FDIC insurance covers bank deposits up to $250,000 per depositor, per bank — a key safety net that crypto and stocks don't have."},
-        {"type": "mc", "id": "u1l4q4", "prompt": "What is an overdraft fee?",
-          "choices": ["A charge for spending more than your account balance", "A reward for saving", "A fee for checking your balance", "Interest you earn"],
+          "explanation": "FDIC insurance covers bank deposits up to $250,000 per depositor, per bank. Crypto and stocks don't have that safety net."
+        },
+        {
+          "type": "mc",
+          "id": "u1l4q4",
+          "prompt": "What is an overdraft fee?",
+          "choices": [
+            "A charge for spending more than your account balance",
+            "A reward for saving",
+            "A fee for checking your balance",
+            "Interest you earn"
+          ],
           "correct": 0,
-          "explanation": "Spend past your balance and many banks charge an overdraft fee — often $30+ per slip."},
-        {"type": "num", "id": "u1l4q5", "prompt": "You keep $2,000 in a savings account earning 4% APY. Roughly how many dollars of interest is that in one year?",
-          "answer": 80, "tolerance": 5, "prefix": "$",
-          "explanation": "4% of $2,000 is about $80 a year — free money for letting your cash sit in the right account."},
-        {"type": "ms", "id": "u1l4q6", "prompt": "Which habits help you avoid unnecessary bank fees? (Choose all that apply.)",
-          "choices": ["Keep enough balance to avoid overdrafts", "Use in-network ATMs", "Ignore your account until payday", "Set up low-balance alerts"],
-          "correct": [0, 1, 3],
-          "explanation": "Watching your balance, using in-network ATMs, and alerts all prevent fees. Ignoring the account is how fees sneak up on you."},
-        {"type": "tf", "id": "u1l4q7", "prompt": "Money in a checking account is a good long-term investment for growing wealth.",
+          "explanation": "Spend past your balance and many banks charge an overdraft fee, often $30 or more each time."
+        },
+        {
+          "type": "num",
+          "id": "u1l4q5",
+          "prompt": "You keep $2,000 in a savings account earning 4% APY. Roughly how many dollars of interest is that in one year?",
+          "answer": 80,
+          "tolerance": 5,
+          "prefix": "$",
+          "explanation": "4% of $2,000 is about $80 a year, free money for keeping your cash in the right account."
+        },
+        {
+          "type": "ms",
+          "id": "u1l4q6",
+          "prompt": "Which habits help you avoid unnecessary bank fees? (Choose all that apply.)",
+          "choices": [
+            "Keep enough balance to avoid overdrafts",
+            "Use in-network ATMs",
+            "Ignore your account until payday",
+            "Set up low-balance alerts"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "Watching your balance, using in-network ATMs, and alerts all prevent fees. Ignoring the account is how fees sneak up on you."
+        },
+        {
+          "type": "tf",
+          "id": "u1l4q7",
+          "prompt": "Money in a checking account is a good long-term investment for growing wealth.",
           "answer": false,
-          "explanation": "Checking pays little to no interest, so inflation slowly erodes it. It's for spending — invest longer-term money elsewhere."}
+          "explanation": "Checking pays little to no interest, so inflation slowly erodes it. It's for spending; invest longer-term money elsewhere."
+        }
       ]
     },
     {
@@ -134,31 +406,101 @@
       "title": "Smart Spending",
       "icon": "tag.fill",
       "questions": [
-        {"type": "mc", "id": "u1l5q1", "prompt": "What is 'impulse spending'?",
-          "choices": ["Buying on a whim without planning it", "Carefully comparing prices first", "Saving before you spend", "Paying a bill on time"],
+        {
+          "type": "mc",
+          "id": "u1l5q1",
+          "prompt": "What is 'impulse spending'?",
+          "choices": [
+            "Buying on a whim without planning it",
+            "Carefully comparing prices first",
+            "Saving before you spend",
+            "Paying a bill on time"
+          ],
           "correct": 0,
-          "explanation": "Impulse buys are unplanned purchases driven by the moment — the enemy of a budget."},
-        {"type": "mc", "id": "u1l5q2", "prompt": "The '24-hour rule' for shopping means…",
-          "choices": ["Waiting a day before a non-essential purchase to see if you still want it", "Only shopping for 24 hours a year", "Returning everything within 24 hours", "Spending 24% of income on wants"],
+          "explanation": "Impulse buys are unplanned purchases made in the moment, the enemy of a budget."
+        },
+        {
+          "type": "mc",
+          "id": "u1l5q2",
+          "prompt": "The '24-hour rule' for shopping means…",
+          "choices": [
+            "Waiting a day before a non-essential purchase to see if you still want it",
+            "Only shopping for 24 hours a year",
+            "Returning everything within 24 hours",
+            "Spending 24% of income on wants"
+          ],
           "correct": 0,
-          "explanation": "Sleeping on it filters out impulse buys — a lot of 'must-haves' feel optional the next day."},
-        {"type": "num", "id": "u1l5q3", "prompt": "A $6 coffee bought every weekday. Roughly how many dollars is that over a 4-week month? (5 days × 4 weeks)",
-          "answer": 120, "tolerance": 0, "prefix": "$",
-          "explanation": "$6 × 5 × 4 = $120 a month. Small daily buys add up fast — that's the 'latte factor.'"},
-        {"type": "cat", "id": "u1l5q4", "prompt": "Sort these into smart-spending habits vs. money traps.",
-          "categories": ["Smart habit", "Money trap"],
-          "items": [["Comparing prices before buying", "Smart habit"], ["Buying because it's 'on sale'", "Money trap"], ["Using a shopping list", "Smart habit"], ["Paying only the card minimum", "Money trap"]],
-          "explanation": "Lists and price comparison protect your money; chasing 'sales' and minimum payments quietly drain it."},
-        {"type": "tf", "id": "u1l5q5", "prompt": "A sale is only a good deal if it's something you were already going to buy.",
+          "explanation": "Sleeping on it filters out impulse buys. A lot of 'must-haves' feel optional the next day."
+        },
+        {
+          "type": "num",
+          "id": "u1l5q3",
+          "prompt": "A $6 coffee bought every weekday. Roughly how many dollars is that over a 4-week month? (5 days × 4 weeks)",
+          "answer": 120,
+          "tolerance": 0,
+          "prefix": "$",
+          "explanation": "$6 × 5 × 4 = $120 a month. Small daily buys add up fast. That's the 'latte factor.'"
+        },
+        {
+          "type": "cat",
+          "id": "u1l5q4",
+          "prompt": "Sort these into smart-spending habits vs. money traps.",
+          "categories": [
+            "Smart habit",
+            "Money trap"
+          ],
+          "items": [
+            [
+              "Comparing prices before buying",
+              "Smart habit"
+            ],
+            [
+              "Buying because it's 'on sale'",
+              "Money trap"
+            ],
+            [
+              "Using a shopping list",
+              "Smart habit"
+            ],
+            [
+              "Paying only the card minimum",
+              "Money trap"
+            ]
+          ],
+          "explanation": "Lists and price comparison protect your money; chasing 'sales' and minimum payments quietly drain it."
+        },
+        {
+          "type": "tf",
+          "id": "u1l5q5",
+          "prompt": "A sale is only a good deal if it's something you were already going to buy.",
           "answer": true,
-          "explanation": "Spending $40 to 'save' $10 on something you didn't need still costs you $40. A deal only helps on real needs."},
-        {"type": "mc", "id": "u1l5q6", "prompt": "Why are forgotten subscriptions a common money leak?",
-          "choices": ["They quietly charge you every month whether you use them or not", "They're illegal", "They pay you interest", "They improve your credit score"],
+          "explanation": "Spending $40 to 'save' $10 on something you didn't need still costs you $40. A deal only helps on real needs."
+        },
+        {
+          "type": "mc",
+          "id": "u1l5q6",
+          "prompt": "Why are forgotten subscriptions a common money leak?",
+          "choices": [
+            "They quietly charge you every month whether you use them or not",
+            "They're illegal",
+            "They pay you interest",
+            "They improve your credit score"
+          ],
           "correct": 0,
-          "explanation": "Auto-renewing subscriptions bill you on autopilot — auditing them a few times a year plugs the leak."},
-        {"type": "order", "id": "u1l5q7", "prompt": "Order these steps for making a smart big purchase.",
-          "items": ["Decide if it's a need or a want", "Set a budget for it", "Compare prices across sellers", "Wait a day, then buy if it still makes sense"],
-          "explanation": "Need vs. want, then a budget, then comparison, then a cool-off — a simple guardrail against overspending."}
+          "explanation": "Auto-renewing subscriptions bill you on autopilot. Reviewing them a few times a year plugs the leak."
+        },
+        {
+          "type": "order",
+          "id": "u1l5q7",
+          "prompt": "Order these steps for making a smart big purchase.",
+          "items": [
+            "Decide if it's a need or a want",
+            "Set a budget for it",
+            "Compare prices across sellers",
+            "Wait a day, then buy if it still makes sense"
+          ],
+          "explanation": "Need vs. want, then a budget, then comparison, then a cool-off: a simple guardrail against overspending."
+        }
       ]
     }
   ],
@@ -168,40 +510,145 @@
     "icon": "trophy.fill",
     "xp": 50,
     "questions": [
-      {"type": "mc", "id": "u1fq1", "prompt": "A budget is best described as…",
-        "choices": ["A plan for spending and saving your money", "A type of loan", "A stock index", "A tax form"],
+      {
+        "type": "mc",
+        "id": "u1fq1",
+        "prompt": "A budget is best described as…",
+        "choices": [
+          "A plan for spending and saving your money",
+          "A type of loan",
+          "A stock index",
+          "A tax form"
+        ],
         "correct": 0,
-        "explanation": "It's your money plan — income in, expenses out."},
-      {"type": "cat", "id": "u1fq2", "prompt": "Sort each into Need or Want.",
-        "categories": ["Need", "Want"],
-        "items": [["Groceries", "Need"], ["Designer bag", "Want"], ["Electricity", "Need"], ["Concert tickets", "Want"]],
-        "explanation": "Essentials to live are needs; everything that just adds enjoyment is a want."},
-      {"type": "num", "id": "u1fq3", "prompt": "Using 50/30/20 on $3,000 take-home, how many dollars should go to savings?",
-        "answer": 600, "tolerance": 0, "prefix": "$",
-        "explanation": "20% of $3,000 is $600 for savings."},
-      {"type": "tf", "id": "u1fq4", "prompt": "An emergency fund should be kept in risky stocks for higher returns.",
+        "explanation": "It's your money plan: income in, expenses out."
+      },
+      {
+        "type": "cat",
+        "id": "u1fq2",
+        "prompt": "Sort each into Need or Want.",
+        "categories": [
+          "Need",
+          "Want"
+        ],
+        "items": [
+          [
+            "Groceries",
+            "Need"
+          ],
+          [
+            "Designer bag",
+            "Want"
+          ],
+          [
+            "Electricity",
+            "Need"
+          ],
+          [
+            "Concert tickets",
+            "Want"
+          ]
+        ],
+        "explanation": "Essentials to live are needs; everything that just adds enjoyment is a want."
+      },
+      {
+        "type": "num",
+        "id": "u1fq3",
+        "prompt": "Using 50/30/20 on $3,000 take-home, how many dollars should go to savings?",
+        "answer": 600,
+        "tolerance": 0,
+        "prefix": "$",
+        "explanation": "20% of $3,000 is $600 for savings."
+      },
+      {
+        "type": "tf",
+        "id": "u1fq4",
+        "prompt": "An emergency fund should be kept in risky stocks for higher returns.",
         "answer": false,
-        "explanation": "Emergency money must be safe and liquid — stocks can drop right when you need it."},
-      {"type": "match", "id": "u1fq5", "prompt": "Match each term to its meaning.",
-        "pairs": [["Fixed expense", "Same amount every month"], ["APY", "Yearly interest earned on savings"], ["Overdraft", "Spending past your balance"], ["Deficit", "Spending more than you earn"]],
-        "explanation": "These are the core money-basics terms from this unit."},
-      {"type": "num", "id": "u1fq6", "prompt": "Essentials are $1,200/month. How big is a 3-month emergency fund?",
-        "answer": 3600, "tolerance": 0, "prefix": "$",
-        "explanation": "$1,200 × 3 = $3,600."},
-      {"type": "ms", "id": "u1fq7", "prompt": "Which help you avoid debt and fees? (Choose all that apply.)",
-        "choices": ["Paying yourself first", "Only paying the card minimum", "Using a shopping list", "Tracking your balance"],
-        "correct": [0, 2, 3],
-        "explanation": "Saving first, lists, and tracking your balance all help. Paying only the minimum keeps you in debt longer."},
-      {"type": "tf", "id": "u1fq8", "prompt": "FDIC insurance protects bank deposits up to a limit if the bank fails.",
+        "explanation": "Emergency money must be safe and liquid. Stocks can drop right when you need it."
+      },
+      {
+        "type": "match",
+        "id": "u1fq5",
+        "prompt": "Match each term to its meaning.",
+        "pairs": [
+          [
+            "Fixed expense",
+            "Same amount every month"
+          ],
+          [
+            "APY",
+            "Yearly interest earned on savings"
+          ],
+          [
+            "Overdraft",
+            "Spending past your balance"
+          ],
+          [
+            "Deficit",
+            "Spending more than you earn"
+          ]
+        ],
+        "explanation": "These are the core money-basics terms from this unit."
+      },
+      {
+        "type": "num",
+        "id": "u1fq6",
+        "prompt": "Essentials are $1,200/month. How big is a 3-month emergency fund?",
+        "answer": 3600,
+        "tolerance": 0,
+        "prefix": "$",
+        "explanation": "$1,200 × 3 = $3,600."
+      },
+      {
+        "type": "ms",
+        "id": "u1fq7",
+        "prompt": "Which help you avoid debt and fees? (Choose all that apply.)",
+        "choices": [
+          "Paying yourself first",
+          "Only paying the card minimum",
+          "Using a shopping list",
+          "Tracking your balance"
+        ],
+        "correct": [
+          0,
+          2,
+          3
+        ],
+        "explanation": "Saving first, lists, and tracking your balance all help. Paying only the minimum keeps you in debt longer."
+      },
+      {
+        "type": "tf",
+        "id": "u1fq8",
+        "prompt": "FDIC insurance protects bank deposits up to a limit if the bank fails.",
         "answer": true,
-        "explanation": "Up to $250,000 per depositor, per bank — a safety net bank accounts have."},
-      {"type": "order", "id": "u1fq9", "prompt": "Order the budgeting steps.",
-        "items": ["Total your income", "List your expenses", "Subtract expenses from income", "Adjust to hit your savings goal"],
-        "explanation": "Income, expenses, difference, adjust — the budgeting loop."},
-      {"type": "mc", "id": "u1fq10", "prompt": "'Paying yourself first' means…",
-        "choices": ["Automating savings before you spend", "Buying treats before bills", "Spending your whole paycheck", "Lending money to friends"],
+        "explanation": "Up to $250,000 per depositor, per bank: a safety net bank accounts have."
+      },
+      {
+        "type": "order",
+        "id": "u1fq9",
+        "prompt": "Order the budgeting steps.",
+        "items": [
+          "Total your income",
+          "List your expenses",
+          "Subtract expenses from income",
+          "Adjust to hit your savings goal"
+        ],
+        "explanation": "Income, expenses, difference, adjust: the budgeting loop."
+      },
+      {
+        "type": "mc",
+        "id": "u1fq10",
+        "prompt": "'Paying yourself first' means…",
+        "choices": [
+          "Automating savings before you spend",
+          "Buying treats before bills",
+          "Spending your whole paycheck",
+          "Lending money to friends"
+        ],
         "correct": 0,
-        "explanation": "Save first, automatically — then spend what's left."}
+        "explanation": "Save first, automatically, then spend what's left."
+      }
     ]
   }
 }

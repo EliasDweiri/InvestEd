@@ -38,7 +38,7 @@
           "answer": 1210,
           "tolerance": 0,
           "prefix": "$",
-          "explanation": "Year 1: $1,000 grows to $1,100. Year 2: that $1,100 grows to $1,210 — the extra $10 is interest earning interest."
+          "explanation": "Year 1: $1,000 grows to $1,100. Year 2: that $1,100 grows to $1,210. The extra $10 is interest earning interest."
         },
         {
           "type": "mc",
@@ -174,7 +174,7 @@
           "id": "u5l2q5",
           "prompt": "The Rule of 72 can also estimate how fast rising prices (inflation) cut your money's value in half.",
           "answer": true,
-          "explanation": "The same math works for anything that grows by a percentage — including inflation eating away at what your dollars can buy."
+          "explanation": "The same math works for anything that grows by a percentage, including inflation eating away at what your dollars can buy."
         },
         {
           "type": "mc",
@@ -187,7 +187,7 @@
             "36 years"
           ],
           "correct": 0,
-          "explanation": "72 ÷ 3 = 24. Low returns mean a long wait — about 24 years to double at 3%."
+          "explanation": "72 ÷ 3 = 24. Low returns mean a long wait: about 24 years to double at 3%."
         },
         {
           "type": "cat",
@@ -260,12 +260,12 @@
           "answer": 24000,
           "tolerance": 0,
           "prefix": "$",
-          "explanation": "$200 × 12 months × 10 years = $24,000. That's all Erin ever contributes — the rest of her growth comes from compounding."
+          "explanation": "$200 × 12 months × 10 years = $24,000. That's all Erin ever contributes. The rest of her growth comes from compounding."
         },
         {
           "type": "num",
           "id": "u5l3q4",
-          "prompt": "Late Liam invests $200 a month from age 28 to 65 — that's 37 years. How many dollars does he personally put in?",
+          "prompt": "Late Liam invests $200 a month from age 28 to 65, which is 37 years. How many dollars does he personally put in?",
           "answer": 88800,
           "tolerance": 0,
           "prefix": "$",
@@ -299,7 +299,7 @@
             1,
             2
           ],
-          "explanation": "Start early, stay consistent, and let it ride — those three give compounding the years it needs. Waiting just throws that time away."
+          "explanation": "Start early, stay consistent, and let it ride. Those three give compounding the years it needs. Waiting just throws that time away."
         },
         {
           "type": "order",
@@ -310,7 +310,7 @@
             "Maya: $200/month for 20 years",
             "Liam: $200/month for 37 years"
           ],
-          "explanation": "$24,000 vs $48,000 vs $88,800. Erin puts in the least — yet starting first gives her money the most time to grow."
+          "explanation": "$24,000 vs $48,000 vs $88,800. Erin puts in the least, yet starting first gives her money the most time to grow."
         }
       ]
     },
@@ -331,14 +331,14 @@
             "Selling a little bit every month"
           ],
           "correct": 0,
-          "explanation": "You put in the same amount on a set schedule — say $100 every month — regardless of whether prices are up or down."
+          "explanation": "You put in the same amount on a set schedule (say $100 every month) whether prices are up or down."
         },
         {
           "type": "tf",
           "id": "u5l4q2",
           "prompt": "With dollar-cost averaging, a fixed amount of money buys more shares when the price is low and fewer when it's high.",
           "answer": true,
-          "explanation": "Because your dollars are fixed, a lower price stretches further and buys more shares — automatically leaning into cheap prices."
+          "explanation": "Because your dollars are fixed, a lower price stretches further and buys more shares, so you automatically buy more when prices are low."
         },
         {
           "type": "num",
@@ -365,7 +365,7 @@
           "answer": 8,
           "tolerance": 0,
           "prefix": "$",
-          "explanation": "$240 ÷ 30 shares = $8 per share — lower than the simple average of $12 and $6 ($9), because you bought more shares when cheap."
+          "explanation": "$240 ÷ 30 shares = $8 per share. That's lower than the simple average of $12 and $6 ($9), because you bought more shares when they were cheap."
         },
         {
           "type": "ms",
@@ -382,7 +382,7 @@
             1,
             2
           ],
-          "explanation": "DCA removes timing stress, leans into low prices, and builds discipline — but no strategy guarantees a profit."
+          "explanation": "DCA removes timing stress, buys more when prices are low, and builds discipline, but no strategy guarantees a profit."
         },
         {
           "type": "order",
@@ -394,7 +394,7 @@
             "Invest that amount every period no matter the price",
             "Keep it going through the ups and downs"
           ],
-          "explanation": "Decide the amount, set the schedule, invest on autopilot, and stay consistent — that's dollar-cost averaging."
+          "explanation": "Decide the amount, set the schedule, invest on autopilot, and stay consistent. That's dollar-cost averaging."
         }
       ]
     },
@@ -415,7 +415,7 @@
             "Mandatory"
           ],
           "correct": 0,
-          "explanation": "Measurable means you can track progress with a number — like saving $1,200 — so you know when you've hit it."
+          "explanation": "Measurable means you can track progress with a number, like saving $1,200, so you know when you've hit it."
         },
         {
           "type": "match",
@@ -439,7 +439,7 @@
               "Time-bound"
             ]
           ],
-          "explanation": "SMART goals are Specific, Measurable, Achievable, Relevant, and Time-bound — clear targets you can actually reach."
+          "explanation": "SMART goals are Specific, Measurable, Achievable, Relevant, and Time-bound: clear targets you can actually reach."
         },
         {
           "type": "cat",
@@ -495,7 +495,7 @@
             "It's the only way to open an account"
           ],
           "correct": 0,
-          "explanation": "A long time horizon lets you weather market ups and downs and gives compounding years to work — so growth investments make sense."
+          "explanation": "A long time horizon lets you ride out market ups and downs and gives compounding years to work, so growth investments make sense."
         },
         {
           "type": "num",
@@ -543,7 +543,7 @@
           "A discount for keeping money in the bank"
         ],
         "correct": 0,
-        "explanation": "Compound interest snowballs because your earnings start earning too — the engine behind long-term growth."
+        "explanation": "Compound interest snowballs because your earnings start earning too. It's the engine behind long-term growth."
       },
       {
         "type": "num",
@@ -566,7 +566,7 @@
       {
         "type": "tf",
         "id": "u5fq4",
-        "prompt": "Compounding only helps you — it never works against you.",
+        "prompt": "Compounding only helps you and never works against you.",
         "answer": false,
         "explanation": "Debt compounds too. Unpaid credit-card interest grows the same way, which is why balances can balloon fast."
       },
@@ -642,7 +642,7 @@
             "Time-bound"
           ]
         ],
-        "explanation": "SMART goals are Specific, Measurable, Achievable, Relevant, and Time-bound — clear enough to act on and track."
+        "explanation": "SMART goals are Specific, Measurable, Achievable, Relevant, and Time-bound: clear enough to act on and track."
       },
       {
         "type": "ms",

@@ -54,7 +54,7 @@ enum LessonContentData {
                             ],
                             explanation: "Fixed costs like rent and insurance stay the same; variable costs like groceries and dining out move around with your choices."),
                         .numeric(id: "u1l1q4", prompt: "You earn $2,000 a month and spend $2,300. How many dollars over budget are you?", answer: 300, tolerance: 0, prefix: "$",
-                            explanation: "Spending $2,300 on $2,000 of income is a $300 deficit — you're relying on savings or debt to cover the gap."),
+                            explanation: "Spending $2,300 on $2,000 of income is a $300 deficit. You're relying on savings or debt to cover the gap."),
                         .trueFalse(id: "u1l1q5", prompt: "The 50/30/20 rule suggests 50% needs, 30% wants, 20% savings.", correctIsTrue: true,
                             explanation: "It's a popular, simple guideline for splitting take-home pay across needs, wants, and savings."),
                         .multiSelect(id: "u1l1q6", prompt: "Which of these belong in the 'needs' bucket of a budget? (Choose all that apply.)",
@@ -64,7 +64,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Concert tickets"),
                             AnswerChoice(id: 3, text: "Electricity bill")
                             ], correctIDs: [0, 1, 3],
-                            explanation: "Rent, groceries, and utilities are essentials. Concert tickets are a 'want' — nice, but not required to live."),
+                            explanation: "Rent, groceries, and utilities are essentials. Concert tickets are a 'want': nice, but not required to live."),
                         .ordering(id: "u1l1q7", prompt: "Put these budgeting steps in the order you'd do them.",
                             items: [
                             "Add up your monthly income",
@@ -72,7 +72,7 @@ enum LessonContentData {
                             "Subtract expenses from income",
                             "Adjust spending to hit your savings goal"
                             ],
-                            explanation: "Start with what comes in, list what goes out, find the difference, then adjust — that's the budgeting loop.")
+                            explanation: "Start with what comes in, list what goes out, find the difference, then adjust. That's the budgeting loop.")
                     ],
                     xpReward: Constants.xpPerLesson
                 ),
@@ -92,7 +92,7 @@ enum LessonContentData {
                             ],
                             explanation: "Needs keep you fed, housed, and able to earn. Wants add enjoyment but you could live without them."),
                         .trueFalse(id: "u1l2q2", prompt: "Streaming subscriptions are usually considered a 'want.'", correctIsTrue: true,
-                            explanation: "Enjoyable, but not essential to survive — so streaming is generally a want."),
+                            explanation: "Enjoyable, but not essential to survive, so streaming is generally a want."),
                         .multipleChoice(id: "u1l2q3", prompt: "Why is it important to separate needs from wants?",
                             choices: [
                             AnswerChoice(id: 0, text: "It helps you cover essentials first and avoid debt"),
@@ -100,7 +100,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "It only matters for businesses"),
                             AnswerChoice(id: 3, text: "It's required by law")
                             ], correct: 0,
-                            explanation: "Knowing the difference makes sure essentials are funded before extras — the core of not overspending."),
+                            explanation: "Knowing the difference makes sure essentials are paid for before extras. That's the core of not overspending."),
                         .multipleChoice(id: "u1l2q4", prompt: "Which best describes a 'want'?",
                             choices: [
                             AnswerChoice(id: 0, text: "Something that improves life but isn't essential to survive"),
@@ -118,9 +118,9 @@ enum LessonContentData {
                             ],
                             explanation: "Health and staying warm are needs; extra entertainment and upgrades are wants."),
                         .trueFalse(id: "u1l2q6", prompt: "Housing and basic utilities are usually considered needs.", correctIsTrue: true,
-                            explanation: "Shelter, water, heat, and electricity are essentials — classic needs."),
+                            explanation: "Shelter, water, heat, and electricity are essentials. They're classic needs."),
                         .numeric(id: "u1l2q7", prompt: "Using the 50/30/20 rule on $2,000 take-home pay, how many dollars go to 'wants'?", answer: 600, tolerance: 0, prefix: "$",
-                            explanation: "30% of $2,000 is $600 — the slice the rule sets aside for wants.")
+                            explanation: "30% of $2,000 is $600, the slice the rule sets aside for wants.")
                     ],
                     xpReward: Constants.xpPerLesson
                 ),
@@ -136,7 +136,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Everyday grocery shopping"),
                             AnswerChoice(id: 3, text: "Paying regular monthly rent")
                             ], correct: 0,
-                            explanation: "It's a cushion for life's surprises — not for planned spending."),
+                            explanation: "It's a cushion for life's surprises, not for planned spending."),
                         .numeric(id: "u1l3q2", prompt: "Experts often suggest saving how many months of expenses in an emergency fund? (Give the low end of the common 3–6 range.)", answer: 3, tolerance: 0, suffix: " months",
                             explanation: "3–6 months of expenses is the usual target; 3 months is a solid starting goal."),
                         .multipleChoice(id: "u1l3q3", prompt: "Where should you generally NOT keep your emergency fund?",
@@ -146,7 +146,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "In a regular savings account"),
                             AnswerChoice(id: 3, text: "Somewhere easy to access")
                             ], correct: 0,
-                            explanation: "Emergency money must be safe and reachable — not tied up in something that could fall right when you need it."),
+                            explanation: "Emergency money must be safe and easy to reach, not tied up in something that could fall right when you need it."),
                         .multipleChoice(id: "u1l3q4", prompt: "What does 'paying yourself first' mean?",
                             choices: [
                             AnswerChoice(id: 0, text: "Setting aside savings before spending on anything else"),
@@ -154,9 +154,9 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Only paying bills you enjoy"),
                             AnswerChoice(id: 3, text: "Investing all your income in stocks")
                             ], correct: 0,
-                            explanation: "Automate savings before you can spend it — the money's gone before you miss it."),
+                            explanation: "Automate savings before you can spend the money. It's gone before you miss it."),
                         .trueFalse(id: "u1l3q5", prompt: "An emergency fund should be easy to access quickly if needed.", correctIsTrue: true,
-                            explanation: "Liquidity matters — in a real emergency you need the cash fast."),
+                            explanation: "Liquidity matters. In a real emergency you need the cash fast."),
                         .ordering(id: "u1l3q6", prompt: "Order these savings priorities from what most people should do first to last.",
                             items: [
                             "Build a small $500–$1,000 starter fund",
@@ -164,9 +164,9 @@ enum LessonContentData {
                             "Grow the fund to 3–6 months of expenses",
                             "Start investing for the long term"
                             ],
-                            explanation: "A starter cushion first, then kill high-interest debt, then a full emergency fund, then invest — a common ordering."),
+                            explanation: "A starter cushion first, then pay off high-interest debt, then a full emergency fund, then invest. That's a common order."),
                         .numeric(id: "u1l3q7", prompt: "If your essential expenses are $1,500 a month, how big is a 3-month emergency fund?", answer: 4500, tolerance: 0, prefix: "$",
-                            explanation: "$1,500 × 3 months = $4,500 — three months of essentials covered.")
+                            explanation: "$1,500 × 3 months = $4,500, enough to cover three months of essentials.")
                     ],
                     xpReward: Constants.xpPerLesson
                 ),
@@ -192,7 +192,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Your car in an accident"),
                             AnswerChoice(id: 3, text: "Your credit score")
                             ], correct: 0,
-                            explanation: "FDIC insurance covers bank deposits up to $250,000 per depositor, per bank — a key safety net that crypto and stocks don't have."),
+                            explanation: "FDIC insurance covers bank deposits up to $250,000 per depositor, per bank. Crypto and stocks don't have that safety net."),
                         .multipleChoice(id: "u1l4q4", prompt: "What is an overdraft fee?",
                             choices: [
                             AnswerChoice(id: 0, text: "A charge for spending more than your account balance"),
@@ -200,9 +200,9 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "A fee for checking your balance"),
                             AnswerChoice(id: 3, text: "Interest you earn")
                             ], correct: 0,
-                            explanation: "Spend past your balance and many banks charge an overdraft fee — often $30+ per slip."),
+                            explanation: "Spend past your balance and many banks charge an overdraft fee, often $30 or more each time."),
                         .numeric(id: "u1l4q5", prompt: "You keep $2,000 in a savings account earning 4% APY. Roughly how many dollars of interest is that in one year?", answer: 80, tolerance: 5, prefix: "$",
-                            explanation: "4% of $2,000 is about $80 a year — free money for letting your cash sit in the right account."),
+                            explanation: "4% of $2,000 is about $80 a year, free money for keeping your cash in the right account."),
                         .multiSelect(id: "u1l4q6", prompt: "Which habits help you avoid unnecessary bank fees? (Choose all that apply.)",
                             choices: [
                             AnswerChoice(id: 0, text: "Keep enough balance to avoid overdrafts"),
@@ -212,7 +212,7 @@ enum LessonContentData {
                             ], correctIDs: [0, 1, 3],
                             explanation: "Watching your balance, using in-network ATMs, and alerts all prevent fees. Ignoring the account is how fees sneak up on you."),
                         .trueFalse(id: "u1l4q7", prompt: "Money in a checking account is a good long-term investment for growing wealth.", correctIsTrue: false,
-                            explanation: "Checking pays little to no interest, so inflation slowly erodes it. It's for spending — invest longer-term money elsewhere.")
+                            explanation: "Checking pays little to no interest, so inflation slowly erodes it. It's for spending; invest longer-term money elsewhere.")
                     ],
                     xpReward: Constants.xpPerLesson
                 ),
@@ -228,7 +228,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Saving before you spend"),
                             AnswerChoice(id: 3, text: "Paying a bill on time")
                             ], correct: 0,
-                            explanation: "Impulse buys are unplanned purchases driven by the moment — the enemy of a budget."),
+                            explanation: "Impulse buys are unplanned purchases made in the moment, the enemy of a budget."),
                         .multipleChoice(id: "u1l5q2", prompt: "The '24-hour rule' for shopping means…",
                             choices: [
                             AnswerChoice(id: 0, text: "Waiting a day before a non-essential purchase to see if you still want it"),
@@ -236,9 +236,9 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Returning everything within 24 hours"),
                             AnswerChoice(id: 3, text: "Spending 24% of income on wants")
                             ], correct: 0,
-                            explanation: "Sleeping on it filters out impulse buys — a lot of 'must-haves' feel optional the next day."),
+                            explanation: "Sleeping on it filters out impulse buys. A lot of 'must-haves' feel optional the next day."),
                         .numeric(id: "u1l5q3", prompt: "A $6 coffee bought every weekday. Roughly how many dollars is that over a 4-week month? (5 days × 4 weeks)", answer: 120, tolerance: 0, prefix: "$",
-                            explanation: "$6 × 5 × 4 = $120 a month. Small daily buys add up fast — that's the 'latte factor.'"),
+                            explanation: "$6 × 5 × 4 = $120 a month. Small daily buys add up fast. That's the 'latte factor.'"),
                         .categorize(id: "u1l5q4", prompt: "Sort these into smart-spending habits vs. money traps.",
                             categories: ["Smart habit", "Money trap"],
                             items: [
@@ -257,7 +257,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "They pay you interest"),
                             AnswerChoice(id: 3, text: "They improve your credit score")
                             ], correct: 0,
-                            explanation: "Auto-renewing subscriptions bill you on autopilot — auditing them a few times a year plugs the leak."),
+                            explanation: "Auto-renewing subscriptions bill you on autopilot. Reviewing them a few times a year plugs the leak."),
                         .ordering(id: "u1l5q7", prompt: "Order these steps for making a smart big purchase.",
                             items: [
                             "Decide if it's a need or a want",
@@ -265,7 +265,7 @@ enum LessonContentData {
                             "Compare prices across sellers",
                             "Wait a day, then buy if it still makes sense"
                             ],
-                            explanation: "Need vs. want, then a budget, then comparison, then a cool-off — a simple guardrail against overspending.")
+                            explanation: "Need vs. want, then a budget, then comparison, then a cool-off: a simple guardrail against overspending.")
                     ],
                     xpReward: Constants.xpPerLesson
                 )
@@ -279,7 +279,7 @@ enum LessonContentData {
                         .trueFalse(id: "u1l1q2-kc", prompt: "A budget should include both your income and your expenses.", correctIsTrue: true,
                             explanation: "A good budget tracks money coming in (income) and money going out (expenses)."),
                         .numeric(id: "u1l1q4-kc", prompt: "You earn $2,000 a month and spend $2,300. How many dollars over budget are you?", answer: 300, tolerance: 0, prefix: "$",
-                            explanation: "Spending $2,300 on $2,000 of income is a $300 deficit — you're relying on savings or debt to cover the gap."),
+                            explanation: "Spending $2,300 on $2,000 of income is a $300 deficit. You're relying on savings or debt to cover the gap."),
                         .multiSelect(id: "u1l1q6-kc", prompt: "Which of these belong in the 'needs' bucket of a budget? (Choose all that apply.)",
                             choices: [
                             AnswerChoice(id: 0, text: "Rent"),
@@ -287,9 +287,9 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Concert tickets"),
                             AnswerChoice(id: 3, text: "Electricity bill")
                             ], correctIDs: [0, 1, 3],
-                            explanation: "Rent, groceries, and utilities are essentials. Concert tickets are a 'want' — nice, but not required to live."),
+                            explanation: "Rent, groceries, and utilities are essentials. Concert tickets are a 'want': nice, but not required to live."),
                         .trueFalse(id: "u1l2q2-kc", prompt: "Streaming subscriptions are usually considered a 'want.'", correctIsTrue: true,
-                            explanation: "Enjoyable, but not essential to survive — so streaming is generally a want."),
+                            explanation: "Enjoyable, but not essential to survive, so streaming is generally a want."),
                         .multipleChoice(id: "u1l2q4-kc", prompt: "Which best describes a 'want'?",
                             choices: [
                             AnswerChoice(id: 0, text: "Something that improves life but isn't essential to survive"),
@@ -299,7 +299,7 @@ enum LessonContentData {
                             ], correct: 0,
                             explanation: "Wants add comfort or fun; you could go without them if money got tight."),
                         .trueFalse(id: "u1l2q6-kc", prompt: "Housing and basic utilities are usually considered needs.", correctIsTrue: true,
-                            explanation: "Shelter, water, heat, and electricity are essentials — classic needs."),
+                            explanation: "Shelter, water, heat, and electricity are essentials. They're classic needs."),
                         .numeric(id: "u1l3q2-kc", prompt: "Experts often suggest saving how many months of expenses in an emergency fund? (Give the low end of the common 3–6 range.)", answer: 3, tolerance: 0, suffix: " months",
                             explanation: "3–6 months of expenses is the usual target; 3 months is a solid starting goal."),
                         .multipleChoice(id: "u1l3q4-kc", prompt: "What does 'paying yourself first' mean?",
@@ -309,7 +309,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Only paying bills you enjoy"),
                             AnswerChoice(id: 3, text: "Investing all your income in stocks")
                             ], correct: 0,
-                            explanation: "Automate savings before you can spend it — the money's gone before you miss it."),
+                            explanation: "Automate savings before you can spend the money. It's gone before you miss it."),
                         .ordering(id: "u1l3q6-kc", prompt: "Order these savings priorities from what most people should do first to last.",
                             items: [
                             "Build a small $500–$1,000 starter fund",
@@ -317,7 +317,7 @@ enum LessonContentData {
                             "Grow the fund to 3–6 months of expenses",
                             "Start investing for the long term"
                             ],
-                            explanation: "A starter cushion first, then kill high-interest debt, then a full emergency fund, then invest — a common ordering."),
+                            explanation: "A starter cushion first, then pay off high-interest debt, then a full emergency fund, then invest. That's a common order."),
                         .trueFalse(id: "u1l4q2-kc", prompt: "A high-yield savings account usually pays more interest than a regular checking account.", correctIsTrue: true,
                             explanation: "High-yield savings accounts exist to grow your cash; checking is built for spending and pays little or nothing."),
                         .multipleChoice(id: "u1l4q4-kc", prompt: "What is an overdraft fee?",
@@ -327,7 +327,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "A fee for checking your balance"),
                             AnswerChoice(id: 3, text: "Interest you earn")
                             ], correct: 0,
-                            explanation: "Spend past your balance and many banks charge an overdraft fee — often $30+ per slip."),
+                            explanation: "Spend past your balance and many banks charge an overdraft fee, often $30 or more each time."),
                         .multiSelect(id: "u1l4q6-kc", prompt: "Which habits help you avoid unnecessary bank fees? (Choose all that apply.)",
                             choices: [
                             AnswerChoice(id: 0, text: "Keep enough balance to avoid overdrafts"),
@@ -343,7 +343,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Returning everything within 24 hours"),
                             AnswerChoice(id: 3, text: "Spending 24% of income on wants")
                             ], correct: 0,
-                            explanation: "Sleeping on it filters out impulse buys — a lot of 'must-haves' feel optional the next day."),
+                            explanation: "Sleeping on it filters out impulse buys. A lot of 'must-haves' feel optional the next day."),
                         .categorize(id: "u1l5q4-kc", prompt: "Sort these into smart-spending habits vs. money traps.",
                             categories: ["Smart habit", "Money trap"],
                             items: [
@@ -360,7 +360,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "They pay you interest"),
                             AnswerChoice(id: 3, text: "They improve your credit score")
                             ], correct: 0,
-                            explanation: "Auto-renewing subscriptions bill you on autopilot — auditing them a few times a year plugs the leak.")
+                            explanation: "Auto-renewing subscriptions bill you on autopilot. Reviewing them a few times a year plugs the leak.")
                     ],
                     xpReward: 60, isFinalTest: true
                 )
@@ -726,9 +726,9 @@ enum LessonContentData {
                             ], correct: 0,
                             explanation: "A credit score is a snapshot of your borrowing trustworthiness, so lenders can guess how risky it is to lend to you."),
                         .numeric(id: "u4l1q2", prompt: "A FICO credit score ranges from a low of 300 up to a high of what number?", answer: 850, tolerance: 0,
-                            explanation: "FICO scores run from 300 to 850 — the higher you climb, the better the rates lenders offer you."),
+                            explanation: "FICO scores run from 300 to 850. The higher you climb, the better the rates lenders offer you."),
                         .trueFalse(id: "u4l1q3", prompt: "Paying your bills on time is the single biggest factor in your credit score.", correctIsTrue: true,
-                            explanation: "Payment history is about 35% of a FICO score — nothing else moves the needle more than paying on time."),
+                            explanation: "Payment history is about 35% of a FICO score. Nothing moves it more than paying on time."),
                         .categorize(id: "u4l1q4", prompt: "Sort each action into whether it's a soft inquiry (no score impact) or a hard inquiry (can ding your score).",
                             categories: ["Soft inquiry", "Hard inquiry"],
                             items: [
@@ -737,7 +737,7 @@ enum LessonContentData {
                             CategoryItem(id: 2, text: "Getting a pre-approved offer in the mail", correctCategory: "Soft inquiry"),
                             CategoryItem(id: 3, text: "Taking out an auto loan", correctCategory: "Hard inquiry")
                             ],
-                            explanation: "Soft inquiries — like peeking at your own score — never hurt you. Hard inquiries happen when you actually apply for credit and can shave off a few points."),
+                            explanation: "Soft inquiries, like checking your own score, never hurt you. Hard inquiries happen when you actually apply for credit and can shave off a few points."),
                         .multiSelect(id: "u4l1q5", prompt: "Which habits help you build a strong credit score? (Choose all that apply.)",
                             choices: [
                             AnswerChoice(id: 0, text: "Paying every bill on time"),
@@ -771,9 +771,9 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Average Purchase Reward"),
                             AnswerChoice(id: 3, text: "Automatic Payment Reminder")
                             ], correct: 0,
-                            explanation: "APR is the Annual Percentage Rate — the yearly cost of carrying a balance on your card."),
+                            explanation: "APR is the Annual Percentage Rate: the yearly cost of carrying a balance on your card."),
                         .trueFalse(id: "u4l2q2", prompt: "If you pay your full statement balance by the due date, you typically pay no interest on your purchases.", correctIsTrue: true,
-                            explanation: "That interest-free window is called the grace period — pay in full and the card is basically free to use."),
+                            explanation: "That interest-free window is called the grace period. Pay in full and the card is basically free to use."),
                         .multipleChoice(id: "u4l2q3", prompt: "What is the 'minimum payment trap'?",
                             choices: [
                             AnswerChoice(id: 0, text: "Paying only the minimum keeps you in debt for years because most of it goes to interest"),
@@ -781,7 +781,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "You can never pay more than the minimum"),
                             AnswerChoice(id: 3, text: "The minimum payment resets your credit score")
                             ], correct: 0,
-                            explanation: "Paying just the minimum barely touches the balance — most goes to interest, so the debt can linger for years."),
+                            explanation: "Paying just the minimum barely touches the balance. Most goes to interest, so the debt can linger for years."),
                         .numeric(id: "u4l2q4", prompt: "Your card has a $2,000 limit and a $500 balance. What is your credit utilization, as a percent?", answer: 25, tolerance: 0, suffix: "%",
                             explanation: "Utilization is balance ÷ limit: $500 ÷ $2,000 = 25%."),
                         .numeric(id: "u4l2q5", prompt: "Experts suggest keeping your credit utilization below what percent to protect your score?", answer: 30, tolerance: 0, suffix: "%",
@@ -821,7 +821,7 @@ enum LessonContentData {
                         .numeric(id: "u4l3q2", prompt: "You borrow $1,000 at 5% simple interest for 1 year. How much interest do you owe?", answer: 50, tolerance: 0, prefix: "$",
                             explanation: "Simple interest is principal × rate × time: $1,000 × 5% × 1 = $50."),
                         .numeric(id: "u4l3q3", prompt: "You borrow $1,000 at 5% simple interest, but now for 2 years. How much total interest do you owe?", answer: 100, tolerance: 0, prefix: "$",
-                            explanation: "$1,000 × 5% × 2 years = $100 — double the time means double the interest."),
+                            explanation: "$1,000 × 5% × 2 years = $100. Double the time means double the interest."),
                         .trueFalse(id: "u4l3q4", prompt: "With a fixed-rate amortizing loan, your early payments go mostly toward interest and later payments go mostly toward principal.", correctIsTrue: true,
                             explanation: "Early on you owe interest on a big balance, so most of the payment is interest. As the balance shrinks, more of each payment chips away the principal."),
                         .multipleChoice(id: "u4l3q5", prompt: "What is the principal of a loan?",
@@ -831,15 +831,15 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "The bank that gave you the loan"),
                             AnswerChoice(id: 3, text: "The penalty for paying late")
                             ], correct: 0,
-                            explanation: "The principal is the starting amount you borrowed — interest is charged on top of it."),
-                        .ordering(id: "u4l3q6", prompt: "Same loan amount and same interest rate — order these from LEAST total interest paid to MOST.",
+                            explanation: "The principal is the starting amount you borrowed. Interest is charged on top of it."),
+                        .ordering(id: "u4l3q6", prompt: "Same loan amount and same interest rate. Order these from LEAST total interest paid to MOST.",
                             items: [
                             "1-year loan",
                             "3-year loan",
                             "5-year loan",
                             "7-year loan"
                             ],
-                            explanation: "The longer you take to repay, the more total interest you rack up — even if the monthly payment feels smaller."),
+                            explanation: "The longer you take to repay, the more total interest you pay, even if the monthly payment feels smaller."),
                         .multipleChoice(id: "u4l3q7", prompt: "All else equal, which loan will cost you the most in total interest?",
                             choices: [
                             AnswerChoice(id: 0, text: "A higher APR with a longer term"),
@@ -847,7 +847,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "A lower APR with a longer term"),
                             AnswerChoice(id: 3, text: "A higher APR with a shorter term")
                             ], correct: 0,
-                            explanation: "A higher rate and more time both pile on interest — combine them and you pay the most overall.")
+                            explanation: "A higher rate and more time both pile on interest. Combine them and you pay the most overall.")
                     ],
                     xpReward: 20
                 ),
@@ -873,9 +873,9 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "It comes from a friend instead of a bank"),
                             AnswerChoice(id: 3, text: "It never charges any interest")
                             ], correct: 0,
-                            explanation: "Good debt is an investment in your future — like a home or education — at a manageable interest rate."),
+                            explanation: "Good debt is an investment in your future, like a home or education, at a manageable interest rate."),
                         .trueFalse(id: "u4l4q3", prompt: "Payday loans often carry extremely high APRs, sometimes around 400%.", correctIsTrue: true,
-                            explanation: "Payday loans look small but their fees translate to sky-high APRs — that's why they're classic bad debt."),
+                            explanation: "Payday loans look small, but their fees add up to sky-high APRs. That's why they're classic bad debt."),
                         .multipleChoice(id: "u4l4q4", prompt: "What does it mean to 'default' on a loan?",
                             choices: [
                             AnswerChoice(id: 0, text: "Failing to make your payments as agreed"),
@@ -883,7 +883,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Refinancing to a lower rate"),
                             AnswerChoice(id: 3, text: "Making an extra payment")
                             ], correct: 0,
-                            explanation: "Defaulting means you've stopped paying as promised — a serious step that hurts your credit and can trigger collections."),
+                            explanation: "Defaulting means you've stopped paying as promised. It hurts your credit and can lead to collections."),
                         .multiSelect(id: "u4l4q5", prompt: "Which are possible consequences of defaulting on a loan? (Choose all that apply.)",
                             choices: [
                             AnswerChoice(id: 0, text: "Damage to your credit score"),
@@ -901,7 +901,7 @@ enum LessonContentData {
                             ],
                             explanation: "Low-rate borrowing that builds an asset tends to be good; high-rate borrowing for spending tends to be bad."),
                         .numeric(id: "u4l4q7", prompt: "A payday lender charges $15 in fees for every $100 borrowed. On a $200 loan, how many dollars in fees do you pay?", answer: 30, tolerance: 0, prefix: "$",
-                            explanation: "$15 per $100 × 2 = $30 in fees for just two weeks — which works out to a shockingly high APR.")
+                            explanation: "$15 per $100 × 2 = $30 in fees for just two weeks, which works out to a shockingly high APR.")
                     ],
                     xpReward: 20
                 ),
@@ -943,7 +943,7 @@ enum LessonContentData {
                             "Car loan (7% APR)",
                             "Student loan (4% APR)"
                             ],
-                            explanation: "Avalanche always chases the highest interest rate first, then works down — that's the cheapest path out."),
+                            explanation: "Avalanche always targets the highest interest rate first, then works down. That's the cheapest way out."),
                         .multiSelect(id: "u4l5q6", prompt: "Which are smart steps when getting out of debt? (Choose all that apply.)",
                             choices: [
                             AnswerChoice(id: 0, text: "Always pay at least the minimum on every debt"),
@@ -970,7 +970,7 @@ enum LessonContentData {
                     iconName: "checkmark.seal.fill",
                     questions: [
                         .numeric(id: "u4l1q2-kc", prompt: "A FICO credit score ranges from a low of 300 up to a high of what number?", answer: 850, tolerance: 0,
-                            explanation: "FICO scores run from 300 to 850 — the higher you climb, the better the rates lenders offer you."),
+                            explanation: "FICO scores run from 300 to 850. The higher you climb, the better the rates lenders offer you."),
                         .categorize(id: "u4l1q4-kc", prompt: "Sort each action into whether it's a soft inquiry (no score impact) or a hard inquiry (can ding your score).",
                             categories: ["Soft inquiry", "Hard inquiry"],
                             items: [
@@ -979,7 +979,7 @@ enum LessonContentData {
                             CategoryItem(id: 2, text: "Getting a pre-approved offer in the mail", correctCategory: "Soft inquiry"),
                             CategoryItem(id: 3, text: "Taking out an auto loan", correctCategory: "Hard inquiry")
                             ],
-                            explanation: "Soft inquiries — like peeking at your own score — never hurt you. Hard inquiries happen when you actually apply for credit and can shave off a few points."),
+                            explanation: "Soft inquiries, like checking your own score, never hurt you. Hard inquiries happen when you actually apply for credit and can shave off a few points."),
                         .matching(id: "u4l1q6-kc", prompt: "Match each FICO score range to its rating.",
                             pairs: [
                             MatchPair(id: 0, left: "800–850", right: "Exceptional"),
@@ -989,7 +989,7 @@ enum LessonContentData {
                             ],
                             explanation: "Roughly: 800+ is exceptional, 670–739 is good, 580–669 is fair, and under 580 is poor. Aim to keep climbing."),
                         .trueFalse(id: "u4l2q2-kc", prompt: "If you pay your full statement balance by the due date, you typically pay no interest on your purchases.", correctIsTrue: true,
-                            explanation: "That interest-free window is called the grace period — pay in full and the card is basically free to use."),
+                            explanation: "That interest-free window is called the grace period. Pay in full and the card is basically free to use."),
                         .numeric(id: "u4l2q4-kc", prompt: "Your card has a $2,000 limit and a $500 balance. What is your credit utilization, as a percent?", answer: 25, tolerance: 0, suffix: "%",
                             explanation: "Utilization is balance ÷ limit: $500 ÷ $2,000 = 25%."),
                         .multiSelect(id: "u4l2q6-kc", prompt: "Which are smart credit card habits? (Choose all that apply.)",
@@ -1004,14 +1004,14 @@ enum LessonContentData {
                             explanation: "Simple interest is principal × rate × time: $1,000 × 5% × 1 = $50."),
                         .trueFalse(id: "u4l3q4-kc", prompt: "With a fixed-rate amortizing loan, your early payments go mostly toward interest and later payments go mostly toward principal.", correctIsTrue: true,
                             explanation: "Early on you owe interest on a big balance, so most of the payment is interest. As the balance shrinks, more of each payment chips away the principal."),
-                        .ordering(id: "u4l3q6-kc", prompt: "Same loan amount and same interest rate — order these from LEAST total interest paid to MOST.",
+                        .ordering(id: "u4l3q6-kc", prompt: "Same loan amount and same interest rate. Order these from LEAST total interest paid to MOST.",
                             items: [
                             "1-year loan",
                             "3-year loan",
                             "5-year loan",
                             "7-year loan"
                             ],
-                            explanation: "The longer you take to repay, the more total interest you rack up — even if the monthly payment feels smaller."),
+                            explanation: "The longer you take to repay, the more total interest you pay, even if the monthly payment feels smaller."),
                         .multipleChoice(id: "u4l4q2-kc", prompt: "What generally makes a debt 'good' debt?",
                             choices: [
                             AnswerChoice(id: 0, text: "It helps you build wealth or income and usually has a lower interest rate"),
@@ -1019,7 +1019,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "It comes from a friend instead of a bank"),
                             AnswerChoice(id: 3, text: "It never charges any interest")
                             ], correct: 0,
-                            explanation: "Good debt is an investment in your future — like a home or education — at a manageable interest rate."),
+                            explanation: "Good debt is an investment in your future, like a home or education, at a manageable interest rate."),
                         .multipleChoice(id: "u4l4q4-kc", prompt: "What does it mean to 'default' on a loan?",
                             choices: [
                             AnswerChoice(id: 0, text: "Failing to make your payments as agreed"),
@@ -1027,7 +1027,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Refinancing to a lower rate"),
                             AnswerChoice(id: 3, text: "Making an extra payment")
                             ], correct: 0,
-                            explanation: "Defaulting means you've stopped paying as promised — a serious step that hurts your credit and can trigger collections."),
+                            explanation: "Defaulting means you've stopped paying as promised. It hurts your credit and can lead to collections."),
                         .matching(id: "u4l4q6-kc", prompt: "Match each debt to how it's usually classified.",
                             pairs: [
                             MatchPair(id: 0, left: "Mortgage", right: "Often good debt"),
@@ -1087,7 +1087,7 @@ enum LessonContentData {
                         .trueFalse(id: "u5l1q2", prompt: "Compound interest can also work against you when you carry a balance on a credit card.", correctIsTrue: true,
                             explanation: "Debt compounds too. Unpaid interest gets added to what you owe, so the balance you're charged interest on keeps growing."),
                         .numeric(id: "u5l1q3", prompt: "You invest $1,000 at 10% compounded once a year. How many dollars do you have after 2 years?", answer: 1210, tolerance: 0, prefix: "$",
-                            explanation: "Year 1: $1,000 grows to $1,100. Year 2: that $1,100 grows to $1,210 — the extra $10 is interest earning interest."),
+                            explanation: "Year 1: $1,000 grows to $1,100. Year 2: that $1,100 grows to $1,210. The extra $10 is interest earning interest."),
                         .multipleChoice(id: "u5l1q4", prompt: "You put $1,000 in two accounts at the same 10% rate. Which ends up with more after several years?",
                             choices: [
                             AnswerChoice(id: 0, text: "The compound-interest account"),
@@ -1149,7 +1149,7 @@ enum LessonContentData {
                         .numeric(id: "u5l2q4", prompt: "You want your money to double in about 6 years. Roughly what yearly return do you need?", answer: 12, tolerance: 0, suffix: "%",
                             explanation: "Flip the rule around: 72 ÷ 6 years = 12%. You'd need about a 12% yearly return."),
                         .trueFalse(id: "u5l2q5", prompt: "The Rule of 72 can also estimate how fast rising prices (inflation) cut your money's value in half.", correctIsTrue: true,
-                            explanation: "The same math works for anything that grows by a percentage — including inflation eating away at what your dollars can buy."),
+                            explanation: "The same math works for anything that grows by a percentage, including inflation eating away at what your dollars can buy."),
                         .multipleChoice(id: "u5l2q6", prompt: "At a 3% yearly return, about how long does it take money to double?",
                             choices: [
                             AnswerChoice(id: 0, text: "24 years"),
@@ -1157,7 +1157,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "6 years"),
                             AnswerChoice(id: 3, text: "36 years")
                             ], correct: 0,
-                            explanation: "72 ÷ 3 = 24. Low returns mean a long wait — about 24 years to double at 3%."),
+                            explanation: "72 ÷ 3 = 24. Low returns mean a long wait: about 24 years to double at 3%."),
                         .categorize(id: "u5l2q7", prompt: "Using the Rule of 72, sort each yearly return by how long it takes money to double.",
                             categories: ["Doubles in under 10 years", "Doubles in 10 years or more"],
                             items: [
@@ -1188,8 +1188,8 @@ enum LessonContentData {
                         .trueFalse(id: "u5l3q2", prompt: "Someone who invests from age 18 to 28 and then stops can end up with more than someone who starts at 28 and invests for decades.", correctIsTrue: true,
                             explanation: "This is the classic early-saver surprise: the head start gives the early investor's money extra years to compound, which can beat a bigger total invested later."),
                         .numeric(id: "u5l3q3", prompt: "Early Erin invests $200 a month for 10 years, then stops. How many dollars did she personally put in?", answer: 24000, tolerance: 0, prefix: "$",
-                            explanation: "$200 × 12 months × 10 years = $24,000. That's all Erin ever contributes — the rest of her growth comes from compounding."),
-                        .numeric(id: "u5l3q4", prompt: "Late Liam invests $200 a month from age 28 to 65 — that's 37 years. How many dollars does he personally put in?", answer: 88800, tolerance: 0, prefix: "$",
+                            explanation: "$200 × 12 months × 10 years = $24,000. That's all Erin ever contributes. The rest of her growth comes from compounding."),
+                        .numeric(id: "u5l3q4", prompt: "Late Liam invests $200 a month from age 28 to 65, which is 37 years. How many dollars does he personally put in?", answer: 88800, tolerance: 0, prefix: "$",
                             explanation: "$200 × 12 × 37 = $88,800. Liam contributes far more than Erin, yet her early start can still put her ahead."),
                         .multipleChoice(id: "u5l3q5", prompt: "Why can an early starter end up ahead even after investing fewer total dollars?",
                             choices: [
@@ -1206,14 +1206,14 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Leave your money invested to keep compounding"),
                             AnswerChoice(id: 3, text: "Wait many years before you begin")
                             ], correctIDs: [0, 1, 2],
-                            explanation: "Start early, stay consistent, and let it ride — those three give compounding the years it needs. Waiting just throws that time away."),
+                            explanation: "Start early, stay consistent, and let it ride. Those three give compounding the years it needs. Waiting just throws that time away."),
                         .ordering(id: "u5l3q7", prompt: "Put these savers in order by the total dollars they personally contribute, least to most.",
                             items: [
                             "Erin: $200/month for 10 years",
                             "Maya: $200/month for 20 years",
                             "Liam: $200/month for 37 years"
                             ],
-                            explanation: "$24,000 vs $48,000 vs $88,800. Erin puts in the least — yet starting first gives her money the most time to grow.")
+                            explanation: "$24,000 vs $48,000 vs $88,800. Erin puts in the least, yet starting first gives her money the most time to grow.")
                     ],
                     xpReward: 20
                 ),
@@ -1229,15 +1229,15 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Only buying when prices are at their lowest"),
                             AnswerChoice(id: 3, text: "Selling a little bit every month")
                             ], correct: 0,
-                            explanation: "You put in the same amount on a set schedule — say $100 every month — regardless of whether prices are up or down."),
+                            explanation: "You put in the same amount on a set schedule (say $100 every month) whether prices are up or down."),
                         .trueFalse(id: "u5l4q2", prompt: "With dollar-cost averaging, a fixed amount of money buys more shares when the price is low and fewer when it's high.", correctIsTrue: true,
-                            explanation: "Because your dollars are fixed, a lower price stretches further and buys more shares — automatically leaning into cheap prices."),
+                            explanation: "Because your dollars are fixed, a lower price stretches further and buys more shares, so you automatically buy more when prices are low."),
                         .numeric(id: "u5l4q3", prompt: "You invest $120 this month and the share price is $12. How many shares do you buy?", answer: 10, tolerance: 0, suffix: " shares",
                             explanation: "$120 ÷ $12 = 10 shares."),
                         .numeric(id: "u5l4q4", prompt: "Next month you invest another $120, but the price has dropped to $6. How many shares do you buy now?", answer: 20, tolerance: 0, suffix: " shares",
                             explanation: "$120 ÷ $6 = 20 shares. The same $120 bought twice as many shares because the price fell."),
                         .numeric(id: "u5l4q5", prompt: "Over those two months you invested $240 and now own 30 shares. What average price did you pay per share?", answer: 8, tolerance: 0, prefix: "$",
-                            explanation: "$240 ÷ 30 shares = $8 per share — lower than the simple average of $12 and $6 ($9), because you bought more shares when cheap."),
+                            explanation: "$240 ÷ 30 shares = $8 per share. That's lower than the simple average of $12 and $6 ($9), because you bought more shares when they were cheap."),
                         .multiSelect(id: "u5l4q6", prompt: "Which are real benefits of dollar-cost averaging? (Choose all that apply.)",
                             choices: [
                             AnswerChoice(id: 0, text: "It takes the pressure off trying to time the market perfectly"),
@@ -1245,7 +1245,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "It builds a steady investing habit"),
                             AnswerChoice(id: 3, text: "It guarantees you'll never lose money")
                             ], correctIDs: [0, 1, 2],
-                            explanation: "DCA removes timing stress, leans into low prices, and builds discipline — but no strategy guarantees a profit."),
+                            explanation: "DCA removes timing stress, buys more when prices are low, and builds discipline, but no strategy guarantees a profit."),
                         .ordering(id: "u5l4q7", prompt: "Order the steps to set up a dollar-cost averaging plan.",
                             items: [
                             "Pick an amount you can invest regularly",
@@ -1253,7 +1253,7 @@ enum LessonContentData {
                             "Invest that amount every period no matter the price",
                             "Keep it going through the ups and downs"
                             ],
-                            explanation: "Decide the amount, set the schedule, invest on autopilot, and stay consistent — that's dollar-cost averaging.")
+                            explanation: "Decide the amount, set the schedule, invest on autopilot, and stay consistent. That's dollar-cost averaging.")
                     ],
                     xpReward: 20
                 ),
@@ -1269,7 +1269,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Maximum"),
                             AnswerChoice(id: 3, text: "Mandatory")
                             ], correct: 0,
-                            explanation: "Measurable means you can track progress with a number — like saving $1,200 — so you know when you've hit it."),
+                            explanation: "Measurable means you can track progress with a number, like saving $1,200, so you know when you've hit it."),
                         .matching(id: "u5l5q2", prompt: "Match each letter of SMART to what it stands for.",
                             pairs: [
                             MatchPair(id: 0, left: "S", right: "Specific"),
@@ -1277,7 +1277,7 @@ enum LessonContentData {
                             MatchPair(id: 2, left: "R", right: "Relevant"),
                             MatchPair(id: 3, left: "T", right: "Time-bound")
                             ],
-                            explanation: "SMART goals are Specific, Measurable, Achievable, Relevant, and Time-bound — clear targets you can actually reach."),
+                            explanation: "SMART goals are Specific, Measurable, Achievable, Relevant, and Time-bound: clear targets you can actually reach."),
                         .categorize(id: "u5l5q3", prompt: "Sort each goal by whether you'd keep the money safe in savings or invest it for growth.",
                             categories: ["Save (short-term)", "Invest (long-term)"],
                             items: [
@@ -1298,7 +1298,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Investing has no risk over long periods"),
                             AnswerChoice(id: 3, text: "It's the only way to open an account")
                             ], correct: 0,
-                            explanation: "A long time horizon lets you weather market ups and downs and gives compounding years to work — so growth investments make sense."),
+                            explanation: "A long time horizon lets you ride out market ups and downs and gives compounding years to work, so growth investments make sense."),
                         .numeric(id: "u5l5q6", prompt: "Your SMART goal is to save $1,200 for a laptop in 12 months. How many dollars must you save each month?", answer: 100, tolerance: 0, prefix: "$",
                             explanation: "$1,200 ÷ 12 months = $100 a month. Breaking a goal into monthly steps makes it Achievable and Time-bound."),
                         .multiSelect(id: "u5l5q7", prompt: "Which of these make a goal 'SMART'? (Choose all that apply.)",
@@ -1348,10 +1348,10 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "6 years"),
                             AnswerChoice(id: 3, text: "36 years")
                             ], correct: 0,
-                            explanation: "72 ÷ 3 = 24. Low returns mean a long wait — about 24 years to double at 3%."),
+                            explanation: "72 ÷ 3 = 24. Low returns mean a long wait: about 24 years to double at 3%."),
                         .trueFalse(id: "u5l3q2-kc", prompt: "Someone who invests from age 18 to 28 and then stops can end up with more than someone who starts at 28 and invests for decades.", correctIsTrue: true,
                             explanation: "This is the classic early-saver surprise: the head start gives the early investor's money extra years to compound, which can beat a bigger total invested later."),
-                        .numeric(id: "u5l3q4-kc", prompt: "Late Liam invests $200 a month from age 28 to 65 — that's 37 years. How many dollars does he personally put in?", answer: 88800, tolerance: 0, prefix: "$",
+                        .numeric(id: "u5l3q4-kc", prompt: "Late Liam invests $200 a month from age 28 to 65, which is 37 years. How many dollars does he personally put in?", answer: 88800, tolerance: 0, prefix: "$",
                             explanation: "$200 × 12 × 37 = $88,800. Liam contributes far more than Erin, yet her early start can still put her ahead."),
                         .multiSelect(id: "u5l3q6-kc", prompt: "Which habits help you take full advantage of time? (Choose all that apply.)",
                             choices: [
@@ -1360,9 +1360,9 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Leave your money invested to keep compounding"),
                             AnswerChoice(id: 3, text: "Wait many years before you begin")
                             ], correctIDs: [0, 1, 2],
-                            explanation: "Start early, stay consistent, and let it ride — those three give compounding the years it needs. Waiting just throws that time away."),
+                            explanation: "Start early, stay consistent, and let it ride. Those three give compounding the years it needs. Waiting just throws that time away."),
                         .trueFalse(id: "u5l4q2-kc", prompt: "With dollar-cost averaging, a fixed amount of money buys more shares when the price is low and fewer when it's high.", correctIsTrue: true,
-                            explanation: "Because your dollars are fixed, a lower price stretches further and buys more shares — automatically leaning into cheap prices."),
+                            explanation: "Because your dollars are fixed, a lower price stretches further and buys more shares, so you automatically buy more when prices are low."),
                         .numeric(id: "u5l4q4-kc", prompt: "Next month you invest another $120, but the price has dropped to $6. How many shares do you buy now?", answer: 20, tolerance: 0, suffix: " shares",
                             explanation: "$120 ÷ $6 = 20 shares. The same $120 bought twice as many shares because the price fell."),
                         .multiSelect(id: "u5l4q6-kc", prompt: "Which are real benefits of dollar-cost averaging? (Choose all that apply.)",
@@ -1372,7 +1372,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "It builds a steady investing habit"),
                             AnswerChoice(id: 3, text: "It guarantees you'll never lose money")
                             ], correctIDs: [0, 1, 2],
-                            explanation: "DCA removes timing stress, leans into low prices, and builds discipline — but no strategy guarantees a profit."),
+                            explanation: "DCA removes timing stress, buys more when prices are low, and builds discipline, but no strategy guarantees a profit."),
                         .matching(id: "u5l5q2-kc", prompt: "Match each letter of SMART to what it stands for.",
                             pairs: [
                             MatchPair(id: 0, left: "S", right: "Specific"),
@@ -1380,7 +1380,7 @@ enum LessonContentData {
                             MatchPair(id: 2, left: "R", right: "Relevant"),
                             MatchPair(id: 3, left: "T", right: "Time-bound")
                             ],
-                            explanation: "SMART goals are Specific, Measurable, Achievable, Relevant, and Time-bound — clear targets you can actually reach."),
+                            explanation: "SMART goals are Specific, Measurable, Achievable, Relevant, and Time-bound: clear targets you can actually reach."),
                         .trueFalse(id: "u5l5q4-kc", prompt: "Money you'll need in just a few months is best put in stocks so it can grow as much as possible.", correctIsTrue: false,
                             explanation: "Stocks can drop right when you need the cash. Short-term money belongs somewhere safe, like a savings account."),
                         .numeric(id: "u5l5q6-kc", prompt: "Your SMART goal is to save $1,200 for a laptop in 12 months. How many dollars must you save each month?", answer: 100, tolerance: 0, prefix: "$",
@@ -1864,7 +1864,7 @@ enum LessonContentData {
                         .numeric(id: "u3l3q3", prompt: "A market is officially a 'bear market' once it falls at least what percent from its recent high?", answer: 20, tolerance: 0, suffix: "%",
                             explanation: "The widely used rule of thumb is a 20% drop from the recent peak."),
                         .numeric(id: "u3l3q4", prompt: "An index peaks at 5,000 and falls to 4,000. What percent has it dropped?", answer: 20, tolerance: 0, suffix: "%",
-                            explanation: "(5,000 - 4,000) / 5,000 = 0.20 = 20% — exactly the bear-market threshold."),
+                            explanation: "(5,000 - 4,000) / 5,000 = 0.20 = 20%, exactly the bear-market threshold."),
                         .trueFalse(id: "u3l3q5", prompt: "The smartest move in a bear market is always to panic-sell everything.", correctIsTrue: false,
                             explanation: "Panic-selling locks in losses. Historically, markets have recovered over time, so staying calm and sticking to a plan usually beats panicking."),
                         .matching(id: "u3l3q6", prompt: "Match each market term to its meaning.",
@@ -1918,7 +1918,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "A special tax on options"),
                             AnswerChoice(id: 3, text: "The number of shares in one contract")
                             ], correct: 0,
-                            explanation: "The premium is the cost of the option itself — the money you hand over to hold that right."),
+                            explanation: "The premium is the cost of the option itself: the money you pay to hold that right."),
                         .categorize(id: "u3l4q6", prompt: "Sort each idea into the view it expresses.",
                             categories: ["Bullish (calls)", "Bearish (puts)"],
                             items: [
@@ -1929,7 +1929,7 @@ enum LessonContentData {
                             ],
                             explanation: "Calls profit when the stock climbs (bullish); puts profit when it drops (bearish)."),
                         .trueFalse(id: "u3l4q7", prompt: "When you BUY an option, the most you can lose is the premium you paid.", correctIsTrue: true,
-                            explanation: "If the bet goes wrong, the option can expire worthless — but you can never lose more than the premium you spent to buy it.")
+                            explanation: "If the bet goes wrong, the option can expire worthless, but you can never lose more than the premium you paid for it.")
                     ],
                     xpReward: 20
                 ),
@@ -1938,7 +1938,7 @@ enum LessonContentData {
                     title: "Options Challenge",
                     iconName: "gamecontroller.fill",
                     questions: [
-                        .multipleChoice(id: "u3l5q1", prompt: "You're bullish on a stock — you expect its price to climb. Which option matches that view?",
+                        .multipleChoice(id: "u3l5q1", prompt: "You're bullish on a stock: you expect its price to climb. Which option matches that view?",
                             choices: [
                             AnswerChoice(id: 0, text: "Buy a call"),
                             AnswerChoice(id: 1, text: "Buy a put"),
@@ -1951,7 +1951,7 @@ enum LessonContentData {
                                 scenario: "You're convinced NVDA will jump after its earnings report next week.", requiredKind: .call, targetPrice: 150,
                                 successNote: "A call profits when the stock climbs above your strike plus the premium you paid."),
                             explanation: "A bullish view calls for a call. It locks in the right to buy NVDA at $150 even if the stock rockets past it."),
-                        .multipleChoice(id: "u3l5q3", prompt: "You're bearish on a stock — you expect its price to drop. Which option matches that view?",
+                        .multipleChoice(id: "u3l5q3", prompt: "You're bearish on a stock: you expect its price to drop. Which option matches that view?",
                             choices: [
                             AnswerChoice(id: 0, text: "Buy a put"),
                             AnswerChoice(id: 1, text: "Buy a call"),
@@ -1970,9 +1970,9 @@ enum LessonContentData {
                             challenge: OptionChallenge(symbol: "AAPL", companyName: "Apple", spot: 212,
                                 scenario: "You expect AAPL to rally into the holiday shopping season.", requiredKind: .call, targetPrice: 230,
                                 successNote: "A call profits when the stock climbs above your strike plus the premium you paid."),
-                            explanation: "Expecting a rise is bullish, so you buy a call — the right to buy AAPL at $230 no matter how high it goes."),
+                            explanation: "Expecting a rise is bullish, so you buy a call: the right to buy AAPL at $230 no matter how high it goes."),
                         .trueFalse(id: "u3l5q7", prompt: "If you buy that call for a $300 premium, the most you can lose is $300.", correctIsTrue: true,
-                            explanation: "When you buy an option, your entire risk is the premium. Worst case, it expires worthless and you're out $300 — no more.")
+                            explanation: "When you buy an option, your entire risk is the premium. Worst case, it expires worthless and you're out $300, no more.")
                     ],
                     xpReward: 20
                 )
@@ -2022,7 +2022,7 @@ enum LessonContentData {
                             ], correct: 0,
                             explanation: "Picture a bear swiping its paw down. A bear market is a falling market, officially a drop of 20% or more."),
                         .numeric(id: "u3l3q4-kc", prompt: "An index peaks at 5,000 and falls to 4,000. What percent has it dropped?", answer: 20, tolerance: 0, suffix: "%",
-                            explanation: "(5,000 - 4,000) / 5,000 = 0.20 = 20% — exactly the bear-market threshold."),
+                            explanation: "(5,000 - 4,000) / 5,000 = 0.20 = 20%, exactly the bear-market threshold."),
                         .matching(id: "u3l3q6-kc", prompt: "Match each market term to its meaning.",
                             pairs: [
                             MatchPair(id: 0, left: "Bull market", right: "Prices rising, optimism high"),
@@ -2064,7 +2064,7 @@ enum LessonContentData {
                             challenge: OptionChallenge(symbol: "AAPL", companyName: "Apple", spot: 212,
                                 scenario: "You expect AAPL to rally into the holiday shopping season.", requiredKind: .call, targetPrice: 230,
                                 successNote: "A call profits when the stock climbs above your strike plus the premium you paid."),
-                            explanation: "Expecting a rise is bullish, so you buy a call — the right to buy AAPL at $230 no matter how high it goes.")
+                            explanation: "Expecting a rise is bullish, so you buy a call: the right to buy AAPL at $230 no matter how high it goes.")
                     ],
                     xpReward: 60, isFinalTest: true
                 )
@@ -2106,9 +2106,9 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "A guarantee that you'll never lose money"),
                             AnswerChoice(id: 3, text: "They have historically beaten most active funds over the long run")
                             ], correctIDs: [0, 1, 3],
-                            explanation: "Index funds are cheap, diversified, and beat most active funds over time — but no investment can promise you'll never lose money."),
+                            explanation: "Index funds are cheap, diversified, and beat most active funds over time, but no investment can promise you'll never lose money."),
                         .numeric(id: "u6l1q5", prompt: "The S&P 500 index is built from 500 companies. Owning one share of a fund that tracks it gives you a slice of how many companies?", answer: 500, tolerance: 0,
-                            explanation: "One share of an S&P 500 index fund spreads your money across all 500 companies at once — that's diversification in a single click."),
+                            explanation: "One share of an S&P 500 index fund spreads your money across all 500 companies at once. That's diversification in a single purchase."),
                         .trueFalse(id: "u6l1q6", prompt: "Because most active fund managers fail to beat their index over the long run, a low-cost index fund is often a smart default.", correctIsTrue: true,
                             explanation: "Study after study shows the large majority of active managers lag their benchmark after fees, which is why index funds are so popular."),
                         .ordering(id: "u6l1q7", prompt: "Order these from least diversified to most diversified.",
@@ -2118,7 +2118,7 @@ enum LessonContentData {
                             "An S&P 500 index fund (500 companies)",
                             "A total U.S. market index fund (thousands of companies)"
                             ],
-                            explanation: "The more companies you hold, the more spread out your risk — going from one stock to a total-market fund steadily increases diversification.")
+                            explanation: "The more companies you hold, the more spread out your risk. Going from one stock to a total-market fund steadily increases diversification.")
                     ],
                     xpReward: 20
                 ),
@@ -2153,7 +2153,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "A share that pays no dividends"),
                             AnswerChoice(id: 3, text: "Free shares handed out by the government")
                             ], correct: 0,
-                            explanation: "Fractional shares let you invest, say, $50 in a fund even if one full share costs hundreds — great for starting small."),
+                            explanation: "Fractional shares let you invest, say, $50 in a fund even if one full share costs hundreds. Great for starting small."),
                         .multiSelect(id: "u6l2q5", prompt: "Which statements about ETFs are TRUE? (Choose all that apply.)",
                             choices: [
                             AnswerChoice(id: 0, text: "They trade throughout the day"),
@@ -2161,11 +2161,11 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "They usually have a ticker symbol you can look up"),
                             AnswerChoice(id: 3, text: "They can only be sold once a year")
                             ], correctIDs: [0, 1, 2],
-                            explanation: "ETFs trade live all day, carry a ticker, and often track indexes — you're never locked in to selling just once a year."),
+                            explanation: "ETFs trade all day, have a ticker, and often track indexes. You're never limited to selling once a year."),
                         .trueFalse(id: "u6l2q6", prompt: "Both ETFs and mutual funds let you own a basket of many investments in a single purchase.", correctIsTrue: true,
-                            explanation: "Whichever wrapper you pick, one purchase buys a whole basket of holdings — instant diversification."),
+                            explanation: "Whichever wrapper you pick, one purchase buys a whole basket of holdings. Instant diversification."),
                         .numeric(id: "u6l2q7", prompt: "One share of a fund costs $250, but you only want to invest $50. How many shares do you buy? (Enter as a decimal.)", answer: 0.2, tolerance: 0,
-                            explanation: "$50 divided by $250 is 0.2 — fractional shares let you put in exactly the dollar amount you want.")
+                            explanation: "$50 divided by $250 is 0.2. Fractional shares let you put in exactly the dollar amount you want.")
                     ],
                     xpReward: 20
                 ),
@@ -2193,7 +2193,7 @@ enum LessonContentData {
                         .trueFalse(id: "u6l3q3", prompt: "In a market-cap-weighted index fund, bigger companies make up a larger share of the fund.", correctIsTrue: true,
                             explanation: "Market-cap weighting means a giant like Apple takes up far more of the fund than a small company does."),
                         .numeric(id: "u6l3q4", prompt: "A fund puts 7% of its money into its largest holding. If you invest $1,000, how many dollars are in that one company?", answer: 70, tolerance: 0, prefix: "$",
-                            explanation: "7% of $1,000 is $70 — the weighting tells you how much of your money sits in each holding."),
+                            explanation: "7% of $1,000 is $70. The weighting tells you how much of your money sits in each holding."),
                         .multipleChoice(id: "u6l3q5", prompt: "Why does one share of a broad fund usually carry less risk than one single stock?",
                             choices: [
                             AnswerChoice(id: 0, text: "If one company does badly, the others can cushion the blow"),
@@ -2201,7 +2201,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Because the government insures all funds"),
                             AnswerChoice(id: 3, text: "Because funds only ever hold winning stocks")
                             ], correct: 0,
-                            explanation: "Spreading money across many companies means no single failure can wipe you out — that's the power of diversification."),
+                            explanation: "Spreading money across many companies means no single failure can wipe you out. That's the power of diversification."),
                         .multiSelect(id: "u6l3q6", prompt: "What can you typically learn from a fund's fact sheet? (Choose all that apply.)",
                             choices: [
                             AnswerChoice(id: 0, text: "Its top holdings"),
@@ -2209,9 +2209,9 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Exactly what it will be worth next year"),
                             AnswerChoice(id: 3, text: "Its expense ratio")
                             ], correctIDs: [0, 1, 3],
-                            explanation: "A fact sheet shows holdings, sector breakdown, and fees — but no one can promise a future price."),
+                            explanation: "A fact sheet shows holdings, sector breakdown, and fees, but no one can promise a future price."),
                         .trueFalse(id: "u6l3q7", prompt: "Owning one share of a diversified fund means you indirectly own tiny slices of many different companies at once.", correctIsTrue: true,
-                            explanation: "That single share represents a sliver of every company in the fund — one purchase, many businesses.")
+                            explanation: "That single share represents a sliver of every company in the fund: one purchase, many businesses.")
                     ],
                     xpReward: 20
                 ),
@@ -2227,11 +2227,11 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "A one-time fee just to open an account"),
                             AnswerChoice(id: 3, text: "The tax you owe on your gains")
                             ], correct: 0,
-                            explanation: "The expense ratio is the slice the fund quietly takes each year — a 0.10% ratio means $1 per $1,000 invested."),
+                            explanation: "The expense ratio is the slice the fund quietly takes each year. A 0.10% ratio means $1 per $1,000 invested."),
                         .numeric(id: "u6l4q2", prompt: "A fund has a 0.50% expense ratio. On a $10,000 investment, how many dollars does that fee cost you in one year?", answer: 50, tolerance: 0, prefix: "$",
-                            explanation: "0.50% of $10,000 is $50 — that's what comes out of your pocket each year for holding the fund."),
+                            explanation: "0.50% of $10,000 is $50. That's what comes out of your pocket each year for holding the fund."),
                         .numeric(id: "u6l4q3", prompt: "Fund A charges 0.05% and Fund B charges 1.05% on a $10,000 balance. How many MORE dollars per year does Fund B cost?", answer: 100, tolerance: 0, prefix: "$",
-                            explanation: "The 1.00% gap on $10,000 is $100 a year — and that difference compounds against you for as long as you invest."),
+                            explanation: "The 1.00% gap on $10,000 is $100 a year, and that difference compounds against you for as long as you invest."),
                         .trueFalse(id: "u6l4q4", prompt: "A 1% annual fee sounds tiny, but over decades it can quietly cost you tens of thousands of dollars in lost growth.", correctIsTrue: true,
                             explanation: "Every dollar taken in fees is also a dollar that never compounds for you, so small fees snowball over a lifetime."),
                         .ordering(id: "u6l4q5", prompt: "Order these funds from cheapest to most expensive by expense ratio.",
@@ -2241,10 +2241,10 @@ enum LessonContentData {
                             "0.75%",
                             "1.25%"
                             ],
-                            explanation: "Lower expense ratios keep more of your money invested and compounding — cheaper is usually better."),
+                            explanation: "Lower expense ratios keep more of your money invested and compounding. Cheaper is usually better."),
                         .multipleChoice(id: "u6l4q6", prompt: "Why do fees hurt more the longer you invest?",
                             choices: [
-                            AnswerChoice(id: 0, text: "You lose the fee AND all the future growth that money could have earned — year after year"),
+                            AnswerChoice(id: 0, text: "You lose the fee AND all the future growth that money could have earned, year after year"),
                             AnswerChoice(id: 1, text: "Fees only apply during the first year"),
                             AnswerChoice(id: 2, text: "Fees make the market go up"),
                             AnswerChoice(id: 3, text: "Fees are fully refunded at retirement")
@@ -2281,9 +2281,9 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "A fund that holds just one stock"),
                             AnswerChoice(id: 3, text: "A fund that charges no fees ever")
                             ], correct: 0,
-                            explanation: "A target-date fund starts aggressive and gradually turns conservative as your goal year — like retirement — nears."),
+                            explanation: "A target-date fund starts aggressive and gradually turns conservative as your goal year (like retirement) gets closer."),
                         .trueFalse(id: "u6l5q3", prompt: "A target-date fund labeled '2065' is designed for someone planning to retire around the year 2065.", correctIsTrue: true,
-                            explanation: "The year in the name is the rough target — the fund adjusts its risk on a glide path toward that date."),
+                            explanation: "The year in the name is the rough target. The fund lowers its risk gradually as that date gets closer."),
                         .matching(id: "u6l5q4", prompt: "Match each tool to what it does for you.",
                             pairs: [
                             MatchPair(id: 0, left: "Robo-advisor", right: "Auto-manages a portfolio based on your goals"),
@@ -2301,9 +2301,9 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "It guarantees a profit every year"),
                             AnswerChoice(id: 3, text: "It can automatically rebalance your portfolio")
                             ], correctIDs: [0, 1, 3],
-                            explanation: "Automation helps with diversification, discipline, and rebalancing — but nothing can guarantee yearly profits."),
+                            explanation: "Automation helps with diversification, discipline, and rebalancing, but nothing can guarantee yearly profits."),
                         .numeric(id: "u6l5q7", prompt: "You set up an automatic investment of $50 every month. How many dollars will you have invested after one year (12 months)?", answer: 600, tolerance: 0, prefix: "$",
-                            explanation: "$50 times 12 months is $600 — small automatic amounts quietly add up over time.")
+                            explanation: "$50 times 12 months is $600. Small automatic amounts quietly add up over time.")
                     ],
                     xpReward: 20
                 )
@@ -2323,7 +2323,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "A guarantee that you'll never lose money"),
                             AnswerChoice(id: 3, text: "They have historically beaten most active funds over the long run")
                             ], correctIDs: [0, 1, 3],
-                            explanation: "Index funds are cheap, diversified, and beat most active funds over time — but no investment can promise you'll never lose money."),
+                            explanation: "Index funds are cheap, diversified, and beat most active funds over time, but no investment can promise you'll never lose money."),
                         .trueFalse(id: "u6l1q6-kc", prompt: "Because most active fund managers fail to beat their index over the long run, a low-cost index fund is often a smart default.", correctIsTrue: true,
                             explanation: "Study after study shows the large majority of active managers lag their benchmark after fees, which is why index funds are so popular."),
                         .categorize(id: "u6l2q2-kc", prompt: "Sort each trait into ETF or Mutual Fund.",
@@ -2342,9 +2342,9 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "A share that pays no dividends"),
                             AnswerChoice(id: 3, text: "Free shares handed out by the government")
                             ], correct: 0,
-                            explanation: "Fractional shares let you invest, say, $50 in a fund even if one full share costs hundreds — great for starting small."),
+                            explanation: "Fractional shares let you invest, say, $50 in a fund even if one full share costs hundreds. Great for starting small."),
                         .trueFalse(id: "u6l2q6-kc", prompt: "Both ETFs and mutual funds let you own a basket of many investments in a single purchase.", correctIsTrue: true,
-                            explanation: "Whichever wrapper you pick, one purchase buys a whole basket of holdings — instant diversification."),
+                            explanation: "Whichever wrapper you pick, one purchase buys a whole basket of holdings. Instant diversification."),
                         .matching(id: "u6l3q2-kc", prompt: "Match each company to the sector it belongs to.",
                             pairs: [
                             MatchPair(id: 0, left: "Apple", right: "Technology"),
@@ -2354,7 +2354,7 @@ enum LessonContentData {
                             ],
                             explanation: "Funds group their holdings into sectors so you can see how your money is spread across the economy."),
                         .numeric(id: "u6l3q4-kc", prompt: "A fund puts 7% of its money into its largest holding. If you invest $1,000, how many dollars are in that one company?", answer: 70, tolerance: 0, prefix: "$",
-                            explanation: "7% of $1,000 is $70 — the weighting tells you how much of your money sits in each holding."),
+                            explanation: "7% of $1,000 is $70. The weighting tells you how much of your money sits in each holding."),
                         .multiSelect(id: "u6l3q6-kc", prompt: "What can you typically learn from a fund's fact sheet? (Choose all that apply.)",
                             choices: [
                             AnswerChoice(id: 0, text: "Its top holdings"),
@@ -2362,14 +2362,14 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Exactly what it will be worth next year"),
                             AnswerChoice(id: 3, text: "Its expense ratio")
                             ], correctIDs: [0, 1, 3],
-                            explanation: "A fact sheet shows holdings, sector breakdown, and fees — but no one can promise a future price."),
+                            explanation: "A fact sheet shows holdings, sector breakdown, and fees, but no one can promise a future price."),
                         .numeric(id: "u6l4q2-kc", prompt: "A fund has a 0.50% expense ratio. On a $10,000 investment, how many dollars does that fee cost you in one year?", answer: 50, tolerance: 0, prefix: "$",
-                            explanation: "0.50% of $10,000 is $50 — that's what comes out of your pocket each year for holding the fund."),
+                            explanation: "0.50% of $10,000 is $50. That's what comes out of your pocket each year for holding the fund."),
                         .trueFalse(id: "u6l4q4-kc", prompt: "A 1% annual fee sounds tiny, but over decades it can quietly cost you tens of thousands of dollars in lost growth.", correctIsTrue: true,
                             explanation: "Every dollar taken in fees is also a dollar that never compounds for you, so small fees snowball over a lifetime."),
                         .multipleChoice(id: "u6l4q6-kc", prompt: "Why do fees hurt more the longer you invest?",
                             choices: [
-                            AnswerChoice(id: 0, text: "You lose the fee AND all the future growth that money could have earned — year after year"),
+                            AnswerChoice(id: 0, text: "You lose the fee AND all the future growth that money could have earned, year after year"),
                             AnswerChoice(id: 1, text: "Fees only apply during the first year"),
                             AnswerChoice(id: 2, text: "Fees make the market go up"),
                             AnswerChoice(id: 3, text: "Fees are fully refunded at retirement")
@@ -2382,7 +2382,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "A fund that holds just one stock"),
                             AnswerChoice(id: 3, text: "A fund that charges no fees ever")
                             ], correct: 0,
-                            explanation: "A target-date fund starts aggressive and gradually turns conservative as your goal year — like retirement — nears."),
+                            explanation: "A target-date fund starts aggressive and gradually turns conservative as your goal year (like retirement) gets closer."),
                         .matching(id: "u6l5q4-kc", prompt: "Match each tool to what it does for you.",
                             pairs: [
                             MatchPair(id: 0, left: "Robo-advisor", right: "Auto-manages a portfolio based on your goals"),
@@ -2398,7 +2398,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "It guarantees a profit every year"),
                             AnswerChoice(id: 3, text: "It can automatically rebalance your portfolio")
                             ], correctIDs: [0, 1, 3],
-                            explanation: "Automation helps with diversification, discipline, and rebalancing — but nothing can guarantee yearly profits.")
+                            explanation: "Automation helps with diversification, discipline, and rebalancing, but nothing can guarantee yearly profits.")
                     ],
                     xpReward: 60, isFinalTest: true
                 )
@@ -2417,12 +2417,12 @@ enum LessonContentData {
                     questions: [
                         .multipleChoice(id: "u10l1q1", prompt: "What does macroeconomics study?",
                             choices: [
-                            AnswerChoice(id: 0, text: "The economy as a whole — things like a country's total output, inflation, and jobs"),
+                            AnswerChoice(id: 0, text: "The economy as a whole: things like a country's total output, inflation, and jobs"),
                             AnswerChoice(id: 1, text: "Only how one family budgets its monthly income"),
                             AnswerChoice(id: 2, text: "How to pick a single winning stock"),
                             AnswerChoice(id: 3, text: "The payroll rules inside one small company")
                             ], correct: 0,
-                            explanation: "Macroeconomics zooms out to the whole economy — total production, prices, and employment — instead of one person or business."),
+                            explanation: "Macroeconomics zooms out to the whole economy (total production, prices, and employment) instead of one person or business."),
                         .trueFalse(id: "u10l1q2", prompt: "Microeconomics looks at individual choices (one person or business), while macroeconomics looks at the whole economy.", correctIsTrue: true,
                             explanation: "Micro means the small, individual scale; macro means the big, whole-economy scale."),
                         .matching(id: "u10l1q3", prompt: "Match each question to whether it is a micro or a macro question.",
@@ -2459,7 +2459,7 @@ enum LessonContentData {
                             AnswerChoice(id: 3, text: "The economy instantly shuts down")
                             ], correct: 0,
                             explanation: "Just like in a single market, when economy-wide demand outruns supply, prices get pushed up."),
-                        .trueFalse(id: "u10l1q7", prompt: "Even though it studies the whole economy, macroeconomics still uses the ideas of supply and demand — just at a much larger scale.", correctIsTrue: true,
+                        .trueFalse(id: "u10l1q7", prompt: "Even though it studies the whole economy, macroeconomics still uses supply and demand, just on a much larger scale.", correctIsTrue: true,
                             explanation: "Supply and demand work for one lemonade stand and for an entire country's economy alike.")
                     ],
                     xpReward: 20
@@ -2476,17 +2476,17 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "How much cash the government keeps in the bank"),
                             AnswerChoice(id: 3, text: "The price of a single company's stock")
                             ], correct: 0,
-                            explanation: "GDP adds up the value of everything a country produces — it's the main scoreboard for the size of an economy."),
+                            explanation: "GDP adds up the value of everything a country produces. It's the main scoreboard for the size of an economy."),
                         .trueFalse(id: "u10l2q2", prompt: "When GDP is growing, the economy is producing more goods and services than before.", correctIsTrue: true,
-                            explanation: "Rising GDP means more output — usually a sign of an expanding, healthier economy."),
+                            explanation: "Rising GDP means more output, usually a sign of a growing, healthier economy."),
                         .multipleChoice(id: "u10l2q3", prompt: "An economy is said to be in a contraction (or recession) when...",
                             choices: [
-                            AnswerChoice(id: 0, text: "Its GDP is shrinking — total output is falling"),
+                            AnswerChoice(id: 0, text: "Its GDP is shrinking: total output is falling"),
                             AnswerChoice(id: 1, text: "Its GDP is growing quickly"),
                             AnswerChoice(id: 2, text: "Prices become perfectly stable"),
                             AnswerChoice(id: 3, text: "Everyone suddenly gets a raise")
                             ], correct: 0,
-                            explanation: "A contraction means the economy is shrinking — GDP falls instead of grows."),
+                            explanation: "A contraction means the economy is shrinking: GDP falls instead of growing."),
                         .numeric(id: "u10l2q4", prompt: "A country's GDP grows from $1,000 billion to $1,030 billion in a year. What is the growth rate?", answer: 3, tolerance: 0, suffix: "%",
                             explanation: "The increase is $30 billion; $30 ÷ $1,000 = 0.03 = 3% growth."),
                         .categorize(id: "u10l2q5", prompt: "Sort each situation into growth or contraction.",
@@ -2523,8 +2523,8 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "The total number of jobs in a country"),
                             AnswerChoice(id: 3, text: "The interest a bank pays you")
                             ], correct: 0,
-                            explanation: "Inflation is the overall upward drift of prices — the same dollar buys a little less each year."),
-                        .trueFalse(id: "u10l3q2", prompt: "During inflation, a dollar buys less than it used to — its purchasing power falls.", correctIsTrue: true,
+                            explanation: "Inflation is the overall rise in prices. The same dollar buys a little less each year."),
+                        .trueFalse(id: "u10l3q2", prompt: "During inflation, a dollar buys less than it used to. Its purchasing power falls.", correctIsTrue: true,
                             explanation: "When prices rise, each dollar stretches less far, so your money's purchasing power shrinks."),
                         .multipleChoice(id: "u10l3q3", prompt: "What is the Consumer Price Index (CPI) used for?",
                             choices: [
@@ -2535,7 +2535,7 @@ enum LessonContentData {
                             ], correct: 0,
                             explanation: "The CPI follows the cost of a common basket of everyday items, so it's a key gauge of inflation."),
                         .trueFalse(id: "u10l3q4", prompt: "In many countries, central banks aim for an inflation rate of about 2% per year.", correctIsTrue: true,
-                            explanation: "A low, steady ~2% is seen as healthy — enough to keep the economy moving without eroding money too fast."),
+                            explanation: "A low, steady ~2% is seen as healthy: enough to keep the economy moving without eroding money too fast."),
                         .numeric(id: "u10l3q5", prompt: "Your savings earned a 5% nominal return this year, but inflation was 2%. What was your approximate real return?", answer: 3, tolerance: 0, suffix: "%",
                             explanation: "Real return is roughly nominal return minus inflation: 5% − 2% = 3%. That's your gain in actual buying power."),
                         .matching(id: "u10l3q6", prompt: "Match each term to its meaning.",
@@ -2567,7 +2567,7 @@ enum LessonContentData {
                         .numeric(id: "u10l4q2", prompt: "In a labor force of 200 people, 10 are unemployed and looking for work. What is the unemployment rate?", answer: 5, tolerance: 0, suffix: "%",
                             explanation: "10 ÷ 200 = 0.05 = 5%. Unemployment rate is unemployed people divided by the labor force."),
                         .trueFalse(id: "u10l4q3", prompt: "A small amount of unemployment is normal, because people are always switching jobs or just entering the workforce.", correctIsTrue: true,
-                            explanation: "Some 'frictional' unemployment is healthy — it just means people are moving between jobs. Zero unemployment almost never happens."),
+                            explanation: "Some 'frictional' unemployment is healthy. It just means people are moving between jobs. Zero unemployment almost never happens."),
                         .multiSelect(id: "u10l4q4", prompt: "When unemployment rises sharply, what tends to happen? (Choose all that apply.)",
                             choices: [
                             AnswerChoice(id: 0, text: "People have less income to spend"),
@@ -2608,7 +2608,7 @@ enum LessonContentData {
                             "Contraction",
                             "Trough"
                             ],
-                            explanation: "The economy grows (expansion), tops out (peak), shrinks (contraction), and bottoms out (trough) — then it starts over."),
+                            explanation: "The economy grows (expansion), tops out (peak), shrinks (contraction), and bottoms out (trough). Then it starts over."),
                         .matching(id: "u10l5q2", prompt: "Match each business-cycle phase to its description.",
                             pairs: [
                             MatchPair(id: 0, left: "Expansion", right: "The economy is growing and jobs are rising"),
@@ -2616,9 +2616,9 @@ enum LessonContentData {
                             MatchPair(id: 2, left: "Contraction", right: "The economy shrinks and output falls"),
                             MatchPair(id: 3, left: "Trough", right: "The low point before growth begins again")
                             ],
-                            explanation: "These four phases repeat over and over — that's why it's called a cycle."),
-                        .trueFalse(id: "u10l5q3", prompt: "The business cycle always turns — no expansion lasts forever, and no contraction lasts forever either.", correctIsTrue: true,
-                            explanation: "Booms eventually cool and downturns eventually recover — the cycle keeps turning."),
+                            explanation: "These four phases repeat over and over. That's why it's called a cycle."),
+                        .trueFalse(id: "u10l5q3", prompt: "The business cycle always turns. No expansion lasts forever, and no contraction does either.", correctIsTrue: true,
+                            explanation: "Booms eventually cool and downturns eventually recover. The cycle keeps turning."),
                         .multipleChoice(id: "u10l5q4", prompt: "A recession is another name for which phase of the business cycle?",
                             choices: [
                             AnswerChoice(id: 0, text: "A contraction, when the economy is shrinking"),
@@ -2626,7 +2626,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "An expansion, when the economy is growing"),
                             AnswerChoice(id: 3, text: "A trough that lasts only one day")
                             ], correct: 0,
-                            explanation: "A recession is a significant, sustained contraction — falling output across the economy."),
+                            explanation: "A recession is a significant, sustained contraction, with output falling across the economy."),
                         .multiSelect(id: "u10l5q5", prompt: "Which are typical signs of an economic expansion? (Choose all that apply.)",
                             choices: [
                             AnswerChoice(id: 0, text: "Rising GDP"),
@@ -2651,7 +2651,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Expansion"),
                             AnswerChoice(id: 3, text: "Boom")
                             ], correct: 0,
-                            explanation: "The trough is the bottom — the turning point where a contraction ends and a new expansion begins.")
+                            explanation: "The trough is the bottom: the turning point where a contraction ends and a new expansion begins.")
                     ],
                     xpReward: 20
                 )
@@ -2681,7 +2681,7 @@ enum LessonContentData {
                             ], correct: 0,
                             explanation: "Just like in a single market, when economy-wide demand outruns supply, prices get pushed up."),
                         .trueFalse(id: "u10l2q2-kc", prompt: "When GDP is growing, the economy is producing more goods and services than before.", correctIsTrue: true,
-                            explanation: "Rising GDP means more output — usually a sign of an expanding, healthier economy."),
+                            explanation: "Rising GDP means more output, usually a sign of a growing, healthier economy."),
                         .numeric(id: "u10l2q4-kc", prompt: "A country's GDP grows from $1,000 billion to $1,030 billion in a year. What is the growth rate?", answer: 3, tolerance: 0, suffix: "%",
                             explanation: "The increase is $30 billion; $30 ÷ $1,000 = 0.03 = 3% growth."),
                         .multiSelect(id: "u10l2q6-kc", prompt: "Which of these count toward this year's GDP? (Choose all that apply.)",
@@ -2692,10 +2692,10 @@ enum LessonContentData {
                             AnswerChoice(id: 3, text: "A fresh loaf of bread baked and sold this year")
                             ], correctIDs: [0, 1, 3],
                             explanation: "GDP counts new goods and services produced this period. Reselling an old used car isn't new production, so it doesn't add to GDP."),
-                        .trueFalse(id: "u10l3q2-kc", prompt: "During inflation, a dollar buys less than it used to — its purchasing power falls.", correctIsTrue: true,
+                        .trueFalse(id: "u10l3q2-kc", prompt: "During inflation, a dollar buys less than it used to. Its purchasing power falls.", correctIsTrue: true,
                             explanation: "When prices rise, each dollar stretches less far, so your money's purchasing power shrinks."),
                         .trueFalse(id: "u10l3q4-kc", prompt: "In many countries, central banks aim for an inflation rate of about 2% per year.", correctIsTrue: true,
-                            explanation: "A low, steady ~2% is seen as healthy — enough to keep the economy moving without eroding money too fast."),
+                            explanation: "A low, steady ~2% is seen as healthy: enough to keep the economy moving without eroding money too fast."),
                         .matching(id: "u10l3q6-kc", prompt: "Match each term to its meaning.",
                             pairs: [
                             MatchPair(id: 0, left: "Inflation", right: "The general rise in prices over time"),
@@ -2723,7 +2723,7 @@ enum LessonContentData {
                             MatchPair(id: 2, left: "Contraction", right: "The economy shrinks and output falls"),
                             MatchPair(id: 3, left: "Trough", right: "The low point before growth begins again")
                             ],
-                            explanation: "These four phases repeat over and over — that's why it's called a cycle."),
+                            explanation: "These four phases repeat over and over. That's why it's called a cycle."),
                         .multipleChoice(id: "u10l5q4-kc", prompt: "A recession is another name for which phase of the business cycle?",
                             choices: [
                             AnswerChoice(id: 0, text: "A contraction, when the economy is shrinking"),
@@ -2731,7 +2731,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "An expansion, when the economy is growing"),
                             AnswerChoice(id: 3, text: "A trough that lasts only one day")
                             ], correct: 0,
-                            explanation: "A recession is a significant, sustained contraction — falling output across the economy."),
+                            explanation: "A recession is a significant, sustained contraction, with output falling across the economy."),
                         .categorize(id: "u10l5q6-kc", prompt: "Sort each event into the expansion or contraction phase.",
                             categories: ["Expansion", "Contraction"],
                             items: [
@@ -3109,15 +3109,15 @@ enum LessonContentData {
                     questions: [
                         .multipleChoice(id: "u8l1q1", prompt: "What does FOMO mean in investing?",
                             choices: [
-                            AnswerChoice(id: 0, text: "Fear Of Missing Out — rushing to buy because everyone else seems to be getting rich"),
+                            AnswerChoice(id: 0, text: "Fear Of Missing Out: rushing to buy because everyone else seems to be getting rich"),
                             AnswerChoice(id: 1, text: "A low-fee index fund"),
                             AnswerChoice(id: 2, text: "A government program that insures your losses"),
                             AnswerChoice(id: 3, text: "The fee a broker charges to sell a stock")
                             ], correct: 0,
                             explanation: "FOMO pushes people to buy after a price has already soared, often right near the top."),
                         .trueFalse(id: "u8l1q2", prompt: "Panic-selling during a market drop turns a temporary paper loss into a permanent, real one.", correctIsTrue: true,
-                            explanation: "A loss on paper only becomes real when you sell — holding gives prices a chance to recover."),
-                        .multiSelect(id: "u8l1q3", prompt: "Which are signs that FOMO — not real analysis — is driving your decision? (Choose all that apply.)",
+                            explanation: "A loss on paper only becomes real when you sell. Holding gives prices a chance to recover."),
+                        .multiSelect(id: "u8l1q3", prompt: "Which are signs that FOMO, not real analysis, is driving your decision? (Choose all that apply.)",
                             choices: [
                             AnswerChoice(id: 0, text: "A stock is all over your feed and 'everyone' seems to own it"),
                             AnswerChoice(id: 1, text: "You feel a rush of urgency to buy right now before you miss out"),
@@ -3201,7 +3201,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Buying after researching the company and deciding it's a fair price"),
                             AnswerChoice(id: 3, text: "Piling into a meme coin so you won't feel left out")
                             ], correctIDs: [0, 1, 3],
-                            explanation: "Herd mentality is letting the crowd — not your own analysis — make the call."),
+                            explanation: "Herd mentality is letting the crowd, not your own analysis, make the call."),
                         .trueFalse(id: "u8l2q7", prompt: "Anchoring can trick you into thinking a stock is 'cheap' just because it's lower than its all-time high.", correctIsTrue: true,
                             explanation: "A lower price isn't automatically a bargain; the business's actual value is what matters.")
                     ],
@@ -3214,13 +3214,13 @@ enum LessonContentData {
                     questions: [
                         .multipleChoice(id: "u8l3q1", prompt: "An investment 'guarantees' you'll double your money in a month with 'zero risk.' This is:",
                             choices: [
-                            AnswerChoice(id: 0, text: "A major red flag — real investments never guarantee high returns with no risk"),
+                            AnswerChoice(id: 0, text: "A major red flag: real investments never guarantee high returns with no risk"),
                             AnswerChoice(id: 1, text: "A normal, safe opportunity you should jump on"),
                             AnswerChoice(id: 2, text: "Proof the investment is government-regulated"),
                             AnswerChoice(id: 3, text: "A sign of a well-diversified portfolio")
                             ], correct: 0,
                             explanation: "Higher returns always come with higher risk, so 'guaranteed' big returns are a classic scam signal."),
-                        .trueFalse(id: "u8l3q2", prompt: "In a Ponzi scheme, early investors are paid with money from new investors — not from real profits.", correctIsTrue: true,
+                        .trueFalse(id: "u8l3q2", prompt: "In a Ponzi scheme, early investors are paid with money from new investors, not from real profits.", correctIsTrue: true,
                             explanation: "It collapses the moment new money slows, and most people end up losing everything."),
                         .multipleChoice(id: "u8l3q3", prompt: "In a 'pump-and-dump,' scammers hype a cheap stock or coin to push the price up, and then:",
                             choices: [
@@ -3248,10 +3248,10 @@ enum LessonContentData {
                             ],
                             explanation: "Transparency is healthy; secrecy, guarantees, and pressure are red flags."),
                         .trueFalse(id: "u8l3q6", prompt: "A paid promotion from an influencer counts as solid financial research.", correctIsTrue: false,
-                            explanation: "Paid promos are advertising, not analysis — the promoter is being paid to say nice things."),
+                            explanation: "Paid promos are advertising, not analysis. The promoter is being paid to say nice things."),
                         .multipleChoice(id: "u8l3q7", prompt: "A celebrity you follow is paid to promote a new crypto token. Before buying, you should:",
                             choices: [
-                            AnswerChoice(id: 0, text: "Do your own research — a paid endorsement isn't evidence the token is good"),
+                            AnswerChoice(id: 0, text: "Do your own research. A paid endorsement isn't evidence the token is good"),
                             AnswerChoice(id: 1, text: "Buy immediately because they're famous and trustworthy"),
                             AnswerChoice(id: 2, text: "Invest your whole savings to show support"),
                             AnswerChoice(id: 3, text: "Assume it's guaranteed to rise because a celebrity likes it")
@@ -3302,7 +3302,7 @@ enum LessonContentData {
                             ], correctIDs: [0, 1, 2],
                             explanation: "Automation, scheduled reviews, and written rules build discipline; impulsive trading breaks it."),
                         .numeric(id: "u8l4q7", prompt: "If you review your portfolio once every 3 months, how many times do you check it in a year?", answer: 4, tolerance: 0,
-                            explanation: "12 months / 3 = 4 scheduled reviews per year — calm and consistent.")
+                            explanation: "12 months / 3 = 4 scheduled reviews per year: calm and consistent.")
                     ],
                     xpReward: 20
                 ),
@@ -3348,7 +3348,7 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Stocks can only ever go up"),
                             AnswerChoice(id: 3, text: "Short-term trading always earns more")
                             ], correct: 0,
-                            explanation: "Given time, compounding turns steady growth into a snowball — the longer you wait, the bigger it gets.")
+                            explanation: "Given time, compounding turns steady growth into a snowball. The longer you wait, the bigger it gets.")
                     ],
                     xpReward: 20
                 )
@@ -3360,7 +3360,7 @@ enum LessonContentData {
                     iconName: "checkmark.seal.fill",
                     questions: [
                         .trueFalse(id: "u8l1q2-kc", prompt: "Panic-selling during a market drop turns a temporary paper loss into a permanent, real one.", correctIsTrue: true,
-                            explanation: "A loss on paper only becomes real when you sell — holding gives prices a chance to recover."),
+                            explanation: "A loss on paper only becomes real when you sell. Holding gives prices a chance to recover."),
                         .ordering(id: "u8l1q4-kc", prompt: "Put the classic FOMO trap in order, from start to painful finish.",
                             items: [
                             "A stock's price skyrockets and fills your feed",
@@ -3395,8 +3395,8 @@ enum LessonContentData {
                             AnswerChoice(id: 2, text: "Buying after researching the company and deciding it's a fair price"),
                             AnswerChoice(id: 3, text: "Piling into a meme coin so you won't feel left out")
                             ], correctIDs: [0, 1, 3],
-                            explanation: "Herd mentality is letting the crowd — not your own analysis — make the call."),
-                        .trueFalse(id: "u8l3q2-kc", prompt: "In a Ponzi scheme, early investors are paid with money from new investors — not from real profits.", correctIsTrue: true,
+                            explanation: "Herd mentality is letting the crowd, not your own analysis, make the call."),
+                        .trueFalse(id: "u8l3q2-kc", prompt: "In a Ponzi scheme, early investors are paid with money from new investors, not from real profits.", correctIsTrue: true,
                             explanation: "It collapses the moment new money slows, and most people end up losing everything."),
                         .multiSelect(id: "u8l3q4-kc", prompt: "Which are red flags of a likely scam? (Choose all that apply.)",
                             choices: [
@@ -3407,7 +3407,7 @@ enum LessonContentData {
                             ], correctIDs: [0, 1, 3],
                             explanation: "Guarantees, urgency, and recruit-your-friends schemes are classic warning signs."),
                         .trueFalse(id: "u8l3q6-kc", prompt: "A paid promotion from an influencer counts as solid financial research.", correctIsTrue: false,
-                            explanation: "Paid promos are advertising, not analysis — the promoter is being paid to say nice things."),
+                            explanation: "Paid promos are advertising, not analysis. The promoter is being paid to say nice things."),
                         .numeric(id: "u8l4q2-kc", prompt: "You automate investing $150 every month. How many dollars is that over one year?", answer: 1800, tolerance: 0, prefix: "$",
                             explanation: "$150 x 12 months = $1,800 invested automatically."),
                         .trueFalse(id: "u8l4q4-kc", prompt: "Checking your portfolio every few minutes tends to increase stress and lead to worse decisions.", correctIsTrue: true,

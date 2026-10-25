@@ -70,6 +70,18 @@ enum LeagueTier: Int, CaseIterable, Comparable {
         }
     }
 
+    /// The coin's face value, printed on the league badge.
+    var faceValue: String? {
+        switch self {
+        case .penny: return "1¢"
+        case .nickel: return "5¢"
+        case .dime: return "10¢"
+        case .quarter: return "25¢"
+        case .silverDollar: return "$1"
+        case .fortune: return nil
+        }
+    }
+
     var iconName: String {
         switch self {
         case .penny, .nickel, .dime: return "centsign.circle.fill"

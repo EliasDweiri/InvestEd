@@ -265,7 +265,7 @@
           "answer": 20,
           "tolerance": 0,
           "suffix": "%",
-          "explanation": "(5,000 - 4,000) / 5,000 = 0.20 = 20% — exactly the bear-market threshold."
+          "explanation": "(5,000 - 4,000) / 5,000 = 0.20 = 20%, exactly the bear-market threshold."
         },
         {
           "type": "tf",
@@ -375,7 +375,7 @@
             "The number of shares in one contract"
           ],
           "correct": 0,
-          "explanation": "The premium is the cost of the option itself — the money you hand over to hold that right."
+          "explanation": "The premium is the cost of the option itself: the money you pay to hold that right."
         },
         {
           "type": "cat",
@@ -410,7 +410,7 @@
           "id": "u3l4q7",
           "prompt": "When you BUY an option, the most you can lose is the premium you paid.",
           "answer": true,
-          "explanation": "If the bet goes wrong, the option can expire worthless — but you can never lose more than the premium you spent to buy it."
+          "explanation": "If the bet goes wrong, the option can expire worthless, but you can never lose more than the premium you paid for it."
         }
       ]
     },
@@ -423,7 +423,7 @@
         {
           "type": "mc",
           "id": "u3l5q1",
-          "prompt": "You're bullish on a stock — you expect its price to climb. Which option matches that view?",
+          "prompt": "You're bullish on a stock: you expect its price to climb. Which option matches that view?",
           "choices": [
             "Buy a call",
             "Buy a put",
@@ -449,7 +449,7 @@
         {
           "type": "mc",
           "id": "u3l5q3",
-          "prompt": "You're bearish on a stock — you expect its price to drop. Which option matches that view?",
+          "prompt": "You're bearish on a stock: you expect its price to drop. Which option matches that view?",
           "choices": [
             "Buy a put",
             "Buy a call",
@@ -492,14 +492,14 @@
           "kind": "call",
           "target": 230,
           "success": "A call profits when the stock climbs above your strike plus the premium you paid.",
-          "explanation": "Expecting a rise is bullish, so you buy a call — the right to buy AAPL at $230 no matter how high it goes."
+          "explanation": "Expecting a rise is bullish, so you buy a call: the right to buy AAPL at $230 no matter how high it goes."
         },
         {
           "type": "tf",
           "id": "u3l5q7",
           "prompt": "If you buy that call for a $300 premium, the most you can lose is $300.",
           "answer": true,
-          "explanation": "When you buy an option, your entire risk is the premium. Worst case, it expires worthless and you're out $300 — no more."
+          "explanation": "When you buy an option, your entire risk is the premium. Worst case, it expires worthless and you're out $300, no more."
         }
       ]
     }
@@ -543,7 +543,7 @@
           "An order that can never be cancelled"
         ],
         "correct": 0,
-        "explanation": "Market orders trade speed for price certainty — they fill right away at whatever price is available."
+        "explanation": "Market orders trade price certainty for speed. They fill right away at whatever price is available."
       },
       {
         "type": "tf",
@@ -592,7 +592,7 @@
         "id": "u3fq8",
         "prompt": "When you buy an option, the most you can lose is the premium you paid.",
         "answer": true,
-        "explanation": "The premium is your entire risk when buying an option — it can expire worthless, but you can't lose more than you spent."
+        "explanation": "The premium is your entire risk when buying an option. It can expire worthless, but you can't lose more than you spent."
       },
       {
         "type": "match",

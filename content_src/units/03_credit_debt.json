@@ -30,14 +30,14 @@
           "prompt": "A FICO credit score ranges from a low of 300 up to a high of what number?",
           "answer": 850,
           "tolerance": 0,
-          "explanation": "FICO scores run from 300 to 850 — the higher you climb, the better the rates lenders offer you."
+          "explanation": "FICO scores run from 300 to 850. The higher you climb, the better the rates lenders offer you."
         },
         {
           "type": "tf",
           "id": "u4l1q3",
           "prompt": "Paying your bills on time is the single biggest factor in your credit score.",
           "answer": true,
-          "explanation": "Payment history is about 35% of a FICO score — nothing else moves the needle more than paying on time."
+          "explanation": "Payment history is about 35% of a FICO score. Nothing moves it more than paying on time."
         },
         {
           "type": "cat",
@@ -65,7 +65,7 @@
               "Hard inquiry"
             ]
           ],
-          "explanation": "Soft inquiries — like peeking at your own score — never hurt you. Hard inquiries happen when you actually apply for credit and can shave off a few points."
+          "explanation": "Soft inquiries, like checking your own score, never hurt you. Hard inquiries happen when you actually apply for credit and can shave off a few points."
         },
         {
           "type": "ms",
@@ -134,14 +134,14 @@
             "Automatic Payment Reminder"
           ],
           "correct": 0,
-          "explanation": "APR is the Annual Percentage Rate — the yearly cost of carrying a balance on your card."
+          "explanation": "APR is the Annual Percentage Rate: the yearly cost of carrying a balance on your card."
         },
         {
           "type": "tf",
           "id": "u4l2q2",
           "prompt": "If you pay your full statement balance by the due date, you typically pay no interest on your purchases.",
           "answer": true,
-          "explanation": "That interest-free window is called the grace period — pay in full and the card is basically free to use."
+          "explanation": "That interest-free window is called the grace period. Pay in full and the card is basically free to use."
         },
         {
           "type": "mc",
@@ -154,7 +154,7 @@
             "The minimum payment resets your credit score"
           ],
           "correct": 0,
-          "explanation": "Paying just the minimum barely touches the balance — most goes to interest, so the debt can linger for years."
+          "explanation": "Paying just the minimum barely touches the balance. Most goes to interest, so the debt can linger for years."
         },
         {
           "type": "num",
@@ -263,7 +263,7 @@
           "answer": 100,
           "tolerance": 0,
           "prefix": "$",
-          "explanation": "$1,000 × 5% × 2 years = $100 — double the time means double the interest."
+          "explanation": "$1,000 × 5% × 2 years = $100. Double the time means double the interest."
         },
         {
           "type": "tf",
@@ -283,19 +283,19 @@
             "The penalty for paying late"
           ],
           "correct": 0,
-          "explanation": "The principal is the starting amount you borrowed — interest is charged on top of it."
+          "explanation": "The principal is the starting amount you borrowed. Interest is charged on top of it."
         },
         {
           "type": "order",
           "id": "u4l3q6",
-          "prompt": "Same loan amount and same interest rate — order these from LEAST total interest paid to MOST.",
+          "prompt": "Same loan amount and same interest rate. Order these from LEAST total interest paid to MOST.",
           "items": [
             "1-year loan",
             "3-year loan",
             "5-year loan",
             "7-year loan"
           ],
-          "explanation": "The longer you take to repay, the more total interest you rack up — even if the monthly payment feels smaller."
+          "explanation": "The longer you take to repay, the more total interest you pay, even if the monthly payment feels smaller."
         },
         {
           "type": "mc",
@@ -308,7 +308,7 @@
             "A higher APR with a shorter term"
           ],
           "correct": 0,
-          "explanation": "A higher rate and more time both pile on interest — combine them and you pay the most overall."
+          "explanation": "A higher rate and more time both pile on interest. Combine them and you pay the most overall."
         }
       ]
     },
@@ -361,14 +361,14 @@
             "It never charges any interest"
           ],
           "correct": 0,
-          "explanation": "Good debt is an investment in your future — like a home or education — at a manageable interest rate."
+          "explanation": "Good debt is an investment in your future, like a home or education, at a manageable interest rate."
         },
         {
           "type": "tf",
           "id": "u4l4q3",
           "prompt": "Payday loans often carry extremely high APRs, sometimes around 400%.",
           "answer": true,
-          "explanation": "Payday loans look small but their fees translate to sky-high APRs — that's why they're classic bad debt."
+          "explanation": "Payday loans look small, but their fees add up to sky-high APRs. That's why they're classic bad debt."
         },
         {
           "type": "mc",
@@ -381,7 +381,7 @@
             "Making an extra payment"
           ],
           "correct": 0,
-          "explanation": "Defaulting means you've stopped paying as promised — a serious step that hurts your credit and can trigger collections."
+          "explanation": "Defaulting means you've stopped paying as promised. It hurts your credit and can lead to collections."
         },
         {
           "type": "ms",
@@ -431,7 +431,7 @@
           "answer": 30,
           "tolerance": 0,
           "prefix": "$",
-          "explanation": "$15 per $100 × 2 = $30 in fees for just two weeks — which works out to a shockingly high APR."
+          "explanation": "$15 per $100 × 2 = $30 in fees for just two weeks, which works out to a shockingly high APR."
         }
       ]
     },
@@ -497,7 +497,7 @@
             "Car loan (7% APR)",
             "Student loan (4% APR)"
           ],
-          "explanation": "Avalanche always chases the highest interest rate first, then works down — that's the cheapest path out."
+          "explanation": "Avalanche always targets the highest interest rate first, then works down. That's the cheapest way out."
         },
         {
           "type": "ms",
@@ -572,7 +572,7 @@
         "id": "u4fq3",
         "prompt": "Paying only the minimum on a credit card can keep you in debt for years.",
         "answer": true,
-        "explanation": "Most of a minimum payment goes to interest, so the balance barely shrinks — that's the minimum payment trap."
+        "explanation": "Most of a minimum payment goes to interest, so the balance barely shrinks. That's the minimum payment trap."
       },
       {
         "type": "cat",
@@ -682,7 +682,7 @@
         "id": "u4fq10",
         "prompt": "Defaulting on a loan can hurt your credit and send the debt to collections.",
         "answer": true,
-        "explanation": "Default is a serious step — it damages your credit score and can hand your debt over to collectors."
+        "explanation": "Default is a serious step. It damages your credit score and can send your debt to collectors."
       }
     ]
   }

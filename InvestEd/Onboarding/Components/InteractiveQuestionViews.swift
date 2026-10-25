@@ -471,12 +471,12 @@ struct InteractiveOptionAnswerView: View {
 
                 if locked {
                     Text(kind == challenge.requiredKind ? challenge.successNote
-                         : "For a scenario like this, a \(challenge.requiredKind.label.lowercased()) is the fit — it profits in the direction the story is betting on.")
+                         : "For a scenario like this, a \(challenge.requiredKind.label.lowercased()) is the fit: it profits in the direction the story is betting on.")
                         .font(AppTheme.captionFont.bold())
                         .foregroundColor(kind == challenge.requiredKind ? AppTheme.primaryGreen : AppTheme.dangerRed)
                 }
 
-                Text("Simulated Black-Scholes pricing — for learning, not investment advice.")
+                Text("Simulated Black-Scholes pricing, for learning only. Not investment advice.")
                     .font(.system(size: 10, weight: .medium))
                     .foregroundColor(AppTheme.textSecondary)
             }
@@ -534,7 +534,7 @@ struct InteractiveOptionAnswerView: View {
                 }
             }
         }
-        Text("Your strike: \(strike, format: .currency(code: "USD")) — \(strikeDescriptor)")
+        Text("Your strike: \(strike, format: .currency(code: "USD")) · \(strikeDescriptor)")
             .font(AppTheme.captionFont).foregroundColor(AppTheme.textSecondary)
 
         // Expiry
@@ -572,7 +572,7 @@ struct InteractiveOptionAnswerView: View {
             teachRow("Premium / share", premium.formatted(.currency(code: "USD")),
                      "what one share of the option costs")
             teachRow("Total cost", totalCost.formatted(.currency(code: "USD")),
-                     "premium × 100 × contracts — also your max loss")
+                     "premium × 100 × contracts, which is also your max loss")
             teachRow("Breakeven", breakeven.formatted(.currency(code: "USD")),
                      kind == .put
                         ? "\(challenge.symbol) must fall below this to profit"

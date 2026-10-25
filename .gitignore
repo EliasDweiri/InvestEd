@@ -12,3 +12,6 @@ xcuserdata/
 backend/.wrangler/
 backend/.dev.vars
 node_modules/
+
+# Files saved by the Claude desktop app
+Claude outputs/

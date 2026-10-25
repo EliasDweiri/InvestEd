@@ -81,7 +81,7 @@ struct LeagueSection: View {
             }
             .cardSurface()
             if scope == .friends && friends.isEmpty {
-                Text("Add friends below to start your own league!")
+                Text("Add friends below to start your own league.")
                     .font(AppTheme.captionFont)
                     .foregroundColor(AppTheme.textSecondary)
                     .frame(maxWidth: .infinity)
@@ -157,11 +157,20 @@ struct LeagueTierHero: View {
 
     var body: some View {
         HStack(spacing: 14) {
-            Image(systemName: tier.iconName)
-                .font(.system(size: 24, weight: .semibold))
-                .foregroundColor(AppTheme.onInk)
-                .frame(width: 52, height: 52)
-                .background(AppTheme.onInk.opacity(0.15), in: Circle())
+            Group {
+                if let face = tier.faceValue {
+                    Text(face)
+                        .font(.system(size: face.count > 2 ? 17 : 20, weight: .bold, design: .serif))
+                } else {
+                    Image(systemName: tier.iconName)
+                        .font(.system(size: 22, weight: .semibold))
+                }
+            }
+            .foregroundColor(AppTheme.onInk)
+            .frame(width: 52, height: 52)
+            .background(AppTheme.onInk.opacity(0.15), in: Circle())
+            .overlay(Circle().stroke(AppTheme.onInk.opacity(0.35), lineWidth: 1.5).padding(4))
+            .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 6) {
                 HStack(alignment: .firstTextBaseline) {
                     Text(tier.name)
@@ -177,7 +186,7 @@ struct LeagueTierHero: View {
                         .font(.caption)
                         .opacity(0.8)
                 } else {
-                    Text("Top league — defend it! · resets weekly")
+                    Text("Top league · resets weekly")
                         .font(.caption)
                         .opacity(0.8)
                 }

@@ -31,13 +31,13 @@ private struct PlacementIntroView: View {
                 .padding(12)
                 .background(MainTab.learn.color.opacity(0.12), in: Circle())
 
-            Text("Let's find your starting point")
+            Text("Find your starting point")
                 .font(AppTheme.titleFont)
                 .multilineTextAlignment(.center)
                 .foregroundColor(AppTheme.textPrimary)
                 .padding(.horizontal, 20)
 
-            Text("Answer a few quick questions about money and investing. Don't know an answer? No problem — just tap \"I'm not sure\" and move on. There's no failing this.")
+            Text("Answer a few quick questions about money and investing. If you don't know one, tap \"I'm not sure\" and move on. There's no failing this.")
                 .font(AppTheme.bodyFont)
                 .foregroundColor(AppTheme.textSecondary)
                 .multilineTextAlignment(.center)
@@ -86,7 +86,7 @@ private struct PlacementQuestionView: View {
 
             Spacer()
 
-            Button("I'm not sure — skip") {
+            Button("I'm not sure") {
                 viewModel.answer(choiceID: nil)
             }
             .font(AppTheme.captionFont)
@@ -108,11 +108,11 @@ private struct PlacementResultView: View {
                 .frame(width: 90, height: 90)
                 .foregroundColor(AppTheme.primaryGreen)
 
-            Text("You're all set!")
+            Text("You're placed")
                 .font(AppTheme.titleFont)
                 .foregroundColor(AppTheme.textPrimary)
 
-            Text("Based on your answers, we've matched you with the perfect starting point on your path: \(LessonContentData.units[viewModel.placementResultUnitIndex].title).")
+            Text("Based on your answers, you'll start at \(LessonContentData.units[viewModel.placementResultUnitIndex].title). Earlier units stay open if you want a refresher.")
                 .font(AppTheme.bodyFont)
                 .foregroundColor(AppTheme.textSecondary)
                 .multilineTextAlignment(.center)

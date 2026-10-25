@@ -72,7 +72,7 @@ final class IAPManager: ObservableObject {
 
     func purchase(_ pack: GoldPack) async {
         guard let product = product(for: pack.id) else {
-            message = "The store isn't live yet — Gold packs unlock once InvestEd is on the App Store."
+            message = "The store isn't live yet. Gold packs unlock once InvestEd is on the App Store."
             return
         }
         purchasingID = pack.id
@@ -83,7 +83,7 @@ final class IAPManager: ObservableObject {
                 if case .verified(let transaction) = verification {
                     grantGold(pack.gold)
                     await transaction.finish()
-                    message = "\(pack.gold) Gold added — happy investing!"
+                    message = "\(pack.gold) Gold added."
                 }
             case .userCancelled, .pending:
                 break

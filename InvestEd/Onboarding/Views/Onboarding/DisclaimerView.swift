@@ -19,7 +19,7 @@ struct DisclaimerView: View {
                     .frame(width: 84, height: 84)
                     .padding(10)
                     .background(MainTab.learn.color.opacity(0.12), in: Circle())
-                Text("Learn by doing — safely")
+                Text("Learn by doing, with no real money at risk")
                     .font(AppTheme.titleFont)
                     .foregroundColor(AppTheme.textPrimary)
                     .multilineTextAlignment(.center)

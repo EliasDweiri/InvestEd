@@ -309,7 +309,7 @@ struct ShopView: View {
             }
 
             Button {
-                shopMessage = "InvestEd Plus is coming soon — subscriptions unlock once the App Store setup is finished."
+                shopMessage = "InvestEd Plus is coming soon. Subscriptions unlock once the App Store setup is finished."
             } label: {
                 Text(Self.purchasesEnabled ? "Subscribe" : "Coming Soon")
                     .font(AppTheme.bodyFont.bold())
@@ -357,9 +357,9 @@ struct ShopView: View {
             user.streakFreezes = (user.streakFreezes ?? 0) + 1
             appState.currentUser = user
             try? FirestoreService.shared.saveUser(user)
-            shopMessage = "Streak Freeze purchased — it activates automatically."
+            shopMessage = "Streak Freeze purchased. It activates automatically."
         } else {
-            shopMessage = "Not enough Gold — lessons pay 10 to 15 Gold each."
+            shopMessage = "Not enough Gold. Lessons pay 10 to 15 Gold each."
         }
     }
 
@@ -373,7 +373,7 @@ struct ShopView: View {
             try? FirestoreService.shared.saveUser(user)
             shopMessage = "\(name) unlocked for \(price) Gold. Style it in the Avatar Studio."
         } else {
-            shopMessage = "Not enough Gold for \(name) — you need \(price)."
+            shopMessage = "Not enough Gold for \(name). You need \(price)."
         }
     }
 

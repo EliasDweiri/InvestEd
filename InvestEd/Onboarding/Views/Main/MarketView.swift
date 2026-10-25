@@ -71,7 +71,7 @@ struct MarketView: View {
             HStack(spacing: 10) {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(AppTheme.textSecondary)
-                TextField("Search any ticker — AAPL, DIS, F…", text: $marketVM.searchText)
+                TextField("Search any ticker: AAPL, DIS, F…", text: $marketVM.searchText)
                     .textInputAutocapitalization(.characters)
                     .autocorrectionDisabled()
                     .submitLabel(.search)
@@ -605,7 +605,7 @@ struct OptionsPlaygroundSheet: View {
                                     ) { strikeOffset = offset }
                                 }
                             }
-                            Text("Strike: \(strike, format: .currency(code: "USD")) — the price your bet is measured against.")
+                            Text("Strike: \(strike, format: .currency(code: "USD")). That's the price your bet is measured against.")
                                 .font(AppTheme.captionFont)
                                 .foregroundColor(AppTheme.textSecondary)
                         }
@@ -618,7 +618,7 @@ struct OptionsPlaygroundSheet: View {
                                     }
                                 }
                             }
-                            Text("More time costs more — the stock has longer to move your way.")
+                            Text("More time costs more, because the stock has longer to move your way.")
                                 .font(AppTheme.captionFont)
                                 .foregroundColor(AppTheme.textSecondary)
                         }
@@ -653,7 +653,7 @@ struct OptionsPlaygroundSheet: View {
                                 .multilineTextAlignment(.center)
                         }
 
-                        Text("Simulated pricing (Black-Scholes, 30% volatility). Real options quotes vary — this playground is for learning, not investment advice.")
+                        Text("Simulated pricing (Black-Scholes, 30% volatility). Real options quotes vary. This is for learning, not investment advice.")
                             .font(.system(size: 10, weight: .medium))
                             .foregroundColor(AppTheme.textSecondary)
                             .multilineTextAlignment(.center)

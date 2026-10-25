@@ -59,7 +59,7 @@
             1,
             3
           ],
-          "explanation": "Index funds are cheap, diversified, and beat most active funds over time — but no investment can promise you'll never lose money."
+          "explanation": "Index funds are cheap, diversified, and beat most active funds over time, but no investment can promise you'll never lose money."
         },
         {
           "type": "num",
@@ -67,7 +67,7 @@
           "prompt": "The S&P 500 index is built from 500 companies. Owning one share of a fund that tracks it gives you a slice of how many companies?",
           "answer": 500,
           "tolerance": 0,
-          "explanation": "One share of an S&P 500 index fund spreads your money across all 500 companies at once — that's diversification in a single click."
+          "explanation": "One share of an S&P 500 index fund spreads your money across all 500 companies at once. That's diversification in a single purchase."
         },
         {
           "type": "tf",
@@ -86,7 +86,7 @@
             "An S&P 500 index fund (500 companies)",
             "A total U.S. market index fund (thousands of companies)"
           ],
-          "explanation": "The more companies you hold, the more spread out your risk — going from one stock to a total-market fund steadily increases diversification."
+          "explanation": "The more companies you hold, the more spread out your risk. Going from one stock to a total-market fund steadily increases diversification."
         }
       ]
     },
@@ -155,7 +155,7 @@
             "Free shares handed out by the government"
           ],
           "correct": 0,
-          "explanation": "Fractional shares let you invest, say, $50 in a fund even if one full share costs hundreds — great for starting small."
+          "explanation": "Fractional shares let you invest, say, $50 in a fund even if one full share costs hundreds. Great for starting small."
         },
         {
           "type": "ms",
@@ -172,14 +172,14 @@
             1,
             2
           ],
-          "explanation": "ETFs trade live all day, carry a ticker, and often track indexes — you're never locked in to selling just once a year."
+          "explanation": "ETFs trade all day, have a ticker, and often track indexes. You're never limited to selling once a year."
         },
         {
           "type": "tf",
           "id": "u6l2q6",
           "prompt": "Both ETFs and mutual funds let you own a basket of many investments in a single purchase.",
           "answer": true,
-          "explanation": "Whichever wrapper you pick, one purchase buys a whole basket of holdings — instant diversification."
+          "explanation": "Whichever wrapper you pick, one purchase buys a whole basket of holdings. Instant diversification."
         },
         {
           "type": "num",
@@ -187,7 +187,7 @@
           "prompt": "One share of a fund costs $250, but you only want to invest $50. How many shares do you buy? (Enter as a decimal.)",
           "answer": 0.2,
           "tolerance": 0,
-          "explanation": "$50 divided by $250 is 0.2 — fractional shares let you put in exactly the dollar amount you want."
+          "explanation": "$50 divided by $250 is 0.2. Fractional shares let you put in exactly the dollar amount you want."
         }
       ]
     },
@@ -248,7 +248,7 @@
           "answer": 70,
           "tolerance": 0,
           "prefix": "$",
-          "explanation": "7% of $1,000 is $70 — the weighting tells you how much of your money sits in each holding."
+          "explanation": "7% of $1,000 is $70. The weighting tells you how much of your money sits in each holding."
         },
         {
           "type": "mc",
@@ -261,7 +261,7 @@
             "Because funds only ever hold winning stocks"
           ],
           "correct": 0,
-          "explanation": "Spreading money across many companies means no single failure can wipe you out — that's the power of diversification."
+          "explanation": "Spreading money across many companies means no single failure can wipe you out. That's the power of diversification."
         },
         {
           "type": "ms",
@@ -278,14 +278,14 @@
             1,
             3
           ],
-          "explanation": "A fact sheet shows holdings, sector breakdown, and fees — but no one can promise a future price."
+          "explanation": "A fact sheet shows holdings, sector breakdown, and fees, but no one can promise a future price."
         },
         {
           "type": "tf",
           "id": "u6l3q7",
           "prompt": "Owning one share of a diversified fund means you indirectly own tiny slices of many different companies at once.",
           "answer": true,
-          "explanation": "That single share represents a sliver of every company in the fund — one purchase, many businesses."
+          "explanation": "That single share represents a sliver of every company in the fund: one purchase, many businesses."
         }
       ]
     },
@@ -306,7 +306,7 @@
             "The tax you owe on your gains"
           ],
           "correct": 0,
-          "explanation": "The expense ratio is the slice the fund quietly takes each year — a 0.10% ratio means $1 per $1,000 invested."
+          "explanation": "The expense ratio is the slice the fund quietly takes each year. A 0.10% ratio means $1 per $1,000 invested."
         },
         {
           "type": "num",
@@ -315,7 +315,7 @@
           "answer": 50,
           "tolerance": 0,
           "prefix": "$",
-          "explanation": "0.50% of $10,000 is $50 — that's what comes out of your pocket each year for holding the fund."
+          "explanation": "0.50% of $10,000 is $50. That's what comes out of your pocket each year for holding the fund."
         },
         {
           "type": "num",
@@ -324,7 +324,7 @@
           "answer": 100,
           "tolerance": 0,
           "prefix": "$",
-          "explanation": "The 1.00% gap on $10,000 is $100 a year — and that difference compounds against you for as long as you invest."
+          "explanation": "The 1.00% gap on $10,000 is $100 a year, and that difference compounds against you for as long as you invest."
         },
         {
           "type": "tf",
@@ -343,14 +343,14 @@
             "0.75%",
             "1.25%"
           ],
-          "explanation": "Lower expense ratios keep more of your money invested and compounding — cheaper is usually better."
+          "explanation": "Lower expense ratios keep more of your money invested and compounding. Cheaper is usually better."
         },
         {
           "type": "mc",
           "id": "u6l4q6",
           "prompt": "Why do fees hurt more the longer you invest?",
           "choices": [
-            "You lose the fee AND all the future growth that money could have earned — year after year",
+            "You lose the fee AND all the future growth that money could have earned, year after year",
             "Fees only apply during the first year",
             "Fees make the market go up",
             "Fees are fully refunded at retirement"
@@ -407,14 +407,14 @@
             "A fund that charges no fees ever"
           ],
           "correct": 0,
-          "explanation": "A target-date fund starts aggressive and gradually turns conservative as your goal year — like retirement — nears."
+          "explanation": "A target-date fund starts aggressive and gradually turns conservative as your goal year (like retirement) gets closer."
         },
         {
           "type": "tf",
           "id": "u6l5q3",
           "prompt": "A target-date fund labeled '2065' is designed for someone planning to retire around the year 2065.",
           "answer": true,
-          "explanation": "The year in the name is the rough target — the fund adjusts its risk on a glide path toward that date."
+          "explanation": "The year in the name is the rough target. The fund lowers its risk gradually as that date gets closer."
         },
         {
           "type": "match",
@@ -462,7 +462,7 @@
             1,
             3
           ],
-          "explanation": "Automation helps with diversification, discipline, and rebalancing — but nothing can guarantee yearly profits."
+          "explanation": "Automation helps with diversification, discipline, and rebalancing, but nothing can guarantee yearly profits."
         },
         {
           "type": "num",
@@ -471,7 +471,7 @@
           "answer": 600,
           "tolerance": 0,
           "prefix": "$",
-          "explanation": "$50 times 12 months is $600 — small automatic amounts quietly add up over time."
+          "explanation": "$50 times 12 months is $600. Small automatic amounts quietly add up over time."
         }
       ]
     }
@@ -493,7 +493,7 @@
           "Avoid all risk"
         ],
         "correct": 0,
-        "explanation": "After their higher fees, the large majority of active funds lag the index — the core case for low-cost index funds."
+        "explanation": "After their higher fees, most active funds lag the index. That's the core case for low-cost index funds."
       },
       {
         "type": "mc",
@@ -515,7 +515,7 @@
         "answer": 15,
         "tolerance": 0,
         "prefix": "$",
-        "explanation": "0.30% of $5,000 is $15 — the fund's yearly cut of your money."
+        "explanation": "0.30% of $5,000 is $15, the fund's yearly cut of your money."
       },
       {
         "type": "tf",
@@ -559,7 +559,7 @@
         "answer": 200,
         "tolerance": 0,
         "prefix": "$",
-        "explanation": "The 1.00% difference on $20,000 is $200 a year — and that gap compounds against you every year you hold it."
+        "explanation": "The 1.00% difference on $20,000 is $200 a year, and that gap compounds against you every year you hold it."
       },
       {
         "type": "match",
@@ -620,7 +620,7 @@
         "prompt": "One share of a fund costs $400, but you invest $100. How many shares do you own? (Enter as a decimal.)",
         "answer": 0.25,
         "tolerance": 0,
-        "explanation": "$100 divided by $400 is 0.25 — fractional shares let you invest any dollar amount you like."
+        "explanation": "$100 divided by $400 is 0.25. Fractional shares let you invest any dollar amount you like."
       }
     ]
   }

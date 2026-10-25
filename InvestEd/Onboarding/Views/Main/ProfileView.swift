@@ -123,7 +123,7 @@ struct ProfileView: View {
                 Text("\(Achievement.currentMonthName) Badge")
                     .font(AppTheme.bodyFont.bold())
                     .foregroundColor(AppTheme.textPrimary)
-                Text(earned ? "Earned — you learned this month!" : "Complete a lesson this month to earn it")
+                Text(earned ? "Earned. You completed a lesson this month." : "Complete a lesson this month to earn it")
                     .font(AppTheme.captionFont)
                     .foregroundColor(AppTheme.textSecondary)
             }
