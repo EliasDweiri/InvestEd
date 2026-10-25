@@ -158,7 +158,7 @@ struct MarketView: View {
         return HStack(spacing: 5) {
             Image(systemName: gain >= 0 ? "arrow.up.right" : "arrow.down.right")
                 .font(.system(size: 11, weight: .bold))
-            Text("\(gain >= 0 ? "+" : "")\(gain, format: .currency(code: "USD")) (\(pct, specifier: "%.2f")%) all-time")
+            Text("\(signedDollars(gain)) (\(abs(pct) < 0.005 ? 0 : pct, specifier: "%.2f")%) all-time")
                 .font(AppTheme.captionFont.bold())
         }
         .foregroundColor(AppTheme.onInk)
@@ -320,9 +320,9 @@ private struct HoldingRow: View {
                 Text(value, format: .currency(code: "USD"))
                     .font(AppTheme.bodyFont.bold())
                     .foregroundColor(AppTheme.textPrimary)
-                Text("\(gain >= 0 ? "+" : "")\(gain, format: .currency(code: "USD"))")
+                Text(signedDollars(gain))
                     .font(AppTheme.captionFont)
-                    .foregroundColor(gain >= 0 ? AppTheme.primaryGreen : AppTheme.dangerRed)
+                    .foregroundColor(gain > -0.005 ? AppTheme.primaryGreen : AppTheme.dangerRed)
             }
         }
         .padding(.horizontal, 14)
@@ -353,9 +353,9 @@ private struct OptionPositionRow: View {
                 Text(totalValue, format: .currency(code: "USD"))
                     .font(AppTheme.bodyFont.bold())
                     .foregroundColor(AppTheme.textPrimary)
-                Text("\(gain >= 0 ? "+" : "")\(gain, format: .currency(code: "USD"))")
+                Text(signedDollars(gain))
                     .font(AppTheme.captionFont)
-                    .foregroundColor(gain >= 0 ? AppTheme.primaryGreen : AppTheme.dangerRed)
+                    .foregroundColor(gain > -0.005 ? AppTheme.primaryGreen : AppTheme.dangerRed)
             }
             Button {
                 onClose()
@@ -533,7 +533,7 @@ struct StockDetailView: View {
 
     private func finishTrade(verb: String) {
         if portfolioVM.errorMessage == nil, shares > 0 {
-            confirmation = "\(verb) \(sharesText) share(s) of \(stock.symbol)!"
+            confirmation = "\(verb) \(sharesText) \(shares == 1 ? "share" : "shares") of \(stock.symbol)."
             sharesText = ""
         }
     }
@@ -639,7 +639,7 @@ struct OptionsPlaygroundSheet: View {
                                                   expiry: expiry, contracts: contracts, premium: premium)
                             if portfolioVM.errorMessage == nil {
                                 success = true
-                                feedback = "Position opened! Watch it under \"Your Options\" on the Market tab."
+                                feedback = "Position opened. Track it under \"Your Options\" on the Market tab."
                             } else {
                                 success = false
                                 feedback = portfolioVM.errorMessage
@@ -738,4 +738,14 @@ struct OptionsPlaygroundSheet: View {
         }
         .buttonStyle(SpringPressStyle())
     }
+}
+
+/// "+$12.30" / "-$4.10", rounded to the cent first so a tiny loss never
+/// shows as "-$0.00".
+func signedDollars(_ value: Double) -> String {
+    let cents = (value * 100).rounded() / 100
+    let text = abs(cents).formatted(.currency(code: "USD"))
+    if cents > 0 { return "+" + text }
+    if cents < 0 { return "-" + text }
+    return text
 }
