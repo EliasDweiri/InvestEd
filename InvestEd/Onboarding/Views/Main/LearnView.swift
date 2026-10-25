@@ -680,7 +680,9 @@ struct LessonPlayerView: View {
         answered = false
         selectedChoiceID = nil
         pendingResponse = nil
-        shuffledChoices = (viewModel.currentQuestion?.choices ?? []).shuffled()
+        // Shuffle multiple-choice answers; True/False keeps its natural order.
+        let choices = viewModel.currentQuestion?.choices ?? []
+        shuffledChoices = viewModel.currentQuestion?.type == .trueFalse ? choices : choices.shuffled()
     }
 
     private var progress: Double {

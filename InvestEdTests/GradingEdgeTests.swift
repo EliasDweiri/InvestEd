@@ -30,6 +30,17 @@ struct GradingEdgeTests {
         #expect(!q.isCorrect(.matches([0: 0])), "a partial map is wrong")
     }
 
+    @Test func matchingAcceptsEitherIdenticalAnswer() {
+        // Two items share the answer "Need": either "Need" chip is right.
+        let q = Question.matching(id: "t", prompt: "p",
+            pairs: [MatchPair(id: 0, left: "Medicine", right: "Need"),
+                    MatchPair(id: 1, left: "Concert", right: "Want"),
+                    MatchPair(id: 2, left: "Coat", right: "Need")],
+            explanation: "e")
+        #expect(q.isCorrect(.matches([0: 2, 1: 1, 2: 0])))
+        #expect(!q.isCorrect(.matches([0: 1, 1: 0, 2: 2])))
+    }
+
     @Test func numericHonorsTolerance() {
         let q = Question.numeric(id: "t", prompt: "p", answer: 100, tolerance: 2, explanation: "e")
         #expect(q.isCorrect(.number(100)))
