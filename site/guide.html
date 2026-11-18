@@ -1,0 +1,89 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>How InvestEd works</title>
+<link rel="icon" href="icon.png"><style>
+:root{--bg:#F3EEE4;--card:#FFFCF5;--ink:#1F1C17;--muted:#6E665A;--line:#E2D9C8;--green:#1E7350;--onink:#FFF8EA}
+@media (prefers-color-scheme:dark){:root{--bg:#121110;--card:#1D1B17;--ink:#F3EEE4;--muted:#A69E90;--line:#302C25;--green:#3E9A72}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+header{background:#1E7350;color:var(--onink);padding:20px 16px}
+header .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:12px}
+header img{width:40px;height:40px;border-radius:10px}
+header a{color:var(--onink);text-decoration:none;font:700 22px/1 ui-serif,Georgia,serif}
+nav{max-width:760px;margin:0 auto;padding:12px 16px 0;display:flex;gap:16px;flex-wrap:wrap;font-size:15px}
+nav a{color:var(--green);font-weight:600;text-decoration:none}nav a[aria-current]{text-decoration:underline}
+main{max-width:760px;margin:16px auto 48px;padding:24px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+@media (max-width:800px){main{margin:16px 16px 48px}}
+h1,h2,h3{font-family:ui-serif,Georgia,serif;line-height:1.25}h1{font-size:30px;margin:0 0 8px}
+h2{font-size:21px;margin:28px 0 8px}a{color:var(--green)}hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.hero{text-align:center}.hero img{width:96px;height:96px;border-radius:22px}.hero p{color:var(--muted)}
+.cards{display:grid;gap:12px;margin-top:20px}.cards a{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink)}
+.cards b{color:var(--green)}
+.wide{max-width:1040px;margin:0 auto;padding:0 16px}
+.hero2{background:#1E7350;color:var(--onink);padding:40px 16px 48px;overflow:hidden}
+.hero2 .wide{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.hero2 h1{font:700 44px/1.1 ui-serif,Georgia,serif;margin:12px 0}
+.hero2 p{font-size:19px;opacity:.92;margin:0 0 20px}
+.hero2 .icon{width:72px;height:72px;border-radius:18px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.pill{display:inline-block;background:rgba(255,248,234,.16);border:1px solid rgba(255,248,234,.35);color:var(--onink);border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px;margin:0 8px 8px 0;text-decoration:none}
+.pill.solid{background:var(--onink);color:#1E7350;border-color:var(--onink)}
+.phone{width:min(270px,70vw);aspect-ratio:9/19.5;border-radius:40px;border:10px solid #111;background:#111;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35);margin:0 auto}
+.phone video,.phone img{width:100%;height:100%;object-fit:cover;display:block}
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:8px}.stats b{display:block;font:700 26px ui-serif,Georgia,serif}.stats span{font-size:14px;opacity:.85}
+section.feat{padding:56px 16px}section.feat:nth-of-type(even){background:var(--card)}
+.feat .wide{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.feat.flip .copy{order:2}
+.kicker{font:700 12px/1 -apple-system,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+.feat h2{font-size:30px;margin:10px 0 12px}.feat p{color:var(--muted);margin:0 0 12px}
+.feat ul{padding-left:20px;margin:0}.feat li{margin:6px 0}
+.gallery{display:flex;gap:16px;overflow-x:auto;padding:8px 16px 20px;scroll-snap-type:x mandatory;max-width:1040px;margin:0 auto}
+.gallery img{width:200px;flex:0 0 auto;border-radius:24px;border:1px solid var(--line);scroll-snap-align:start}
+.faq{max-width:760px;margin:0 auto;padding:0 16px 48px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:14px 16px}
+.faq summary{font-weight:600;cursor:pointer}.faq details p{color:var(--muted);margin:10px 0 0}
+.center{text-align:center}.h2c{font:700 30px ui-serif,Georgia,serif;text-align:center;margin:48px 16px 8px}
+.sub{text-align:center;color:var(--muted);margin:0 16px 20px}
+main.bare{max-width:none;margin:0;padding:0;background:none;border:0;border-radius:0}
+@media (max-width:800px){.hero2 .wide,.feat .wide{grid-template-columns:1fr}.feat.flip .copy{order:0}.hero2 h1{font-size:34px}main.bare{margin:0}}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:0 16px 32px}
+</style></head><body>
+<header><div class="in"><img src="icon.png" alt=""><a href="index.html">InvestEd</a></div></header>
+<nav><a href="index.html">Home</a><a href="guide.html" aria-current=page>Guide</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav><main><h1>How InvestEd works</h1>
+<p>A quick guide to the parts of the app that people ask about most.</p>
+<h2>The learning path</h2>
+<p>InvestEd has <strong>12 units</strong> with <strong>5 lessons</strong> each. Lessons unlock in order. When you finish a unit's lessons, its <strong>Knowledge Check</strong> unlocks. Pass it to open the next unit.</p>
+<p>Not sure where to start? The <strong>placement test</strong> asks a few questions and drops you at the right unit. You can retake it anytime in <strong>Profile &gt; Settings</strong>.</p>
+<h2>Hearts</h2>
+<p>You start every lesson with <strong>5 hearts</strong>. A wrong answer costs one heart and shows you the explanation. Run out and the lesson restarts, so slow down and read the explanation.</p>
+<h2>XP, levels, and Gold</h2>
+<ul>
+<li><strong>XP</strong>: 20 per lesson, plus a 10 XP bonus for a perfect lesson. Every 100 XP is a new level.</li>
+<li><strong>Gold</strong>: 10 per lesson (15 if perfect) and 25 for passing a Knowledge Check. Spend it in the <strong>Shop</strong> on avatar gear and Streak Freezes.</li>
+<li>Gold is <strong>only earned</strong>, never bought, and it has no cash value.</li>
+</ul>
+<h2>Streaks and Streak Freezes</h2>
+<p>Finish at least one lesson a day to grow your streak. A <strong>Streak Freeze</strong> (150 Gold, hold up to 3) automatically covers one missed day. You can turn the evening reminder on or off in Settings.</p>
+<h2>The practice portfolio</h2>
+<p>You start with <strong>$10,000 of practice money</strong>.</p>
+<ul>
+<li><strong>Prices are real.</strong> Quotes come from the stock market, delayed by a few seconds.</li>
+<li><strong>Trades are not.</strong> Nothing you buy is real and nothing can be cashed out.</li>
+<li><strong>Search any ticker</strong> on the Market tab, then use <strong>Buy</strong> or <strong>Sell</strong> on its page.</li>
+<li><strong>Portfolio value</strong> = your cash + what your stocks and options are worth right now.</li>
+</ul>
+<h2>Options, simply</h2>
+<p>An option is a bet on where a stock's price will be by a certain date.</p>
+<ul>
+<li>A <strong>call</strong> pays off if the price goes <strong>up</strong> past the strike.</li>
+<li>A <strong>put</strong> pays off if the price goes <strong>down</strong> past the strike.</li>
+<li>The <strong>premium</strong> is what you pay for the bet. It's the most you can lose.</li>
+<li><strong>Breakeven</strong> is the price the stock must reach at expiry for you to get your premium back.</li>
+</ul>
+<p>InvestEd prices options with the <strong>Black-Scholes</strong> formula at 30% volatility. Real option prices vary. This is for learning.</p>
+<h2>Friends and weekly leagues</h2>
+<p>Add friends by username or by sharing your friend code. Everyone's weekly XP puts them in a coin league that climbs from <strong>Penny</strong> to <strong>Nickel, Dime, Quarter, Silver Dollar,</strong> and <strong>Fortune</strong>. Leagues reset every week.</p>
+<p>Other people can see only your <strong>username, avatar, level, and XP</strong>, never your email or portfolio.</p>
+<h2>Staying safe</h2>
+<p>Tap anyone in your friends list, the league board, or search to <strong>Report</strong> or <strong>Block</strong> them. Blocked users disappear from your leagues and can't send you requests. We review every report within 24 hours.</p>
+<p>Still stuck? Visit <a href="support.html">Support</a>.</p></main>
+<footer>InvestEd is an educational app. All investing in it is simulated. Not financial advice.</footer>
+</body></html>

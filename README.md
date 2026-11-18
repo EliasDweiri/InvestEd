@@ -5,6 +5,8 @@
 > Built for the 2026 Congressional App Challenge.
 > Elias Dweiri · Bellarmine College Preparatory, San Jose, California
 
+**Try it in your browser:** [investedlearning.pages.dev/play](https://investedlearning.pages.dev/play/), a web demo with the first three units and the practice market.
+
 <p align="center">
   <img src="docs/screenshots/01-learn.jpg" width="160" alt="Learning path">
   <img src="docs/screenshots/04-lesson.jpg" width="160" alt="A matching question in a lesson">
@@ -116,6 +118,7 @@ InvestEdTests/         Unit tests
 1. Open `InvestEd.xcodeproj` in Xcode 26 and run on an iOS 26 simulator.
 2. The app ships pointing at the deployed Worker, so live market data works out of the box. To run your own backend: in `backend/`, `wrangler secret put FINNHUB_API_KEY`, then `wrangler deploy`, and update `Constants.workerURL`.
 3. If the network is unavailable, the simulator falls back to built-in sample quotes.
+4. **Web demo:** `site/` is the project website and `site/play/` is the browser demo. They are plain HTML/JS with no build step: open `site/play/index.html` in a browser, or deploy with `npx wrangler pages deploy site --project-name investedlearning`.
 
 ---
 
@@ -135,6 +138,7 @@ All app code, lesson content and the backend Worker are original to this project
 - **AI tools used:** Claude (Anthropic).
 - **What AI helped with:** Claude was my coding partner. I planned each step (the market simulator, the friend system, and so on) and it wrote much of the Swift, JavaScript and Python code, helped debug build and runtime errors, drafted first versions of lesson questions, and helped redesign the interface and write this README and the tests.
 - **What I designed and decided myself:** the idea and audience; what the app teaches and in what order; the architecture and the rule that every tool stays free (Cloudflare Workers, no Sign in with Apple); assembling and building the project in Xcode; setting up Firebase and deploying the Worker and security rules; fact-checking lessons; testing with two accounts; and product calls such as removing the AI chatbot and hiding paid features.
+- **Web demo:** the browser version in `site/play/` was written with Claude from the app's own lesson files, after the Congressional App Challenge deadline.
 - **At runtime:** the app itself uses no AI. Penny's tips and all lesson content are fixed text.
 
 ## What's next (2.0)

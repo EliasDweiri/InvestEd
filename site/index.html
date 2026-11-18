@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>InvestEd: learn money by doing it</title>
+<link rel="icon" href="icon.png"><style>
+:root{--bg:#F3EEE4;--card:#FFFCF5;--ink:#1F1C17;--muted:#6E665A;--line:#E2D9C8;--green:#1E7350;--onink:#FFF8EA}
+@media (prefers-color-scheme:dark){:root{--bg:#121110;--card:#1D1B17;--ink:#F3EEE4;--muted:#A69E90;--line:#302C25;--green:#3E9A72}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+header{background:#1E7350;color:var(--onink);padding:20px 16px}
+header .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:12px}
+header img{width:40px;height:40px;border-radius:10px}
+header a{color:var(--onink);text-decoration:none;font:700 22px/1 ui-serif,Georgia,serif}
+nav{max-width:760px;margin:0 auto;padding:12px 16px 0;display:flex;gap:16px;flex-wrap:wrap;font-size:15px}
+nav a{color:var(--green);font-weight:600;text-decoration:none}nav a[aria-current]{text-decoration:underline}
+main{max-width:760px;margin:16px auto 48px;padding:24px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+@media (max-width:800px){main{margin:16px 16px 48px}}
+h1,h2,h3{font-family:ui-serif,Georgia,serif;line-height:1.25}h1{font-size:30px;margin:0 0 8px}
+h2{font-size:21px;margin:28px 0 8px}a{color:var(--green)}hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.hero{text-align:center}.hero img{width:96px;height:96px;border-radius:22px}.hero p{color:var(--muted)}
+.cards{display:grid;gap:12px;margin-top:20px}.cards a{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink)}
+.cards b{color:var(--green)}
+.wide{max-width:1040px;margin:0 auto;padding:0 16px}
+.hero2{background:#1E7350;color:var(--onink);padding:40px 16px 48px;overflow:hidden}
+.hero2 .wide{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.hero2 h1{font:700 44px/1.1 ui-serif,Georgia,serif;margin:12px 0}
+.hero2 p{font-size:19px;opacity:.92;margin:0 0 20px}
+.hero2 .icon{width:72px;height:72px;border-radius:18px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.pill{display:inline-block;background:rgba(255,248,234,.16);border:1px solid rgba(255,248,234,.35);color:var(--onink);border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px;margin:0 8px 8px 0;text-decoration:none}
+.pill.solid{background:var(--onink);color:#1E7350;border-color:var(--onink)}
+.phone{width:min(270px,70vw);aspect-ratio:9/19.5;border-radius:40px;border:10px solid #111;background:#111;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35);margin:0 auto}
+.phone video,.phone img{width:100%;height:100%;object-fit:cover;display:block}
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:8px}.stats b{display:block;font:700 26px ui-serif,Georgia,serif}.stats span{font-size:14px;opacity:.85}
+section.feat{padding:56px 16px}section.feat:nth-of-type(even){background:var(--card)}
+.feat .wide{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.feat.flip .copy{order:2}
+.kicker{font:700 12px/1 -apple-system,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+.feat h2{font-size:30px;margin:10px 0 12px}.feat p{color:var(--muted);margin:0 0 12px}
+.feat ul{padding-left:20px;margin:0}.feat li{margin:6px 0}
+.gallery{display:flex;gap:16px;overflow-x:auto;padding:8px 16px 20px;scroll-snap-type:x mandatory;max-width:1040px;margin:0 auto}
+.gallery img{width:200px;flex:0 0 auto;border-radius:24px;border:1px solid var(--line);scroll-snap-align:start}
+.faq{max-width:760px;margin:0 auto;padding:0 16px 48px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:14px 16px}
+.faq summary{font-weight:600;cursor:pointer}.faq details p{color:var(--muted);margin:10px 0 0}
+.center{text-align:center}.h2c{font:700 30px ui-serif,Georgia,serif;text-align:center;margin:48px 16px 8px}
+.sub{text-align:center;color:var(--muted);margin:0 16px 20px}
+main.bare{max-width:none;margin:0;padding:0;background:none;border:0;border-radius:0}
+@media (max-width:800px){.hero2 .wide,.feat .wide{grid-template-columns:1fr}.feat.flip .copy{order:0}.hero2 h1{font-size:34px}main.bare{margin:0}}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:0 16px 32px}
+</style></head><body>
+<header><div class="in"><img src="icon.png" alt=""><a href="index.html">InvestEd</a></div></header>
+<nav><a href="index.html" aria-current=page>Home</a><a href="guide.html">Guide</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav><main class="bare"><div class="hero2"><div class="wide"><div>
+<img class="icon" src="icon.png" alt="InvestEd app icon">
+<h1>Learn money by doing it.</h1>
+<p>InvestEd is a free iPhone app that teaches teens personal finance with bite-size lessons and a $10,000 practice portfolio that uses real stock prices and zero real money.</p>
+<span class="pill solid">Coming soon to the App Store</span><a class="pill solid" href="play/">Try it in your browser</a><a class="pill" href="guide.html">How it works</a>
+<div class="stats"><div><b>12</b><span>units</span></div><div><b>60</b><span>lessons</span></div><div><b>420</b><span>practice questions</span></div><div><b>$0</b><span>ads or purchases</span></div></div>
+</div><div><div class="phone"><video src="media/tour.mp4" poster="media/tour-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="A quick tour of the app"></video></div></div></div></div><section class="feat"><div class="wide"><div class="copy"><div class="kicker">Start where you are</div><h2>A quick placement test</h2><p>Answer a few questions and InvestEd starts you at the right unit, so you skip what you already know.</p><ul><li>Questions get harder or easier as you answer</li><li>Tap &ldquo;I'm not sure&rdquo; instead of guessing</li><li>Retake it anytime from Settings</li></ul></div><div><div class="phone"><video src="media/placement.mp4" poster="media/placement-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Placement test"></video></div></div></div></section><section class="feat flip"><div class="wide"><div class="copy"><div class="kicker">12 units, 60 lessons</div><h2>Lessons that feel like a game</h2><p>From budgeting and paychecks to credit, compound interest, the stock market, and options. Every lesson is about 7 questions.</p><ul><li>Sort, match, order, and number questions, not just multiple choice</li><li>A wrong answer shows the explanation right away</li><li>Earn XP and Gold, keep your streak going</li></ul></div><div><div class="phone"><video src="media/lesson.mp4" poster="media/lesson-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Playing a lesson"></video></div></div></div></section><section class="feat"><div class="wide"><div class="copy"><div class="kicker">Real prices, fake money</div><h2>A $10,000 practice portfolio</h2><p>Search any U.S. stock, buy and sell with practice cash, and try calls and puts in the Options Playground. Prices come from the real market.</p><ul><li>Live quotes, simulated trades</li><li>Options priced with Black-Scholes, explained in plain English</li><li>See exactly how much you could lose before you buy</li></ul></div><div><div class="phone"><video src="media/market.mp4" poster="media/market-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Buying a stock and an option"></video></div></div></div></section><h2 class="h2c">A look inside</h2><p class="sub">Swipe to see every tab.</p><div class="gallery"><img src="media/01-learn.jpg" alt="Learn tab" loading="lazy"><img src="media/04-lesson.jpg" alt="A sorting question" loading="lazy"><img src="media/02-market.jpg" alt="Market tab" loading="lazy"><img src="media/03-options.jpg" alt="Options Playground" loading="lazy"><img src="media/05-league.jpg" alt="Friends and weekly league" loading="lazy"><img src="media/06-profile.jpg" alt="Profile and achievements" loading="lazy"><img src="media/07-shop.jpg" alt="Shop" loading="lazy"></div><h2 class="h2c">Quick answers</h2><div class="faq"><details><summary>Is any of this real money?</summary><p>No. Every trade uses practice money. The prices are real, but you can't deposit, withdraw, or cash out anything.</p></details><details><summary>Is it really free?</summary><p>Yes. No ads, no subscriptions, and nothing to buy. Gold is earned by learning and can't be purchased.</p></details><details><summary>Who is it for?</summary><p>Teens 13 and up, and anyone who wants a friendly start with money and investing.</p></details><details><summary>Is this financial advice?</summary><p>No. InvestEd teaches concepts and lets you practice. Talk with a licensed professional before investing real money.</p></details><p class="center"><a href="guide.html">Read the full guide</a> &middot; <a href="support.html">Get help</a></p></div></main>
+<footer>InvestEd is an educational app. All investing in it is simulated. Not financial advice.</footer>
+</body></html>
