@@ -10,6 +10,7 @@ const UNITS = [
    {
     "id": "unit1-lesson1",
     "title": "Budgeting 101",
+    "icon": "chart.pie.fill",
     "questions": [
      {
       "type": "mc",
@@ -69,6 +70,7 @@ const UNITS = [
    {
     "id": "unit1-lesson2",
     "title": "Needs vs. Wants",
+    "icon": "cart.fill",
     "questions": [
      {
       "type": "tf",
@@ -124,6 +126,7 @@ const UNITS = [
    {
     "id": "unit1-lesson3",
     "title": "Saving & Emergency Funds",
+    "icon": "banknote.fill",
     "questions": [
      {
       "type": "mc",
@@ -194,6 +197,7 @@ const UNITS = [
    {
     "id": "unit1-lesson4",
     "title": "Banking Basics",
+    "icon": "building.columns.fill",
     "questions": [
      {
       "type": "tf",
@@ -266,6 +270,7 @@ const UNITS = [
    {
     "id": "unit1-lesson5",
     "title": "Smart Spending",
+    "icon": "tag.fill",
     "questions": [
      {
       "type": "mc",
@@ -335,6 +340,7 @@ const UNITS = [
    {
     "id": "unit7-lesson1",
     "title": "Reading a Paycheck",
+    "icon": "banknote.fill",
     "questions": [
      {
       "type": "mc",
@@ -400,6 +406,7 @@ const UNITS = [
    {
     "id": "unit7-lesson2",
     "title": "How Income Tax Works",
+    "icon": "percent",
     "questions": [
      {
       "type": "mc",
@@ -462,6 +469,7 @@ const UNITS = [
    {
     "id": "unit7-lesson3",
     "title": "Types of Taxes",
+    "icon": "building.columns.fill",
     "questions": [
      {
       "type": "mc",
@@ -527,6 +535,7 @@ const UNITS = [
    {
     "id": "unit7-lesson4",
     "title": "Retirement Accounts 101",
+    "icon": "chart.line.uptrend.xyaxis",
     "questions": [
      {
       "type": "mc",
@@ -599,6 +608,7 @@ const UNITS = [
    {
     "id": "unit7-lesson5",
     "title": "Your First Job Money Moves",
+    "icon": "briefcase.fill",
     "questions": [
      {
       "type": "mc",
@@ -672,6 +682,7 @@ const UNITS = [
    {
     "id": "unit4-lesson1",
     "title": "Credit Scores",
+    "icon": "speedometer",
     "questions": [
      {
       "type": "mc",
@@ -730,6 +741,7 @@ const UNITS = [
    {
     "id": "unit4-lesson2",
     "title": "Credit Cards",
+    "icon": "creditcard.fill",
     "questions": [
      {
       "type": "mc",
@@ -804,6 +816,7 @@ const UNITS = [
    {
     "id": "unit4-lesson3",
     "title": "Loans & Interest",
+    "icon": "percent",
     "questions": [
      {
       "type": "num",
@@ -861,6 +874,7 @@ const UNITS = [
    {
     "id": "unit4-lesson4",
     "title": "Good Debt vs. Bad Debt",
+    "icon": "arrow.up.arrow.down",
     "questions": [
      {
       "type": "mc",
@@ -926,6 +940,7 @@ const UNITS = [
    {
     "id": "unit4-lesson5",
     "title": "Getting Out of Debt",
+    "icon": "chart.line.downtrend.xyaxis",
     "questions": [
      {
       "type": "mc",
